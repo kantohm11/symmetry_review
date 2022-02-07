@@ -1,7 +1,7 @@
 bookdown::gitbook:
   split_by: section
   includes:
-    in_header: mathjax.html
+    in_header: mathjax_header.html
   citation_package: none
   css: style.css
   config:
