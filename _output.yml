@@ -1,4 +1,7 @@
 bookdown::gitbook:
+  split_by: section
+  includes:
+    in_header: mathjax.html
   citation_package: none
   css: style.css
   config:
@@ -9,11 +12,13 @@ bookdown::gitbook:
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     edit: https://github.com/kantohm11/symmetry_review/edit/main/%s
     download: ["pdf", "tex"]
-  pandoc_args: [ "--csl", "aps_custom.csl" ]
+  pandoc_args: [ "--csl", "aps_custom.csl"]
 bookdown::pdf_book:
   #includes:
     #in_header: preamble.tex
   latex_engine: xelatex
+  includes:
+    in_header: preamble.tex
   citation_package: biblatex
   biblio-style: "biblatex-phys"
   keep_tex: yes

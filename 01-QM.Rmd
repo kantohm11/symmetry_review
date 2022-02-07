@@ -1,0 +1,19 @@
+# Quantum Anomaly in Quantum Mechanics
+In this chapter we learn about quantum anomaly of a symmetry in quantum mechanics, without assuming any kind of locality. 
+Here, locality roughly means that we have a notion of "observables localized in a subregion of the space (or spacetime)."
+Both quantum field theory (QFT) and a quantum system on lattice are local in this sence, which greatly affect the possible behavior of a symmetry.
+Here we will see what kind of "topological" phenomena are possible regarding symemtry when the locality is absent.
+In such case, we often regard that all of the observables are associated to a single point consisting the entire "space", justifying call such a system "0+1-dimensional."
+
+## Basics about quantum mechanics
+
+
+Let us recall the basics.
+Given a quantum system, we have a Hilbert space $\mathcal{H}$,
+in which a state lives.
+$\ket{1}$
+
+
+## test
+
+test

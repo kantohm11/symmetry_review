@@ -1,5 +1,5 @@
 book_filename: "symmetry_review"
 language:
   ui:
-    chapter_name: " "
+    chapter_name: "Chapter "
 delete_merged_file: true

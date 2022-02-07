@@ -1,7 +1,6 @@
 --- 
 title: "Topological Aspects of Symmetry in Low Dimensions"
 author: "Kantaro Ohmori"
-affiliation: "University of Tokyo"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -19,18 +18,72 @@ abstract: |
   Time permits, we also see how the inclusion of fermions affects the story.
 ---
 
+
 # Introduction
+
+$$\ket{x}$$
+
+$\bra{x}, \braket{x|y|z}$
+
 Symmetry is a guiding principle in physics. In many case, given a system, you first analyze its symmetry. Or, to model a given phenomena, the symmetry is often be the first clue.
 Therefore, there have been numerous research on the topic. What is surprising is that, still, in 2022, it is a hot area of research and there are many things to be understood.
 
-## Aim
-This lecture aims to be an introduction to the field of symmetry and its anomaly in quantum field theory. In the first part of the lecture topological aspects of symmetry in quantum mechanics are reviewed, then in the latter part of the lecture we proceed to symmetry in 1+1-dimensional quantum field theory.
+## Lecture Guide 
+
+### Objective
+This lecture aims to be an introduction to the field of symmetry and its anomaly in quantum field theory (QFT). In the first part of the lecture topological aspects of symmetry in quantum mechanics are reviewed, then in the latter part of the lecture we proceed to symmetry in 1+1-dimensional quantum field theory.
 
 Proficiency in the undergraduate level quantum mechanics and some basic knowledge about quantum field theory are assumed, but (hopefully) not much more. Especially, the first half will focus on quantum mechanics so it is hopefully understandable to even advanced undergraduates.
 
-## Useful references
+### Useful references
 1. @tachikawa_2019:
   The first half of Yuji’s lecture is about the big framework the most of researchers assume (but not necessarily proven), which I will omit.
   The second half of Yuji's will serve as an advanced version of this lecture.
 2. @Witten:2015aoa, @Witten:2015aba:
   While there are not so much overlap between this lecture by me and these lecture note and paper by E. Witten, and Witten's is a bit more advanced, they are undoubtedly ones of the best entry points to the field.
+
+## Motivation
+Why do we care about symmetry and its anomaly in quantum field theory?
+There are two (closely related) uses cases of symmetry and its anomaly in the study of QFT and its applications:
+
+1. to construction of a model, given observed spectrum or other desired properties, and
+2. to constraining possible long range physics from 't Hooft anomaly matching.
+
+An example for the case one is the Standard Model (SM) of the particle physics.
+The spectrum of the fermions fits into a representation of $SU(3)\times SU(2) \times U(1)$ nicely, and gauging of the symmetry, after including the Higgs boson, magically explains almost all physics that occur in a collider. (The finding of the quark model involving the color symmetry was also mainly from group theory: it was to reproduce the observed $SU(3)$ symmetry among hadrons. )
+
+The quantum anomaly is also very important in construction of the SM: a single family of fermions in SM has chiral spectrum but seemingly miraculous cancellation of the quantum anomaly, which makes the model consistent. This cancellation also leads to the idea of grand unification.
+
+The second case is about the quantum anomaly for *global* symmetry.[^anomaly]
+'t Hooft anomaly matching states that the anomaly should match between the UV and IR of an renormalization group (RG) flow (see Fig. \@ref(fig:flow)).
+Let $G_\text{UV}$ and $G_\text{IR}$ be the symmetry group for the UV and IR theory, respectively.
+The existence of the RG flow between them in particular means that an isomorphism between them:
+\begin{equation}
+  (\#eq:Ghom)
+  \phi: G_\text{UV} \to G_\text{IR}.
+\end{equation}
+The RG flow also assigns a map between the quantum anomalies, which are a property of symmetries in a local quantum system, for the symmetries $G_\text{UV}$ and $G_\text{IR}$;
+but this time it is backwards:
+\begin{equation}
+  (\#eq:pullback)
+  \phi^*: \mathcal{A}_\text{IR} \to \mathcal{A}_\text{UV}.
+\end{equation}
+This map is in a sense linear, in particular $\phi^* (0) = 0$, where $\mathcal{A}=0$ means that there is no anomaly.
+Therefore, if you know that $\mathcal{A}_\text{UV}\neq 0$, which immediately means $\mathcal{A}_\text{IR}\neq 0$.
+In turn, you also conclude that the IR *theory* it self is *not* trivial: you need some degrees of freedom to **match** the anomaly.
+
+This is the power of 't Hooft anomaly matching: that you can say something without analysing the dynamics about where the theory can flow into. 
+This can be done even if the theory is very hard to analyze, i.e. *strongly coupled*, for example asymptotically free theories.
+For such theories the anomaly matching (and some generalization) are sometimes the only, or one of the few, analytical tools that one can apply. 
+Thus the 't Hooft anomaly matching is a part of the foundation in the research of strongly coupled quantum systems.
+
+
+[^anomaly]: Some authors, including the author of this lecture note, sometimes use the term "'t Hooft anomaly", to mean a quantum anomaly for a *global* symmetry, to distinguish it from a quantum anomaly involving *gauge* symmetry. However this terminology does not seem to have a historical root (while the term "'t Hooft anomaly matching" is easily justified), so in this lecture KO tries to avoid the terminology to avoid any possible confusion.
+
+```{r flow, echo = FALSE, fig.cap = "'t Hooft anomaly matching",out.width = '50%',fig.align = 'center'}
+knitr::include_graphics(rep("figs/flow_symmetry.jpeg"))
+```
+
+
+
+
