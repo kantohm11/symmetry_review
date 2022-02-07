@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Topological Aspects of Symmetry in Low Dimensions</title>
-  <meta name="description" content="Page not found | Topological Aspects of Symmetry in Low Dimensions" />
+  <title>1.2 Motivation | Topological Aspects of Symmetry in Low Dimensions</title>
+  <meta name="description" content="1.2 Motivation | Topological Aspects of Symmetry in Low Dimensions" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta property="og:title" content="1.2 Motivation | Topological Aspects of Symmetry in Low Dimensions" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="kantohm11/symmetry_review" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta name="twitter:title" content="1.2 Motivation | Topological Aspects of Symmetry in Low Dimensions" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="lecture-guide.html"/>
+<link rel="next" href="quantum-anomaly-in-quantum-mechanics.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -153,19 +153,60 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="motivation" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Motivation</h2>
+<p>Why do we care about symmetry and its anomaly in quantum field theory?
+There are two (closely related) uses cases of symmetry and its anomaly in the study of QFT and its applications:</p>
+<ol style="list-style-type: decimal">
+<li>to construction of a model, given observed spectrum or other desired properties, and</li>
+<li>to constraining possible long range physics from ’t Hooft anomaly matching.</li>
+</ol>
+<p>An example for the case one is the Standard Model (SM) of the particle physics.
+The spectrum of the fermions fits into a representation of <span class="math inline">\(SU(3)\times SU(2) \times U(1)\)</span> nicely, and gauging of the symmetry, after including the Higgs boson, magically explains almost all physics that occur in a collider. (The finding of the quark model involving the color symmetry was also mainly from group theory: it was to reproduce the observed <span class="math inline">\(SU(3)\)</span> symmetry among hadrons. )</p>
+<p>The quantum anomaly is also very important in construction of the SM: a single family of fermions in SM has chiral spectrum but seemingly miraculous cancellation of the quantum anomaly, which makes the model consistent. This cancellation also leads to the idea of grand unification.</p>
+<p>The second case is about the quantum anomaly for <em>global</em> symmetry.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+’t Hooft anomaly matching states that the anomaly should match between the UV and IR of an renormalization group (RG) flow (see Fig. <a href="motivation.html#fig:flow">1.1</a>).
+Let <span class="math inline">\(G_\text{UV}\)</span> and <span class="math inline">\(G_\text{IR}\)</span> be the symmetry group for the UV and IR theory, respectively.
+The existence of the RG flow between them in particular means that an isomorphism between them:
+<span class="math display" id="eq:Ghom">\[\begin{equation}
+  \tag{1.1}
+  \phi: G_\text{UV} \to G_\text{IR}.
+\end{equation}\]</span>
+The RG flow also assigns a map between the quantum anomalies, which are a property of symmetries in a local quantum system, for the symmetries <span class="math inline">\(G_\text{UV}\)</span> and <span class="math inline">\(G_\text{IR}\)</span>;
+but this time it is backwards:
+<span class="math display" id="eq:pullback">\[\begin{equation}
+  \tag{1.2}
+  \phi^*: \mathcal{A}_\text{IR} \to \mathcal{A}_\text{UV}.
+\end{equation}\]</span>
+This map is in a sense linear, in particular <span class="math inline">\(\phi^* (0) = 0\)</span>, where <span class="math inline">\(\mathcal{A}=0\)</span> means that there is no anomaly.
+Therefore, if you know that <span class="math inline">\(\mathcal{A}_\text{UV}\neq 0\)</span>, which immediately means <span class="math inline">\(\mathcal{A}_\text{IR}\neq 0\)</span>.
+In turn, you also conclude that the IR <em>theory</em> it self is <em>not</em> trivial: you need some degrees of freedom to <strong>match</strong> the anomaly.</p>
+<p>This is the power of ’t Hooft anomaly matching: that you can say something without analysing the dynamics about where the theory can flow into.
+This can be done even if the theory is very hard to analyze, i.e. <em>strongly coupled</em>, for example asymptotically free theories.
+For such theories the anomaly matching (and some generalization) are sometimes the only, or one of the few, analytical tools that one can apply.
+Thus the ’t Hooft anomaly matching is a part of the foundation in the research of strongly coupled quantum systems.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:flow"></span>
+<img src="figs/flow_symmetry.jpeg" alt="'t Hooft anomaly matching" width="50%" />
+<p class="caption">
+Figure 1.1: ’t Hooft anomaly matching
+</p>
+</div>
+
+</div>
+<!-- </div> -->
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Some authors, including the author of this lecture note, sometimes use the term “’t Hooft anomaly”, to mean a quantum anomaly for a <em>global</em> symmetry, to distinguish it from a quantum anomaly involving <em>gauge</em> symmetry. However this terminology does not seem to have a historical root (while the term “’t Hooft anomaly matching” is easily justified), so in this lecture KO tries to avoid the terminology to avoid any possible confusion.<a href="motivation.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="lecture-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="quantum-anomaly-in-quantum-mechanics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -196,7 +237,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/kantohm11/symmetry_review/edit/main/%s",
+"link": "https://github.com/kantohm11/symmetry_review/edit/main/index.Rmd",
 "text": "Edit"
 },
 "history": {

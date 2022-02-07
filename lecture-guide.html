@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title> 2 Introduction | Topological Aspects of Symmetry in Low Dimensions</title>
-  <meta name="description" content=" 2 Introduction | Topological Aspects of Symmetry in Low Dimensions" />
+  <title>1.1 Lecture Guide | Topological Aspects of Symmetry in Low Dimensions</title>
+  <meta name="description" content="1.1 Lecture Guide | Topological Aspects of Symmetry in Low Dimensions" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content=" 2 Introduction | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta property="og:title" content="1.1 Lecture Guide | Topological Aspects of Symmetry in Low Dimensions" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="kantohm11/symmetry_review" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content=" 2 Introduction | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta name="twitter:title" content="1.1 Lecture Guide | Topological Aspects of Symmetry in Low Dimensions" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Kantaro Ohmori" />
 
 
-<meta name="date" content="2022-02-05" />
+<meta name="date" content="2022-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html"/>
-
+<link rel="next" href="motivation.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -63,6 +63,19 @@ div.abstract{
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+          Macros: {
+            RR: "{\\bf R}",
+            bold: ["{\\bf #1}",1],
+            ket: ["{\\lvert #1 \\rangle}",1],
+            bra: ["{\\langle #1 \\rvert}",1],
+            braket: ["{\\langle #1 \\rangle}",1],
+          }
+        }
+      });
+</script>
 
 
 
@@ -107,10 +120,19 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#aim"><i class="fa fa-check"></i><b>1.1</b> Aim</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#useful-references"><i class="fa fa-check"></i><b>1.2</b> Useful references</a></li>
+<li class="chapter" data-level="1.1" data-path="lecture-guide.html"><a href="lecture-guide.html"><i class="fa fa-check"></i><b>1.1</b> Lecture Guide</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="lecture-guide.html"><a href="lecture-guide.html#objective"><i class="fa fa-check"></i><b>1.1.1</b> Objective</a></li>
+<li class="chapter" data-level="1.1.2" data-path="lecture-guide.html"><a href="lecture-guide.html#useful-references"><i class="fa fa-check"></i><b>1.1.2</b> Useful references</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="motivation.html"><a href="motivation.html"><i class="fa fa-check"></i><b>1.2</b> Motivation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="quantum-anomaly-in-quantum-mechanics.html"><a href="quantum-anomaly-in-quantum-mechanics.html"><i class="fa fa-check"></i><b>2</b> Quantum Anomaly in Quantum Mechanics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basics-about-quantum-mechanics.html"><a href="basics-about-quantum-mechanics.html"><i class="fa fa-check"></i><b>2.1</b> Basics about quantum mechanics</a></li>
+<li class="chapter" data-level="2.2" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>2.2</b> test</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -131,20 +153,34 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-1" class="section level1" number="2">
-<h1><span class="header-section-number"> 2</span> Introduction</h1>
-<p>test</p>
-
+<div id="lecture-guide" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Lecture Guide</h2>
+<div id="objective" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Objective</h3>
+<p>This lecture aims to be an introduction to the field of symmetry and its anomaly in quantum field theory (QFT). In the first part of the lecture topological aspects of symmetry in quantum mechanics are reviewed, then in the latter part of the lecture we proceed to symmetry in 1+1-dimensional quantum field theory.</p>
+<p>Proficiency in the undergraduate level quantum mechanics and some basic knowledge about quantum field theory are assumed, but (hopefully) not much more. Especially, the first half will focus on quantum mechanics so it is hopefully understandable to even advanced undergraduates.</p>
+</div>
+<div id="useful-references" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Useful references</h3>
+<ol style="list-style-type: decimal">
+<li><span class="citation"> [<a href="#ref-tachikawa_2019" role="doc-biblioref">1</a>]</span>:
+The first half of Yuji’s lecture is about the big framework the most of researchers assume (but not necessarily proven), which I will omit.
+The second half of Yuji’s will serve as an advanced version of this lecture.</li>
+<li><span class="citation"> [<a href="#ref-Witten:2015aoa" role="doc-biblioref">2</a>]</span>, <span class="citation"> [<a href="#ref-Witten:2015aba" role="doc-biblioref">3</a>]</span>:
+While there are not so much overlap between this lecture by me and these lecture note and paper by E. Witten, and Witten’s is a bit more advanced, they are undoubtedly ones of the best entry points to the field.</li>
+</ol>
+</div>
+</div>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body">
-<div class="csl-entry">
+<div id="ref-tachikawa_2019" class="csl-entry">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">Y. Tachikawa, <em>Lecture on Anomalies and Topological Phases</em>, (2019), <span class="nodecoration"><a href="https://member.ipmu.jp/yuji.tachikawa/lectures/2019-top-anom/">https://member.ipmu.jp/yuji.tachikawa/lectures/2019-top-anom/</a></span>.</div>
 </div>
-<div class="csl-entry">
+<div id="ref-Witten:2015aoa" class="csl-entry">
 <div class="csl-left-margin">[2] </div><div class="csl-right-inline">E. Witten, <em><span class="nocase">Three lectures on topological phases of matter</span></em>, Riv. Nuovo Cim. <strong>39</strong>, 313 (2016), <span class="nodecoration"><a href="https://arxiv.org/abs/1510.07698">https://arxiv.org/abs/1510.07698</a></span>.</div>
 </div>
-<div class="csl-entry">
+<div id="ref-Witten:2015aba" class="csl-entry">
 <div class="csl-left-margin">[3] </div><div class="csl-right-inline">E. Witten, <em><span>Fermion Path Integrals And Topological Phases</span></em>, Rev. Mod. Phys. <strong>88</strong>, 035001 (2016), <span class="nodecoration"><a href="https://arxiv.org/abs/1508.04715">https://arxiv.org/abs/1508.04715</a></span>.</div>
-</div>
 </div>
 </div>
             </section>
@@ -152,8 +188,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="motivation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -184,7 +220,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/kantohm11/symmetry_review/edit/main/01-intro.Rmd",
+"link": "https://github.com/kantohm11/symmetry_review/edit/main/index.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -207,6 +243,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
