@@ -20,20 +20,22 @@ abstract: |
 
 
 # Introduction
-
-$$\ket{x}$$
-
-$\bra{x}, \braket{x|y|z}$
-
 Symmetry is a guiding principle in physics. In many case, given a system, you first analyze its symmetry. Or, to model a given phenomena, the symmetry is often be the first clue.
 Therefore, there have been numerous research on the topic. What is surprising is that, still, in 2022, it is a hot area of research and there are many things to be understood.
 
-## Lecture Guide 
+## Lecture guide 
+
+### Usage of this note
+This note is provided primaliry as a website.
+The usage is self-explaining but you might find a useful tips if you click the "i" mark in the top navigation bar. Also from the navigation bar one can download the pdf version. (If you want a epub file, I can easily generate it too, so let me know.)
+
+The parts having \* at the tail of its title will probably be skipped in the lecture.
 
 ### Objective
 This lecture aims to be an introduction to the field of symmetry and its anomaly in quantum field theory (QFT). In the first part of the lecture topological aspects of symmetry in quantum mechanics are reviewed, then in the latter part of the lecture we proceed to symmetry in 1+1-dimensional quantum field theory.
 
-Proficiency in the undergraduate level quantum mechanics and some basic knowledge about quantum field theory are assumed, but (hopefully) not much more. Especially, the first half will focus on quantum mechanics so it is hopefully understandable to even advanced undergraduates.
+### Prerequisite
+Proficiency in the undergraduate level quantum mechanics and some basic knowledge about quantum field theory and group theory (e.g. what are $SO(3)$, $SU(2)$, $\mathbb{Z}_2$, and so on) are assumed, but (hopefully) not much more. Especially, the first half will focus on quantum mechanics so it is hopefully understandable to even advanced undergraduates.
 
 ### Useful references
 1. @tachikawa_2019:
@@ -72,7 +74,7 @@ This map is in a sense linear, in particular $\phi^* (0) = 0$, where $\mathcal{A
 Therefore, if you know that $\mathcal{A}_\text{UV}\neq 0$, which immediately means $\mathcal{A}_\text{IR}\neq 0$.
 In turn, you also conclude that the IR *theory* it self is *not* trivial: you need some degrees of freedom to **match** the anomaly.
 
-This is the power of 't Hooft anomaly matching: that you can say something without analysing the dynamics about where the theory can flow into. 
+This is the power of 't Hooft anomaly matching: that you can say something without analyzing the dynamics about where the theory can flow into. 
 This can be done even if the theory is very hard to analyze, i.e. *strongly coupled*, for example asymptotically free theories.
 For such theories the anomaly matching (and some generalization) are sometimes the only, or one of the few, analytical tools that one can apply. 
 Thus the 't Hooft anomaly matching is a part of the foundation in the research of strongly coupled quantum systems.

@@ -1,19 +1,397 @@
 # Quantum Anomaly in Quantum Mechanics
 In this chapter we learn about quantum anomaly of a symmetry in quantum mechanics, without assuming any kind of locality. 
 Here, locality roughly means that we have a notion of "observables localized in a subregion of the space (or spacetime)."
-Both quantum field theory (QFT) and a quantum system on lattice are local in this sence, which greatly affect the possible behavior of a symmetry.
-Here we will see what kind of "topological" phenomena are possible regarding symemtry when the locality is absent.
+Both quantum field theory (QFT) and a quantum system on lattice are local in this sense, which greatly affect the possible behavior of a symmetry.
+Here we will see what kind of "topological" phenomena are possible regarding symmetry when the locality is absent.
 In such case, we often regard that all of the observables are associated to a single point consisting the entire "space", justifying call such a system "0+1-dimensional."
 
 ## Basics about quantum mechanics
 
-
 Let us recall the basics.
 Given a quantum system, we have a Hilbert space $\mathcal{H}$,
 in which a state lives.
-$\ket{1}$
+A unit state $\ket{\psi}$ and another $\ket{\psi'}$ describes the same state, which we write as $\ket{\psi}\sim\ket{\psi'}$, if (and only if)
+\begin{equation}
+  (\#eq:phase-equiv)
+  \ket{\psi} = e^{\mathrm{i}\alpha}\ket{\psi'}
+\end{equation}
+for some phase $\alpha$.
+Then, we define the *ray space* $\mathbb{P}\mathcal{H}$ as the projective space of $\mathcal{H}$:
+\begin{equation}
+  (\#eq:PH)
+  \mathbb{P}\mathcal{H} := S\mathcal{H}/\sim,
+\end{equation}
+where $S\mathcal{H}$ denotes the space of unit states.
+By definition, elements in the ray space are one-to-one corresponded to physical states of the system.
+Given two states $[\ket{\psi}],[\ket{\phi}] \in \mathbb{P}\mathcal{H}$, where $[,]$ denotes the equivalence class in the definition \@ref(eq:PH), the transition probability of the two states are
+\begin{equation}
+  (\#eq:transprob)
+  \lvert \braket{\psi|\phi}\rvert^2.
+\end{equation}
+Note that this definition does not depends on the choice of the representatives $\psi,\phi$ in each class.
+We put the structure of abelian group to $C^2(G,M)$ induced by the abelian group structure of $M$.
+
+Sometimes it is convenient to focus on *operators* acting on the states, rather than the states itself.
+We let the algebra of the (bounded) operators be denoted by $\mathcal{A}$.
+If the Hilbert space is finite dimensional, i.e. $\mathcal{H} = \mathbb{C}^n$ for some integer $n$,
+the algebra is simply the matrix algebra:
+\begin{equation}
+  (\#eq:Amatrix)
+  \mathcal{A} \cong \mathrm{Mat}(\mathbb{C}^n).
+\end{equation}
+
+In this lecture we consider the dynamics by a constant Hamiltonian[^floquet].
+We use the Heisenberg picture, so the state $\ket{\psi}$ does not develop but an operator $\mathcal{O}$
+develops in time as
+\begin{equation}
+  (\#eq:Odev)
+  \mathcal{O}(t) = e^{\mathrm{i}H t} \mathcal{O}(0) e^{-\mathrm{i}H t}.
+\end{equation}
+Here we have set the plank constant $\hbar =1$.
+
+[^floquet]: Instead, one might consider a discrete (finite time) evolution by a unitary operator.
+Such a system is often called Floquet system. The term originally means that you have an external field periodic in the time. The discrepancy between the continuous and discrete evolutions is an interesting ongoing research topic.
 
 
-## test
+## Wigner's theorem
 
-test
+According to E. Wigner, a **symmetry transformation** $U$ acting on a quantum system is a bijection
+\begin{equation}
+  (\#eq:sym)
+  T: \mathbb{P}\mathcal{H} \to \mathbb{P}\mathcal{H},
+\end{equation}
+that preserves the transition probability \@ref(eq:transprob).
+We call a bijection $U$ on $\mathcal{H}$ is compatible with $T$ if $U$ induces the same action on $\mathbb{P}\mathcal{H}$ as $T$.
+
+
+Then, Wigner's theorem states:
+
+::: {.theorem name="Wigner 1931"}
+Given a symmetry transformation $T$, there exists a bijection $U_T$ on $\mathcal{H}$ compatible with $T$.
+This $U_T$ is either linear (over $\mathbb{C}$) and unitary, or anti-linear and anti-unitary. If $\mathrm{dim}\mathcal{H}\ge 2$, this $U$ is unique up to a overall phase redefinition $U_T \mapsto e^{\mathrm{i}\alpha}U_T$. (When $\mathrm{dim}\mathcal{H} = 1$, $T$ is unique, and $U_T$ can be taken either of unitary or anti-unitary one. Once the choice is fixed, it is up to the phase.)
+:::
+
+This is why we usually care about unitary operator (like Pauli matrices).
+The proof can be found somewhere, e.g. @Weinberg:1995mt. We will see examples soon.
+
+We also have an action of $T$ on the algebra of operators $\mathcal{A}$ through this theorem:
+\begin{align}
+  (\#eq:TonA)
+  T \curvearrowright \mathcal{A}  & \to \mathcal{A}\\
+  \mathcal{O} & \mapsto U_T \mathcal{O} U^\dagger_T.
+\end{align}
+Note that this action is independent of the phase freedom of $U_T$ and thus uniquely defined.
+\@ref(eq:Odev) is a special case of this.
+
+Finally, we call a symmetry $T$ is **preserved** by the Hamiltonian if 
+\begin{equation}
+  (\#eq:UHcommute)
+  [U_T,H] = 0.
+\end{equation}
+
+## Bloch sphere and projective representation
+Let us take a close look at the case of a qubit, i.e. $\mathcal{H} = \mathbb{C}^2$.
+Pick a basis $\ket{0}$ and $\ket{1}$ and expand a unit state $\ket{\psi}$ as 
+\begin{equation}
+  (\#eq:psiexp)
+  \ket{\psi} = \cos(\theta/2) \ket{0} + \sin(\theta/2)e^{\mathrm{i}\phi} \ket{1},
+\end{equation}
+where $0\le \theta \le \pi$ and $0 \le \phi \le 2\pi$.
+One can always bring a unit state to this form using the phase ambiguity $\ket{\psi}\sim e^{\mathrm{i}\alpha}\ket{\psi}$.
+Note that when $\theta = 0$ and $\theta =\pi$, the the correspoinding point in $\mathbb{P}\mathcal{H}$ is independent of $\phi$. Therefore $(\theta,\phi)$ is the coordinates (polar and azimuthal angles) on $S^2$, called the Bloch sphere:
+\begin{equation}
+  (\#eq:PHCP1)
+  \mathbb{P}\mathcal{H} \cong \mathbb{CP}^1 \cong S^2.
+\end{equation}
+The relationship between the polar coordinates on $S^2$ and the Cartesian coordinates on $\mathbb{R}^3$ is $(x,y,z) = (\sin\theta\,\cos\phi,\sin\theta\,\sin\phi,\cos\theta)$.
+
+Given two states $\ket{\psi_1}$ and $\ket{\psi_2}$, the transition probability is $|\braket{\psi_2|\psi_1}|^2 = \cos^2(\theta_{12}/2)$, where $\theta_{12}$ is the angle between the two corresponding point in the Bloch sphere.
+Symmetry transformation $T$ is a bijection on Bloch sphere preserving this quantity. Such transformations are one-to-one corresponded to the orthogonal group
+\begin{equation}
+  (\#eq:TisO3)
+  \{\text{Symmetry transformations on a qubit}\} \cong O(3).
+\end{equation}
+We can also identify the composition of symmetry transformations as the multiplication of the group $O(3)$.
+What are the corresponding (anti)unitaries?
+
+### Orientation preserving part
+Let us first study the part $SO(3) \subset O(3)$ that preserves the orientation of the sphere.
+In particular, the rotation $R_z(\beta)$ around the $z$ ($\theta =0$ direction) axis sends
+\begin{equation}
+  (\#eq:Rz)
+  R_z(\beta) : (\theta ,\phi) \mapsto (\theta, \phi + \beta).
+\end{equation}
+A unitary compatible with this transformation is
+\begin{equation}
+  (\#eq:RzU1)
+  U_{R_z(\beta)}' = 
+  \begin{pmatrix}
+  1 & 0 \\
+  0 & e^{\mathrm{i}\beta}\\
+  \end{pmatrix}.
+\end{equation}
+Or, if we can demand that the unitary is also special ($\mathrm{det}U =1$) by using the phase ambiguity,
+achieving 
+\begin{equation}
+  (\#eq:RzU2)
+  U_{R_z(\beta)} = 
+  \begin{pmatrix}
+  e^{\mathrm{i}\beta/2} & 0 \\
+  0 & e^{\mathrm{i}\beta/2}\\
+  \end{pmatrix}.
+\end{equation}
+However, this expression has a peculiar feature:
+that the $2\pi$ rotation is mapped to $U_{R_z(\beta = 2\pi)} = -\mathbf{I}_{2}$, not to the identity matrix $\mathbf{I}_2$!
+In other words, if we use the special unitary $U_{R_z(\beta)}$ ($0\le \beta < 2\pi$), the composition law of the unitary operators is
+\begin{equation}
+  (\#eq:UUprod)
+  U_{R_z(\beta)} U_{R_z(\beta')} = e^{\mathrm{i}\alpha(\beta,\beta')}U_{R_z(\beta+\beta' \mathrm{mod}\, 2\pi)}
+\end{equation}
+which is not quite straightforward. The function $\alpha(\beta,\beta')$ is called the **projective phase** and in this case it is
+\begin{equation}
+  (\#eq:projphaseRz)
+  \alpha(\beta,\beta')=
+    \begin{cases}
+      0 & (\beta+\beta' < 2\pi)\\
+      \pi & (\beta+\beta' \ge 2\pi)
+    \end{cases}.
+\end{equation}
+
+If one only focus on $R_z(\beta)$, one can use $U'$ in \@ref(eq:RzU1), which has the trivial projective phase. 
+However, it is known that we cannot find a good unitaries $U_g$ for all of the group $g\in SO(3)$ acting on the Block sphere.[^generalRot] We will see how to prove this in the next section.
+When a group $G$ acts on a vector space, but the represented matrices $U_g$ cannot avoid the projective phase, the pair of the vector space and the action is called a **projective representation**.
+The qubit space $\mathbb{C}^2$ is a projective representation of $SO(3)$.[^SU2]
+
+[^generalRot]: A general rotation around the axis $\mathbf{n}$ is known to be compatible with
+\begin{equation}
+  (\#eq:generalRot)
+  U_{R_{\mathbf{n}}(\beta)}  = \exp(-i\beta \mathbf{n}\cdot \vec{\sigma}/2),
+\end{equation}
+where $\vec\sigma$ are the Pauli matrices.
+
+[^SU2]: This is closely related to the fact that $SU(2)$, under which $\mathbb{C}^2$ is an ordinary (linear) representation, is a double cover of $SO(3)$.
+
+### Orientation reserving part
+What happens for the orientation reversing map in $O(3)$, specifically for the reflection
+\begin{equation}
+  (\#eq:reflection)
+  \mathrm{Ref}: (\theta,\phi) \mapsto (\theta,-\phi).
+\end{equation}
+For this we have to assign an *anti-*unitary operator, which is
+\begin{equation}
+  (\#eq:Uref)
+  U_{\mathrm{Ref}} = K \mathbf{I}_2,
+\end{equation}
+where $K$ is the complex conjugation map acting on $\mathbb{C}$.
+A general element in $O(3)\setminus SO(3)$ can be obtained by multiplying a rotation to the reflection.
+There is no projective phase regarding $\mathrm{Ref}$.
+
+
+### General finite states model\*
+For general $n$ state system, $\mathcal{H} \cong \mathbb{C}^n$, the projective space is the complex projective space $\mathbb{CP}^n$. The symmetry transformations are
+\begin{equation}
+  (\#eq:TisPSU)
+  \{\text{Symmetry transformations on $\mathbb{C}^n$}\} \cong PSU(n)\rtimes \mathbb{Z}_2,
+\end{equation}
+where $PSU(n) = SU(n)/\mathbb{Z}_n$ and $\mathbb{Z}_2$ acts as the charge conjugation.
+$\mathbb{C}^n$ is a projective representation of $PSU(n)$, while the $\mathbb{Z}_2$ part is realized as an anti-unitary.
+
+## $\mathbb{Z}_2\times \mathbb{Z}_2$ projective representation
+Here we introduce a systematic method in studying the projective phase,
+using the same example of qubit.
+For simplicity, we concentrate on the following $\mathbb{Z}_2\times \mathbb{Z}_2$ subgroup inside $SO(3)$:
+\begin{equation}
+  (\#eq:Z2Z2)
+  \{\mathrm{Id}, R_x(\pi), R_y(\pi), R_z(\pi)\} \subset SO(3).
+\end{equation}
+Note that $R_x(\pi) = R_y(\pi)R_z(\pi) = R_z(\pi)R_y(\pi)$, so this subset is closed under the multiplication forming the group $\mathbb{Z}_2\times \mathbb{Z}_2$.
+To be concise, we rename the generators of this group as $a := R_z(\pi)$ and $b := R_y(\pi)$, then $R_x(\pi) = ab = ba$.
+The explicit actions of these generators on the coordinates are
+\begin{align}
+  (\#eq:Rxyactions)
+  a \curvearrowright (\theta,\phi) &\mapsto (\theta,\phi+\pi)\\
+  b \curvearrowright (\theta,\phi) &\mapsto (\pi-\theta,\pi-\phi)
+\end{align}
+From this and \@ref(eq:psiexp), we can read the action of $a$ and $b$ on the states as 
+\begin{align}
+  (\#eq:abActionPsi)
+  a \curvearrowright [\, \cos(\theta/2)\ket{0} + \sin(\theta/2) e^{\mathrm{i}\phi}\ket{1} \,] \mapsto & [\, \cos(\theta/2)\ket{0} - \sin(\theta/2) e^{\mathrm{i}\phi}\ket{1} \,]\\
+  b \curvearrowright [\, \cos(\theta/2)\ket{0} + \sin(\theta/2) e^{\mathrm{i}\phi} \ket{1}\,] \mapsto & [\, \sin(\theta/2)\ket{0} - \cos(\theta/2) e^{-\mathrm{i}\phi}\ket{1} \,]\\
+   \sim  & [\, \sin(\theta/2)e^{\mathrm{i}\phi}\ket{0} - \cos(\theta/2) \ket{1} \,].
+\end{align}
+The last line is the equivalence between the states by the overall phase $e^{\mathrm{i}\phi}$.
+These transformations can be easily realized by the unitary matrices
+\begin{equation}
+  (\#eq:UaUbZ2Z2)
+  U_a = 
+  \begin{pmatrix}
+    1 & 0 \\
+    0 & -1 \\
+  \end{pmatrix} = \sigma_3,\quad
+  U_b' = 
+  \begin{pmatrix}
+    0 & 1 \\
+    -1 & 0 \\
+  \end{pmatrix} = \mathrm{i}\sigma_2.
+\end{equation}
+However, the latter matrix squares to $-\mathbf{I}_2$, although $b^2=1$.
+To fix this, one can instead use
+\begin{equation}
+  (\#eq:UbZ2Z2)
+  U_b = 
+  \begin{pmatrix}
+    0 & -\mathrm{i} \\
+    \mathrm{i} & 0 \\
+  \end{pmatrix} =\sigma_2.
+\end{equation}
+However, an issue remains: although $ab = ba = R_x(\pi)$, we have $U_a U_b = - U_b U_a$.
+This discrepancy between the multiplication law among group elements and their corresponding unitaries is the projective phase.
+If we set $U_{ab} = U_b U_a = \sigma _1$, the multiplication law among $U_g$, $g\in \mathbb{Z}_2\times\mathbb{Z}_2$ is
+\begin{equation}
+  (\#eq:ProjRep)
+  U_g U_{g'} = e^{\mathrm{i}\alpha(g,g')}U_{gg'},
+\end{equation}
+where in this example the projective phase is
+\begin{equation}
+  (\#eq:ProjZ2Z2)
+    \alpha(a,b) = \pi,\quad
+    \alpha(g,g') = 0 \,\, \text{(otherwise)}.
+\end{equation}
+
+Recall that we have the room to redefine each $U_g$ by a phase. Can we use this freedom to eliminate the projective phase?
+Let us say the we redefine $U_g$ by phase $\beta(g)$:
+\begin{equation}
+  (\#eq:Uredef)
+  U_g \mapsto e^{\mathrm{i}\beta(g)}U_g.
+\end{equation}
+Then, the projective phase appears in \@ref(eq:ProjRep) gets shifted by
+\begin{equation}
+  (\#eq:ProjPhaseGauge)
+  \alpha(g,g') \mapsto \alpha(g,g') + \beta(g) + \beta(g') - \beta(gg').
+\end{equation}
+Is there a function $\beta$ that eliminate $\alpha(g,g')$ for all $g,g' \in \mathbb{Z}_2\times \mathbb{Z}_2$?
+The answer is no.
+
+::: {.exercise}
+Show that there is no $\beta$ that satisfies $\beta(gg') - \beta(g) - \beta(g') = \alpha(g,g')$ for all $g,g'\in \mathbb{Z}_2\times \mathbb{Z}_2$ when the function $\alpha$ is defined by \@ref(eq:ProjZ2Z2).
+:::
+When a projective phase cannot be removed by the phase rotation of the unitaries, the phase is called (cohomologically) nontrivial. The phase $\alpha$ in \@ref(eq:ProjZ2Z2) is nontrivial.
+
+We have not talked about the Hamiltonian. What are the hamiltonians preserving the $\mathbb{Z}_2\times \mathbb{Z}_2$ symmetry? For a Hamiltonian $H$ to preserve the symmetry, we need
+\begin{equation}
+  (\#eq:HamilPreserve)
+  U_a H U_a^\dagger = U_b H U_b^\dagger = H.
+\end{equation}
+Such $H$ has to be proportional to $\mathbf{I}_2$. This is easy to explicitly check.
+
+!!!! UNDER CONSTRUCTION !!!!
+
+Now, we also see that the entire group $SO(3)$ acting on the qubit also has a nontrivial projective phase. This is because other elements of $SO(3)$ does not help to resolve the projective phase that $\mathbb{Z}_2\times \mathbb{Z}_2$ has.
+
+
+
+## Charged particle on the Aharonov-Bohm ring
+What is the use of the projective phase?
+So far we have only talked about minimal case: qubit.
+Let us jump to a system with a infinite dimensional Hilbert space.
+
+## Group cohomology
+Let us formalize what we learned above for a general group $G$.
+We assume that for each $g\in G$, we have a symmetry transformation $T_g$ acting on $\mathbb{P}\mathcal{H}$ as symmetry transformations satisfying the multiplication law:
+\begin{equation}
+  (\#eq:Tmult)
+  T_g T_{g'} = T_{gg'}
+\end{equation}
+
+By Wigner's theorem, for each $g$, we also have $U_g$.
+The multiplication law of $T_g$ only guarantees 
+\begin{equation}
+  (\#eq:ProjRepGen)
+  U_g U_{g'} = e^{\mathrm{i}\alpha(g,g')}U_{gg'},
+\end{equation}
+for some phase $\alpha(g,g')$, because the correspondence between $T_g$ and $U_g$ is only up to a phase.
+Here we introduce the terminology from algebraic topology.
+A map from $n$-th power of $G$ to some abelian group $M$ is called $M$-valued $n$-**cochain**, denoted by
+\begin{equation}
+  (\#eq:GroupCochain)
+  C^n(G,M) := Map(G^n,M).
+\end{equation}
+Note that a cochain is not demanded to be a group homomorphism; it is just a map.
+$\alpha$ is a  $\mathbb{R}/2\pi\mathbb{Z}$ ($\cong U(1)$) valued 2-cochain.
+In this lecture, $M$ is almost always $\mathbb{R}/2\pi\mathbb{Z}$, so we will not explicitly declare the value domain onwards.
+
+The 2-cochain $\alpha$ is actually not completely arbitrary.
+The constraint comes form the associativity of the unitary operators: $(U_{g_1}U_{g_2})U_{g_3} = U_{g_1}(U_{g_2}U_{g_3})$, which leads
+\begin{equation}
+  (\#eq:cocycle)
+  \delta_3 \alpha (g_1,g_2,g_3) := -\alpha(g_1,g_2)-\alpha(g_1g_2,g_3) + \alpha(g_1,g_2g_3) + \alpha(g_2,g_3) = 0.
+\end{equation}
+Here we have defined the derivative $\delta_3: C^2(G) \to C^3(G)$ on 2-cochains.
+A 2-cochain satisfies this condition is called a cocycle, and the set of cocycle is denoted by[^otherdegree]
+\begin{equation}
+  (\#eq:GroupCocycle)
+  Z^2(G) := \mathrm{Ker}(\delta_3) = \{\alpha\in C^2(G)\mid \delta_3 \alpha = 0\}.
+\end{equation}
+
+::: {.exercise}
+Show that the particular cochain $\alpha \in C^2(\mathbb{Z}_2\times\mathbb{Z}_2)$ defined in \@ref(eq:ProjZ2Z2) is indeed a cocycle.
+:::
+
+
+[^otherdegree]: The derivative $\delta_{n+1}$ for general $n$-cochain can be defined, but we will postpone this until next chapter, other than $\delta_2$ which is defined just below.
+
+Not all the (nonzero) elements of $C^2(G)$ are interesting: some of them might be eliminated by
+redefinition of the unitary operators $U_g$:
+\begin{equation}
+  (\#eq:UredefGen)
+  U_g \mapsto e^{\mathrm{i}\beta(g)}U_g,
+\end{equation}
+with $\beta \in C^1(G)$.
+The phase $\alpha(g,g')$ gets shifted by this redefinition as:
+\begin{equation}
+  (\#eq:ProjPhaseGauge)
+  \alpha(g_1,g_2) \mapsto \alpha(g_1,g_2) - \delta_2 \beta (g_1,g_2) := \alpha(g_1,g_2) + \beta(g_1g_2)-\beta(g_1) - \beta(g_2).
+\end{equation}
+The map $\delta_2: C^1(G) \to C^2(G)$ is also called the derivative.
+An image of $\delta_2$ is called a coboudnary, denoted by 
+\begin{equation}
+  (\#eq:GroupCoboundary)
+  B^2(G) := \mathrm{Im}(\delta_2) = \{\delta_2 \beta\mid \beta \in C^1(G)\}.
+\end{equation}
+The crucial feature of the derivative is that it vanishes when composed:
+\begin{equation}
+  (\#eq:DeltaNilp)
+  \delta_3\circ \delta_2 = 0.
+\end{equation}
+Therefore we have $B^2(G)\subset Z^2(G)$.
+Now, interesting projective phases are those not in $B^2(G)$. 
+This motivates us the define the *group cohomology group*[^nonconfusion]
+\begin{equation}
+  (\#eq:GroupCohomology)
+  H^2(G) := Z^2(G)/B^2(G).
+\end{equation}
+
+[^nonconfusion]: Do not confuse this with the cohomology group of the group as a topological space. The two, the group cohomology of a group and the geometric cohomology of the same, can be denoted by the same symbol $H(G)$, but they are different. They are confusing especially when $G$ is continuous.
+Rather, the group cohomology is identified with the (simplicial/cellular) cohomology of an infinite-dimensional topological space called the classifying space $BG$.
+
+In this lecture we do not have time to learn how to compute the cohomology group, but the examples we have seen are
+\begin{gather}
+  (\#eq:CohomologySO3Z2Z2)
+  H^2(SO(3)) \cong \mathbb{Z}_2,\\
+  H^2(\mathbb{Z}_2\times\mathbb{Z}_2) \cong \mathbb{Z}_2.
+\end{gather}
+
+::: {.exercise}
+Prove \@ref(eq:DeltaNilp).
+:::
+
+::: {.exercise}
+Show that $H^2(\mathbb{Z}_2)=0$. (If you want, also calculate $H^2(\mathbb{Z}_2,\mathbb{Z}_2)$.)
+:::
+
+
+## Anomalous symmetry and 1D SPT
+
+## Anomalies for fermions \*?
+
+## Kitaev Chain \*?
