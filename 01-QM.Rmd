@@ -114,64 +114,81 @@ Symmetry transformation $T$ is a bijection on Bloch sphere preserving this quant
 We can also identify the composition of symmetry transformations as the multiplication of the group $O(3)$.
 What are the corresponding (anti)unitaries?
 
-### Orientation preserving part
+### Projective phase of $SO(3)$ 
 Let us first study the part $SO(3) \subset O(3)$ that preserves the orientation of the sphere.
-In particular, the rotation $R_z(\beta)$ around the $z$ ($\theta =0$ direction) axis sends
+In particular, the rotation $R_z(\lambda)$ around the $z$ ($\theta =0$ direction) axis sends
 \begin{equation}
   (\#eq:Rz)
-  R_z(\beta) : (\theta ,\phi) \mapsto (\theta, \phi + \beta).
+  R_z(\lambda) : (\theta ,\phi) \mapsto (\theta, \phi + \lambda).
 \end{equation}
 A unitary compatible with this transformation is
 \begin{equation}
   (\#eq:RzU1)
-  U_{R_z(\beta)}' = 
+  U_{R_z(\lambda)}' = 
   \begin{pmatrix}
   1 & 0 \\
-  0 & e^{\mathrm{i}\beta}\\
+  0 & e^{\mathrm{i}\lambda}\\
   \end{pmatrix}.
 \end{equation}
 Or, if we can demand that the unitary is also special ($\mathrm{det}U =1$) by using the phase ambiguity,
 achieving 
 \begin{equation}
   (\#eq:RzU2)
-  U_{R_z(\beta)} = 
+  U_{R_z(\lambda)} = 
   \begin{pmatrix}
-  e^{\mathrm{i}\beta/2} & 0 \\
-  0 & e^{\mathrm{i}\beta/2}\\
+  e^{\mathrm{i}\lambda/2} & 0 \\
+  0 & e^{\mathrm{i}\lambda/2}\\
   \end{pmatrix}.
 \end{equation}
 However, this expression has a peculiar feature:
-that the $2\pi$ rotation is mapped to $U_{R_z(\beta = 2\pi)} = -\mathbf{I}_{2}$, not to the identity matrix $\mathbf{I}_2$!
-In other words, if we use the special unitary $U_{R_z(\beta)}$ ($0\le \beta < 2\pi$), the composition law of the unitary operators is
+that the $2\pi$ rotation is mapped to $U_{R_z(\lambda = 2\pi)} = -\mathbf{I}_{2}$, not to the identity matrix $\mathbf{I}_2$!
+In other words, if we use the special unitary $U_{R_z(\lambda)}$ ($0\le \lambda < 2\pi$), the composition law of the unitary operators is
 \begin{equation}
   (\#eq:UUprod)
-  U_{R_z(\beta)} U_{R_z(\beta')} = e^{\mathrm{i}\alpha(\beta,\beta')}U_{R_z(\beta+\beta' \mathrm{mod}\, 2\pi)}
+  U_{R_z(\lambda)} U_{R_z(\lambda')} = e^{\mathrm{i}\alpha(\lambda,\lambda')}U_{R_z(\lambda+\lambda' \mathrm{mod}\, 2\pi)}
 \end{equation}
-which is not quite straightforward. The function $\alpha(\beta,\beta')$ is called the **projective phase** and in this case it is
+which is not quite straightforward. The function $\alpha(\lambda,\lambda')$ is called the **projective phase** and in this case it is
 \begin{equation}
   (\#eq:projphaseRz)
-  \alpha(\beta,\beta')=
+  \alpha(\lambda,\lambda')=
     \begin{cases}
-      0 & (\beta+\beta' < 2\pi)\\
-      \pi & (\beta+\beta' \ge 2\pi)
+      0 & (\lambda+\lambda' < 2\pi)\\
+      \pi & (\lambda+\lambda' \ge 2\pi)
     \end{cases}.
 \end{equation}
 
-If one only focus on $R_z(\beta)$, one can use $U'$ in \@ref(eq:RzU1), which has the trivial projective phase. 
-However, it is known that we cannot find a good unitaries $U_g$ for all of the group $g\in SO(3)$ acting on the Block sphere.[^generalRot] We will see how to prove this in the next section.
-When a group $G$ acts on a vector space, but the represented matrices $U_g$ cannot avoid the projective phase, the pair of the vector space and the action is called a **projective representation**.
-The qubit space $\mathbb{C}^2$ is a projective representation of $SO(3)$.[^SU2]
-
-[^generalRot]: A general rotation around the axis $\mathbf{n}$ is known to be compatible with
+If one only focus on $R_z(\lambda)$, one can use $U'$ in \@ref(eq:RzU1), which has the trivial projective phase. 
+However, it is known that we cannot find a good unitaries $U_g$ for all of the group $g\in SO(3)$ acting on the Block sphere. One choice of the general expression is 
 \begin{equation}
   (\#eq:generalRot)
-  U_{R_{\mathbf{n}}(\beta)}  = \exp(-i\beta \mathbf{n}\cdot \vec{\sigma}/2),
+  U_{R_{\mathbf{n}}(\lambda)}  = \exp(-i\lambda \mathbf{n}\cdot \vec{\sigma}/2).
 \end{equation}
-where $\vec\sigma$ are the Pauli matrices.
+The claim is that you cannot come up with a function $\beta: SO(3) \to \mathbb{R}/2\pi\mathbb{Z}$ such that $e^{\mathrm{i}\beta(g)}U_{R_{\mathbf{n}}(\lambda)}$ exactly satisfies the group multiplication law of $SO(3)$ without projective phase.
+We will prove this in the next section.
 
-[^SU2]: This is closely related to the fact that $SU(2)$, under which $\mathbb{C}^2$ is an ordinary (linear) representation, is a double cover of $SO(3)$.
+When a group $G$ acts on a vector space, but the represented matrices $U_g$ cannot avoid the projective phase, the pair of the vector space and the action is called a **projective representation**.
+The qubit space $\mathbb{C}^2$ is a projective representation of $SO(3)$.
+The general presentation mat
 
-### Orientation reserving part
+### $SO(3)$ or $SU(2)$?
+You might have confused; you might been taught that a qubit, or a spin, is acted by $SU(2)$, and wondering why I am emphasizing $SO(3)$ instead.
+The Lie groups $SU(2)$ and $SO(3)$ are closely related: $SU(2)$ is a double cover of $SO(3)$.
+In other words,
+\begin{equation}
+  (\#eq:SU2SO3)
+  SO(3) = SU(2)/Z(SU(2)),
+\end{equation}
+where $Z(SU(2))\cong \mathbb{Z}_2$ is the center of $SU(2)$ generated by $-\mathbf{I}_2$.
+The $SU(2)$ can naturally act on $\mathbb{C}^2$. 
+However, $-\mathbf{I}_2 \in SU(2)$ does not change the *ray* of the state, which is the physical entity. 
+Therefore, more precise statement is that a symmetry of a qubit/spin is $SO(3)$, as Wigner defined it,
+but to describe the Hilbert space $SU(2)$, that does not suffer from the projective phase, is more convenient.
+And the projective phase is the **quantum anomaly**: something is not quite right about the symmetry.
+
+Another way of saying the same this is to focus on the algebra $\mathcal{A}$ of observables. The symmetry acts on the algebra of operators by conjugation (\@ref(eq:TonA)), and thus the center $-\mathbf{I}_2$ of $SU(2)$ acts trivially. 
+So the symmetry acting on the *observables* is $SO(3)$, not $SU(2)$. And the projective phase, or the double cover $SU(2)$ arises only when we consider the vector space of the states.
+
+### Anti-Unitary symmetry*
 What happens for the orientation reversing map in $O(3)$, specifically for the reflection
 \begin{equation}
   (\#eq:reflection)
@@ -196,7 +213,7 @@ For general $n$ state system, $\mathcal{H} \cong \mathbb{C}^n$, the projective s
 where $PSU(n) = SU(n)/\mathbb{Z}_n$ and $\mathbb{Z}_2$ acts as the charge conjugation.
 $\mathbb{C}^n$ is a projective representation of $PSU(n)$, while the $\mathbb{Z}_2$ part is realized as an anti-unitary.
 
-## $\mathbb{Z}_2\times \mathbb{Z}_2$ projective representation
+## $\mathbb{Z}_2\times \mathbb{Z}_2$ projective representation{#Z2Z2}
 Here we introduce a systematic method in studying the projective phase,
 using the same example of qubit.
 For simplicity, we concentrate on the following $\mathbb{Z}_2\times \mathbb{Z}_2$ subgroup inside $SO(3)$:
@@ -264,27 +281,16 @@ Let us say the we redefine $U_g$ by phase $\beta(g)$:
   (\#eq:Uredef)
   U_g \mapsto e^{\mathrm{i}\beta(g)}U_g.
 \end{equation}
-Then, the projective phase appears in \@ref(eq:ProjRep) gets shifted by
-\begin{equation}
-  (\#eq:ProjPhaseGauge)
-  \alpha(g,g') \mapsto \alpha(g,g') + \beta(g) + \beta(g') - \beta(gg').
-\end{equation}
-Is there a function $\beta$ that eliminate $\alpha(g,g')$ for all $g,g' \in \mathbb{Z}_2\times \mathbb{Z}_2$?
-The answer is no.
+However, such phase rotation cannot eliminate the commutator $[U_a,U_b]$, which has to be zero if $\alpha = 0$.
 
-::: {.exercise}
-Show that there is no $\beta$ that satisfies $\beta(gg') - \beta(g) - \beta(g') = \alpha(g,g')$ for all $g,g'\in \mathbb{Z}_2\times \mathbb{Z}_2$ when the function $\alpha$ is defined by \@ref(eq:ProjZ2Z2).
-:::
 When a projective phase cannot be removed by the phase rotation of the unitaries, the phase is called (cohomologically) nontrivial. The phase $\alpha$ in \@ref(eq:ProjZ2Z2) is nontrivial.
 
-We have not talked about the Hamiltonian. What are the hamiltonians preserving the $\mathbb{Z}_2\times \mathbb{Z}_2$ symmetry? For a Hamiltonian $H$ to preserve the symmetry, we need
-\begin{equation}
-  (\#eq:HamilPreserve)
-  U_a H U_a^\dagger = U_b H U_b^\dagger = H.
-\end{equation}
-Such $H$ has to be proportional to $\mathbf{I}_2$. This is easy to explicitly check.
+One significance of the nontrivial projective phase is that it prohibits a one-dimensional representatoin: in the $\mathbb{Z}_2\times\mathbb{Z}_2$ example, since $[U_a,U_b]\neq 0$ (even though the group $\mathbb{Z}_2\times \mathbb{Z}_2$ is abelian), the such operators cannot act on a one-dimensional space. Note that for a linear representation one always has the *trivial* representation; with a nontrivial projective phase, there is no such thing.
 
-!!!! UNDER CONSTRUCTION !!!!
+This in turn put a restriction on the possible Hamiltonian.
+Assume that the Hamiltonian on the qubit preserves the $\mathbb{Z}_2\times \mathbb{Z}_2$ symmetry.
+If the two energy were distinct, each state should consist a one-dimensional representation with the projective phase, which contradicts with the above observation. Hence the projective action of $\mathbb{Z}_2\times \mathbb{Z}_2$ is enough to ensure that the two states are degenerate.
+
 
 Now, we also see that the entire group $SO(3)$ acting on the qubit also has a nontrivial projective phase. This is because other elements of $SO(3)$ does not help to resolve the projective phase that $\mathbb{Z}_2\times \mathbb{Z}_2$ has.
 
@@ -292,8 +298,75 @@ Now, we also see that the entire group $SO(3)$ acting on the qubit also has a no
 
 ## Charged particle on the Aharonov-Bohm ring
 What is the use of the projective phase?
-So far we have only talked about minimal case: qubit.
-Let us jump to a system with a infinite dimensional Hilbert space.
+It provides a way to find a qubit : if you can cook up a system with the $\mathbb{Z}_2\times \mathbb{Z}_2$ with the nontrivial projective phase --- or **quantum anomaly** ---, you are guaranteed to have (at least) 2-fold degeneracy.
+
+Let us see how this happens in an example with a infinite dimensional Hilbert space.
+Here we consider a charged free particle confined in a ring $S^1$ with radius $R$. We put the magnetic flux $\Phi$ through the ring.
+The Hamiltonian is 
+\begin{equation}
+  (\#eq:ABringHam0)
+  H = \frac{1}{2m}(p_x + \frac{e}{c}A_x)^2,
+\end{equation}
+where $x$ is the coordinate on $S^1$ with the identification $x \sim x + 2\pi R$, $p_x = -\mathrm{i}\hbar \frac{\mathrm{d}}{\mathrm{d}x}$, and $A_x = \Phi/(2\pi R)$ is the vector potential along the ring.
+We rewrite this as
+\begin{equation}
+  (\#eq:ABringHam1)
+  H = \frac{\hbar^2}{2mR^2}\bigl(\hat{n} + \frac{\theta}{2\pi} \bigr)^2,
+\end{equation}
+were $\hat{n} = \frac{R p_x}{\hbar}$ and $\theta = \frac{e \Phi}{\hbar c}$.
+
+A wave function $\psi(x)$ can be expanded by the periodic exponential function $\psi_n(x) \propto e^{\mathrm{i}n\,x/R}$, $n \in \mathbb{Z}$. The corresponding state $\ket{n}$ is the eigenstate of the operators $\hat{n}$ and $H$:[^Dirac]
+\begin{equation}
+  (\#eq:nEigen)
+  \hat{n} \ket{n} = n \ket{n},
+  \quad H \ket{n} = E_n(\theta) \ket{n} = \frac{\hbar^2}{2mR^2}(n+\frac{\theta}{2\pi})^2 \ket{n}.
+\end{equation}
+
+[^Dirac]: $E_n(\theta+2\pi) = E_{n+1}(\theta)$ and thus the spectrum is unchanged by the $2\pi$-shift of $\theta$. This is closely related to the Dirac quantization of magnetic charge; $\theta =2\pi$ is the flux created by the Dirac monopole.
+
+This system has the symmetry shifting $x$ as $x \mapsto x+ \alpha R$ with a $2\pi$-periodic parameter $\alpha$.
+The unitary corresponding to this symmetry can be directly read off from the wave function as[^pump]
+\begin{equation}
+  (\#eq:U1shift)
+  U_\lambda \ket{n} = e^{\mathrm{i}\lambda n}\ket{n}.
+\end{equation}
+
+[^pump]: If one does the $2\pi$-shift of theta adiabatically, the spectrum is unchanged as noticed in the above footnote, but the $U(1)$ eigenvalue $n$ carried by the state is shifted by 1. This (or something similar) is called Thouless pump.
+Indeed this is yet *another quantum anomaly*, "anomaly involving parameter space". See @Cordova:2019jnf for more detail.
+
+
+
+There are other symmetries, depending on $\theta$.
+For example, when $\theta = 0$, there is a $\mathbb{Z}_2$ flipping $x$: $x\mapsto -x$, $\ket{n} \mapsto \ket{-n}$.
+A more interesting case is $\theta = \pi$, then the $\ket{n} \mapsto \ket{n}$ action is not a symmetry of the Hamiltonian, but the following is preserved:
+\begin{equation}
+  (\#eq:Z2ThetaPi)
+  U_{\mathbb{Z}_2}\ket{n} = \ket{-n-1}.
+\end{equation}
+Now the multiplication between $U_\lambda$ and $\mathbb{Z}_2$ is 
+\begin{equation}
+  (\#eq:U1Z2comu)
+  U_\lambda U_{\mathbb{Z}_2} = e^{-\mathrm{i}\lambda}U_{\mathbb{Z}_2}U_{-\lambda}.
+\end{equation}
+Note that in right hand side the parameter $\lambda$ of $U_{\lambda}$ is flipped, so the two symmetry forms the semidirect product $U(1) \rtimes \mathbb{Z}_2$. On top to that, we oberserve the projective phase $e^{-\mathrm{i}\lambda}$.
+If we focus on the subgroup $\mathbb{Z}_2^\text{shift}$ ($\lambda = \pi$) subgroup of the $U(1)$, we have the subgroup $\mathbb{Z}_2^\text{shift}\times \mathbb{Z}_2$ of $U(1) \rtimes \mathbb{Z}_2$ and the projective phase $e^{-\mathrm{i}\pi}=-1$ is the same phase we observed in Section \@ref(Z2Z2)!
+
+Recall that, in Section \@ref(Z2Z2), we have proven that there is no one-dimensional representation of $\mathbb{Z}_2\times \mathbb{Z}_2$ with the nontrivial projective phase. Therefore *every* eigenspace of $H$ at $\theta = \pi$ has dimension at least two. This can be easily verified because $E_n(\pi) = E_{-n-1}(\pi)$. Therefore, in particular, the ground state has exact two-fold degeneracy that you might use as a qubit.[^flux]
+
+[^flux]: I believe this is called the flux qubit, but do not trust me, I'm not an expert on quantum computing.
+
+Ok, but we could find the degeneracy without discussing the projective phase. The real advantage of the quantum anomaly is that it shows the degeneracy is *robust*; this is the result of the symmetry and its quantum anomaly, so, as long as they are preserved, the degeneracy cannot be lifted.
+Also, the quantum anomaly is a *discrete* thing and therefore it cannot be changed by continuous deformation. (We will discuss about his a bit more in the next section.)
+So, even if we deform the Hamiltonian as
+\begin{equation}
+  (\#eq:ABringHamDef)
+  H' = \frac{\hbar^2}{2mR^2}\bigl(\hat{n} + \frac{1}{2} \bigr)^2 + \Re(e^{\mathrm{i}m x/R}+e^{\mathrm{i}(-m-1)x/R}),
+\end{equation}
+we know that there is a degeneracy, although in this system cannot be easily solved.
+This is the power of quantum anomaly: it tells us something nontrivial *without solving the system*!
+[^param2]
+
+[^param2]: Probably what is more useful in practice (i.e.\ when you devise a quantum computer) is the "anomaly involving parameter space", briefly discussed in the footnote above. It can show that , with *arbitrary* potential $V(x)$, you can find a degeneracy if you tune $\theta$. (It does not tell which $\theta$ you have to tune in, though.)
 
 ## Group cohomology
 Let us formalize what we learned above for a general group $G$.

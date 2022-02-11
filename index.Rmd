@@ -1,11 +1,12 @@
 --- 
 title: "Topological Aspects of Symmetry in Low Dimensions"
-author: "Kantaro Ohmori"
+author: "Kantaro Ohmori, </br> University of Tokyo"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: scrartcl
 bibliography: [ref.bib]
+biblatexoptions: "sorting=none"
 #biblio-style: apalike
 link-citations: yes
 github-repo: kantohm11/symmetry_review
@@ -26,8 +27,8 @@ Therefore, there have been numerous research on the topic. What is surprising is
 ## Lecture guide 
 
 ### Usage of this note
-This note is provided primaliry as a website.
-The usage is self-explaining but you might find a useful tips if you click the "i" mark in the top navigation bar. Also from the navigation bar one can download the pdf version. (If you want a epub file, I can easily generate it too, so let me know.)
+This note is provided primarily as a website.
+The usage is self-explaining but you might find a useful tips if you click the "i" mark in the top navigation bar. Also from the navigation bar one can download the pdf version. (If you want a epub file, I can easily generate it too, so let me know.) **However, the equation number does not much currently between the html and pdf format.**
 
 The parts having \* at the tail of its title will probably be skipped in the lecture.
 
