@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.3 Bloch sphere and projective representation | Topological Aspects of Symmetry in Low Dimensions</title>
+  <meta name="description" content="2.3 Bloch sphere and projective representation | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.3 Bloch sphere and projective representation | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="kantohm11/symmetry_review" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.3 Bloch sphere and projective representation | Topological Aspects of Symmetry in Low Dimensions" />
+  
+  
+  
+
+<meta name="author" content="Kantaro Ohmori,  University of Tokyo" />
+
+
+<meta name="date" content="2022-02-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="wigners-theorem.html"/>
+<link rel="next" href="Z2Z2.html"/>
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+          Macros: {
+            RR: "{\\bf R}",
+            bold: ["{\\bf #1}",1],
+            ket: ["{\\lvert #1 \\rangle}",1],
+            bra: ["{\\langle #1 \\rvert}",1],
+            braket: ["{\\langle #1 \\rangle}",1],
+          }
+        }
+      });
+</script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Topological Aspects of Symmetry in Low Dimensions</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lecture-guide.html"><a href="lecture-guide.html"><i class="fa fa-check"></i><b>1.1</b> Lecture guide</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="lecture-guide.html"><a href="lecture-guide.html#usage-of-this-note"><i class="fa fa-check"></i><b>1.1.1</b> Usage of this note</a></li>
+<li class="chapter" data-level="1.1.2" data-path="lecture-guide.html"><a href="lecture-guide.html#objective"><i class="fa fa-check"></i><b>1.1.2</b> Objective</a></li>
+<li class="chapter" data-level="1.1.3" data-path="lecture-guide.html"><a href="lecture-guide.html#prerequisite"><i class="fa fa-check"></i><b>1.1.3</b> Prerequisite</a></li>
+<li class="chapter" data-level="1.1.4" data-path="lecture-guide.html"><a href="lecture-guide.html#useful-references"><i class="fa fa-check"></i><b>1.1.4</b> Useful references</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="motivation.html"><a href="motivation.html"><i class="fa fa-check"></i><b>1.2</b> Motivation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="quantum-anomaly-in-quantum-mechanics.html"><a href="quantum-anomaly-in-quantum-mechanics.html"><i class="fa fa-check"></i><b>2</b> Quantum Anomaly in Quantum Mechanics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basics-about-quantum-mechanics.html"><a href="basics-about-quantum-mechanics.html"><i class="fa fa-check"></i><b>2.1</b> Basics about quantum mechanics</a></li>
+<li class="chapter" data-level="2.2" data-path="wigners-theorem.html"><a href="wigners-theorem.html"><i class="fa fa-check"></i><b>2.2</b> Wigner’s theorem</a></li>
+<li class="chapter" data-level="2.3" data-path="bloch-sphere-and-projective-representation.html"><a href="bloch-sphere-and-projective-representation.html"><i class="fa fa-check"></i><b>2.3</b> Bloch sphere and projective representation</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="bloch-sphere-and-projective-representation.html"><a href="bloch-sphere-and-projective-representation.html#projective-phase-of-so3"><i class="fa fa-check"></i><b>2.3.1</b> Projective phase of <span class="math inline">\(SO(3)\)</span></a></li>
+<li class="chapter" data-level="2.3.2" data-path="bloch-sphere-and-projective-representation.html"><a href="bloch-sphere-and-projective-representation.html#so3-or-su2"><i class="fa fa-check"></i><b>2.3.2</b> <span class="math inline">\(SO(3)\)</span> or <span class="math inline">\(SU(2)\)</span>?</a></li>
+<li class="chapter" data-level="2.3.3" data-path="bloch-sphere-and-projective-representation.html"><a href="bloch-sphere-and-projective-representation.html#anti-unitary-symmetry"><i class="fa fa-check"></i><b>2.3.3</b> Anti-Unitary symmetry*</a></li>
+<li class="chapter" data-level="2.3.4" data-path="bloch-sphere-and-projective-representation.html"><a href="bloch-sphere-and-projective-representation.html#general-finite-states-model"><i class="fa fa-check"></i><b>2.3.4</b> General finite states model*</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="Z2Z2.html"><a href="Z2Z2.html"><i class="fa fa-check"></i><b>2.4</b> <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span> projective representation</a></li>
+<li class="chapter" data-level="2.5" data-path="charged-particle-on-the-aharonov-bohm-ring.html"><a href="charged-particle-on-the-aharonov-bohm-ring.html"><i class="fa fa-check"></i><b>2.5</b> Charged particle on the Aharonov-Bohm ring</a></li>
+<li class="chapter" data-level="2.6" data-path="group-cohomology.html"><a href="group-cohomology.html"><i class="fa fa-check"></i><b>2.6</b> Group cohomology</a></li>
+<li class="chapter" data-level="2.7" data-path="anomalous-symmetry-and-1d-spt.html"><a href="anomalous-symmetry-and-1d-spt.html"><i class="fa fa-check"></i><b>2.7</b> Anomalous symmetry and 1D SPT</a></li>
+<li class="chapter" data-level="2.8" data-path="anomalies-for-fermions.html"><a href="anomalies-for-fermions.html"><i class="fa fa-check"></i><b>2.8</b> Anomalies for fermions *?</a></li>
+<li class="chapter" data-level="2.9" data-path="kitaev-chain.html"><a href="kitaev-chain.html"><i class="fa fa-check"></i><b>2.9</b> Kitaev Chain *?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Topological Aspects of Symmetry in Low Dimensions</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bloch-sphere-and-projective-representation" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Bloch sphere and projective representation</h2>
+<p>Let us take a close look at the case of a qubit, i.e. <span class="math inline">\(\mathcal{H} = \mathbb{C}^2\)</span>.
+Pick a basis <span class="math inline">\(\ket{0}\)</span> and <span class="math inline">\(\ket{1}\)</span> and expand a unit state <span class="math inline">\(\ket{\psi}\)</span> as
+<span class="math display" id="eq:psiexp">\[\begin{equation}
+  \tag{2.9}
+  \ket{\psi} = \cos(\theta/2) \ket{0} + \sin(\theta/2)e^{\mathrm{i}\phi} \ket{1},
+\end{equation}\]</span>
+where <span class="math inline">\(0\le \theta \le \pi\)</span> and <span class="math inline">\(0 \le \phi \le 2\pi\)</span>.
+One can always bring a unit state to this form using the phase ambiguity <span class="math inline">\(\ket{\psi}\sim e^{\mathrm{i}\alpha}\ket{\psi}\)</span>.
+Note that when <span class="math inline">\(\theta = 0\)</span> and <span class="math inline">\(\theta =\pi\)</span>, the the correspoinding point in <span class="math inline">\(\mathbb{P}\mathcal{H}\)</span> is independent of <span class="math inline">\(\phi\)</span>. Therefore <span class="math inline">\((\theta,\phi)\)</span> is the coordinates (polar and azimuthal angles) on <span class="math inline">\(S^2\)</span>, called the Bloch sphere:
+<span class="math display" id="eq:PHCP1">\[\begin{equation}
+  \tag{2.10}
+  \mathbb{P}\mathcal{H} \cong \mathbb{CP}^1 \cong S^2.
+\end{equation}\]</span>
+The relationship between the polar coordinates on <span class="math inline">\(S^2\)</span> and the Cartesian coordinates on <span class="math inline">\(\mathbb{R}^3\)</span> is <span class="math inline">\((x,y,z) = (\sin\theta\,\cos\phi,\sin\theta\,\sin\phi,\cos\theta)\)</span>.</p>
+<p>Given two states <span class="math inline">\(\ket{\psi_1}\)</span> and <span class="math inline">\(\ket{\psi_2}\)</span>, the transition probability is <span class="math inline">\(|\braket{\psi_2|\psi_1}|^2 = \cos^2(\theta_{12}/2)\)</span>, where <span class="math inline">\(\theta_{12}\)</span> is the angle between the two corresponding point in the Bloch sphere.
+Symmetry transformation <span class="math inline">\(T\)</span> is a bijection on Bloch sphere preserving this quantity. Such transformations are one-to-one corresponded to the orthogonal group
+<span class="math display" id="eq:TisO3">\[\begin{equation}
+  \tag{2.11}
+  \{\text{Symmetry transformations on a qubit}\} \cong O(3).
+\end{equation}\]</span>
+We can also identify the composition of symmetry transformations as the multiplication of the group <span class="math inline">\(O(3)\)</span>.
+What are the corresponding (anti)unitaries?</p>
+<div id="projective-phase-of-so3" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Projective phase of <span class="math inline">\(SO(3)\)</span></h3>
+<p>Let us first study the part <span class="math inline">\(SO(3) \subset O(3)\)</span> that preserves the orientation of the sphere.
+In particular, the rotation <span class="math inline">\(R_z(\lambda)\)</span> around the <span class="math inline">\(z\)</span> (<span class="math inline">\(\theta =0\)</span> direction) axis sends
+<span class="math display" id="eq:Rz">\[\begin{equation}
+  \tag{2.12}
+  R_z(\lambda) : (\theta ,\phi) \mapsto (\theta, \phi + \lambda).
+\end{equation}\]</span>
+A unitary compatible with this transformation is
+<span class="math display" id="eq:RzU1">\[\begin{equation}
+  \tag{2.13}
+  U_{R_z(\lambda)}&#39; = 
+  \begin{pmatrix}
+  1 &amp; 0 \\
+  0 &amp; e^{\mathrm{i}\lambda}\\
+  \end{pmatrix}.
+\end{equation}\]</span>
+Or, if we can demand that the unitary is also special (<span class="math inline">\(\mathrm{det}U =1\)</span>) by using the phase ambiguity,
+achieving
+<span class="math display" id="eq:RzU2">\[\begin{equation}
+  \tag{2.14}
+  U_{R_z(\lambda)} = 
+  \begin{pmatrix}
+  e^{\mathrm{i}\lambda/2} &amp; 0 \\
+  0 &amp; e^{\mathrm{i}\lambda/2}\\
+  \end{pmatrix}.
+\end{equation}\]</span>
+However, this expression has a peculiar feature:
+that the <span class="math inline">\(2\pi\)</span> rotation is mapped to <span class="math inline">\(U_{R_z(\lambda = 2\pi)} = -\mathbf{I}_{2}\)</span>, not to the identity matrix <span class="math inline">\(\mathbf{I}_2\)</span>!
+In other words, if we use the special unitary <span class="math inline">\(U_{R_z(\lambda)}\)</span> (<span class="math inline">\(0\le \lambda &lt; 2\pi\)</span>), the composition law of the unitary operators is
+<span class="math display" id="eq:UUprod">\[\begin{equation}
+  \tag{2.15}
+  U_{R_z(\lambda)} U_{R_z(\lambda&#39;)} = e^{\mathrm{i}\alpha(\lambda,\lambda&#39;)}U_{R_z(\lambda+\lambda&#39; \mathrm{mod}\, 2\pi)}
+\end{equation}\]</span>
+which is not quite straightforward. The function <span class="math inline">\(\alpha(\lambda,\lambda&#39;)\)</span> is called the <strong>projective phase</strong> and in this case it is
+<span class="math display" id="eq:projphaseRz">\[\begin{equation}
+  \tag{2.16}
+  \alpha(\lambda,\lambda&#39;)=
+    \begin{cases}
+      0 &amp; (\lambda+\lambda&#39; &lt; 2\pi)\\
+      \pi &amp; (\lambda+\lambda&#39; \ge 2\pi)
+    \end{cases}.
+\end{equation}\]</span></p>
+<p>If one only focus on <span class="math inline">\(R_z(\lambda)\)</span>, one can use <span class="math inline">\(U&#39;\)</span> in <a href="bloch-sphere-and-projective-representation.html#eq:RzU1">(2.13)</a>, which has the trivial projective phase.
+However, it is known that we cannot find a good unitaries <span class="math inline">\(U_g\)</span> for all of the group <span class="math inline">\(g\in SO(3)\)</span> acting on the Block sphere. One choice of the general expression is
+<span class="math display" id="eq:generalRot">\[\begin{equation}
+  \tag{2.17}
+  U_{R_{\mathbf{n}}(\lambda)}  = \exp(-i\lambda \mathbf{n}\cdot \vec{\sigma}/2).
+\end{equation}\]</span>
+The claim is that you cannot come up with a function <span class="math inline">\(\beta: SO(3) \to \mathbb{R}/2\pi\mathbb{Z}\)</span> such that <span class="math inline">\(e^{\mathrm{i}\beta(g)}U_{R_{\mathbf{n}}(\lambda)}\)</span> exactly satisfies the group multiplication law of <span class="math inline">\(SO(3)\)</span> without projective phase.
+We will prove this in the next section.</p>
+<p>When a group <span class="math inline">\(G\)</span> acts on a vector space, but the represented matrices <span class="math inline">\(U_g\)</span> cannot avoid the projective phase, the pair of the vector space and the action is called a <strong>projective representation</strong>.
+The qubit space <span class="math inline">\(\mathbb{C}^2\)</span> is a projective representation of <span class="math inline">\(SO(3)\)</span>.
+The general presentation mat</p>
+</div>
+<div id="so3-or-su2" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> <span class="math inline">\(SO(3)\)</span> or <span class="math inline">\(SU(2)\)</span>?</h3>
+<p>You might have confused; you might been taught that a qubit, or a spin, is acted by <span class="math inline">\(SU(2)\)</span>, and wondering why I am emphasizing <span class="math inline">\(SO(3)\)</span> instead.
+The Lie groups <span class="math inline">\(SU(2)\)</span> and <span class="math inline">\(SO(3)\)</span> are closely related: <span class="math inline">\(SU(2)\)</span> is a double cover of <span class="math inline">\(SO(3)\)</span>.
+In other words,
+<span class="math display" id="eq:SU2SO3">\[\begin{equation}
+  \tag{2.18}
+  SO(3) = SU(2)/Z(SU(2)),
+\end{equation}\]</span>
+where <span class="math inline">\(Z(SU(2))\cong \mathbb{Z}_2\)</span> is the center of <span class="math inline">\(SU(2)\)</span> generated by <span class="math inline">\(-\mathbf{I}_2\)</span>.
+The <span class="math inline">\(SU(2)\)</span> can naturally act on <span class="math inline">\(\mathbb{C}^2\)</span>.
+However, <span class="math inline">\(-\mathbf{I}_2 \in SU(2)\)</span> does not change the <em>ray</em> of the state, which is the physical entity.
+Therefore, more precise statement is that a symmetry of a qubit/spin is <span class="math inline">\(SO(3)\)</span>, as Wigner defined it,
+but to describe the Hilbert space <span class="math inline">\(SU(2)\)</span>, that does not suffer from the projective phase, is more convenient.
+And the projective phase is the <strong>quantum anomaly</strong>: something is not quite right about the symmetry.</p>
+<p>Another way of saying the same this is to focus on the algebra <span class="math inline">\(\mathcal{A}\)</span> of observables. The symmetry acts on the algebra of operators by conjugation (<a href="wigners-theorem.html#eq:TonA">(2.7)</a>), and thus the center <span class="math inline">\(-\mathbf{I}_2\)</span> of <span class="math inline">\(SU(2)\)</span> acts trivially.
+So the symmetry acting on the <em>observables</em> is <span class="math inline">\(SO(3)\)</span>, not <span class="math inline">\(SU(2)\)</span>. And the projective phase, or the double cover <span class="math inline">\(SU(2)\)</span> arises only when we consider the vector space of the states.</p>
+</div>
+<div id="anti-unitary-symmetry" class="section level3" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Anti-Unitary symmetry*</h3>
+<p>What happens for the orientation reversing map in <span class="math inline">\(O(3)\)</span>, specifically for the reflection
+<span class="math display" id="eq:reflection">\[\begin{equation}
+  \tag{2.19}
+  \mathrm{Ref}: (\theta,\phi) \mapsto (\theta,-\phi).
+\end{equation}\]</span>
+For this we have to assign an <em>anti-</em>unitary operator, which is
+<span class="math display" id="eq:Uref">\[\begin{equation}
+  \tag{2.20}
+  U_{\mathrm{Ref}} = K \mathbf{I}_2,
+\end{equation}\]</span>
+where <span class="math inline">\(K\)</span> is the complex conjugation map acting on <span class="math inline">\(\mathbb{C}\)</span>.
+A general element in <span class="math inline">\(O(3)\setminus SO(3)\)</span> can be obtained by multiplying a rotation to the reflection.
+There is no projective phase regarding <span class="math inline">\(\mathrm{Ref}\)</span>.</p>
+</div>
+<div id="general-finite-states-model" class="section level3" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> General finite states model*</h3>
+<p>For general <span class="math inline">\(n\)</span> state system, <span class="math inline">\(\mathcal{H} \cong \mathbb{C}^n\)</span>, the projective space is the complex projective space <span class="math inline">\(\mathbb{CP}^n\)</span>. The symmetry transformations are
+<span class="math display" id="eq:TisPSU">\[\begin{equation}
+  \tag{2.21}
+  \{\text{Symmetry transformations on $\mathbb{C}^n$}\} \cong PSU(n)\rtimes \mathbb{Z}_2,
+\end{equation}\]</span>
+where <span class="math inline">\(PSU(n) = SU(n)/\mathbb{Z}_n\)</span> and <span class="math inline">\(\mathbb{Z}_2\)</span> acts as the charge conjugation.
+<span class="math inline">\(\mathbb{C}^n\)</span> is a projective representation of <span class="math inline">\(PSU(n)\)</span>, while the <span class="math inline">\(\mathbb{Z}_2\)</span> part is realized as an anti-unitary.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="wigners-theorem.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Z2Z2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/kantohm11/symmetry_review/edit/main/01-QM.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["symmetry_review.pdf", "symmetry_review.tex"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

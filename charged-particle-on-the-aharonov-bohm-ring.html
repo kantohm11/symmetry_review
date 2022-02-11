@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Topological Aspects of Symmetry in Low Dimensions</title>
-  <meta name="description" content="References | Topological Aspects of Symmetry in Low Dimensions" />
+  <title>2.5 Charged particle on the Aharonov-Bohm ring | Topological Aspects of Symmetry in Low Dimensions</title>
+  <meta name="description" content="2.5 Charged particle on the Aharonov-Bohm ring | Topological Aspects of Symmetry in Low Dimensions" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta property="og:title" content="2.5 Charged particle on the Aharonov-Bohm ring | Topological Aspects of Symmetry in Low Dimensions" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="kantohm11/symmetry_review" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta name="twitter:title" content="2.5 Charged particle on the Aharonov-Bohm ring | Topological Aspects of Symmetry in Low Dimensions" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="kitaev-chain.html"/>
-
+<link rel="prev" href="Z2Z2.html"/>
+<link rel="next" href="group-cohomology.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -168,50 +168,85 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
-
+<div id="charged-particle-on-the-aharonov-bohm-ring" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Charged particle on the Aharonov-Bohm ring</h2>
+<p>What is the use of the projective phase?
+It provides a way to find a qubit : if you can cook up a system with the <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span> with the nontrivial projective phase — or <strong>quantum anomaly</strong> —, you are guaranteed to have (at least) 2-fold degeneracy.</p>
+<p>Let us see how this happens in an example with a infinite dimensional Hilbert space.
+Here we consider a charged free particle confined in a ring <span class="math inline">\(S^1\)</span> with radius <span class="math inline">\(R\)</span>. We put the magnetic flux <span class="math inline">\(\Phi\)</span> through the ring.
+The Hamiltonian is
+<span class="math display" id="eq:ABringHam0">\[\begin{equation}
+  \tag{2.30}
+  H = \frac{1}{2m}(p_x + \frac{e}{c}A_x)^2,
+\end{equation}\]</span>
+where <span class="math inline">\(x\)</span> is the coordinate on <span class="math inline">\(S^1\)</span> with the identification <span class="math inline">\(x \sim x + 2\pi R\)</span>, <span class="math inline">\(p_x = -\mathrm{i}\hbar \frac{\mathrm{d}}{\mathrm{d}x}\)</span>, and <span class="math inline">\(A_x = \Phi/(2\pi R)\)</span> is the vector potential along the ring.
+We rewrite this as
+<span class="math display" id="eq:ABringHam1">\[\begin{equation}
+  \tag{2.31}
+  H = \frac{\hbar^2}{2mR^2}\bigl(\hat{n} + \frac{\theta}{2\pi} \bigr)^2,
+\end{equation}\]</span>
+were <span class="math inline">\(\hat{n} = \frac{R p_x}{\hbar}\)</span> and <span class="math inline">\(\theta = \frac{e \Phi}{\hbar c}\)</span>.</p>
+<p>A wave function <span class="math inline">\(\psi(x)\)</span> can be expanded by the periodic exponential function <span class="math inline">\(\psi_n(x) \propto e^{\mathrm{i}n\,x/R}\)</span>, <span class="math inline">\(n \in \mathbb{Z}\)</span>. The corresponding state <span class="math inline">\(\ket{n}\)</span> is the eigenstate of the operators <span class="math inline">\(\hat{n}\)</span> and <span class="math inline">\(H\)</span>:<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>
+<span class="math display" id="eq:nEigen">\[\begin{equation}
+  \tag{2.32}
+  \hat{n} \ket{n} = n \ket{n},
+  \quad H \ket{n} = E_n(\theta) \ket{n} = \frac{\hbar^2}{2mR^2}(n+\frac{\theta}{2\pi})^2 \ket{n}.
+\end{equation}\]</span></p>
+<p>This system has the symmetry shifting <span class="math inline">\(x\)</span> as <span class="math inline">\(x \mapsto x+ \alpha R\)</span> with a <span class="math inline">\(2\pi\)</span>-periodic parameter <span class="math inline">\(\alpha\)</span>.
+The unitary corresponding to this symmetry can be directly read off from the wave function as<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>
+<span class="math display" id="eq:U1shift">\[\begin{equation}
+  \tag{2.33}
+  U_\lambda \ket{n} = e^{\mathrm{i}\lambda n}\ket{n}.
+\end{equation}\]</span></p>
+<p>There are other symmetries, depending on <span class="math inline">\(\theta\)</span>.
+For example, when <span class="math inline">\(\theta = 0\)</span>, there is a <span class="math inline">\(\mathbb{Z}_2\)</span> flipping <span class="math inline">\(x\)</span>: <span class="math inline">\(x\mapsto -x\)</span>, <span class="math inline">\(\ket{n} \mapsto \ket{-n}\)</span>.
+A more interesting case is <span class="math inline">\(\theta = \pi\)</span>, then the <span class="math inline">\(\ket{n} \mapsto \ket{n}\)</span> action is not a symmetry of the Hamiltonian, but the following is preserved:
+<span class="math display" id="eq:Z2ThetaPi">\[\begin{equation}
+  \tag{2.34}
+  U_{\mathbb{Z}_2}\ket{n} = \ket{-n-1}.
+\end{equation}\]</span>
+Now the multiplication between <span class="math inline">\(U_\lambda\)</span> and <span class="math inline">\(\mathbb{Z}_2\)</span> is
+<span class="math display" id="eq:U1Z2comu">\[\begin{equation}
+  \tag{2.35}
+  U_\lambda U_{\mathbb{Z}_2} = e^{-\mathrm{i}\lambda}U_{\mathbb{Z}_2}U_{-\lambda}.
+\end{equation}\]</span>
+Note that in right hand side the parameter <span class="math inline">\(\lambda\)</span> of <span class="math inline">\(U_{\lambda}\)</span> is flipped, so the two symmetry forms the semidirect product <span class="math inline">\(U(1) \rtimes \mathbb{Z}_2\)</span>. On top to that, we oberserve the projective phase <span class="math inline">\(e^{-\mathrm{i}\lambda}\)</span>.
+If we focus on the subgroup <span class="math inline">\(\mathbb{Z}_2^\text{shift}\)</span> (<span class="math inline">\(\lambda = \pi\)</span>) subgroup of the <span class="math inline">\(U(1)\)</span>, we have the subgroup <span class="math inline">\(\mathbb{Z}_2^\text{shift}\times \mathbb{Z}_2\)</span> of <span class="math inline">\(U(1) \rtimes \mathbb{Z}_2\)</span> and the projective phase <span class="math inline">\(e^{-\mathrm{i}\pi}=-1\)</span> is the same phase we observed in Section <a href="Z2Z2.html#Z2Z2">2.4</a>!</p>
+<p>Recall that, in Section <a href="Z2Z2.html#Z2Z2">2.4</a>, we have proven that there is no one-dimensional representation of <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span> with the nontrivial projective phase. Therefore <em>every</em> eigenspace of <span class="math inline">\(H\)</span> at <span class="math inline">\(\theta = \pi\)</span> has dimension at least two. This can be easily verified because <span class="math inline">\(E_n(\pi) = E_{-n-1}(\pi)\)</span>. Therefore, in particular, the ground state has exact two-fold degeneracy that you might use as a qubit.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+<p>Ok, but we could find the degeneracy without discussing the projective phase. The real advantage of the quantum anomaly is that it shows the degeneracy is <em>robust</em>; this is the result of the symmetry and its quantum anomaly, so, as long as they are preserved, the degeneracy cannot be lifted.
+Also, the quantum anomaly is a <em>discrete</em> thing and therefore it cannot be changed by continuous deformation. (We will discuss about his a bit more in the next section.)
+So, even if we deform the Hamiltonian as
+<span class="math display" id="eq:ABringHamDef">\[\begin{equation}
+  \tag{2.36}
+  H&#39; = \frac{\hbar^2}{2mR^2}\bigl(\hat{n} + \frac{1}{2} \bigr)^2 + \Re(e^{\mathrm{i}m x/R}+e^{\mathrm{i}(-m-1)x/R}),
+\end{equation}\]</span>
+we know that there is a degeneracy, although in this system cannot be easily solved.
+This is the power of quantum anomaly: it tells us something nontrivial <em>without solving the system</em>!
+<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
+</div>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body">
-<div class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Y. Tachikawa, <em>Lecture on Anomalies and Topological Phases</em>, (2019), <span class="nodecoration"><a href="https://member.ipmu.jp/yuji.tachikawa/lectures/2019-top-anom/">https://member.ipmu.jp/yuji.tachikawa/lectures/2019-top-anom/</a></span>.</div>
-</div>
-<div class="csl-entry">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">E. Witten, <em><span class="nocase">Three lectures on topological phases of matter</span></em>, Riv. Nuovo Cim. <strong>39</strong>, 313 (2016), <span class="nodecoration"><a href="https://arxiv.org/abs/1510.07698">https://arxiv.org/abs/1510.07698</a></span>.</div>
-</div>
-<div class="csl-entry">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">E. Witten, <em><span>Fermion Path Integrals And Topological Phases</span></em>, Rev. Mod. Phys. <strong>88</strong>, 035001 (2016), <span class="nodecoration"><a href="https://arxiv.org/abs/1508.04715">https://arxiv.org/abs/1508.04715</a></span>.</div>
-</div>
-<div class="csl-entry">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">S. Weinberg, <em><span class="nocase">The Quantum theory of fields. Vol. 1: Foundations</span></em> (Cambridge University Press, 2005).</div>
-</div>
-<div class="csl-entry">
+<div id="ref-Cordova:2019jnf" class="csl-entry">
 <div class="csl-left-margin">[5] </div><div class="csl-right-inline">C. Córdova, D. S. Freed, H. T. Lam, and N. Seiberg, <em><span class="nocase">Anomalies in the Space of Coupling Constants and Their Dynamical Applications I</span></em>, SciPost Phys. <strong>8</strong>, 001 (2020), <span class="nodecoration"><a href="https://arxiv.org/abs/1905.09315">https://arxiv.org/abs/1905.09315</a></span>.</div>
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p><span class="math inline">\(E_n(\theta+2\pi) = E_{n+1}(\theta)\)</span> and thus the spectrum is unchanged by the <span class="math inline">\(2\pi\)</span>-shift of <span class="math inline">\(\theta\)</span>. This is closely related to the Dirac quantization of magnetic charge; <span class="math inline">\(\theta =2\pi\)</span> is the flux created by the Dirac monopole.<a href="charged-particle-on-the-aharonov-bohm-ring.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>If one does the <span class="math inline">\(2\pi\)</span>-shift of theta adiabatically, the spectrum is unchanged as noticed in the above footnote, but the <span class="math inline">\(U(1)\)</span> eigenvalue <span class="math inline">\(n\)</span> carried by the state is shifted by 1. This (or something similar) is called Thouless pump.
+Indeed this is yet <em>another quantum anomaly</em>, “anomaly involving parameter space”. See <span class="citation"> [<a href="#ref-Cordova:2019jnf" role="doc-biblioref">5</a>]</span> for more detail.<a href="charged-particle-on-the-aharonov-bohm-ring.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>I believe this is called the flux qubit, but do not trust me, I’m not an expert on quantum computing.<a href="charged-particle-on-the-aharonov-bohm-ring.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Probably what is more useful in practice (i.e. when you devise a quantum computer) is the “anomaly involving parameter space”, briefly discussed in the footnote above. It can show that , with <em>arbitrary</em> potential <span class="math inline">\(V(x)\)</span>, you can find a degeneracy if you tune <span class="math inline">\(\theta\)</span>. (It does not tell which <span class="math inline">\(\theta\)</span> you have to tune in, though.)<a href="charged-particle-on-the-aharonov-bohm-ring.html#fnref6" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="kitaev-chain.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="Z2Z2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="group-cohomology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -242,7 +277,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/kantohm11/symmetry_review/edit/main/99-references.Rmd",
+"link": "https://github.com/kantohm11/symmetry_review/edit/main/01-QM.Rmd",
 "text": "Edit"
 },
 "history": {

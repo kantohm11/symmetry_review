@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Topological Aspects of Symmetry in Low Dimensions</title>
-  <meta name="description" content="References | Topological Aspects of Symmetry in Low Dimensions" />
+  <title>2.4 \(\mathbb{Z}_2\times \mathbb{Z}_2\) projective representation | Topological Aspects of Symmetry in Low Dimensions</title>
+  <meta name="description" content="2.4 \(\mathbb{Z}_2\times \mathbb{Z}_2\) projective representation | Topological Aspects of Symmetry in Low Dimensions" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta property="og:title" content="2.4 \(\mathbb{Z}_2\times \mathbb{Z}_2\) projective representation | Topological Aspects of Symmetry in Low Dimensions" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="kantohm11/symmetry_review" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta name="twitter:title" content="2.4 \(\mathbb{Z}_2\times \mathbb{Z}_2\) projective representation | Topological Aspects of Symmetry in Low Dimensions" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="kitaev-chain.html"/>
-
+<link rel="prev" href="bloch-sphere-and-projective-representation.html"/>
+<link rel="next" href="charged-particle-on-the-aharonov-bohm-ring.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -168,50 +168,89 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
-
-<div id="refs" class="references csl-bib-body">
-<div class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Y. Tachikawa, <em>Lecture on Anomalies and Topological Phases</em>, (2019), <span class="nodecoration"><a href="https://member.ipmu.jp/yuji.tachikawa/lectures/2019-top-anom/">https://member.ipmu.jp/yuji.tachikawa/lectures/2019-top-anom/</a></span>.</div>
+<div id="Z2Z2" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span> projective representation</h2>
+<p>Here we introduce a systematic method in studying the projective phase,
+using the same example of qubit.
+For simplicity, we concentrate on the following <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span> subgroup inside <span class="math inline">\(SO(3)\)</span>:
+<span class="math display" id="eq:Z2Z2">\[\begin{equation}
+  \tag{2.22}
+  \{\mathrm{Id}, R_x(\pi), R_y(\pi), R_z(\pi)\} \subset SO(3).
+\end{equation}\]</span>
+Note that <span class="math inline">\(R_x(\pi) = R_y(\pi)R_z(\pi) = R_z(\pi)R_y(\pi)\)</span>, so this subset is closed under the multiplication forming the group <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span>.
+To be concise, we rename the generators of this group as <span class="math inline">\(a := R_z(\pi)\)</span> and <span class="math inline">\(b := R_y(\pi)\)</span>, then <span class="math inline">\(R_x(\pi) = ab = ba\)</span>.
+The explicit actions of these generators on the coordinates are
+<span class="math display" id="eq:Rxyactions">\[\begin{align}
+  \tag{2.23}
+  a \curvearrowright (\theta,\phi) &amp;\mapsto (\theta,\phi+\pi)\\
+  b \curvearrowright (\theta,\phi) &amp;\mapsto (\pi-\theta,\pi-\phi)
+\end{align}\]</span>
+From this and <a href="bloch-sphere-and-projective-representation.html#eq:psiexp">(2.9)</a>, we can read the action of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> on the states as
+<span class="math display" id="eq:abActionPsi">\[\begin{align}
+  \tag{2.24}
+  a \curvearrowright [\, \cos(\theta/2)\ket{0} + \sin(\theta/2) e^{\mathrm{i}\phi}\ket{1} \,] \mapsto &amp; [\, \cos(\theta/2)\ket{0} - \sin(\theta/2) e^{\mathrm{i}\phi}\ket{1} \,]\\
+  b \curvearrowright [\, \cos(\theta/2)\ket{0} + \sin(\theta/2) e^{\mathrm{i}\phi} \ket{1}\,] \mapsto &amp; [\, \sin(\theta/2)\ket{0} - \cos(\theta/2) e^{-\mathrm{i}\phi}\ket{1} \,]\\
+   \sim  &amp; [\, \sin(\theta/2)e^{\mathrm{i}\phi}\ket{0} - \cos(\theta/2) \ket{1} \,].
+\end{align}\]</span>
+The last line is the equivalence between the states by the overall phase <span class="math inline">\(e^{\mathrm{i}\phi}\)</span>.
+These transformations can be easily realized by the unitary matrices
+<span class="math display" id="eq:UaUbZ2Z2">\[\begin{equation}
+  \tag{2.25}
+  U_a = 
+  \begin{pmatrix}
+    1 &amp; 0 \\
+    0 &amp; -1 \\
+  \end{pmatrix} = \sigma_3,\quad
+  U_b&#39; = 
+  \begin{pmatrix}
+    0 &amp; 1 \\
+    -1 &amp; 0 \\
+  \end{pmatrix} = \mathrm{i}\sigma_2.
+\end{equation}\]</span>
+However, the latter matrix squares to <span class="math inline">\(-\mathbf{I}_2\)</span>, although <span class="math inline">\(b^2=1\)</span>.
+To fix this, one can instead use
+<span class="math display" id="eq:UbZ2Z2">\[\begin{equation}
+  \tag{2.26}
+  U_b = 
+  \begin{pmatrix}
+    0 &amp; -\mathrm{i} \\
+    \mathrm{i} &amp; 0 \\
+  \end{pmatrix} =\sigma_2.
+\end{equation}\]</span>
+However, an issue remains: although <span class="math inline">\(ab = ba = R_x(\pi)\)</span>, we have <span class="math inline">\(U_a U_b = - U_b U_a\)</span>.
+This discrepancy between the multiplication law among group elements and their corresponding unitaries is the projective phase.
+If we set <span class="math inline">\(U_{ab} = U_b U_a = \sigma _1\)</span>, the multiplication law among <span class="math inline">\(U_g\)</span>, <span class="math inline">\(g\in \mathbb{Z}_2\times\mathbb{Z}_2\)</span> is
+<span class="math display" id="eq:ProjRep">\[\begin{equation}
+  \tag{2.27}
+  U_g U_{g&#39;} = e^{\mathrm{i}\alpha(g,g&#39;)}U_{gg&#39;},
+\end{equation}\]</span>
+where in this example the projective phase is
+<span class="math display" id="eq:ProjZ2Z2">\[\begin{equation}
+  \tag{2.28}
+    \alpha(a,b) = \pi,\quad
+    \alpha(g,g&#39;) = 0 \,\, \text{(otherwise)}.
+\end{equation}\]</span></p>
+<p>Recall that we have the room to redefine each <span class="math inline">\(U_g\)</span> by a phase. Can we use this freedom to eliminate the projective phase?
+Let us say the we redefine <span class="math inline">\(U_g\)</span> by phase <span class="math inline">\(\beta(g)\)</span>:
+<span class="math display" id="eq:Uredef">\[\begin{equation}
+  \tag{2.29}
+  U_g \mapsto e^{\mathrm{i}\beta(g)}U_g.
+\end{equation}\]</span>
+However, such phase rotation cannot eliminate the commutator <span class="math inline">\([U_a,U_b]\)</span>, which has to be zero if <span class="math inline">\(\alpha = 0\)</span>.</p>
+<p>When a projective phase cannot be removed by the phase rotation of the unitaries, the phase is called (cohomologically) nontrivial. The phase <span class="math inline">\(\alpha\)</span> in <a href="Z2Z2.html#eq:ProjZ2Z2">(2.28)</a> is nontrivial.</p>
+<p>One significance of the nontrivial projective phase is that it prohibits a one-dimensional representatoin: in the <span class="math inline">\(\mathbb{Z}_2\times\mathbb{Z}_2\)</span> example, since <span class="math inline">\([U_a,U_b]\neq 0\)</span> (even though the group <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span> is abelian), the such operators cannot act on a one-dimensional space. Note that for a linear representation one always has the <em>trivial</em> representation; with a nontrivial projective phase, there is no such thing.</p>
+<p>This in turn put a restriction on the possible Hamiltonian.
+Assume that the Hamiltonian on the qubit preserves the <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span> symmetry.
+If the two energy were distinct, each state should consist a one-dimensional representation with the projective phase, which contradicts with the above observation. Hence the projective action of <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span> is enough to ensure that the two states are degenerate.</p>
+<p>Now, we also see that the entire group <span class="math inline">\(SO(3)\)</span> acting on the qubit also has a nontrivial projective phase. This is because other elements of <span class="math inline">\(SO(3)\)</span> does not help to resolve the projective phase that <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span> has.</p>
 </div>
-<div class="csl-entry">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">E. Witten, <em><span class="nocase">Three lectures on topological phases of matter</span></em>, Riv. Nuovo Cim. <strong>39</strong>, 313 (2016), <span class="nodecoration"><a href="https://arxiv.org/abs/1510.07698">https://arxiv.org/abs/1510.07698</a></span>.</div>
-</div>
-<div class="csl-entry">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">E. Witten, <em><span>Fermion Path Integrals And Topological Phases</span></em>, Rev. Mod. Phys. <strong>88</strong>, 035001 (2016), <span class="nodecoration"><a href="https://arxiv.org/abs/1508.04715">https://arxiv.org/abs/1508.04715</a></span>.</div>
-</div>
-<div class="csl-entry">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">S. Weinberg, <em><span class="nocase">The Quantum theory of fields. Vol. 1: Foundations</span></em> (Cambridge University Press, 2005).</div>
-</div>
-<div class="csl-entry">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">C. Córdova, D. S. Freed, H. T. Lam, and N. Seiberg, <em><span class="nocase">Anomalies in the Space of Coupling Constants and Their Dynamical Applications I</span></em>, SciPost Phys. <strong>8</strong>, 001 (2020), <span class="nodecoration"><a href="https://arxiv.org/abs/1905.09315">https://arxiv.org/abs/1905.09315</a></span>.</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="kitaev-chain.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="bloch-sphere-and-projective-representation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="charged-particle-on-the-aharonov-bohm-ring.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -242,7 +281,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/kantohm11/symmetry_review/edit/main/99-references.Rmd",
+"link": "https://github.com/kantohm11/symmetry_review/edit/main/01-QM.Rmd",
 "text": "Edit"
 },
 "history": {

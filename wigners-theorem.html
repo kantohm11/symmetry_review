@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Topological Aspects of Symmetry in Low Dimensions</title>
-  <meta name="description" content="References | Topological Aspects of Symmetry in Low Dimensions" />
+  <title>2.2 Wigner’s theorem | Topological Aspects of Symmetry in Low Dimensions</title>
+  <meta name="description" content="2.2 Wigner’s theorem | Topological Aspects of Symmetry in Low Dimensions" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta property="og:title" content="2.2 Wigner’s theorem | Topological Aspects of Symmetry in Low Dimensions" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="kantohm11/symmetry_review" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta name="twitter:title" content="2.2 Wigner’s theorem | Topological Aspects of Symmetry in Low Dimensions" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="kitaev-chain.html"/>
-
+<link rel="prev" href="basics-about-quantum-mechanics.html"/>
+<link rel="next" href="bloch-sphere-and-projective-representation.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -168,50 +168,49 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
-
+<div id="wigners-theorem" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Wigner’s theorem</h2>
+<p>According to E. Wigner, a <strong>symmetry transformation</strong> <span class="math inline">\(U\)</span> acting on a quantum system is a bijection
+<span class="math display" id="eq:sym">\[\begin{equation}
+  \tag{2.6}
+  T: \mathbb{P}\mathcal{H} \to \mathbb{P}\mathcal{H},
+\end{equation}\]</span>
+that preserves the transition probability <a href="basics-about-quantum-mechanics.html#eq:transprob">(2.3)</a>.
+We call a bijection <span class="math inline">\(U\)</span> on <span class="math inline">\(\mathcal{H}\)</span> is compatible with <span class="math inline">\(T\)</span> if <span class="math inline">\(U\)</span> induces the same action on <span class="math inline">\(\mathbb{P}\mathcal{H}\)</span> as <span class="math inline">\(T\)</span>.</p>
+<p>Then, Wigner’s theorem states:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-1" class="theorem"><strong>Theorem 2.1  (Wigner 1931) </strong></span>Given a symmetry transformation <span class="math inline">\(T\)</span>, there exists a bijection <span class="math inline">\(U_T\)</span> on <span class="math inline">\(\mathcal{H}\)</span> compatible with <span class="math inline">\(T\)</span>.
+This <span class="math inline">\(U_T\)</span> is either linear (over <span class="math inline">\(\mathbb{C}\)</span>) and unitary, or anti-linear and anti-unitary. If <span class="math inline">\(\mathrm{dim}\mathcal{H}\ge 2\)</span>, this <span class="math inline">\(U\)</span> is unique up to a overall phase redefinition <span class="math inline">\(U_T \mapsto e^{\mathrm{i}\alpha}U_T\)</span>. (When <span class="math inline">\(\mathrm{dim}\mathcal{H} = 1\)</span>, <span class="math inline">\(T\)</span> is unique, and <span class="math inline">\(U_T\)</span> can be taken either of unitary or anti-unitary one. Once the choice is fixed, it is up to the phase.)</p>
+</div>
+<p>This is why we usually care about unitary operator (like Pauli matrices).
+The proof can be found somewhere, e.g. <span class="citation"> [<a href="#ref-Weinberg:1995mt" role="doc-biblioref">4</a>]</span>. We will see examples soon.</p>
+<p>We also have an action of <span class="math inline">\(T\)</span> on the algebra of operators <span class="math inline">\(\mathcal{A}\)</span> through this theorem:
+<span class="math display" id="eq:TonA">\[\begin{align}
+  \tag{2.7}
+  T \curvearrowright \mathcal{A}  &amp; \to \mathcal{A}\\
+  \mathcal{O} &amp; \mapsto U_T \mathcal{O} U^\dagger_T.
+\end{align}\]</span>
+Note that this action is independent of the phase freedom of <span class="math inline">\(U_T\)</span> and thus uniquely defined.
+<a href="basics-about-quantum-mechanics.html#eq:Odev">(2.5)</a> is a special case of this.</p>
+<p>Finally, we call a symmetry <span class="math inline">\(T\)</span> is <strong>preserved</strong> by the Hamiltonian if
+<span class="math display" id="eq:UHcommute">\[\begin{equation}
+  \tag{2.8}
+  [U_T,H] = 0.
+\end{equation}\]</span></p>
+</div>
+<h3>References</h3>
 <div id="refs" class="references csl-bib-body">
-<div class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Y. Tachikawa, <em>Lecture on Anomalies and Topological Phases</em>, (2019), <span class="nodecoration"><a href="https://member.ipmu.jp/yuji.tachikawa/lectures/2019-top-anom/">https://member.ipmu.jp/yuji.tachikawa/lectures/2019-top-anom/</a></span>.</div>
-</div>
-<div class="csl-entry">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">E. Witten, <em><span class="nocase">Three lectures on topological phases of matter</span></em>, Riv. Nuovo Cim. <strong>39</strong>, 313 (2016), <span class="nodecoration"><a href="https://arxiv.org/abs/1510.07698">https://arxiv.org/abs/1510.07698</a></span>.</div>
-</div>
-<div class="csl-entry">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">E. Witten, <em><span>Fermion Path Integrals And Topological Phases</span></em>, Rev. Mod. Phys. <strong>88</strong>, 035001 (2016), <span class="nodecoration"><a href="https://arxiv.org/abs/1508.04715">https://arxiv.org/abs/1508.04715</a></span>.</div>
-</div>
-<div class="csl-entry">
+<div id="ref-Weinberg:1995mt" class="csl-entry">
 <div class="csl-left-margin">[4] </div><div class="csl-right-inline">S. Weinberg, <em><span class="nocase">The Quantum theory of fields. Vol. 1: Foundations</span></em> (Cambridge University Press, 2005).</div>
 </div>
-<div class="csl-entry">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">C. Córdova, D. S. Freed, H. T. Lam, and N. Seiberg, <em><span class="nocase">Anomalies in the Space of Coupling Constants and Their Dynamical Applications I</span></em>, SciPost Phys. <strong>8</strong>, 001 (2020), <span class="nodecoration"><a href="https://arxiv.org/abs/1905.09315">https://arxiv.org/abs/1905.09315</a></span>.</div>
 </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="kitaev-chain.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="basics-about-quantum-mechanics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bloch-sphere-and-projective-representation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -242,7 +241,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/kantohm11/symmetry_review/edit/main/99-references.Rmd",
+"link": "https://github.com/kantohm11/symmetry_review/edit/main/01-QM.Rmd",
 "text": "Edit"
 },
 "history": {
