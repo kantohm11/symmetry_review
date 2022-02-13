@@ -78,7 +78,7 @@
 
 \title{Topological Aspects of Symmetry in Low Dimensions}
 \author{Kantaro Ohmori, University of Tokyo}
-\date{2022-02-11}
+\date{2022-02-13}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[section]
@@ -296,8 +296,8 @@ Finally, we call a symmetry \(T\) is \textbf{preserved} by the Hamiltonian if
   [U_T,H] = 0.
 \end{equation}
 
-\hypertarget{bloch-sphere-and-projective-representation}{%
-\subsection{Bloch sphere and projective representation}\label{bloch-sphere-and-projective-representation}}
+\hypertarget{Bloch}{%
+\subsection{Bloch sphere and projective representation}\label{Bloch}}
 
 Let us take a close look at the case of a qubit, i.e.~\(\mathcal{H} = \mathbb{C}^2\).
 Pick a basis \(\ket{0}\) and \(\ket{1}\) and expand a unit state \(\ket{\psi}\) as
@@ -573,7 +573,6 @@ So, even if we deform the Hamiltonian as
 \end{equation}
 we know that there is a degeneracy, although in this system cannot be easily solved.
 This is the power of quantum anomaly: it tells us something nontrivial \emph{without solving the system}!
-\footnote{Probably what is more useful in practice (i.e.~when you devise a quantum computer) is the ``anomaly involving parameter space'', briefly discussed in the footnote above. It can show that , with \emph{arbitrary} potential \(V(x)\), you can find a degeneracy if you tune \(\theta\). (It does not tell which \(\theta\) you have to tune in, though.)}
 
 \hypertarget{group-cohomology}{%
 \subsection{Group cohomology}\label{group-cohomology}}
@@ -669,11 +668,130 @@ Show that \(H^2(\mathbb{Z}_2)=0\). (If you want, also calculate \(H^2(\mathbb{Z}
 \hypertarget{anomalous-symmetry-and-1d-spt}{%
 \subsection{Anomalous symmetry and 1D SPT}\label{anomalous-symmetry-and-1d-spt}}
 
-\hypertarget{anomalies-for-fermions}{%
-\subsection{Anomalies for fermions *?}\label{anomalies-for-fermions}}
+\hypertarget{symmetry-protected-topological-phase}{%
+\subsubsection{Symmetry Protected Topological Phase}\label{symmetry-protected-topological-phase}}
 
-\hypertarget{kitaev-chain}{%
-\subsection{Kitaev Chain *?}\label{kitaev-chain}}
+Before moving to the quantum anomaly in QFT, here let us see the crucial connection between quantum anomaly and \textbf{symmetry protected topological phase}(SPT), introduced in \textcite{Chen:2011pg}, a topic in condensed-matter physics.
+The relationship is summarized as the following hypothesis \footnote{The name of the hypothesis is cooked up by KO. Also the correct reference is not clear to KO (other than having a very long list); it feels more like a theme that gradually arose over a time (through the decade of 2010).}
+
+\begin{hypothesis}[SPT-inflow hypothesis]
+\protect\hypertarget{hyp:SPT}{}\label{hyp:SPT}A \(d+1\)-dimensional QFT with an anomalous global symmetry \(G\) (and non-anomalous Lorentz symmetry)
+can be realized as a boundary of a \((d+1)+1\)-dimensional SPT phase with (non-anomalous) symmetry \(G\).
+\end{hypothesis}
+
+This is a refinement of the Callan-Harvey anomaly-inflow principle \textcite{Callan:1984sa}.
+Callan-Harvey anomaly-inflow asserts that a quantum anomaly is related to a \emph{classical action} of backgrounds in \((d+1)+1\) dimension, but what kind of backgrounds/action can consist an ``inflow action'' was unclear; now it is replaced by ``SPT'', which has moth more clear definition and physical interpretation.
+
+We define the SPT on a lattice.
+To define, first we define the notion of ``short range entangled'' state.\footnote{This definition is by the original paper. A. Kitaev, and therefore many other people, uses the same words (SRE/SPT) for a non-equivalent thing. Let us call a state \(\ket{\psi}\) is \textbf{invertible} if \(\ket{\psi}\otimes \ket{\psi^\vee} \in \mathcal{H} \otimes \mathcal{H}^\vee\) is SRE (as defined in the main text). Here \(\mathcal{H}^\vee\) is the dual of \(\mathcal{H}\) and \(\ket{\psi^\vee}\) is the dual of \(\ket{\psi}\). What Kitaev calls SRE is actually this invertibility.
+  Note that while there is no nontrivial SPT when \(G\) is trivial by definition, but there can potentially be nontrivial invertible state even when \(G\) is trivial. An invertible state can actually captures a pure-gravitational anomaly on the boundary which improves Hypothesis \ref{hyp:SPT}.} \footnote{About continuum, see Yuji's note \textcite{tachikawa_2019}. In short an \emph{invertible QFT}, the continuum version of invertible state defined in the above footnote, is defined (and classified!) in \textcite{Freed:2016rqq}.}
+
+\begin{definition}[Short Range Entangled (SRE)]
+\protect\hypertarget{def:SRE}{}\label{def:SRE}Consider a \(d\) (space) dimensional lattice system without boundary, whose Hilbert space is \(\mathcal{H} = \bigotimes_{i} \mathcal{H}_i\), where \(\mathcal{H}_i\) is the local Hilbert space associated to the site \(i\).
+A state \(\ket{\psi} \in \mathcal{H}\) is short range entangled when you can make \(\ket{\psi}\) a tensor product state by the following operation:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Enlarge the local Hilbert space \(\mathcal{H}^\text{enlarged}_i = \mathcal{H}_i \otimes \mathcal{H}_i^\text{ext}\) by some Hilbert space \(\mathcal{H}_i^\text{ext}\).
+  Also pick a state \(\ket{\phi_i} \in \mathcal{H}_i^\text{ext}\) from each \(\mathcal{H}_i^\text{ext}\) and set \(\ket{\hat\psi}\in \otimes_i \mathcal{H}_i^\text{enlarged}\) to be \(\ket{\hat\psi} = \ket{\psi}\otimes_i \ket{\phi_i}\).
+\item
+  Then pick a unitary \(U_i\) acting on each of the enlarged local Hilbert spaces \(\mathcal{H}_i^\text{enlarge}\).
+\end{enumerate}
+
+The resulting state is \(\ket{\tilde{\psi}}=\prod_i U_i \ket{\hat{\psi}}\), and \(\ket{\psi}\) is SRE iff you can pick \(\mathcal{H}_i^\text{ext}, \ket{\phi_i}\) and \(U_i\) so that \(\ket{\tilde{\psi}} = \otimes_i \ket{i}\) for some local states \(\ket{i} \in \mathcal{H}^\text{enlarged}_i\).
+\end{definition}
+
+In short, a state is SRE when you can add additional degrees of freedom then resolve all the entanglement between the sites by local unitary.
+We also define \(G\)-SRE:
+
+\begin{definition}[G-SRE]
+\protect\hypertarget{def:GSRE}{}\label{def:GSRE}Consider a \(d\) (space) dimensional lattice system without boundary with on-site symmetry \(G\). A \(G\)-invariant state \(\ket{\psi}\) is \(G\)-SRE iff it is SRE and all of the unitaries \(U_i\) in Definition \ref{def:SRE} can be taken to be the ones preserving \(G\).
+\end{definition}
+
+Then an SPT is defined by
+
+\begin{definition}[Symmetry Protected Topological phase]
+\protect\hypertarget{def:SPT}{}\label{def:SPT}A \(G\)-invariant state \(\ket{\psi}\) is in a (non-trivial) symmetry protected topological phase iff \(\ket{\psi}\) is SRE but not \(G\)-SRE.
+\end{definition}
+
+In other words a SPT state is SRE but not in a way respecting the on-site \(G\) symmetry.
+
+\hypertarget{example-of-11d-so3-spt}{%
+\subsubsection{Example of 1+1d SO(3) SPT}\label{example-of-11d-so3-spt}}
+
+Let us construct an example of SPT on 1+1d lattice for symmetry \(SO(3)\).
+We put two qubits, labeled by \(A\) and \(B\), on each site. So \(\mathcal{H}_i = \mathcal{H}^A_i \otimes \mathcal{H}^B_i\), with \(\mathcal{H}^A_i \cong \mathcal{H}^B_i \cong \mathbb{C}^2\).
+As a on-site
+Let \(\ket{s_i}\) be the singlet state entangling the \(A\)-qubit at site \(i\) (\(i\in\mathbb{Z}\)) and the \(B\)-qubit at site \(i+1\): \(\ket{s_i} = \ket{\uparrow_{i,B}}\ket{\downarrow_{i+1,A}} - \ket{\downarrow_{i,B}} \ket{\uparrow_{i+1,A}} \in \mathcal{H}_{i}^A\otimes \mathcal{H}_{i+1}^B\).
+Then we define the total state \(\ket{\psi}\) by\footnote{This state looks very artificial. Instead, on can consider the state
+  \begin{equation}
+    \label{eq:AKLT}
+    \ket{\mathrm{AKLT}} = \prod_i P_i^\text{triplet} \ket{\psi}
+  \end{equation}
+  where \(P_i^\text{triplet}\), acting on \(\mathcal{H}_i\), is the projection operator onto the triplet states consists of the \(A\)- and \(B\)- qubits on the \emph{same} site \(i\).
+  This state ,in the same SPT as \(\ket{\psi}\), is the ground state of the AKLT Hamiltonian \textcite{AKLT}
+  \begin{equation}
+    \label{eq:AKLTHam}
+    H_{\mathrm{AKLT}} = \sum_i \Bigl(\vec{S}_i \cdot \vec{S}_{i+1} + \frac13 \bigl(\vec{S}_{j} \cdot \vec{S}_{j+1}\bigr)^2\Bigr),
+  \end{equation}
+  which was studied way before the invention the notion of SPT.}
+\begin{equation}
+  \label{eq:SO3SPT}
+  \ket{\psi} = \bigotimes_i \ket{s_i}.
+\end{equation}
+The entanglement structure of this state is depicted in Figure \ref{fig:so3spt}.
+Note that, although \eqref{eq:SO3SPT} is defined by the tensor product, each \(\ket{s_i}\) is not contained in a single site Hilbert space \(\mathcal{H}_i\), and thus \(\ket{\psi}\) is not a tensor product of local states, each in \(\mathcal{H}_i\).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{figs/so3spt} 
+
+}
+
+\caption{The entanglement structure of the state \(\ket{\psi}\) defined in \eqref{eq:SO3SPT}. The \(B\)-qubit at site \(i\) is entangled with the \(A\)-qubit at side \(i+1\), as indicated by the green line.}\label{fig:so3spt}
+\end{figure}
+
+
+
+We let the group \(SO(3)\) acts on the (projective space of) total states as follows. Let \(T_g^{(i,A)}\) and \(T_g^{(i,B)}\) be the \(SO(3)\) symmetry transformation, defined in Section @ref\{Bloch\}, on the \(A\)- or \(B\)-qubit at the \(i\)-th site. Then the \(SO(3)\) action for which \(\ket{\psi}\) is in SPT is
+\begin{equation}
+  \label{eq:SO3SPTAction}
+  T_g = \prod_{i}T_g^{(i,A)}T_{g^{-1}}^{(i,B)}.
+\end{equation}
+The state \(\ket{\psi}\) is invariant under this transformation, because \(T_g = \prod_i T_{g^{-1}}^{(i,B)}T_g^{(i+1,A)}\) and \(T_{g^{-1}}^{(i,B)}T_{g}^{(i+1,A)}\) makes the singlet state \(\ket{s_i}\) invariant.
+Note that this symmetry transformation does not have the projective phase: it is cancelled between the ones coming from \(U_g^{(i,A)}\) and \(U_{g^{-1}}^{(i,B)}\) within each site.
+
+The direct exposition that \(\ket{\psi}\) is in a SPT can be found in \textcite{Prakash:2018ugo}.
+Here instead we observe how the Hypothesis \ref{hyp:SPT} works in this example.
+The state \(\ket{\psi}\) has no problem to be defined on a periodic lattice.
+However, when there is a boundary, say that only \(i \in \mathbb{Z}_{\ge 0}\) participate in the lattice, the \(A\)-qubit at site \(i=0\) does not have its partner to create an entanglement.
+Thus, there are equally good/bad extensions of the state \(\ket{\psi}\) to open boundary:
+\begin{equation}
+  \label{eq:psiBoundary}
+  \ket{\uparrow,\psi} = \ket{\uparrow_{0,A}}\otimes \bigotimes_{i\ge 0}\ket{s_{i}}, \quad
+  \ket{\downarrow,\psi} = \ket{\downarrow_{0,A}}\otimes \bigotimes_{i\ge 0}\ket{s_{i}}.
+\end{equation}
+We call the degrees of freedom \(\ket{\uparrow \! \downarrow_{0,A}}\) the \textbf{edge modes}, as it localizes at the boundary.
+On this edge mode, the \(SO(3)\) symmetry acs by \(T_g\), which is exactly the projective representation the qubit has.
+This edge mode is \emph{robust} -- if you force the \((i=0,A)\)-qubit be entangled with another qubit (in a finite distance) by some unitary, you get another unentangled qubit, as you cannot erase/create the entanglement by unitaries.
+In summary, if we cut the chain in the SPT, on the edge we have the qubit protected by the projective action of \(SO(3)\).
+
+\hypertarget{spt-general-projective-representation}{%
+\subsubsection{SPT general projective representation*}\label{spt-general-projective-representation}}
+
+It is easy the generalize the above example into a general projective representation \(R\) of a group \(G\). (Here we assume that \(G\) acts by unitary operations.)
+For each site we prepare the local Hilbart space as \(\mathcal{H}_i = R_i \otimes R^\vee_i\), where \(R_i\) is the \(i\)-th copy of \(R\) and \(R^\vee_i\) is the dual of \(R\).
+Pick a nonzero state \(\ket{0}\) from \(R\), let \(\ket{0^\vee} \in R^\vee\) denote the dual of \(\ket{0}\), and then define the singlet state \(\ket{s_i}\) by
+\begin{equation}
+  \label{eq:ketsiGeneral}
+  \ket{s_i} = \int \mathrm{d}g \bigl(U_{g^{-1}}\ket{0^\vee}_{(i,B)}\big)\otimes \bigl(U_{g}\ket{0}_{(i+1,A)}\bigr) \in R_{i}^\vee \otimes R_{i+1},
+\end{equation}
+where \(\mathrm{d}g\) is the Haar measure of \(G\) (it is just a sum over the group element if \(G\) is finite).
+This state is invariant under \(T_{g^{-1}}^{(i,B)}T_g^{(i+1,A)}\) (and nonzero).
+Now the rest of the constuction is the same as above, and we see the edge mode in \(R\) when the lattice has a boundary.
+Thus we have seen how the (one direction of) Hypothesis \ref{hyp:SPT} works in the 1+1d bulk/0+1d boundary case.
 
 \printbibliography
 

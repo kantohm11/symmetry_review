@@ -12,3 +12,23 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+:root {
+  --thm-color: lightgoldenrodyellow;
+}
+
+.theorem {
+  background-color: var(--thm-color);
+}
+
+.hypothesis {
+  background-color: var(--thm-color);
+}
+
+.definition {
+  background-color: var(--thm-color);
+}
+
+.exercise {
+  background-color: var(--thm-color);
+}
