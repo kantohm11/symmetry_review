@@ -24,15 +24,15 @@
 <meta name="author" content="Kantaro Ohmori,  University of Tokyo" />
 
 
-<meta name="date" content="2022-02-13" />
+<meta name="date" content="2022-02-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="group-cohomology.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="second-group-cohomology.html"/>
+<link rel="next" href="quantum-anomaly-in-11d-qft.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -142,13 +142,17 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="Z2Z2.html"><a href="Z2Z2.html"><i class="fa fa-check"></i><b>2.4</b> <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span> projective representation</a></li>
 <li class="chapter" data-level="2.5" data-path="charged-particle-on-the-aharonov-bohm-ring.html"><a href="charged-particle-on-the-aharonov-bohm-ring.html"><i class="fa fa-check"></i><b>2.5</b> Charged particle on the Aharonov-Bohm ring</a></li>
-<li class="chapter" data-level="2.6" data-path="group-cohomology.html"><a href="group-cohomology.html"><i class="fa fa-check"></i><b>2.6</b> Group cohomology</a></li>
+<li class="chapter" data-level="2.6" data-path="second-group-cohomology.html"><a href="second-group-cohomology.html"><i class="fa fa-check"></i><b>2.6</b> Second Group cohomology</a></li>
 <li class="chapter" data-level="2.7" data-path="anomalous-symmetry-and-1d-spt.html"><a href="anomalous-symmetry-and-1d-spt.html"><i class="fa fa-check"></i><b>2.7</b> Anomalous symmetry and 1D SPT</a>
 <ul>
 <li class="chapter" data-level="2.7.1" data-path="anomalous-symmetry-and-1d-spt.html"><a href="anomalous-symmetry-and-1d-spt.html#symmetry-protected-topological-phase"><i class="fa fa-check"></i><b>2.7.1</b> Symmetry Protected Topological Phase</a></li>
 <li class="chapter" data-level="2.7.2" data-path="anomalous-symmetry-and-1d-spt.html"><a href="anomalous-symmetry-and-1d-spt.html#example-of-11d-so3-spt"><i class="fa fa-check"></i><b>2.7.2</b> Example of 1+1d SO(3) SPT</a></li>
-<li class="chapter" data-level="2.7.3" data-path="anomalous-symmetry-and-1d-spt.html"><a href="anomalous-symmetry-and-1d-spt.html#spt-general-projective-representation"><i class="fa fa-check"></i><b>2.7.3</b> SPT general projective representation*</a></li>
+<li class="chapter" data-level="2.7.3" data-path="anomalous-symmetry-and-1d-spt.html"><a href="anomalous-symmetry-and-1d-spt.html#spt-for-a-general-projective-representation"><i class="fa fa-check"></i><b>2.7.3</b> SPT for a general projective representation*</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="quantum-anomaly-in-11d-qft.html"><a href="quantum-anomaly-in-11d-qft.html"><i class="fa fa-check"></i><b>3</b> Quantum Anomaly in 1+1d QFT</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="locality.html"><a href="locality.html"><i class="fa fa-check"></i><b>3.1</b> Locality</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -248,8 +252,8 @@ On this edge mode, the <span class="math inline">\(SO(3)\)</span> symmetry acs b
 This edge mode is <em>robust</em> – if you force the <span class="math inline">\((i=0,A)\)</span>-qubit be entangled with another qubit (in a finite distance) by some unitary, you get another unentangled qubit, as you cannot erase/create the entanglement by unitaries.
 In summary, if we cut the chain in the SPT, on the edge we have the qubit protected by the projective action of <span class="math inline">\(SO(3)\)</span>.</p>
 </div>
-<div id="spt-general-projective-representation" class="section level3" number="2.7.3">
-<h3><span class="header-section-number">2.7.3</span> SPT general projective representation*</h3>
+<div id="spt-for-a-general-projective-representation" class="section level3" number="2.7.3">
+<h3><span class="header-section-number">2.7.3</span> SPT for a general projective representation*</h3>
 <p>It is easy the generalize the above example into a general projective representation <span class="math inline">\(R\)</span> of a group <span class="math inline">\(G\)</span>. (Here we assume that <span class="math inline">\(G\)</span> acts by unitary operations.)
 For each site we prepare the local Hilbart space as <span class="math inline">\(\mathcal{H}_i = R_i \otimes R^\vee_i\)</span>, where <span class="math inline">\(R_i\)</span> is the <span class="math inline">\(i\)</span>-th copy of <span class="math inline">\(R\)</span> and <span class="math inline">\(R^\vee_i\)</span> is the dual of <span class="math inline">\(R\)</span>.
 Pick a nonzero state <span class="math inline">\(\ket{0}\)</span> from <span class="math inline">\(R\)</span>, let <span class="math inline">\(\ket{0^\vee} \in R^\vee\)</span> denote the dual of <span class="math inline">\(\ket{0}\)</span>, and then define the singlet state <span class="math inline">\(\ket{s_i}\)</span> by
@@ -294,16 +298,16 @@ Thus we have seen how the (one direction of) Hypothesis <a href="anomalous-symme
 Note that while there is no nontrivial SPT when <span class="math inline">\(G\)</span> is trivial by definition, but there can potentially be nontrivial invertible state even when <span class="math inline">\(G\)</span> is trivial. An invertible state can actually captures a pure-gravitational anomaly on the boundary which improves Hypothesis <a href="anomalous-symmetry-and-1d-spt.html#hyp:SPT">2.1</a>.<a href="anomalous-symmetry-and-1d-spt.html#fnref9" class="footnote-back">↩︎</a></p></li>
 <li id="fn10"><p>About continuum, see Yuji’s note <span class="citation"> [<a href="#ref-tachikawa_2019" role="doc-biblioref">1</a>]</span>. In short an <em>invertible QFT</em>, the continuum version of invertible state defined in the above footnote, is defined (and classified!) in <span class="citation"> [<a href="#ref-Freed:2016rqq" role="doc-biblioref">8</a>]</span>.<a href="anomalous-symmetry-and-1d-spt.html#fnref10" class="footnote-back">↩︎</a></p></li>
 <li id="fn11"><p>This state looks very artificial. Instead, on can consider the state
-<span class="math display" id="eq:AKLT">\[\begin{equation}
-  \tag{2.52}
+<span class="math display" id="eq:AKLT">\[\begin{equation*}
+  \tag{3.2}
   \ket{\mathrm{AKLT}} = \prod_i P_i^\text{triplet} \ket{\psi}
-\end{equation}\]</span>
+\end{equation*}\]</span>
 where <span class="math inline">\(P_i^\text{triplet}\)</span>, acting on <span class="math inline">\(\mathcal{H}_i\)</span>, is the projection operator onto the triplet states consists of the <span class="math inline">\(A\)</span>- and <span class="math inline">\(B\)</span>- qubits on the <em>same</em> site <span class="math inline">\(i\)</span>.
-This state ,in the same SPT as <span class="math inline">\(\ket{\psi}\)</span>, is the ground state of the AKLT Hamiltonian <span class="citation"> [<a href="#ref-AKLT" role="doc-biblioref">9</a>]</span>
-<span class="math display" id="eq:AKLTHam">\[\begin{equation}
-  \tag{2.53}
+This state ,in the same SPT as <span class="math inline">\(\ket{\psi}\)</span>, is the ground state of the AKLT Hamiltonian defined with spin-1 operators <span class="math inline">\(\vec{S}_i\)</span> <span class="citation"> [<a href="#ref-AKLT" role="doc-biblioref">9</a>]</span>:
+<span class="math display" id="eq:AKLTHam">\[\begin{equation*}
+  \tag{3.3}
   H_{\mathrm{AKLT}} = \sum_i \Bigl(\vec{S}_i \cdot \vec{S}_{i+1} + \frac13 \bigl(\vec{S}_{j} \cdot \vec{S}_{j+1}\bigr)^2\Bigr),
-\end{equation}\]</span>
+\end{equation*}\]</span>
 which was studied way before the invention the notion of SPT.<a href="anomalous-symmetry-and-1d-spt.html#fnref11" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
@@ -312,8 +316,8 @@ which was studied way before the invention the notion of SPT.<a href="anomalous-
           </div>
         </div>
       </div>
-<a href="group-cohomology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="second-group-cohomology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="quantum-anomaly-in-11d-qft.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

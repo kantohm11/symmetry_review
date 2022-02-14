@@ -68,8 +68,10 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\addtokomafont{section}{\clearpage}
 \usepackage{braket}
 \numberwithin{equation}{section}
+\renewenvironment{align}{\begin{equation}\begin{aligned}}{\end{aligned}\end{equation}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -78,7 +80,7 @@
 
 \title{Topological Aspects of Symmetry in Low Dimensions}
 \author{Kantaro Ohmori, University of Tokyo}
-\date{2022-02-13}
+\date{2022-02-14}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[section]
@@ -284,7 +286,7 @@ The proof can be found somewhere, e.g. \textcite{Weinberg:1995mt}. We will see e
 We also have an action of \(T\) on the algebra of operators \(\mathcal{A}\) through this theorem:
 \begin{align}
   \label{eq:TonA}
-  T \curvearrowright \mathcal{A}  & \to \mathcal{A}\\
+  T \curvearrowright \mathcal{A}  & \to \mathcal{A} \\
   \mathcal{O} & \mapsto U_T \mathcal{O} U^\dagger_T.
 \end{align}
 Note that this action is independent of the phase freedom of \(U_T\) and thus uniquely defined.
@@ -574,8 +576,8 @@ So, even if we deform the Hamiltonian as
 we know that there is a degeneracy, although in this system cannot be easily solved.
 This is the power of quantum anomaly: it tells us something nontrivial \emph{without solving the system}!
 
-\hypertarget{group-cohomology}{%
-\subsection{Group cohomology}\label{group-cohomology}}
+\hypertarget{second-group-cohomology}{%
+\subsection{Second Group cohomology}\label{second-group-cohomology}}
 
 Let us formalize what we learned above for a general group \(G\).
 We assume that for each \(g\in G\), we have a symmetry transformation \(T_g\) acting on \(\mathbb{P}\mathcal{H}\) as symmetry transformations satisfying the multiplication law:
@@ -651,11 +653,11 @@ This motivates us the define the \emph{group cohomology group}\footnote{Do not c
 \end{equation}
 
 In this lecture we do not have time to learn how to compute the cohomology group, but the examples we have seen are
-\begin{gather}
+\begin{align}
   \label{eq:CohomologySO3Z2Z2}
-  H^2(SO(3)) \cong \mathbb{Z}_2,\\
-  H^2(\mathbb{Z}_2\times\mathbb{Z}_2) \cong \mathbb{Z}_2.
-\end{gather}
+  H^2(SO(3)) &\cong \mathbb{Z}_2,\\
+  H^2(\mathbb{Z}_2\times\mathbb{Z}_2) &\cong \mathbb{Z}_2.
+\end{align}
 
 \begin{exercise}
 Prove \eqref{eq:DeltaNilp}.
@@ -726,16 +728,16 @@ We put two qubits, labeled by \(A\) and \(B\), on each site. So \(\mathcal{H}_i 
 As a on-site
 Let \(\ket{s_i}\) be the singlet state entangling the \(A\)-qubit at site \(i\) (\(i\in\mathbb{Z}\)) and the \(B\)-qubit at site \(i+1\): \(\ket{s_i} = \ket{\uparrow_{i,B}}\ket{\downarrow_{i+1,A}} - \ket{\downarrow_{i,B}} \ket{\uparrow_{i+1,A}} \in \mathcal{H}_{i}^A\otimes \mathcal{H}_{i+1}^B\).
 Then we define the total state \(\ket{\psi}\) by\footnote{This state looks very artificial. Instead, on can consider the state
-  \begin{equation}
+  \begin{equation*}
     \label{eq:AKLT}
     \ket{\mathrm{AKLT}} = \prod_i P_i^\text{triplet} \ket{\psi}
-  \end{equation}
+  \end{equation*}
   where \(P_i^\text{triplet}\), acting on \(\mathcal{H}_i\), is the projection operator onto the triplet states consists of the \(A\)- and \(B\)- qubits on the \emph{same} site \(i\).
-  This state ,in the same SPT as \(\ket{\psi}\), is the ground state of the AKLT Hamiltonian \textcite{AKLT}
-  \begin{equation}
+  This state ,in the same SPT as \(\ket{\psi}\), is the ground state of the AKLT Hamiltonian defined with spin-1 operators \(\vec{S}_i\) \textcite{AKLT}:
+  \begin{equation*}
     \label{eq:AKLTHam}
     H_{\mathrm{AKLT}} = \sum_i \Bigl(\vec{S}_i \cdot \vec{S}_{i+1} + \frac13 \bigl(\vec{S}_{j} \cdot \vec{S}_{j+1}\bigr)^2\Bigr),
-  \end{equation}
+  \end{equation*}
   which was studied way before the invention the notion of SPT.}
 \begin{equation}
   \label{eq:SO3SPT}
@@ -778,8 +780,8 @@ On this edge mode, the \(SO(3)\) symmetry acs by \(T_g\), which is exactly the p
 This edge mode is \emph{robust} -- if you force the \((i=0,A)\)-qubit be entangled with another qubit (in a finite distance) by some unitary, you get another unentangled qubit, as you cannot erase/create the entanglement by unitaries.
 In summary, if we cut the chain in the SPT, on the edge we have the qubit protected by the projective action of \(SO(3)\).
 
-\hypertarget{spt-general-projective-representation}{%
-\subsubsection{SPT general projective representation*}\label{spt-general-projective-representation}}
+\hypertarget{spt-for-a-general-projective-representation}{%
+\subsubsection{SPT for a general projective representation*}\label{spt-for-a-general-projective-representation}}
 
 It is easy the generalize the above example into a general projective representation \(R\) of a group \(G\). (Here we assume that \(G\) acts by unitary operations.)
 For each site we prepare the local Hilbart space as \(\mathcal{H}_i = R_i \otimes R^\vee_i\), where \(R_i\) is the \(i\)-th copy of \(R\) and \(R^\vee_i\) is the dual of \(R\).
@@ -792,6 +794,21 @@ where \(\mathrm{d}g\) is the Haar measure of \(G\) (it is just a sum over the gr
 This state is invariant under \(T_{g^{-1}}^{(i,B)}T_g^{(i+1,A)}\) (and nonzero).
 Now the rest of the constuction is the same as above, and we see the edge mode in \(R\) when the lattice has a boundary.
 Thus we have seen how the (one direction of) Hypothesis \ref{hyp:SPT} works in the 1+1d bulk/0+1d boundary case.
+
+\hypertarget{quantum-anomaly-in-11d-qft}{%
+\section{Quantum Anomaly in 1+1d QFT}\label{quantum-anomaly-in-11d-qft}}
+
+In this chapter we learn about quantum anomaly of symmetry in 1+1-dimensional QFT. A QFT is a quantum mechanics equipped with a continuous locality (while a lattice system possess a discrete locality).\footnote{Most things in this chapter are supposed to be applied to both of QFTs and lattice systems. It is just that KO is more familiar with QFTs and also the lecture is for high-energy students.} Here, the locality means that we have the notion of ``space'', and the observables are contained in the space.
+This locality (plus some assumption) prohibits the projective phase that we discussed so far, but then there is possibly more subtle anomaly about how much local the composition law of the symmetry is.
+It is not a very traditional way but we see this phenomenon through the action of the symmetry on the Hilbert spaces of QFT on \emph{an interval} with different boundary conditions. The quantum anomaly in this dimensions for a finite group \(G\) can be captured by the 3rd group cohomology.
+
+\hypertarget{locality}{%
+\subsection{Locality}\label{locality}}
+
+\begin{equation}
+    \label{eq:test}
+    a+a = 2
+\end{equation}
 
 \printbibliography
 

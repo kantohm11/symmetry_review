@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.6 Group cohomology | Topological Aspects of Symmetry in Low Dimensions</title>
-  <meta name="description" content="2.6 Group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
+  <title>2.6 Second Group cohomology | Topological Aspects of Symmetry in Low Dimensions</title>
+  <meta name="description" content="2.6 Second Group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.6 Group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta property="og:title" content="2.6 Second Group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="kantohm11/symmetry_review" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.6 Group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta name="twitter:title" content="2.6 Second Group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Kantaro Ohmori,  University of Tokyo" />
 
 
-<meta name="date" content="2022-02-13" />
+<meta name="date" content="2022-02-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -142,13 +142,17 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="Z2Z2.html"><a href="Z2Z2.html"><i class="fa fa-check"></i><b>2.4</b> <span class="math inline">\(\mathbb{Z}_2\times \mathbb{Z}_2\)</span> projective representation</a></li>
 <li class="chapter" data-level="2.5" data-path="charged-particle-on-the-aharonov-bohm-ring.html"><a href="charged-particle-on-the-aharonov-bohm-ring.html"><i class="fa fa-check"></i><b>2.5</b> Charged particle on the Aharonov-Bohm ring</a></li>
-<li class="chapter" data-level="2.6" data-path="group-cohomology.html"><a href="group-cohomology.html"><i class="fa fa-check"></i><b>2.6</b> Group cohomology</a></li>
+<li class="chapter" data-level="2.6" data-path="second-group-cohomology.html"><a href="second-group-cohomology.html"><i class="fa fa-check"></i><b>2.6</b> Second Group cohomology</a></li>
 <li class="chapter" data-level="2.7" data-path="anomalous-symmetry-and-1d-spt.html"><a href="anomalous-symmetry-and-1d-spt.html"><i class="fa fa-check"></i><b>2.7</b> Anomalous symmetry and 1D SPT</a>
 <ul>
 <li class="chapter" data-level="2.7.1" data-path="anomalous-symmetry-and-1d-spt.html"><a href="anomalous-symmetry-and-1d-spt.html#symmetry-protected-topological-phase"><i class="fa fa-check"></i><b>2.7.1</b> Symmetry Protected Topological Phase</a></li>
 <li class="chapter" data-level="2.7.2" data-path="anomalous-symmetry-and-1d-spt.html"><a href="anomalous-symmetry-and-1d-spt.html#example-of-11d-so3-spt"><i class="fa fa-check"></i><b>2.7.2</b> Example of 1+1d SO(3) SPT</a></li>
-<li class="chapter" data-level="2.7.3" data-path="anomalous-symmetry-and-1d-spt.html"><a href="anomalous-symmetry-and-1d-spt.html#spt-general-projective-representation"><i class="fa fa-check"></i><b>2.7.3</b> SPT general projective representation*</a></li>
+<li class="chapter" data-level="2.7.3" data-path="anomalous-symmetry-and-1d-spt.html"><a href="anomalous-symmetry-and-1d-spt.html#spt-for-a-general-projective-representation"><i class="fa fa-check"></i><b>2.7.3</b> SPT for a general projective representation*</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="quantum-anomaly-in-11d-qft.html"><a href="quantum-anomaly-in-11d-qft.html"><i class="fa fa-check"></i><b>3</b> Quantum Anomaly in 1+1d QFT</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="locality.html"><a href="locality.html"><i class="fa fa-check"></i><b>3.1</b> Locality</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -171,8 +175,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="group-cohomology" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Group cohomology</h2>
+<div id="second-group-cohomology" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Second Group cohomology</h2>
 <p>Let us formalize what we learned above for a general group <span class="math inline">\(G\)</span>.
 We assume that for each <span class="math inline">\(g\in G\)</span>, we have a symmetry transformation <span class="math inline">\(T_g\)</span> acting on <span class="math inline">\(\mathbb{P}\mathcal{H}\)</span> as symmetry transformations satisfying the multiplication law:
 <span class="math display" id="eq:Tmult">\[\begin{equation}
@@ -241,13 +245,13 @@ This motivates us the define the <em>group cohomology group</em><a href="#fn7" c
   H^2(G) := Z^2(G)/B^2(G).
 \end{equation}\]</span></p>
 <p>In this lecture we do not have time to learn how to compute the cohomology group, but the examples we have seen are
-<span class="math display" id="eq:CohomologySO3Z2Z2">\[\begin{gather}
+<span class="math display" id="eq:CohomologySO3Z2Z2">\[\begin{align}
   \tag{2.47}
-  H^2(SO(3)) \cong \mathbb{Z}_2,\\
-  H^2(\mathbb{Z}_2\times\mathbb{Z}_2) \cong \mathbb{Z}_2.
-\end{gather}\]</span></p>
+  H^2(SO(3)) &amp;\cong \mathbb{Z}_2,\\
+  H^2(\mathbb{Z}_2\times\mathbb{Z}_2) &amp;\cong \mathbb{Z}_2.
+\end{align}\]</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 2.2  </strong></span>Prove <a href="group-cohomology.html#eq:DeltaNilp">(2.45)</a>.</p>
+<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 2.2  </strong></span>Prove <a href="second-group-cohomology.html#eq:DeltaNilp">(2.45)</a>.</p>
 </div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 2.3  </strong></span>Show that <span class="math inline">\(H^2(\mathbb{Z}_2)=0\)</span>. (If you want, also calculate <span class="math inline">\(H^2(\mathbb{Z}_2,\mathbb{Z}_2)\)</span>.)</p>
@@ -256,9 +260,9 @@ This motivates us the define the <em>group cohomology group</em><a href="#fn7" c
 <div class="footnotes">
 <hr />
 <ol start="6">
-<li id="fn6"><p>The derivative <span class="math inline">\(\delta_{n+1}\)</span> for general <span class="math inline">\(n\)</span>-cochain can be defined, but we will postpone this until next chapter, other than <span class="math inline">\(\delta_2\)</span> which is defined just below.<a href="group-cohomology.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>The derivative <span class="math inline">\(\delta_{n+1}\)</span> for general <span class="math inline">\(n\)</span>-cochain can be defined, but we will postpone this until next chapter, other than <span class="math inline">\(\delta_2\)</span> which is defined just below.<a href="second-group-cohomology.html#fnref6" class="footnote-back">↩︎</a></p></li>
 <li id="fn7"><p>Do not confuse this with the cohomology group of the group as a topological space. The two, the group cohomology of a group and the geometric cohomology of the same, can be denoted by the same symbol <span class="math inline">\(H(G)\)</span>, but they are different. They are confusing especially when <span class="math inline">\(G\)</span> is continuous.
-Rather, the group cohomology is identified with the (simplicial/cellular) cohomology of an infinite-dimensional topological space called the classifying space <span class="math inline">\(BG\)</span>.<a href="group-cohomology.html#fnref7" class="footnote-back">↩︎</a></p></li>
+Rather, the group cohomology is identified with the (simplicial/cellular) cohomology of an infinite-dimensional topological space called the classifying space <span class="math inline">\(BG\)</span>.<a href="second-group-cohomology.html#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
