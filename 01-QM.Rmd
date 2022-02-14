@@ -77,7 +77,7 @@ The proof can be found somewhere, e.g. @Weinberg:1995mt. We will see examples so
 We also have an action of $T$ on the algebra of operators $\mathcal{A}$ through this theorem:
 \begin{align}
   (\#eq:TonA)
-  T \curvearrowright \mathcal{A}  & \to \mathcal{A}\\
+  T \curvearrowright \mathcal{A}  & \to \mathcal{A} \\
   \mathcal{O} & \mapsto U_T \mathcal{O} U^\dagger_T.
 \end{align}
 Note that this action is independent of the phase freedom of $U_T$ and thus uniquely defined.
@@ -370,7 +370,7 @@ This is the power of quantum anomaly: it tells us something nontrivial *without 
 [^param2]: Probably what is more useful in practice (i.e.\ when you devise a quantum computer) is the "anomaly involving parameter space", briefly discussed in the footnote above. It can show that , with *arbitrary* potential $V(x)$ or other deformation that does not destroy the periodicity of $\theta$ and some $\mathbb{Z}_n$ shift symmetry, you can find a degeneracy if you tune $\theta$. (It does not tell which $\theta$ you have to tune in, though.) Thus your (superconducting) circuit does not have to be circular for example, 
 --->
 
-## Group cohomology
+## Second Group cohomology
 Let us formalize what we learned above for a general group $G$.
 We assume that for each $g\in G$, we have a symmetry transformation $T_g$ acting on $\mathbb{P}\mathcal{H}$ as symmetry transformations satisfying the multiplication law:
 \begin{equation}
@@ -450,11 +450,11 @@ This motivates us the define the *group cohomology group*[^nonconfusion]
 Rather, the group cohomology is identified with the (simplicial/cellular) cohomology of an infinite-dimensional topological space called the classifying space $BG$.
 
 In this lecture we do not have time to learn how to compute the cohomology group, but the examples we have seen are
-\begin{gather}
+\begin{align}
   (\#eq:CohomologySO3Z2Z2)
-  H^2(SO(3)) \cong \mathbb{Z}_2,\\
-  H^2(\mathbb{Z}_2\times\mathbb{Z}_2) \cong \mathbb{Z}_2.
-\end{gather}
+  H^2(SO(3)) &\cong \mathbb{Z}_2,\\
+  H^2(\mathbb{Z}_2\times\mathbb{Z}_2) &\cong \mathbb{Z}_2.
+\end{align}
 
 ::: {.exercise}
 Prove \@ref(eq:DeltaNilp).
@@ -528,16 +528,16 @@ The entanglement structure of this state is depicted in Figure \@ref(fig:so3spt)
 Note that, although \@ref(eq:SO3SPT) is defined by the tensor product, each $\ket{s_i}$ is not contained in a single site Hilbert space $\mathcal{H}_i$, and thus $\ket{\psi}$ is not a tensor product of local states, each in $\mathcal{H}_i$.
 
 [^AKLT]: This state looks very artificial. Instead, on can consider the state
-\begin{equation}
+\begin{equation*}
   (\#eq:AKLT)
   \ket{\mathrm{AKLT}} = \prod_i P_i^\text{triplet} \ket{\psi}
-\end{equation}
+\end{equation*}
 where $P_i^\text{triplet}$, acting on $\mathcal{H}_i$, is the projection operator onto the triplet states consists of the $A$- and $B$- qubits on the *same* site $i$. 
-This state ,in the same SPT as $\ket{\psi}$, is the ground state of the AKLT Hamiltonian @AKLT
-\begin{equation}
+This state ,in the same SPT as $\ket{\psi}$, is the ground state of the AKLT Hamiltonian defined with spin-1 operators $\vec{S}_i$ @AKLT:
+\begin{equation*}
   (\#eq:AKLTHam)
   H_{\mathrm{AKLT}} = \sum_i \Bigl(\vec{S}_i \cdot \vec{S}_{i+1} + \frac13 \bigl(\vec{S}_{j} \cdot \vec{S}_{j+1}\bigr)^2\Bigr),
-\end{equation}
+\end{equation*}
 which was studied way before the invention the notion of SPT.
 
 ```{r so3spt, echo = FALSE, fig.cap = '(ref:so3spt)', out.width = '50%',fig.align = 'center'}
@@ -569,7 +569,7 @@ On this edge mode, the $SO(3)$ symmetry acs by $T_g$, which is exactly the proje
 This edge mode is *robust* -- if you force the $(i=0,A)$-qubit be entangled with another qubit (in a finite distance) by some unitary, you get another unentangled qubit, as you cannot erase/create the entanglement by unitaries.
 In summary, if we cut the chain in the SPT, on the edge we have the qubit protected by the projective action of $SO(3)$.
 
-### SPT general projective representation*
+### SPT for a general projective representation*
 It is easy the generalize the above example into a general projective representation $R$ of a group $G$. (Here we assume that $G$ acts by unitary operations.)
 For each site we prepare the local Hilbart space as $\mathcal{H}_i = R_i \otimes R^\vee_i$, where $R_i$ is the $i$-th copy of $R$ and $R^\vee_i$ is the dual of $R$.
 Pick a nonzero state $\ket{0}$ from $R$, let $\ket{0^\vee} \in R^\vee$ denote the dual of $\ket{0}$, and then define the singlet state $\ket{s_i}$ by
