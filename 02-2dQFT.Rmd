@@ -7,8 +7,74 @@ It is not a very traditional way but we see this phenomenon through the action o
 [^QFTvsLattice]: Most things in this chapter are supposed to be applied to both of QFTs and lattice systems. It is just that KO is more familiar with QFTs and also the lecture is for high-energy students.
 
 
-## Locality
+## QFT on a manifold and symmetry
 As emphasized, the locality plays the essential role in (topological properties of) QFT.
-Given a $d+1$-dimensional QFT, we can quantize the theory on a spacial manifold $M_d$ to get $\mathcal{H}_d$.[^structure]
+One concequence of the locality is that,
+given a $d+1$-dimensional QFT, we can quantize the theoy on a spacial closed manifold $M_d$ to get $\mathcal{H}_{M_d}$.[^structure]
+In other words a QFT is not just the Hilbert space and the Hamiltonian, but a rule to assign thme when a closed manifold $M_d$ is taken.
+It is more precise to express the same thing in terms of the algebra of operators. 
+For a QFT, given a region $R \in \mathbb{R}^{d,1}$, there is the algebra of local operators contained in $R$: $\mathcal{A}(R)$.
+Then we "glue" the algebra $\mathcal{A}(B^{d+1})$ on a ball to get $\mathcal{A}(R)$ for an arbitrary manifold $R$. In particular we can get $\mathcal{A}(M_d\times \mathbb{R})$.[^rough]
+
+[^rough]: This explanation is awfully rough. For a better discussion the reader might refer to @Witten:2021jzq
+
+A symmetry also is expected to be local: that if there is a symmetry $T$ in a QFT, that means, for arbitrary $\mathcal{M}_d$,
+there should exists a symmetry transformation $T_{M_d}$ on $\mathbb{P}\mathcal{H}_{M_d}$.
+This is manifest in the case of continuous symmetry. 
+For example, the unitary operator $U_\lambda$ for a $U(1)$ rotation by angle $\lambda$ is, from the Noether's theorem,
+\begin{equation}
+    (\#eq:Noether)
+    U_\alpha = e^{\mathrm{i}\lambda \int_{M_d}j^0 \mathrm{d}^dx},
+\end{equation}
+where $j^\mu$ is the Noether current. 
+In other words the locality of the unitary operator is manifest in the integral in the expression.
+For a discrete symmetry, the Noether current is not available. 
+However, we can define that a symmetry transformation is a automorphism of $\mathcal{A}(R)$:
+\begin{equation}
+    (\#eq:TonAR)
+    T \curvearrowright \mathcal{A}(R) \to \mathcal{A}(R),
+\end{equation}
+and then $T$ also naturally (projectively) acts on $\mathcal{H}_{M_d}$ which is a representation of $\mathcal{A}(R)$.
+In a more explict term, if the QFT is written in terms of fundamental fields and symmetry acts on these fields,
+the Hilbert space $\mathcal{H}_{M_d}$ is the Fock space constructed from creation/annhilation operators for each modes of the fields on $M_d$,
+and the action of a symmetry on the fields naturally defines the action on the annihilation operators, in turn defining the action on $\mathcal{H}_{M_d}$.
+
+For a local unitary, defined in the above sense, $U$ to be the symmetry of the theory, it has to commute with the Hamiltonian.
+We also assume that the Hamiltonian is local:
+\begin{equation}
+    (\#eq:localHam)
+    H = \int T_{00} \mathrm{d}^dx,
+\end{equation}
+where $T_{\mu\nu}$ is the energy-momentum tensor.
+For a symmetry in QFT, we demand that $[U,T_{\mu\nu}] = 0$.[^TUcomu]
+
+
+[^TUcomu]: KO do not know whether there is an example where $T_{00}$ commutes with $U$ but some other component of $T_{\mu\nu}$ does not.
 
 [^structure]: We often need an additional structure to $M_d$. For example, if the theory includes fermionic fields, the manifold $M_d$ has to be equipped with the spin structure. In this lecture we do not care about thie subtle but interesting and important subtlety and assume that the theory is *bosonic*, i.e. does not contain fermionic fields. This amounts to assume only the orientation of $M_d$. (To put a QFT on an unoriented manifold, one needs an anti-unitary symmetry which also be ignored in thie lecture.) The references mentioned in \@ref(othernotes) have contents about fermionic theories.
+
+## No projective phase on closed manifold
+
+
+## Boundary conditions
+
+What if the spacial manifold has boundaries? Then we need to assign a **boundary condition** for each component of boundary.[^gravity]
+
+[^gravity]: A QFT does not necessarily have a boundary condition; indeed this is one manifestation of *pure gravity* anomaly. More comment on this should be found later.
+
+## 1+1-dimensional periodic scalar theory
+Here we will see an anomalous symmetry in 1+1-dimensional (relativistic) periodic scalar.
+The theory should be explained in any good textbooks on string theory, e.g. @PolchinskiVol1.
+### Model
+The action of the periodic scalar theory is
+### $U(1)^2$ Symmetry
+The theory has two $U(1)$
+### Projectiveness in the set of Hilbert spaces with various boundary conditions.
+Let us see the anomaly.
+## Third group cohomology
+$H^3(G)$
+## Prospect
+
+
+
+

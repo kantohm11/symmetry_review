@@ -55,7 +55,7 @@ Such a system is often called Floquet system. The term originally means that you
 
 ## Wigner's theorem
 
-According to E. Wigner, a **symmetry transformation** $U$ acting on a quantum system is a bijection
+According to E. Wigner, a **symmetry transformation** $T$ acting on a quantum system is a bijection
 \begin{equation}
   (\#eq:sym)
   T: \mathbb{P}\mathcal{H} \to \mathbb{P}\mathcal{H},
@@ -68,7 +68,7 @@ Then, Wigner's theorem states:
 
 ::: {.theorem name="Wigner 1931"}
 Given a symmetry transformation $T$, there exists a bijection $U_T$ on $\mathcal{H}$ compatible with $T$.
-This $U_T$ is either linear (over $\mathbb{C}$) and unitary, or anti-linear and anti-unitary. If $\mathrm{dim}\mathcal{H}\ge 2$, this $U$ is unique up to a overall phase redefinition $U_T \mapsto e^{\mathrm{i}\alpha}U_T$. (When $\mathrm{dim}\mathcal{H} = 1$, $T$ is unique, and $U_T$ can be taken either of unitary or anti-unitary one. Once the choice is fixed, it is up to the phase.)
+This $U_T$ is either linear (over $\mathbb{C}$) and unitary, or anti-linear and anti-unitary. If $\mathrm{dim}\mathcal{H}\ge 2$, $U_T$ is unique up to a overall phase redefinition $U_T \mapsto e^{\mathrm{i}\alpha}U_T$. (When $\mathrm{dim}\mathcal{H} = 1$, $T$ is unique, and $U_T$ can be taken either of unitary or anti-unitary one. Once the choice is fixed, it is up to the phase.)
 :::
 
 This is why we usually care about unitary operator (like Pauli matrices).
