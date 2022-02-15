@@ -8,8 +8,7 @@ It is not a very traditional way but we see this phenomenon through the action o
 
 
 ## Locality
+As emphasized, the locality plays the essential role in (topological properties of) QFT.
+Given a $d+1$-dimensional QFT, we can quantize the theory on a spacial manifold $M_d$ to get $\mathcal{H}_d$.[^structure]
 
-\begin{equation}
-    (\#eq:test)
-    a+a = 2
-\end{equation}
+[^structure]: We often need an additional structure to $M_d$. For example, if the theory includes fermionic fields, the manifold $M_d$ has to be equipped with the spin structure. In this lecture we do not care about thie subtle but interesting and important subtlety and assume that the theory is *bosonic*, i.e. does not contain fermionic fields. This amounts to assume only the orientation of $M_d$. (To put a QFT on an unoriented manifold, one needs an anti-unitary symmetry which also be ignored in thie lecture.) The references mentioned in \@ref(othernotes) have contents about fermionic theories.

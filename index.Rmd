@@ -38,7 +38,7 @@ This lecture aims to be an introduction to the field of symmetry and its anomaly
 ### Prerequisite
 Proficiency in the undergraduate level quantum mechanics and some basic knowledge about quantum field theory and group theory (e.g. what are $SO(3)$, $SU(2)$, $\mathbb{Z}_2$, and so on) are assumed, but (hopefully) not much more. Especially, the first half will focus on quantum mechanics so it is hopefully understandable to even advanced undergraduates.
 
-### Useful references
+### Useful references{#othernotes}
 1. @tachikawa_2019:
   The first half of Yuji’s lecture is about the big framework the most of researchers assume (but not necessarily proven), which I will omit.
   The second half of Yuji's will serve as an advanced version of this lecture.

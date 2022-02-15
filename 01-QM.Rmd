@@ -529,13 +529,11 @@ Note that, although \@ref(eq:SO3SPT) is defined by the tensor product, each $\ke
 
 [^AKLT]: This state looks very artificial. Instead, on can consider the state
 \begin{equation*}
-  (\#eq:AKLT)
   \ket{\mathrm{AKLT}} = \prod_i P_i^\text{triplet} \ket{\psi}
 \end{equation*}
 where $P_i^\text{triplet}$, acting on $\mathcal{H}_i$, is the projection operator onto the triplet states consists of the $A$- and $B$- qubits on the *same* site $i$. 
 This state ,in the same SPT as $\ket{\psi}$, is the ground state of the AKLT Hamiltonian defined with spin-1 operators $\vec{S}_i$ @AKLT:
 \begin{equation*}
-  (\#eq:AKLTHam)
   H_{\mathrm{AKLT}} = \sum_i \Bigl(\vec{S}_i \cdot \vec{S}_{i+1} + \frac13 \bigl(\vec{S}_{j} \cdot \vec{S}_{j+1}\bigr)^2\Bigr),
 \end{equation*}
 which was studied way before the invention the notion of SPT.
