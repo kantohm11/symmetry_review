@@ -338,11 +338,17 @@ Indeed this is yet *another quantum anomaly*, "anomaly involving parameter space
 
 There are other symmetries, depending on $\theta$.
 For example, when $\theta = 0$, there is a $\mathbb{Z}_2$ flipping $x$: $x\mapsto -x$, $\ket{n} \mapsto \ket{-n}$.
-A more interesting case is $\theta = \pi$, then the $\ket{n} \mapsto \ket{n}$ action is not a symmetry of the Hamiltonian, but the following is preserved:
+A more interesting case is $\theta = \pi$, then the $\ket{n} \mapsto \ket{-n}$ action is not a symmetry of the Hamiltonian, but the following is preserved:
 \begin{equation}
   (\#eq:Z2ThetaPi)
   U_{\mathbb{Z}_2}\ket{n} = \ket{-n-1}.
 \end{equation}
+Note that this is also the $\mathbb{Z}_2$ flipping symmetry, in the sense of the following:
+\begin{equation}
+  (\#eq:UxU)
+  U_{\mathbb{Z}_2}^\dagger \, f(x) \, U_{\mathbb{Z}_2} = f(-x),
+\end{equation}
+for any periodic function $f$ of $x$.
 Now the multiplication between $U_\lambda$ and $\mathbb{Z}_2$ is 
 \begin{equation}
   (\#eq:U1Z2comu)
@@ -360,8 +366,9 @@ Also, the quantum anomaly is a *discrete* thing and therefore it cannot be chang
 So, even if we deform the Hamiltonian as
 \begin{equation}
   (\#eq:ABringHamDef)
-  H' = \frac{\hbar^2}{2mR^2}\bigl(\hat{n} + \frac{1}{2} \bigr)^2 + \Re(e^{\mathrm{i}m x/R}+e^{\mathrm{i}(-m-1)x/R}),
+  H' = \frac{\hbar^2}{2mR^2}\bigl(\hat{n} + \frac{1}{2} \bigr)^2 + V(x),
 \end{equation}
+with an arbitrary (periodic) potential $V(x)$ that is even : $V(x) = V(-x)$,
 we know that there is a degeneracy, although in this system cannot be easily solved.
 This is the power of quantum anomaly: it tells us something nontrivial *without solving the system*!
 <!---
@@ -370,8 +377,8 @@ This is the power of quantum anomaly: it tells us something nontrivial *without 
 [^param2]: Probably what is more useful in practice (i.e.\ when you devise a quantum computer) is the "anomaly involving parameter space", briefly discussed in the footnote above. It can show that , with *arbitrary* potential $V(x)$ or other deformation that does not destroy the periodicity of $\theta$ and some $\mathbb{Z}_n$ shift symmetry, you can find a degeneracy if you tune $\theta$. (It does not tell which $\theta$ you have to tune in, though.) Thus your (superconducting) circuit does not have to be circular for example, 
 --->
 
-## Second Group cohomology
-Let us formalize what we learned above for a general group $G$.
+## Second group cohomology
+Let us formalize what we have learned above for a general group $G$.
 We assume that for each $g\in G$, we have a symmetry transformation $T_g$ acting on $\mathbb{P}\mathcal{H}$ as symmetry transformations satisfying the multiplication law:
 \begin{equation}
   (\#eq:Tmult)
@@ -488,7 +495,7 @@ To define, first we define the notion of "short range entangled" state.[^inv] [^
 [^inv]: This definition is by the original paper. A. Kitaev, and therefore many other people, uses the same words (SRE/SPT) for a non-equivalent thing. Let us call a state $\ket{\psi}$ is **invertible** if $\ket{\psi}\otimes \ket{\psi^\vee} \in \mathcal{H} \otimes \mathcal{H}^\vee$ is SRE (as defined in the main text). Here $\mathcal{H}^\vee$ is the dual of $\mathcal{H}$ and $\ket{\psi^\vee}$ is the dual of $\ket{\psi}$. What Kitaev calls SRE is actually this invertibility.
 Note that while there is no nontrivial SPT when $G$ is trivial by definition, but there can potentially be nontrivial invertible state even when $G$ is trivial. An invertible state can actually captures a pure-gravitational anomaly on the boundary which improves Hypothesis \@ref(hyp:SPT).
 
-[^conti]: About continuum, see Yuji's note @tachikawa_2019. In short an *invertible QFT*, the continuum version of invertible state defined in the above footnote, is defined (and classified!) in @Freed:2016rqq.
+[^conti]: About continuum, see Yuji's note @tachikawa_2019. In short an *invertible QFT*, the continuum version of invertible state defined in the above footnote, is defined (and classified!) in @Freed:2016rqq @Yonekura:2018ufj.
 
 ::: {.definition #SRE name="Short Range Entangled (SRE)"}
 Consider a $d$ (space) dimensional lattice system without boundary, whose Hilbert space is $\mathcal{H} = \bigotimes_{i} \mathcal{H}_i$, where $\mathcal{H}_i$ is the local Hilbert space associated to the site $i$.

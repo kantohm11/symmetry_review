@@ -11,7 +11,7 @@ It is not a very traditional way but we see this phenomenon through the action o
 As emphasized, the locality plays the essential role in (topological properties of) QFT.
 One concequence of the locality is that,
 given a $d+1$-dimensional QFT, we can quantize the theoy on a spacial closed manifold $M_d$ to get $\mathcal{H}_{M_d}$.[^structure]
-In other words a QFT is not just the Hilbert space and the Hamiltonian, but a rule to assign thme when a closed manifold $M_d$ is taken.
+In other words a QFT is not just the Hilbert space and the Hamiltonian, but a rule to assign them when a closed manifold $M_d$ is given.
 It is more precise to express the same thing in terms of the algebra of operators. 
 For a QFT, given a region $R \in \mathbb{R}^{d,1}$, there is the algebra of local operators contained in $R$: $\mathcal{A}(R)$.
 Then we "glue" the algebra $\mathcal{A}(B^{d+1})$ on a ball to get $\mathcal{A}(R)$ for an arbitrary manifold $R$. In particular we can get $\mathcal{A}(M_d\times \mathbb{R})$.[^rough]
@@ -39,40 +39,105 @@ In a more explict term, if the QFT is written in terms of fundamental fields and
 the Hilbert space $\mathcal{H}_{M_d}$ is the Fock space constructed from creation/annhilation operators for each modes of the fields on $M_d$,
 and the action of a symmetry on the fields naturally defines the action on the annihilation operators, in turn defining the action on $\mathcal{H}_{M_d}$.
 
-For a local unitary, defined in the above sense, $U$ to be the symmetry of the theory, it has to commute with the Hamiltonian.
+For a local symmetry transformation $T$, defined in the above sense, to be the symmetry of the theory, the corresponding unitary has to commute with the Hamiltonian.
 We also assume that the Hamiltonian is local:
 \begin{equation}
     (\#eq:localHam)
     H = \int T_{00} \mathrm{d}^dx,
 \end{equation}
 where $T_{\mu\nu}$ is the energy-momentum tensor.
-For a symmetry in QFT, we demand that $[U,T_{\mu\nu}] = 0$.[^TUcomu]
+For a symmetry in QFT, we demand that $[U,T_{\mu\nu}] = 0$. Otherwise $U$ does not commute with the spacetime symmetry.
 
-
-[^TUcomu]: KO do not know whether there is an example where $T_{00}$ commutes with $U$ but some other component of $T_{\mu\nu}$ does not.
 
 [^structure]: We often need an additional structure to $M_d$. For example, if the theory includes fermionic fields, the manifold $M_d$ has to be equipped with the spin structure. In this lecture we do not care about thie subtle but interesting and important subtlety and assume that the theory is *bosonic*, i.e. does not contain fermionic fields. This amounts to assume only the orientation of $M_d$. (To put a QFT on an unoriented manifold, one needs an anti-unitary symmetry which also be ignored in thie lecture.) The references mentioned in \@ref(othernotes) have contents about fermionic theories.
 
-## No projective phase on closed manifold
+## No projective phase on S^1 
+Now specialize to 1+1d QFT, and consider $M_1 = S^1$, which is the only connected closed 1-dimensional manifold.
+A reader might have guessed that, as a generalization of what we have learned in the case of QM, the unitary operator realizing the symmetry on $\mathcal{H}_{S^1}$ might have projective phase in there multiplication rule.
+This very natural guess, however, is not correct.
 
+For a general QFT, the Hamiltonian depends on the radius $R$ of $S^1$.
+When $R$ is very large compared to any scale in the theory, we regard the QFT on $S^1\times \mathbb{R}_\text{time}$ as the infrared-regulation of QFT on $\mathbb{R}^1\times \mathbb{R}_\text{time}$.
 
-## Boundary conditions
+Now, if the QFT has single vacuum, the cluster decomposition principle (which is another manifestation of locality) that the symmetry should preserve it. So $S^1$ with large enough $R$ has single vacuum, which contradicts with a nontrivial projective phase.
+More generally, if a discrete symmetry is spontaneously broken,
+there can be multiple vacua in the $R\to \infty$ limit.
+However, if there is a domain wall connecting the two vacua , there is a exponentially suppressed 
+amplitude between the two state with finite but large $R$.
+Therefore, we expect that, without additional mechanism prohibiting domain walls[^one_form], there is a single vacuum on $S^1$ with large but finite $R$. 
+As the projective phase is discrete, captured by $H^2(G)$, it has to be constant of $R$. Therefore we do not expect any nontrivial projective phase of $U$ acting on $\mathcal{H}_{S^1}$ for any radius $R$ of $S^1$.
 
-What if the spacial manifold has boundaries? Then we need to assign a **boundary condition** for each component of boundary.[^gravity]
+[^one_form]: The mechanism is the "one-form symmetry" [@Komargodski:2020mxz]. An older reference is [@Hellerman:2006zs].
 
-[^gravity]: A QFT does not necessarily have a boundary condition; indeed this is one manifestation of *pure gravity* anomaly. More comment on this should be found later.
+--- 
+#Discarding the following original version and specialize to the case of $S^1$.
+#A reader might have guessed that, as a generalization of what we have learned in the case of QM, the unitary operator realizing the symmetry on $\mathcal{H}_{M_d}$ might have projective phase in there multiplication rule.
+#This very natural guess, however, is not correct.
+#(This section is a bit abstract, but we will turn to more concrete example soon.)
+#
+#For a symmetry to be preserved in the theory, we demanded $[U,T_{\mu\nu}] = 0$. This means that the symmetry operator $U$ can commute with a time evolution operator with a small perturbation $\delta g$ of the metric around the flat one, see Figure \@ref(fig:UGeometry) (a), since $T_{\mu\nu}$ couples with $\delta g$.
+#A (potentially) stricter requirement is that $U$ commute with time evolution with very bumpy metric: Figure \@ref(fig:UGeometry) (b).
+#Or, one might even demand that $U$ commutes with *topology changing* time evolution: Figure \@ref(fig:UGeometry) (c).
+#
+#The discrepancy among (a),(b) and (c) of Figure \@ref(fig:UGeometry) should be understood as the *mixed anomaly* between the symmetry transformation and the space time symmetry generated by $T_{\mu\nu}$. 
+#A nontrivial fact is that there is no such mixed anomaly in 1+1-dimensional unitary bosonic QFT. 
+#For this fact, lacking any of the three adjectives gives a counter example, so this is subtle and beyond the scope of this lecture.[^counter]
+#Here let us simply assume that the condition (c) in Figure \@ref(fig:UGeometry).
+#
+#[^counter]: For a unitary QFT, if the manifold $M_d$ is a sphere $S^d$ with the trivial spin structure, then \@ref(fig:UGeometry) generally holds [@Freed:2016rqq;@Yonekura:2018ufj]. For a non-unitary (probability non-preserving) QFT, the ghost number $U(1)$ symmetry of the $bc$ ghost is the counter example.
+#
+#Then, consider in particular the lower figure of Figure \@ref(fig:UGeometry). Here, a single copy of $S^{d-1}$ evolves into the disjoint union $S^{d-1} \sqcup S^{d-1}$.
+#If we let $Z_\text{split}$ denote the evolution operator $\mathcal{S^d} = \mathcal{S^d}\otimes \mathcal{S^d}$, the assumption we have made states
+#\begin{equation}
+#    (\#eq:UZ)
+#    Z_\text{split} U = (U\otimes U) Z_\text{split}.
+#\end{equation}
+#Now, if we have to elements of the symmetry group $g_1,g_2$ and corresponding unitaries $U_{g_1}, U_{g_2}$, we worry about the
+#potential projective phase in the multiplication : $U_{g_1}U_{g_2} = e^{\alpha(g_1,g_2)}U_{g_1g_2}$. However, \@ref(eq:UZ) tells
+#\begin{equation*}
+#    Z_\text{split} U_{g_1}U_{g_2} = (U_{g_1}U_{g_2}\otimes U_{g_1}U_{g_2}) Z_\text{split}.
+#\end{equation*}
+#If there were a projective phase, the amount of the phase differs between the left and right hand side. Therefore there is no projective phase of the symmetry operators acting on $\mathcal{H}_{S^d}$. ($Z_\text{split}$ is nonzero if the QFT is unitary.)
+---
+
+Then, is there any projective-ness in the symmetry in 2d QFT?
+To explicitly see that, we need to think about *manifolds with boundaries*.[^twist]
+
+[^twist]: Instead one can see it from closed manifold with symmetry twist. Actually this is more conventional way. However KO finds that the manifolds with boundary is more "clean" in a sense.
+
 
 ## 1+1-dimensional periodic scalar theory
-Here we will see an anomalous symmetry in 1+1-dimensional (relativistic) periodic scalar.
+Rather than explaining the general theory of a QFT on a open manifold, let us jump to a concrete example: 1+1-dimensional (relativistic) massless periodic scalar $\phi$.
 The theory should be explained in any good textbooks on string theory, e.g. @PolchinskiVol1.
-### Model
-The action of the periodic scalar theory is
-### $U(1)^2$ Symmetry
-The theory has two $U(1)$
-### Projectiveness in the set of Hilbert spaces with various boundary conditions.
+
+### The model
+The action of the massless periodic scalar theory (on Euclidean flat space) is (in Polchinski's normalization except for using $\phi$ instead of $X$)
+\begin{equation}
+    (\#eq:Sphi)
+    S = -\frac{1}{4\pi\alpha'}\int_{M_2} \mathrm{d}\tau\mathrm{d}\sigma \,\delta^{ab}\partial_a \phi \partial_b \phi.
+\end{equation}
+The scalar field $\phi$ is periodic and we set the periodicity to be $2\pi R$: $\phi \sim \phi + 2\pi R$. 
+The equation of motion is the massless Klein-Gordon one
+\begin{equation}
+    (\#eq:EOMphi)
+    \partial^2 \phi = 0.
+\end{equation}
+The canonical momentum $\Pi(\sigma,\tau)$ is
+\begin{equation}
+    (\#eq:momentum)
+    \Pi = \frac{1}{4\pi \alpha'} 
+\end{equation}
+
+### Quantization on $S^1$ and $U(1)^2$ symmetry
+The theory has two $U(1)$ 
+
+### Hilbert spaces on an interval as a projective higher-reprentation
 Let us see the anomaly.
+
+
 ## Third group cohomology
 $H^3(G)$
+
 ## Prospect
 
 
