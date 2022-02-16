@@ -80,7 +80,7 @@
 
 \title{Topological Aspects of Symmetry in Low Dimensions}
 \author{Kantaro Ohmori, University of Tokyo}
-\date{2022-02-14}
+\date{2022-02-16}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[section]
@@ -140,8 +140,8 @@ This lecture aims to be an introduction to the field of symmetry and its anomaly
 
 Proficiency in the undergraduate level quantum mechanics and some basic knowledge about quantum field theory and group theory (e.g.~what are \(SO(3)\), \(SU(2)\), \(\mathbb{Z}_2\), and so on) are assumed, but (hopefully) not much more. Especially, the first half will focus on quantum mechanics so it is hopefully understandable to even advanced undergraduates.
 
-\hypertarget{useful-references}{%
-\subsubsection{Useful references}\label{useful-references}}
+\hypertarget{othernotes}{%
+\subsubsection{Useful references}\label{othernotes}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -265,7 +265,7 @@ Here we have set the plank constant \(\hbar =1\).
 \hypertarget{wigners-theorem}{%
 \subsection{Wigner's theorem}\label{wigners-theorem}}
 
-According to E. Wigner, a \textbf{symmetry transformation} \(U\) acting on a quantum system is a bijection
+According to E. Wigner, a \textbf{symmetry transformation} \(T\) acting on a quantum system is a bijection
 \begin{equation}
   \label{eq:sym}
   T: \mathbb{P}\mathcal{H} \to \mathbb{P}\mathcal{H},
@@ -277,7 +277,7 @@ Then, Wigner's theorem states:
 
 \begin{theorem}[Wigner 1931]
 Given a symmetry transformation \(T\), there exists a bijection \(U_T\) on \(\mathcal{H}\) compatible with \(T\).
-This \(U_T\) is either linear (over \(\mathbb{C}\)) and unitary, or anti-linear and anti-unitary. If \(\mathrm{dim}\mathcal{H}\ge 2\), this \(U\) is unique up to a overall phase redefinition \(U_T \mapsto e^{\mathrm{i}\alpha}U_T\). (When \(\mathrm{dim}\mathcal{H} = 1\), \(T\) is unique, and \(U_T\) can be taken either of unitary or anti-unitary one. Once the choice is fixed, it is up to the phase.)
+This \(U_T\) is either linear (over \(\mathbb{C}\)) and unitary, or anti-linear and anti-unitary. If \(\mathrm{dim}\mathcal{H}\ge 2\), \(U_T\) is unique up to a overall phase redefinition \(U_T \mapsto e^{\mathrm{i}\alpha}U_T\). (When \(\mathrm{dim}\mathcal{H} = 1\), \(T\) is unique, and \(U_T\) can be taken either of unitary or anti-unitary one. Once the choice is fixed, it is up to the phase.)
 \end{theorem}
 
 This is why we usually care about unitary operator (like Pauli matrices).
@@ -551,11 +551,17 @@ The unitary corresponding to this symmetry can be directly read off from the wav
 
 There are other symmetries, depending on \(\theta\).
 For example, when \(\theta = 0\), there is a \(\mathbb{Z}_2\) flipping \(x\): \(x\mapsto -x\), \(\ket{n} \mapsto \ket{-n}\).
-A more interesting case is \(\theta = \pi\), then the \(\ket{n} \mapsto \ket{n}\) action is not a symmetry of the Hamiltonian, but the following is preserved:
+A more interesting case is \(\theta = \pi\), then the \(\ket{n} \mapsto \ket{-n}\) action is not a symmetry of the Hamiltonian, but the following is preserved:
 \begin{equation}
   \label{eq:Z2ThetaPi}
   U_{\mathbb{Z}_2}\ket{n} = \ket{-n-1}.
 \end{equation}
+Note that this is also the \(\mathbb{Z}_2\) flipping symmetry, in the sense of the following:
+\begin{equation}
+  \label{eq:UxU}
+  U_{\mathbb{Z}_2}^\dagger \, f(x) \, U_{\mathbb{Z}_2} = f(-x),
+\end{equation}
+for any periodic function \(f\) of \(x\).
 Now the multiplication between \(U_\lambda\) and \(\mathbb{Z}_2\) is
 \begin{equation}
   \label{eq:U1Z2comu}
@@ -571,15 +577,16 @@ Also, the quantum anomaly is a \emph{discrete} thing and therefore it cannot be 
 So, even if we deform the Hamiltonian as
 \begin{equation}
   \label{eq:ABringHamDef}
-  H' = \frac{\hbar^2}{2mR^2}\bigl(\hat{n} + \frac{1}{2} \bigr)^2 + \Re(e^{\mathrm{i}m x/R}+e^{\mathrm{i}(-m-1)x/R}),
+  H' = \frac{\hbar^2}{2mR^2}\bigl(\hat{n} + \frac{1}{2} \bigr)^2 + V(x),
 \end{equation}
+with an arbitrary (periodic) potential \(V(x)\) that is even : \(V(x) = V(-x)\),
 we know that there is a degeneracy, although in this system cannot be easily solved.
 This is the power of quantum anomaly: it tells us something nontrivial \emph{without solving the system}!
 
 \hypertarget{second-group-cohomology}{%
-\subsection{Second Group cohomology}\label{second-group-cohomology}}
+\subsection{Second group cohomology}\label{second-group-cohomology}}
 
-Let us formalize what we learned above for a general group \(G\).
+Let us formalize what we have learned above for a general group \(G\).
 We assume that for each \(g\in G\), we have a symmetry transformation \(T_g\) acting on \(\mathbb{P}\mathcal{H}\) as symmetry transformations satisfying the multiplication law:
 \begin{equation}
   \label{eq:Tmult}
@@ -686,7 +693,7 @@ Callan-Harvey anomaly-inflow asserts that a quantum anomaly is related to a \emp
 
 We define the SPT on a lattice.
 To define, first we define the notion of ``short range entangled'' state.\footnote{This definition is by the original paper. A. Kitaev, and therefore many other people, uses the same words (SRE/SPT) for a non-equivalent thing. Let us call a state \(\ket{\psi}\) is \textbf{invertible} if \(\ket{\psi}\otimes \ket{\psi^\vee} \in \mathcal{H} \otimes \mathcal{H}^\vee\) is SRE (as defined in the main text). Here \(\mathcal{H}^\vee\) is the dual of \(\mathcal{H}\) and \(\ket{\psi^\vee}\) is the dual of \(\ket{\psi}\). What Kitaev calls SRE is actually this invertibility.
-  Note that while there is no nontrivial SPT when \(G\) is trivial by definition, but there can potentially be nontrivial invertible state even when \(G\) is trivial. An invertible state can actually captures a pure-gravitational anomaly on the boundary which improves Hypothesis \ref{hyp:SPT}.} \footnote{About continuum, see Yuji's note \textcite{tachikawa_2019}. In short an \emph{invertible QFT}, the continuum version of invertible state defined in the above footnote, is defined (and classified!) in \textcite{Freed:2016rqq}.}
+  Note that while there is no nontrivial SPT when \(G\) is trivial by definition, but there can potentially be nontrivial invertible state even when \(G\) is trivial. An invertible state can actually captures a pure-gravitational anomaly on the boundary which improves Hypothesis \ref{hyp:SPT}.} \footnote{About continuum, see Yuji's note \textcite{tachikawa_2019}. In short an \emph{invertible QFT}, the continuum version of invertible state defined in the above footnote, is defined (and classified!) in \textcite{Freed:2016rqq} \textcite{Yonekura:2018ufj}.}
 
 \begin{definition}[Short Range Entangled (SRE)]
 \protect\hypertarget{def:SRE}{}\label{def:SRE}Consider a \(d\) (space) dimensional lattice system without boundary, whose Hilbert space is \(\mathcal{H} = \bigotimes_{i} \mathcal{H}_i\), where \(\mathcal{H}_i\) is the local Hilbert space associated to the site \(i\).
@@ -729,13 +736,11 @@ As a on-site
 Let \(\ket{s_i}\) be the singlet state entangling the \(A\)-qubit at site \(i\) (\(i\in\mathbb{Z}\)) and the \(B\)-qubit at site \(i+1\): \(\ket{s_i} = \ket{\uparrow_{i,B}}\ket{\downarrow_{i+1,A}} - \ket{\downarrow_{i,B}} \ket{\uparrow_{i+1,A}} \in \mathcal{H}_{i}^A\otimes \mathcal{H}_{i+1}^B\).
 Then we define the total state \(\ket{\psi}\) by\footnote{This state looks very artificial. Instead, on can consider the state
   \begin{equation*}
-    \label{eq:AKLT}
     \ket{\mathrm{AKLT}} = \prod_i P_i^\text{triplet} \ket{\psi}
   \end{equation*}
   where \(P_i^\text{triplet}\), acting on \(\mathcal{H}_i\), is the projection operator onto the triplet states consists of the \(A\)- and \(B\)- qubits on the \emph{same} site \(i\).
   This state ,in the same SPT as \(\ket{\psi}\), is the ground state of the AKLT Hamiltonian defined with spin-1 operators \(\vec{S}_i\) \textcite{AKLT}:
   \begin{equation*}
-    \label{eq:AKLTHam}
     H_{\mathrm{AKLT}} = \sum_i \Bigl(\vec{S}_i \cdot \vec{S}_{i+1} + \frac13 \bigl(\vec{S}_{j} \cdot \vec{S}_{j+1}\bigr)^2\Bigr),
   \end{equation*}
   which was studied way before the invention the notion of SPT.}
@@ -802,13 +807,111 @@ In this chapter we learn about quantum anomaly of symmetry in 1+1-dimensional QF
 This locality (plus some assumption) prohibits the projective phase that we discussed so far, but then there is possibly more subtle anomaly about how much local the composition law of the symmetry is.
 It is not a very traditional way but we see this phenomenon through the action of the symmetry on the Hilbert spaces of QFT on \emph{an interval} with different boundary conditions. The quantum anomaly in this dimensions for a finite group \(G\) can be captured by the 3rd group cohomology.
 
-\hypertarget{locality}{%
-\subsection{Locality}\label{locality}}
+\hypertarget{qft-on-a-manifold-and-symmetry}{%
+\subsection{QFT on a manifold and symmetry}\label{qft-on-a-manifold-and-symmetry}}
 
+As emphasized, the locality plays the essential role in (topological properties of) QFT.
+One concequence of the locality is that,
+given a \(d+1\)-dimensional QFT, we can quantize the theoy on a spacial closed manifold \(M_d\) to get \(\mathcal{H}_{M_d}\).\footnote{We often need an additional structure to \(M_d\). For example, if the theory includes fermionic fields, the manifold \(M_d\) has to be equipped with the spin structure. In this lecture we do not care about thie subtle but interesting and important subtlety and assume that the theory is \emph{bosonic}, i.e.~does not contain fermionic fields. This amounts to assume only the orientation of \(M_d\). (To put a QFT on an unoriented manifold, one needs an anti-unitary symmetry which also be ignored in thie lecture.) The references mentioned in \ref{othernotes} have contents about fermionic theories.}
+In other words a QFT is not just the Hilbert space and the Hamiltonian, but a rule to assign them when a closed manifold \(M_d\) is given.
+It is more precise to express the same thing in terms of the algebra of operators.
+For a QFT, given a region \(R \in \mathbb{R}^{d,1}\), there is the algebra of local operators contained in \(R\): \(\mathcal{A}(R)\).
+Then we ``glue'' the algebra \(\mathcal{A}(B^{d+1})\) on a ball to get \(\mathcal{A}(R)\) for an arbitrary manifold \(R\). In particular we can get \(\mathcal{A}(M_d\times \mathbb{R})\).\footnote{This explanation is awfully rough. For a better discussion the reader might refer to \textcite{Witten:2021jzq}}
+
+A symmetry also is expected to be local: that if there is a symmetry \(T\) in a QFT, that means, for arbitrary \(\mathcal{M}_d\),
+there should exists a symmetry transformation \(T_{M_d}\) on \(\mathbb{P}\mathcal{H}_{M_d}\).
+This is manifest in the case of continuous symmetry.
+For example, the unitary operator \(U_\lambda\) for a \(U(1)\) rotation by angle \(\lambda\) is, from the Noether's theorem,
 \begin{equation}
-    \label{eq:test}
-    a+a = 2
+    \label{eq:Noether}
+    U_\alpha = e^{\mathrm{i}\lambda \int_{M_d}j^0 \mathrm{d}^dx},
 \end{equation}
+where \(j^\mu\) is the Noether current.
+In other words the locality of the unitary operator is manifest in the integral in the expression.
+For a discrete symmetry, the Noether current is not available.
+However, we can define that a symmetry transformation is a automorphism of \(\mathcal{A}(R)\):
+\begin{equation}
+    \label{eq:TonAR}
+    T \curvearrowright \mathcal{A}(R) \to \mathcal{A}(R),
+\end{equation}
+and then \(T\) also naturally (projectively) acts on \(\mathcal{H}_{M_d}\) which is a representation of \(\mathcal{A}(R)\).
+In a more explict term, if the QFT is written in terms of fundamental fields and symmetry acts on these fields,
+the Hilbert space \(\mathcal{H}_{M_d}\) is the Fock space constructed from creation/annhilation operators for each modes of the fields on \(M_d\),
+and the action of a symmetry on the fields naturally defines the action on the annihilation operators, in turn defining the action on \(\mathcal{H}_{M_d}\).
+
+For a local symmetry transformation \(T\), defined in the above sense, to be the symmetry of the theory, the corresponding unitary has to commute with the Hamiltonian.
+We also assume that the Hamiltonian is local:
+\begin{equation}
+    \label{eq:localHam}
+    H = \int T_{00} \mathrm{d}^dx,
+\end{equation}
+where \(T_{\mu\nu}\) is the energy-momentum tensor.
+For a symmetry in QFT, we demand that \([U,T_{\mu\nu}] = 0\). Otherwise \(U\) does not commute with the spacetime symmetry.
+
+\hypertarget{no-projective-phase-on-s1}{%
+\subsection{No projective phase on S\^{}1}\label{no-projective-phase-on-s1}}
+
+Now specialize to 1+1d QFT, and consider \(M_1 = S^1\), which is the only connected closed 1-dimensional manifold.
+A reader might have guessed that, as a generalization of what we have learned in the case of QM, the unitary operator realizing the symmetry on \(\mathcal{H}_{S^1}\) might have projective phase in there multiplication rule.
+This very natural guess, however, is not correct.
+
+For a general QFT, the Hamiltonian depends on the radius \(R\) of \(S^1\).
+When \(R\) is very large compared to any scale in the theory, we regard the QFT on \(S^1\times \mathbb{R}_\text{time}\) as the infrared-regulation of QFT on \(\mathbb{R}^1\times \mathbb{R}_\text{time}\).
+
+Now, if the QFT has single vacuum, the cluster decomposition principle (which is another manifestation of locality) that the symmetry should preserve it. So \(S^1\) with large enough \(R\) has single vacuum, which contradicts with a nontrivial projective phase.
+More generally, if a discrete symmetry is spontaneously broken,
+there can be multiple vacua in the \(R\to \infty\) limit.
+However, if there is a domain wall connecting the two vacua , there is a exponentially suppressed
+amplitude between the two state with finite but large \(R\).
+Therefore, we expect that, without additional mechanism prohibiting domain walls\footnote{The mechanism is the ``one-form symmetry'' \autocite{Komargodski:2020mxz}. An older reference is \autocite{Hellerman:2006zs}.}, there is a single vacuum on \(S^1\) with large but finite \(R\).
+As the projective phase is discrete, captured by \(H^2(G)\), it has to be constant of \(R\). Therefore we do not expect any nontrivial projective phase of \(U\) acting on \(\mathcal{H}_{S^1}\) for any radius \(R\) of \(S^1\).
+
+Then, is there any projective-ness in the symmetry in 2d QFT?
+To explicitly see that, we need to think about \emph{manifolds with boundaries}.\footnote{Instead one can see it from closed manifold with symmetry twist. Actually this is more conventional way. However KO finds that the manifolds with boundary is more ``clean'' in a sense.}
+
+\hypertarget{dimensional-periodic-scalar-theory}{%
+\subsection{1+1-dimensional periodic scalar theory}\label{dimensional-periodic-scalar-theory}}
+
+Rather than explaining the general theory of a QFT on a open manifold, let us jump to a concrete example: 1+1-dimensional (relativistic) massless periodic scalar \(\phi\).
+The theory should be explained in any good textbooks on string theory, e.g. \textcite{PolchinskiVol1}.
+
+\hypertarget{the-model}{%
+\subsubsection{The model}\label{the-model}}
+
+The action of the massless periodic scalar theory (on Euclidean flat space) is (in Polchinski's normalization except for using \(\phi\) instead of \(X\))
+\begin{equation}
+    \label{eq:Sphi}
+    S = -\frac{1}{4\pi\alpha'}\int_{M_2} \mathrm{d}\tau\mathrm{d}\sigma \,\delta^{ab}\partial_a \phi \partial_b \phi.
+\end{equation}
+The scalar field \(\phi\) is periodic and we set the periodicity to be \(2\pi R\): \(\phi \sim \phi + 2\pi R\).
+The equation of motion is the massless Klein-Gordon one
+\begin{equation}
+    \label{eq:EOMphi}
+    \partial^2 \phi = 0.
+\end{equation}
+The canonical momentum \(\Pi(\sigma,\tau)\) is
+\begin{equation}
+    \label{eq:momentum}
+    \Pi = \frac{1}{4\pi \alpha'} 
+\end{equation}
+
+\hypertarget{quantization-on-s1-and-u12-symmetry}{%
+\subsubsection{\texorpdfstring{Quantization on \(S^1\) and \(U(1)^2\) symmetry}{Quantization on S\^{}1 and U(1)\^{}2 symmetry}}\label{quantization-on-s1-and-u12-symmetry}}
+
+The theory has two \(U(1)\)
+
+\hypertarget{hilbert-spaces-on-an-interval-as-a-projective-higher-reprentation}{%
+\subsubsection{Hilbert spaces on an interval as a projective higher-reprentation}\label{hilbert-spaces-on-an-interval-as-a-projective-higher-reprentation}}
+
+Let us see the anomaly.
+
+\hypertarget{third-group-cohomology}{%
+\subsection{Third group cohomology}\label{third-group-cohomology}}
+
+\(H^3(G)\)
+
+\hypertarget{prospect}{%
+\subsection{Prospect}\label{prospect}}
 
 \printbibliography
 

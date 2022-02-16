@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.6 Second group cohomology | Topological Aspects of Symmetry in Low Dimensions</title>
-  <meta name="description" content="2.6 Second group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
+  <title>3.2 No projective phase on S^1 | Topological Aspects of Symmetry in Low Dimensions</title>
+  <meta name="description" content="3.2 No projective phase on S^1 | Topological Aspects of Symmetry in Low Dimensions" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.6 Second group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta property="og:title" content="3.2 No projective phase on S^1 | Topological Aspects of Symmetry in Low Dimensions" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="kantohm11/symmetry_review" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.6 Second group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta name="twitter:title" content="3.2 No projective phase on S^1 | Topological Aspects of Symmetry in Low Dimensions" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="charged-particle-on-the-aharonov-bohm-ring.html"/>
-<link rel="next" href="anomalous-symmetry-and-1d-spt.html"/>
+<link rel="prev" href="qft-on-a-manifold-and-symmetry.html"/>
+<link rel="next" href="dimensional-periodic-scalar-theory.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -184,94 +184,37 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="second-group-cohomology" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Second group cohomology</h2>
-<p>Let us formalize what we have learned above for a general group <span class="math inline">\(G\)</span>.
-We assume that for each <span class="math inline">\(g\in G\)</span>, we have a symmetry transformation <span class="math inline">\(T_g\)</span> acting on <span class="math inline">\(\mathbb{P}\mathcal{H}\)</span> as symmetry transformations satisfying the multiplication law:
-<span class="math display" id="eq:Tmult">\[\begin{equation}
-  \tag{2.38}
-  T_g T_{g&#39;} = T_{gg&#39;}
-\end{equation}\]</span></p>
-<p>By Wigner’s theorem, for each <span class="math inline">\(g\)</span>, we also have <span class="math inline">\(U_g\)</span>.
-The multiplication law of <span class="math inline">\(T_g\)</span> only guarantees
-<span class="math display" id="eq:ProjRepGen">\[\begin{equation}
-  \tag{2.39}
-  U_g U_{g&#39;} = e^{\mathrm{i}\alpha(g,g&#39;)}U_{gg&#39;},
-\end{equation}\]</span>
-for some phase <span class="math inline">\(\alpha(g,g&#39;)\)</span>, because the correspondence between <span class="math inline">\(T_g\)</span> and <span class="math inline">\(U_g\)</span> is only up to a phase.
-Here we introduce the terminology from algebraic topology.
-A map from <span class="math inline">\(n\)</span>-th power of <span class="math inline">\(G\)</span> to some abelian group <span class="math inline">\(M\)</span> is called <span class="math inline">\(M\)</span>-valued <span class="math inline">\(n\)</span>-<strong>cochain</strong>, denoted by
-<span class="math display" id="eq:GroupCochain">\[\begin{equation}
-  \tag{2.40}
-  C^n(G,M) := Map(G^n,M).
-\end{equation}\]</span>
-Note that a cochain is not demanded to be a group homomorphism; it is just a map.
-<span class="math inline">\(\alpha\)</span> is a <span class="math inline">\(\mathbb{R}/2\pi\mathbb{Z}\)</span> (<span class="math inline">\(\cong U(1)\)</span>) valued 2-cochain.
-In this lecture, <span class="math inline">\(M\)</span> is almost always <span class="math inline">\(\mathbb{R}/2\pi\mathbb{Z}\)</span>, so we will not explicitly declare the value domain onwards.</p>
-<p>The 2-cochain <span class="math inline">\(\alpha\)</span> is actually not completely arbitrary.
-The constraint comes form the associativity of the unitary operators: <span class="math inline">\((U_{g_1}U_{g_2})U_{g_3} = U_{g_1}(U_{g_2}U_{g_3})\)</span>, which leads
-<span class="math display" id="eq:cocycle">\[\begin{equation}
-  \tag{2.41}
-  \delta_3 \alpha (g_1,g_2,g_3) := -\alpha(g_1,g_2)-\alpha(g_1g_2,g_3) + \alpha(g_1,g_2g_3) + \alpha(g_2,g_3) = 0.
-\end{equation}\]</span>
-Here we have defined the derivative <span class="math inline">\(\delta_3: C^2(G) \to C^3(G)\)</span> on 2-cochains.
-A 2-cochain satisfies this condition is called a cocycle, and the set of cocycle is denoted by<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>
-<span class="math display" id="eq:GroupCocycle">\[\begin{equation}
-  \tag{2.42}
-  Z^2(G) := \mathrm{Ker}(\delta_3) = \{\alpha\in C^2(G)\mid \delta_3 \alpha = 0\}.
-\end{equation}\]</span></p>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Exercise 2.1  </strong></span>Show that the particular cochain <span class="math inline">\(\alpha \in C^2(\mathbb{Z}_2\times\mathbb{Z}_2)\)</span> defined in <a href="Z2Z2.html#eq:ProjZ2Z2">(2.28)</a> is indeed a cocycle.</p>
+<div id="no-projective-phase-on-s1" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> No projective phase on S^1</h2>
+<p>Now specialize to 1+1d QFT, and consider <span class="math inline">\(M_1 = S^1\)</span>, which is the only connected closed 1-dimensional manifold.
+A reader might have guessed that, as a generalization of what we have learned in the case of QM, the unitary operator realizing the symmetry on <span class="math inline">\(\mathcal{H}_{S^1}\)</span> might have projective phase in there multiplication rule.
+This very natural guess, however, is not correct.</p>
+<p>For a general QFT, the Hamiltonian depends on the radius <span class="math inline">\(R\)</span> of <span class="math inline">\(S^1\)</span>.
+When <span class="math inline">\(R\)</span> is very large compared to any scale in the theory, we regard the QFT on <span class="math inline">\(S^1\times \mathbb{R}_\text{time}\)</span> as the infrared-regulation of QFT on <span class="math inline">\(\mathbb{R}^1\times \mathbb{R}_\text{time}\)</span>.</p>
+<p>Now, if the QFT has single vacuum, the cluster decomposition principle (which is another manifestation of locality) that the symmetry should preserve it. So <span class="math inline">\(S^1\)</span> with large enough <span class="math inline">\(R\)</span> has single vacuum, which contradicts with a nontrivial projective phase.
+More generally, if a discrete symmetry is spontaneously broken,
+there can be multiple vacua in the <span class="math inline">\(R\to \infty\)</span> limit.
+However, if there is a domain wall connecting the two vacua , there is a exponentially suppressed
+amplitude between the two state with finite but large <span class="math inline">\(R\)</span>.
+Therefore, we expect that, without additional mechanism prohibiting domain walls<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>, there is a single vacuum on <span class="math inline">\(S^1\)</span> with large but finite <span class="math inline">\(R\)</span>.
+As the projective phase is discrete, captured by <span class="math inline">\(H^2(G)\)</span>, it has to be constant of <span class="math inline">\(R\)</span>. Therefore we do not expect any nontrivial projective phase of <span class="math inline">\(U\)</span> acting on <span class="math inline">\(\mathcal{H}_{S^1}\)</span> for any radius <span class="math inline">\(R\)</span> of <span class="math inline">\(S^1\)</span>.</p>
+<p>Then, is there any projective-ness in the symmetry in 2d QFT?
+To explicitly see that, we need to think about <em>manifolds with boundaries</em>.<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a></p>
 </div>
-<p>Not all the (nonzero) elements of <span class="math inline">\(C^2(G)\)</span> are interesting: some of them might be eliminated by
-redefinition of the unitary operators <span class="math inline">\(U_g\)</span>:
-<span class="math display" id="eq:UredefGen">\[\begin{equation}
-  \tag{2.43}
-  U_g \mapsto e^{\mathrm{i}\beta(g)}U_g,
-\end{equation}\]</span>
-with <span class="math inline">\(\beta \in C^1(G)\)</span>.
-The phase <span class="math inline">\(\alpha(g,g&#39;)\)</span> gets shifted by this redefinition as:
-<span class="math display" id="eq:ProjPhaseGauge">\[\begin{equation}
-  \tag{2.44}
-  \alpha(g_1,g_2) \mapsto \alpha(g_1,g_2) - \delta_2 \beta (g_1,g_2) := \alpha(g_1,g_2) + \beta(g_1g_2)-\beta(g_1) - \beta(g_2).
-\end{equation}\]</span>
-The map <span class="math inline">\(\delta_2: C^1(G) \to C^2(G)\)</span> is also called the derivative.
-An image of <span class="math inline">\(\delta_2\)</span> is called a coboudnary, denoted by
-<span class="math display" id="eq:GroupCoboundary">\[\begin{equation}
-  \tag{2.45}
-  B^2(G) := \mathrm{Im}(\delta_2) = \{\delta_2 \beta\mid \beta \in C^1(G)\}.
-\end{equation}\]</span>
-The crucial feature of the derivative is that it vanishes when composed:
-<span class="math display" id="eq:DeltaNilp">\[\begin{equation}
-  \tag{2.46}
-  \delta_3\circ \delta_2 = 0.
-\end{equation}\]</span>
-Therefore we have <span class="math inline">\(B^2(G)\subset Z^2(G)\)</span>.
-Now, interesting projective phases are those not in <span class="math inline">\(B^2(G)\)</span>.
-This motivates us the define the <em>group cohomology group</em><a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>
-<span class="math display" id="eq:GroupCohomology">\[\begin{equation}
-  \tag{2.47}
-  H^2(G) := Z^2(G)/B^2(G).
-\end{equation}\]</span></p>
-<p>In this lecture we do not have time to learn how to compute the cohomology group, but the examples we have seen are
-<span class="math display" id="eq:CohomologySO3Z2Z2">\[\begin{align}
-  \tag{2.48}
-  H^2(SO(3)) &amp;\cong \mathbb{Z}_2,\\
-  H^2(\mathbb{Z}_2\times\mathbb{Z}_2) &amp;\cong \mathbb{Z}_2.
-\end{align}\]</span></p>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 2.2  </strong></span>Prove <a href="second-group-cohomology.html#eq:DeltaNilp">(2.46)</a>.</p>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-Komargodski:2020mxz" class="csl-entry">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">Z. Komargodski, K. Ohmori, K. Roumpedakis, and S. Seifnashri, <em><span class="nocase">Symmetries and strings of adjoint QCD<span class="math inline">\(_{2}\)</span></span></em>, JHEP <strong>03</strong>, 103 (2021), <span class="nodecoration"><a href="https://arxiv.org/abs/2008.07567">https://arxiv.org/abs/2008.07567</a></span>.</div>
 </div>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 2.3  </strong></span>Show that <span class="math inline">\(H^2(\mathbb{Z}_2)=0\)</span>. (If you want, also calculate <span class="math inline">\(H^2(\mathbb{Z}_2,\mathbb{Z}_2)\)</span>.)</p>
+<div id="ref-Hellerman:2006zs" class="csl-entry">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">S. Hellerman, A. Henriques, T. Pantev, E. Sharpe, and M. Ando, <em><span class="nocase">Cluster decomposition, T-duality, and gerby CFT’s</span></em>, Adv. Theor. Math. Phys. <strong>11</strong>, 751 (2007), <span class="nodecoration"><a href="https://arxiv.org/abs/hep-th/0606034">https://arxiv.org/abs/hep-th/0606034</a></span>.</div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="6">
-<li id="fn6"><p>The derivative <span class="math inline">\(\delta_{n+1}\)</span> for general <span class="math inline">\(n\)</span>-cochain can be defined, but we will postpone this until next chapter, other than <span class="math inline">\(\delta_2\)</span> which is defined just below.<a href="second-group-cohomology.html#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>Do not confuse this with the cohomology group of the group as a topological space. The two, the group cohomology of a group and the geometric cohomology of the same, can be denoted by the same symbol <span class="math inline">\(H(G)\)</span>, but they are different. They are confusing especially when <span class="math inline">\(G\)</span> is continuous.
-Rather, the group cohomology is identified with the (simplicial/cellular) cohomology of an infinite-dimensional topological space called the classifying space <span class="math inline">\(BG\)</span>.<a href="second-group-cohomology.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<ol start="15">
+<li id="fn15"><p>The mechanism is the “one-form symmetry” <span class="citation"> [<a href="#ref-Komargodski:2020mxz" role="doc-biblioref">13</a>]</span>. An older reference is <span class="citation"> [<a href="#ref-Hellerman:2006zs" role="doc-biblioref">14</a>]</span>.<a href="no-projective-phase-on-s1.html#fnref15" class="footnote-back">↩︎</a></p></li>
+<li id="fn16"><p>Instead one can see it from closed manifold with symmetry twist. Actually this is more conventional way. However KO finds that the manifolds with boundary is more “clean” in a sense.<a href="no-projective-phase-on-s1.html#fnref16" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -279,8 +222,8 @@ Rather, the group cohomology is identified with the (simplicial/cellular) cohomo
           </div>
         </div>
       </div>
-<a href="charged-particle-on-the-aharonov-bohm-ring.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="anomalous-symmetry-and-1d-spt.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="qft-on-a-manifold-and-symmetry.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dimensional-periodic-scalar-theory.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -311,7 +254,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/kantohm11/symmetry_review/edit/main/01-QM.Rmd",
+"link": "https://github.com/kantohm11/symmetry_review/edit/main/02-2dQFT.Rmd",
 "text": "Edit"
 },
 "history": {

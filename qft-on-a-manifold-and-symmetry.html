@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.6 Second group cohomology | Topological Aspects of Symmetry in Low Dimensions</title>
-  <meta name="description" content="2.6 Second group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
+  <title>3.1 QFT on a manifold and symmetry | Topological Aspects of Symmetry in Low Dimensions</title>
+  <meta name="description" content="3.1 QFT on a manifold and symmetry | Topological Aspects of Symmetry in Low Dimensions" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.6 Second group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta property="og:title" content="3.1 QFT on a manifold and symmetry | Topological Aspects of Symmetry in Low Dimensions" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="kantohm11/symmetry_review" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.6 Second group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta name="twitter:title" content="3.1 QFT on a manifold and symmetry | Topological Aspects of Symmetry in Low Dimensions" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="charged-particle-on-the-aharonov-bohm-ring.html"/>
-<link rel="next" href="anomalous-symmetry-and-1d-spt.html"/>
+<link rel="prev" href="quantum-anomaly-in-11d-qft.html"/>
+<link rel="next" href="no-projective-phase-on-s1.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -184,94 +184,55 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="second-group-cohomology" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Second group cohomology</h2>
-<p>Let us formalize what we have learned above for a general group <span class="math inline">\(G\)</span>.
-We assume that for each <span class="math inline">\(g\in G\)</span>, we have a symmetry transformation <span class="math inline">\(T_g\)</span> acting on <span class="math inline">\(\mathbb{P}\mathcal{H}\)</span> as symmetry transformations satisfying the multiplication law:
-<span class="math display" id="eq:Tmult">\[\begin{equation}
-  \tag{2.38}
-  T_g T_{g&#39;} = T_{gg&#39;}
-\end{equation}\]</span></p>
-<p>By Wigner’s theorem, for each <span class="math inline">\(g\)</span>, we also have <span class="math inline">\(U_g\)</span>.
-The multiplication law of <span class="math inline">\(T_g\)</span> only guarantees
-<span class="math display" id="eq:ProjRepGen">\[\begin{equation}
-  \tag{2.39}
-  U_g U_{g&#39;} = e^{\mathrm{i}\alpha(g,g&#39;)}U_{gg&#39;},
+<div id="qft-on-a-manifold-and-symmetry" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> QFT on a manifold and symmetry</h2>
+<p>As emphasized, the locality plays the essential role in (topological properties of) QFT.
+One concequence of the locality is that,
+given a <span class="math inline">\(d+1\)</span>-dimensional QFT, we can quantize the theoy on a spacial closed manifold <span class="math inline">\(M_d\)</span> to get <span class="math inline">\(\mathcal{H}_{M_d}\)</span>.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>
+In other words a QFT is not just the Hilbert space and the Hamiltonian, but a rule to assign them when a closed manifold <span class="math inline">\(M_d\)</span> is given.
+It is more precise to express the same thing in terms of the algebra of operators.
+For a QFT, given a region <span class="math inline">\(R \in \mathbb{R}^{d,1}\)</span>, there is the algebra of local operators contained in <span class="math inline">\(R\)</span>: <span class="math inline">\(\mathcal{A}(R)\)</span>.
+Then we “glue” the algebra <span class="math inline">\(\mathcal{A}(B^{d+1})\)</span> on a ball to get <span class="math inline">\(\mathcal{A}(R)\)</span> for an arbitrary manifold <span class="math inline">\(R\)</span>. In particular we can get <span class="math inline">\(\mathcal{A}(M_d\times \mathbb{R})\)</span>.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p>
+<p>A symmetry also is expected to be local: that if there is a symmetry <span class="math inline">\(T\)</span> in a QFT, that means, for arbitrary <span class="math inline">\(\mathcal{M}_d\)</span>,
+there should exists a symmetry transformation <span class="math inline">\(T_{M_d}\)</span> on <span class="math inline">\(\mathbb{P}\mathcal{H}_{M_d}\)</span>.
+This is manifest in the case of continuous symmetry.
+For example, the unitary operator <span class="math inline">\(U_\lambda\)</span> for a <span class="math inline">\(U(1)\)</span> rotation by angle <span class="math inline">\(\lambda\)</span> is, from the Noether’s theorem,
+<span class="math display" id="eq:Noether">\[\begin{equation}
+    \tag{3.1}
+    U_\alpha = e^{\mathrm{i}\lambda \int_{M_d}j^0 \mathrm{d}^dx},
 \end{equation}\]</span>
-for some phase <span class="math inline">\(\alpha(g,g&#39;)\)</span>, because the correspondence between <span class="math inline">\(T_g\)</span> and <span class="math inline">\(U_g\)</span> is only up to a phase.
-Here we introduce the terminology from algebraic topology.
-A map from <span class="math inline">\(n\)</span>-th power of <span class="math inline">\(G\)</span> to some abelian group <span class="math inline">\(M\)</span> is called <span class="math inline">\(M\)</span>-valued <span class="math inline">\(n\)</span>-<strong>cochain</strong>, denoted by
-<span class="math display" id="eq:GroupCochain">\[\begin{equation}
-  \tag{2.40}
-  C^n(G,M) := Map(G^n,M).
+where <span class="math inline">\(j^\mu\)</span> is the Noether current.
+In other words the locality of the unitary operator is manifest in the integral in the expression.
+For a discrete symmetry, the Noether current is not available.
+However, we can define that a symmetry transformation is a automorphism of <span class="math inline">\(\mathcal{A}(R)\)</span>:
+<span class="math display" id="eq:TonAR">\[\begin{equation}
+    \tag{3.2}
+    T \curvearrowright \mathcal{A}(R) \to \mathcal{A}(R),
 \end{equation}\]</span>
-Note that a cochain is not demanded to be a group homomorphism; it is just a map.
-<span class="math inline">\(\alpha\)</span> is a <span class="math inline">\(\mathbb{R}/2\pi\mathbb{Z}\)</span> (<span class="math inline">\(\cong U(1)\)</span>) valued 2-cochain.
-In this lecture, <span class="math inline">\(M\)</span> is almost always <span class="math inline">\(\mathbb{R}/2\pi\mathbb{Z}\)</span>, so we will not explicitly declare the value domain onwards.</p>
-<p>The 2-cochain <span class="math inline">\(\alpha\)</span> is actually not completely arbitrary.
-The constraint comes form the associativity of the unitary operators: <span class="math inline">\((U_{g_1}U_{g_2})U_{g_3} = U_{g_1}(U_{g_2}U_{g_3})\)</span>, which leads
-<span class="math display" id="eq:cocycle">\[\begin{equation}
-  \tag{2.41}
-  \delta_3 \alpha (g_1,g_2,g_3) := -\alpha(g_1,g_2)-\alpha(g_1g_2,g_3) + \alpha(g_1,g_2g_3) + \alpha(g_2,g_3) = 0.
+and then <span class="math inline">\(T\)</span> also naturally (projectively) acts on <span class="math inline">\(\mathcal{H}_{M_d}\)</span> which is a representation of <span class="math inline">\(\mathcal{A}(R)\)</span>.
+In a more explict term, if the QFT is written in terms of fundamental fields and symmetry acts on these fields,
+the Hilbert space <span class="math inline">\(\mathcal{H}_{M_d}\)</span> is the Fock space constructed from creation/annhilation operators for each modes of the fields on <span class="math inline">\(M_d\)</span>,
+and the action of a symmetry on the fields naturally defines the action on the annihilation operators, in turn defining the action on <span class="math inline">\(\mathcal{H}_{M_d}\)</span>.</p>
+<p>For a local symmetry transformation <span class="math inline">\(T\)</span>, defined in the above sense, to be the symmetry of the theory, the corresponding unitary has to commute with the Hamiltonian.
+We also assume that the Hamiltonian is local:
+<span class="math display" id="eq:localHam">\[\begin{equation}
+    \tag{3.3}
+    H = \int T_{00} \mathrm{d}^dx,
 \end{equation}\]</span>
-Here we have defined the derivative <span class="math inline">\(\delta_3: C^2(G) \to C^3(G)\)</span> on 2-cochains.
-A 2-cochain satisfies this condition is called a cocycle, and the set of cocycle is denoted by<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>
-<span class="math display" id="eq:GroupCocycle">\[\begin{equation}
-  \tag{2.42}
-  Z^2(G) := \mathrm{Ker}(\delta_3) = \{\alpha\in C^2(G)\mid \delta_3 \alpha = 0\}.
-\end{equation}\]</span></p>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Exercise 2.1  </strong></span>Show that the particular cochain <span class="math inline">\(\alpha \in C^2(\mathbb{Z}_2\times\mathbb{Z}_2)\)</span> defined in <a href="Z2Z2.html#eq:ProjZ2Z2">(2.28)</a> is indeed a cocycle.</p>
+where <span class="math inline">\(T_{\mu\nu}\)</span> is the energy-momentum tensor.
+For a symmetry in QFT, we demand that <span class="math inline">\([U,T_{\mu\nu}] = 0\)</span>. Otherwise <span class="math inline">\(U\)</span> does not commute with the spacetime symmetry.</p>
 </div>
-<p>Not all the (nonzero) elements of <span class="math inline">\(C^2(G)\)</span> are interesting: some of them might be eliminated by
-redefinition of the unitary operators <span class="math inline">\(U_g\)</span>:
-<span class="math display" id="eq:UredefGen">\[\begin{equation}
-  \tag{2.43}
-  U_g \mapsto e^{\mathrm{i}\beta(g)}U_g,
-\end{equation}\]</span>
-with <span class="math inline">\(\beta \in C^1(G)\)</span>.
-The phase <span class="math inline">\(\alpha(g,g&#39;)\)</span> gets shifted by this redefinition as:
-<span class="math display" id="eq:ProjPhaseGauge">\[\begin{equation}
-  \tag{2.44}
-  \alpha(g_1,g_2) \mapsto \alpha(g_1,g_2) - \delta_2 \beta (g_1,g_2) := \alpha(g_1,g_2) + \beta(g_1g_2)-\beta(g_1) - \beta(g_2).
-\end{equation}\]</span>
-The map <span class="math inline">\(\delta_2: C^1(G) \to C^2(G)\)</span> is also called the derivative.
-An image of <span class="math inline">\(\delta_2\)</span> is called a coboudnary, denoted by
-<span class="math display" id="eq:GroupCoboundary">\[\begin{equation}
-  \tag{2.45}
-  B^2(G) := \mathrm{Im}(\delta_2) = \{\delta_2 \beta\mid \beta \in C^1(G)\}.
-\end{equation}\]</span>
-The crucial feature of the derivative is that it vanishes when composed:
-<span class="math display" id="eq:DeltaNilp">\[\begin{equation}
-  \tag{2.46}
-  \delta_3\circ \delta_2 = 0.
-\end{equation}\]</span>
-Therefore we have <span class="math inline">\(B^2(G)\subset Z^2(G)\)</span>.
-Now, interesting projective phases are those not in <span class="math inline">\(B^2(G)\)</span>.
-This motivates us the define the <em>group cohomology group</em><a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>
-<span class="math display" id="eq:GroupCohomology">\[\begin{equation}
-  \tag{2.47}
-  H^2(G) := Z^2(G)/B^2(G).
-\end{equation}\]</span></p>
-<p>In this lecture we do not have time to learn how to compute the cohomology group, but the examples we have seen are
-<span class="math display" id="eq:CohomologySO3Z2Z2">\[\begin{align}
-  \tag{2.48}
-  H^2(SO(3)) &amp;\cong \mathbb{Z}_2,\\
-  H^2(\mathbb{Z}_2\times\mathbb{Z}_2) &amp;\cong \mathbb{Z}_2.
-\end{align}\]</span></p>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Exercise 2.2  </strong></span>Prove <a href="second-group-cohomology.html#eq:DeltaNilp">(2.46)</a>.</p>
-</div>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 2.3  </strong></span>Show that <span class="math inline">\(H^2(\mathbb{Z}_2)=0\)</span>. (If you want, also calculate <span class="math inline">\(H^2(\mathbb{Z}_2,\mathbb{Z}_2)\)</span>.)</p>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-Witten:2021jzq" class="csl-entry">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">E. Witten, <em><span class="nocase">Why Does Quantum Field Theory In Curved Spacetime Make Sense? And What Happens To The Algebra of Observables In The Thermodynamic Limit?</span></em>, (2021), <span class="nodecoration"><a href="https://arxiv.org/abs/2112.11614">https://arxiv.org/abs/2112.11614</a></span>.</div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="6">
-<li id="fn6"><p>The derivative <span class="math inline">\(\delta_{n+1}\)</span> for general <span class="math inline">\(n\)</span>-cochain can be defined, but we will postpone this until next chapter, other than <span class="math inline">\(\delta_2\)</span> which is defined just below.<a href="second-group-cohomology.html#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>Do not confuse this with the cohomology group of the group as a topological space. The two, the group cohomology of a group and the geometric cohomology of the same, can be denoted by the same symbol <span class="math inline">\(H(G)\)</span>, but they are different. They are confusing especially when <span class="math inline">\(G\)</span> is continuous.
-Rather, the group cohomology is identified with the (simplicial/cellular) cohomology of an infinite-dimensional topological space called the classifying space <span class="math inline">\(BG\)</span>.<a href="second-group-cohomology.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<ol start="13">
+<li id="fn13"><p>We often need an additional structure to <span class="math inline">\(M_d\)</span>. For example, if the theory includes fermionic fields, the manifold <span class="math inline">\(M_d\)</span> has to be equipped with the spin structure. In this lecture we do not care about thie subtle but interesting and important subtlety and assume that the theory is <em>bosonic</em>, i.e. does not contain fermionic fields. This amounts to assume only the orientation of <span class="math inline">\(M_d\)</span>. (To put a QFT on an unoriented manifold, one needs an anti-unitary symmetry which also be ignored in thie lecture.) The references mentioned in <a href="lecture-guide.html#othernotes">1.1.4</a> have contents about fermionic theories.<a href="qft-on-a-manifold-and-symmetry.html#fnref13" class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p>This explanation is awfully rough. For a better discussion the reader might refer to <span class="citation"> [<a href="#ref-Witten:2021jzq" role="doc-biblioref">12</a>]</span><a href="qft-on-a-manifold-and-symmetry.html#fnref14" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -279,8 +240,8 @@ Rather, the group cohomology is identified with the (simplicial/cellular) cohomo
           </div>
         </div>
       </div>
-<a href="charged-particle-on-the-aharonov-bohm-ring.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="anomalous-symmetry-and-1d-spt.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="quantum-anomaly-in-11d-qft.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="no-projective-phase-on-s1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -311,7 +272,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/kantohm11/symmetry_review/edit/main/01-QM.Rmd",
+"link": "https://github.com/kantohm11/symmetry_review/edit/main/02-2dQFT.Rmd",
 "text": "Edit"
 },
 "history": {
