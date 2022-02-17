@@ -263,7 +263,7 @@ To fix this, one can instead use
 \end{equation}
 However, an issue remains: although $ab = ba = R_x(\pi)$, we have $U_a U_b = - U_b U_a$.
 This discrepancy between the multiplication law among group elements and their corresponding unitaries is the projective phase.
-If we set $U_{ab} = U_b U_a = \sigma _1$, the multiplication law among $U_g$, $g\in \mathbb{Z}_2\times\mathbb{Z}_2$ is
+If we set $U_{ab} = U_b U_a = \mathrm{i}\sigma _1$, the multiplication law among $U_g$, $g\in \mathbb{Z}_2\times\mathbb{Z}_2$ is
 \begin{equation}
   (\#eq:ProjRep)
   U_g U_{g'} = e^{\mathrm{i}\alpha(g,g')}U_{gg'},
@@ -271,7 +271,7 @@ If we set $U_{ab} = U_b U_a = \sigma _1$, the multiplication law among $U_g$, $g
 where in this example the projective phase is
 \begin{equation}
   (\#eq:ProjZ2Z2)
-    \alpha(a,b) = \pi,\quad
+    \alpha(a,b) = \alpha(ab,ab) = \pi,\quad
     \alpha(g,g') = 0 \,\, \text{(otherwise)}.
 \end{equation}
 

@@ -108,34 +108,119 @@ To explicitly see that, we need to think about *manifolds with boundaries*.[^twi
 
 ## 1+1-dimensional periodic scalar theory
 Rather than explaining the general theory of a QFT on a open manifold, let us jump to a concrete example: 1+1-dimensional (relativistic) massless periodic scalar $\phi$.
-The theory should be explained in any good textbooks on string theory, e.g. @PolchinskiVol1.
+The theory should be explained in any good textbooks on string theory, e.g. @PolchinskiVol1. Here we give a lightening review.
 
 ### The model
-The action of the massless periodic scalar theory (on Euclidean flat space) is (in Polchinski's normalization except for using $\phi$ instead of $X$)
+The action of the free massless periodic scalar theory (on the Minkowski flat space) is (in Polchinski's normalization, in particular $\hbar =1$  as usual)
 \begin{equation}
-    (\#eq:Sphi)
-    S = -\frac{1}{4\pi\alpha'}\int_{M_2} \mathrm{d}\tau\mathrm{d}\sigma \,\delta^{ab}\partial_a \phi \partial_b \phi.
+    (\#eq:SX)
+    S = -\frac{1}{4\pi\alpha'}\int_{M_2} \mathrm{d}\tau\mathrm{d}\sigma \,\eta^{ab}\partial_a X \partial_b X.
 \end{equation}
-The scalar field $\phi$ is periodic and we set the periodicity to be $2\pi R$: $\phi \sim \phi + 2\pi R$. 
+The scalar field $X$ is periodic and we set the periodicity to be $2\pi R$: $X \sim X + 2\pi R$. 
 The equation of motion is the massless Klein-Gordon one
 \begin{equation}
-    (\#eq:EOMphi)
-    \partial^2 \phi = 0.
+    (\#eq:EOMX)
+    \partial^2 X = 0.
 \end{equation}
 The canonical momentum $\Pi(\sigma,\tau)$ is
 \begin{equation}
     (\#eq:momentum)
-    \Pi = \frac{1}{4\pi \alpha'} 
+    \Pi = \frac{1}{2\pi \alpha'} \partial_\tau X,
+\end{equation}
+and the Hamiltonian is
+\begin{equation}
+    (\#eq:HamX)
+    H = \frac{1}{2\pi\alpha'}\int\, \mathrm{d}\sigma \delta^{ab}\partial_a X \partial_b X.
 \end{equation}
 
 ### Quantization on $S^1$ and $U(1)^2$ symmetry
-The theory has two $U(1)$ 
+Let us quantize the theory on $S^1$, where we set the periodicity of the spacial coordinate $\sigma \sim \sigma + 2\pi$.
+We write the general solution to the EOM \@ref(eq:EOMX) as
+\begin{equation}
+    (\#eq:Xexp)
+    X^w(\sigma,\tau) = x +  R w \sigma + 2\pi \alpha' p \, \tau + \mathrm{i}\bigl(\frac{\alpha'}{2}\bigr) \sum_{m = -\infty}^{\infty} \frac1m\Bigl(\frac{\alpha_m}{z^m_+}+\frac{\tilde\alpha_m}{z^m_-}\Bigr),
+\end{equation}
+where $z = \exp(- \mathrm{i}(\tau \pm \sigma))$.
+The second term is possible because both $\sigma$ and $X$ is periodic, and the winding number $w$ is quantized (discretized): $w\in \mathbb{Z}$.
+When there is such topologically distinct classical solutions to the EOM exists, we build the Hilbert space $\mathcal{H}_w$ around each solution labeled by $w$, and the take the direct sum $\mathcal{H} = \bigotimes_w \mathcal{H}_w$ as the total Hilbert space.
+The canonical commutation relation gives
+\begin{equation}
+    (\#eq:comu)
+    [x,p] = \mathrm{i}, \quad [\alpha_m,\alpha_n] = [\tilde{\alpha}_m,\tilde{\alpha}_n] = m \delta_{m,-n},
+\end{equation}
+and the Hamiltonian is (up to a divergent constant coming from commuting $\alpha$'s)
+\begin{equation}
+    (\#eq:HamXModes)
+    H = \frac{\alpha'}{4} \bigl(\frac{n^2}{R^2}+\frac{w^2 R^2}{\alpha'^2}\bigr) + \sum_{n=1}^{\infty} \bigl(\alpha_{-n}\alpha_n + \tilde{\alpha}_{-n}\tilde{\alpha}_n\bigr),
+\end{equation}
+where $n = R p$ is the quantized momentum whose eigenvalues takes in $\mathbb{Z}$, as in the case of the particle on $S^1$.
+A general eigenstate can be constructed by acting finite number of operators $\alpha_{-i}$ and $\tilde{\alpha}_{-j}$ on a state $\ket{n,w}$:
+\begin{equation}
+    (\#eq:eigen)
+    \alpha_{-i_1}^{t_1}\alpha_{-i_2}^{t_s} \cdots 
+    \tilde\alpha_{-j_1}^{s_1}\tilde\alpha_{-j_2}^{s_2} \cdots 
+    \ket{n,w},
+\end{equation}
+where $i_a,j_b,t_c,s_d$ are positive integers, and the state $\ket{n,w}$ satisfies
+\begin{align}
+    \alpha_i \ket{n,w} = \tilde{\alpha}_j \ket{n,w} = 0,
+\end{align}
+and has the corresponding quantum number $n$ and $w$.
 
-### Hilbert spaces on an interval as a projective higher-reprentation
-Let us see the anomaly.
+This system famously have to $U(1)$ symmetries, whose charges are $n$ and $w$ respectively. The former is called the momentum $U(1)$, and the latter called the winding $U(1)$.
+We write the corresponding unitaries as $U^p_\lambda$ and $U^w_\lambda$, where $\lambda$ is the parameter of the symmetry transformation, so that
+\begin{equation}
+    (\#eq:UpwAct)
+    U^p_\lambda \ket{n,w} = e^{\mathrm{i}\lambda n }\ket{n,w},\quad
+    U^w_\lambda \ket{n,w} = e^{\mathrm{i}\lambda w }\ket{n,w}.
+\end{equation}
+Also, the momentum $U(1)$ is basically the canonical momentum $p$ to the average coodinate $x = \int X \mathrm{d}\sigma$, it causes the translation in the space of $X$:
+\begin{equation}
+    (\#eq:UpActX)
+    (U^p_{\lambda})^\dagger\, f(X(\sigma,\tau)) \, U^p_{\lambda} = 
+    f(X(\sigma,\tau) + \lambda R),
+\end{equation}
+where $f$ is a periodic function.
+With this boundary condition, 
 
 
-## Third group cohomology
+### Projective phases on the Hilbert spaces on an interval
+Now let us see how the two $U(1)$ symmetries acts on the Hilbert spaces defined on a manifold with boudnaries. In 1d, there is only one (topology type) of a compact manifold with boundaries: the interval $I = [0,2\pi]$.
+To define the theory on the interval, we have to pick boundary conditions for each of the boundaries: $\sigma =0$ (left boundary) and $\sigma =2\pi$ (right boundary).
+Here we pick the Dirichlet boundary condition $\mathcal{D}(\theta_L,\theta_R)$
+defined by 
+\begin{equation}
+    (\#eq:Dirichlet)
+    X(\sigma = 0,t) = R \theta_L, \quad X(\sigma = 2\pi, t)= R \theta_R.
+\end{equation}
+The expansion of the periodic field $X$ in this case is 
+\begin{equation}
+    (\#eq:XexpDirichlet)
+    X = R\theta_L + R w \sigma + \mathrm{i}\bigl(\frac{\alpha'}{2}\bigr) e^{-\mathrm{i}\tau} \sum_{m = -\infty}^{\infty}  \frac1m \alpha_m \sin(m \sigma/2),
+\end{equation}
+where the winding $w$ now has to takes values in $w \in (\theta_R-\theta_L)/2\pi + \mathbb{Z}$.
+We write the Hilbert space of states on the interval with the boundary condition $\mathcal{D}(\theta_L,\theta_R)$ as $\mathcal{H}_{\theta_L,\theta_R}$, and the state with winding $w$ in it as $\ket{w}_{\theta_L,\theta_R}$. We only consider the ground states for the oscillation modes but the story can be applied to the states with these modes without any change.
+
+How does the $U(1)^2$ symmetries acts on the states?
+The momentum symmetry translate $X$, and breaks the boundary condition \@ref(eq:Dirichlet). 
+But it still defines a linear map *between the Hilbert spaces*:
+\begin{align}
+    (\#eq:UpactDirichlet)
+    U^p_\lambda : \mathcal{H}_{\theta_L,\theta_R} &\to \mathcal{H}_{\theta_L+\lambda,\theta_R+\lambda}\\
+    \ket{w}_{\theta_L,\theta_R} &\mapsto \ket{w}_{\theta_L+\lambda,\theta_R+\lambda}.
+\end{align}
+On the other hand, the winding $U(1)$ symmetry preserved the Dirichlet boundary condition:
+\begin{align}
+    (\#eq:UwactDirichlet)
+    \widetilde{U}^w_\lambda : \mathcal{H}_{\theta_L,\theta_R} &\to \mathcal{H}_{\theta_L,\theta_R}\\
+    \ket{w}_{\theta_L,\theta_R} &\mapsto e^{\mathrm{i}\lambda w}\ket{w}_{\theta_L,\theta_R}.
+\end{align}
+Here we put the tilde on $U^w_\lambda$ because there is one problem with this action, i.e. $\widetilde{U}^w_\lambda = e^{\mathrm{i}(\theta_R-\theta_L)}\widetilde{U}^w_{\lambda+2\pi}$.
+
+## Categorical representation and 3rd group cohomology
+### Categorical representation
+
+### 3rd group cohomology
 $H^3(G)$
 
 ## Prospect
