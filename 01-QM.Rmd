@@ -435,7 +435,7 @@ The phase $\alpha(g,g')$ gets shifted by this redefinition as:
   \alpha(g_1,g_2) \mapsto \alpha(g_1,g_2) - \delta_2 \beta (g_1,g_2) := \alpha(g_1,g_2) + \beta(g_1g_2)-\beta(g_1) - \beta(g_2).
 \end{equation}
 The map $\delta_2: C^1(G) \to C^2(G)$ is also called the derivative.
-An image of $\delta_2$ is called a coboudnary, denoted by 
+An image of $\delta_2$ is called a coboundary, denoted by
 \begin{equation}
   (\#eq:GroupCoboundary)
   B^2(G) := \mathrm{Im}(\delta_2) = \{\delta_2 \beta\mid \beta \in C^1(G)\}.
@@ -525,7 +525,7 @@ In other words a SPT state is SRE but not in a way respecting the on-site $G$ sy
 Let us construct an example of SPT on 1+1d lattice for symmetry $SO(3)$.
 We put two qubits, labeled by $A$ and $B$, on each site. So $\mathcal{H}_i = \mathcal{H}^A_i \otimes \mathcal{H}^B_i$, with $\mathcal{H}^A_i \cong \mathcal{H}^B_i \cong \mathbb{C}^2$.
 As a on-site 
-Let $\ket{s_i}$ be the singlet state entangling the $A$-qubit at site $i$ ($i\in\mathbb{Z}$) and the $B$-qubit at site $i+1$: $\ket{s_i} = \ket{\uparrow_{i,B}}\ket{\downarrow_{i+1,A}} - \ket{\downarrow_{i,B}} \ket{\uparrow_{i+1,A}} \in \mathcal{H}_{i}^A\otimes \mathcal{H}_{i+1}^B$.
+Let $\ket{s_i}$ be the Bell state between the $A$-qubit at site $i$ ($i\in\mathbb{Z}$) and the $B$-qubit at site $i+1$: $\ket{s_i} = \ket{\uparrow_{i,B}}\ket{\uparrow_{i+1,A}} + \ket{\downarrow_{i,B}} \ket{\downarrow_{i+1,A}} \in \mathcal{H}_{i}^A\otimes \mathcal{H}_{i+1}^B$.
 Then we define the total state $\ket{\psi}$ by[^AKLT]
 \begin{equation}
   (\#eq:SO3SPT)
@@ -577,12 +577,11 @@ In summary, if we cut the chain in the SPT, on the edge we have the qubit protec
 ### SPT for a general projective representation*
 It is easy the generalize the above example into a general projective representation $R$ of a group $G$. (Here we assume that $G$ acts by unitary operations.)
 For each site we prepare the local Hilbart space as $\mathcal{H}_i = R_i \otimes R^\vee_i$, where $R_i$ is the $i$-th copy of $R$ and $R^\vee_i$ is the dual of $R$.
-Pick a nonzero state $\ket{0}$ from $R$, let $\ket{0^\vee} \in R^\vee$ denote the dual of $\ket{0}$, and then define the singlet state $\ket{s_i}$ by
+Pick a basis $\ket{i}$ in $R$, let $\ket{i^\vee} \in R^\vee$ denote the dual basis, and then define the singlet state $\ket{s_i}$ by
 \begin{equation}
   (\#eq:ketsiGeneral)
-  \ket{s_i} = \int \mathrm{d}g \bigl(U_{g^{-1}}\ket{0^\vee}_{(i,B)}\big)\otimes \bigl(U_{g}\ket{0}_{(i+1,A)}\bigr) \in R_{i}^\vee \otimes R_{i+1},
+  \ket{s_i} = \sum_{i}^{\mathrm{dim}R} \ket{i^\vee}\otimes\ket{i}\in R_{i}^\vee \otimes R_{i+1}.
 \end{equation}
-where $\mathrm{d}g$ is the Haar measure of $G$ (it is just a sum over the group element if $G$ is finite).
 This state is invariant under $T_{g^{-1}}^{(i,B)}T_g^{(i+1,A)}$ (and nonzero).
 Now the rest of the constuction is the same as above, and we see the edge mode in $R$ when the lattice has a boundary.
 Thus we have seen how the (one direction of) Hypothesis \@ref(hyp:SPT) works in the 1+1d bulk/0+1d boundary case.

@@ -51,7 +51,7 @@ For a symmetry in QFT, we demand that $[U,T_{\mu\nu}] = 0$. Otherwise $U$ does n
 
 [^structure]: We often need an additional structure to $M_d$. For example, if the theory includes fermionic fields, the manifold $M_d$ has to be equipped with the spin structure. In this lecture we do not care about thie subtle but interesting and important subtlety and assume that the theory is *bosonic*, i.e. does not contain fermionic fields. This amounts to assume only the orientation of $M_d$. (To put a QFT on an unoriented manifold, one needs an anti-unitary symmetry which also be ignored in thie lecture.) The references mentioned in \@ref(othernotes) have contents about fermionic theories.
 
-## No projective phase on S^1 
+## No projective phase on S^1{#noproj}
 Now specialize to 1+1d QFT, and consider $M_1 = S^1$, which is the only connected closed 1-dimensional manifold.
 A reader might have guessed that, as a generalization of what we have learned in the case of QM, the unitary operator realizing the symmetry on $\mathcal{H}_{S^1}$ might have projective phase in there multiplication rule.
 This very natural guess, however, is not correct.
@@ -174,7 +174,7 @@ We write the corresponding unitaries as $U^p_\lambda$ and $U^w_\lambda$, where $
     U^p_\lambda \ket{n,w} = e^{\mathrm{i}\lambda n }\ket{n,w},\quad
     U^w_\lambda \ket{n,w} = e^{\mathrm{i}\lambda w }\ket{n,w}.
 \end{equation}
-Also, the momentum $U(1)$ is basically the canonical momentum $p$ to the average coodinate $x = \int X \mathrm{d}\sigma$, it causes the translation in the space of $X$:
+Also, the momentum $U(1)$ is basically the canonical momentum $p$ to the average coordinate $x = \int X \mathrm{d}\sigma$, it causes the translation in the space of $X$:
 \begin{equation}
     (\#eq:UpActX)
     (U^p_{\lambda})^\dagger\, f(X(\sigma,\tau)) \, U^p_{\lambda} = 
@@ -187,7 +187,7 @@ With this boundary condition,
 ### Projective phases on the Hilbert spaces on an interval
 Now let us see how the two $U(1)$ symmetries acts on the Hilbert spaces defined on a manifold with boudnaries. In 1d, there is only one (topology type) of a compact manifold with boundaries: the interval $I = [0,2\pi]$.
 To define the theory on the interval, we have to pick boundary conditions for each of the boundaries: $\sigma =0$ (left boundary) and $\sigma =2\pi$ (right boundary).
-Here we pick the Dirichlet boundary condition $\mathcal{D}(\theta_L,\theta_R)$
+Here we pick the Dirichlet boundary condition $\mathcal{D}(\theta_L)$ and $\mathcal{D}(\theta_R)$ for the left and right boundaries,
 defined by 
 \begin{equation}
     (\#eq:Dirichlet)
@@ -209,22 +209,156 @@ But it still defines a linear map *between the Hilbert spaces*:
     U^p_\lambda : \mathcal{H}_{\theta_L,\theta_R} &\to \mathcal{H}_{\theta_L+\lambda,\theta_R+\lambda}\\
     \ket{w}_{\theta_L,\theta_R} &\mapsto \ket{w}_{\theta_L+\lambda,\theta_R+\lambda}.
 \end{align}
-On the other hand, the winding $U(1)$ symmetry preserved the Dirichlet boundary condition:
+On the other hand, the winding $U(1)$ symmetry preserves the Dirichlet boundary condition and the naive extension of the action \@ref(eq:UpwAct) to this case is
 \begin{align}
-    (\#eq:UwactDirichlet)
+    (\#eq:tildeUwactDirichlet)
     \widetilde{U}^w_\lambda : \mathcal{H}_{\theta_L,\theta_R} &\to \mathcal{H}_{\theta_L,\theta_R}\\
     \ket{w}_{\theta_L,\theta_R} &\mapsto e^{\mathrm{i}\lambda w}\ket{w}_{\theta_L,\theta_R}.
 \end{align}
 Here we put the tilde on $U^w_\lambda$ because there is one problem with this action, i.e. $\widetilde{U}^w_\lambda = e^{\mathrm{i}(\theta_R-\theta_L)}\widetilde{U}^w_{\lambda+2\pi}$.
+This projective phase can be easily removed by redefining the unitary as
+\begin{align}
+    (\#eq:UwactDirichlet)
+    U^w_\lambda : \mathcal{H}_{\theta_L,\theta_R} &\to \mathcal{H}_{\theta_L,\theta_R}\\
+    \ket{w}_{\theta_L,\theta_R} &\mapsto e^{\mathrm{i}\lambda (w-([\theta_R]-[\theta_L])/2\pi)}\ket{w}_{\theta_L,\theta_R},
+\end{align}
+where $[\theta]$ is the number in $[0,2\pi)$ and $[\theta] = \theta \mod 2\pi$. Note that the modification is not $[\theta_R-\theta_L]$, so that the modification is defined *locally* -- it is a sum of independent contributions from the left and right boundaries.
+However, this redefinition produces a projective phase in the product of $U^p_{\lambda_p}$ and $U^w_{\lambda_w}$:
+\begin{equation}
+    (\#eq:UpUwcomu)
+    U^w_{\lambda_w}U^p_{\lambda_p}|_{\theta_L,\theta_R} = e^{\mathrm{i}\lambda_w(-\{\lambda_p+\theta_R\} + \{\lambda_p+\theta_L\})/2\pi} U^p_{\lambda_p}U^w_{\lambda_w}|_{\theta_L,\theta_R},
+\end{equation}
+where $\{\theta\} = \theta - [\theta] \in 2\pi \mathbb{Z}$.
+The $|_{\theta_1,\theta_2}$ denotes the boundary conditions on which the operator just left of the vertical bar acts. For the other operator composed with this one, the domain is chosen so that the composition makes sense.
+This is the projective phase characterizing the mixed anomaly between the two $U(1)$ symmetry (or, the anomaly for the (anti-)diagonal of $U(1)$'s).
+This characterization is utterly different from what you find in @PolchinskiVol1, so
 
-## Categorical representation and 3rd group cohomology
-### Categorical representation
+::: {.exercise}
+Find the relation ship between the characterization of the $U(1)^2$ anomaly here and more traditional one, defined by the 2-pt function of the currents. (KO does not know the answer, and he will be very pleased if you send an answer to him.)
+:::
 
-### 3rd group cohomology
-$H^3(G)$
+A virtue of this complicated way of stating the anomaly is
 
-## Prospect
+1. it is clear that this is some kind of generalization of Wigner's projective phase, and
+2. applicable to discrete case.
 
+For example, we can take the $\mathbb{Z}_2$ subgroup of the diagonal of $U(1)$'s whose unitary is $U_{\mathbb{Z}_2}=U^w_\pi U^p_\pi$ and then the projective phase is
+\begin{equation}
+    (\#eq:2dUZ2)
+    U_{\mathbb{Z}_2}^2|_{\theta_L,\theta_R} = e^{\mathrm{i}(-\{\pi+\theta_R\}+\{\pi+\theta_L\})/2} \mathrm{id}|_{\theta_L,\theta_R}.
+\end{equation}
+
+Next we see that this projective phase can be captured by the third group cohomology.
+
+
+## Third group cohomology
+### Projective phases on Hilbert spaces on intervals
+Consider a 1+1-dimensional theory with boundary conditions $\mathcal{B}_i$
+and symmetry $G$. 
+For each pair of boundary conditions $(\mathcal{B}_L,\mathcal{B}_R)$, we have the Hilbert space $\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}$ (for a fixed length of the interval).
+A boundary condition $\mathcal{B}$ does not necessarily fixed by the symmetry action, but rather mapped to another boundary condition $g\mathcal{B}$. 
+Accordingly, the Unitary in general maps a Hilbert space to another Hilbert space[^separable][^category]:
+\begin{equation}
+    (\#eq:UgB)
+    U_g|_{\mathcal{B}_L,\mathcal{B}_R} : \mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R} \to \mathcal{H}_{g\mathcal{B}_L,g\mathcal{B}_R}.
+\end{equation}
+Then, the composition rule of $U_g's$ might involve projective phases:
+\begin{equation}
+    (\#eq:UBproj)
+    U_{g_1}U_{g_2}|_{\mathcal{B}_L,\mathcal{B}_R} = e^{\mathrm{i}\tilde{\alpha}(g_1,g_2,\mathcal{B}_L,\mathcal{B}_R)}U_{g_1g_2}|_{\mathcal{B}_L,\mathcal{B}_R}.
+\end{equation}
+We further assume that the phase is *local*; it should be a sum of contributions from left and right boundaries, and the two contributions should  obey the same rule:
+\begin{equation}
+    (\#eq:alphasplit)
+    \tilde{\alpha}(g_1,g_2,\mathcal{B}_L,\mathcal{B}_R)
+    =
+    \hat{\alpha}(g_1,g_2,\mathcal{B}_L) - \hat{\alpha}(g_1,g_2,\mathcal{B}_R)
+\end{equation}
+for some function $\hat\alpha$. The negative sign is because the orientation is reversed between the left and right boundaries; in other words the contribution from the right boundary should be the time-reversal of the one from the left.
+In particular, we assume $\tilde{\alpha}(g_1,g_2,\mathcal{B},\mathcal{B}) = 0$. As this can also be considered as the IR cutoff of $\mathbb{R}$ when the interval is long, this should indeed vanish according to the assumptions we made in Section \@ref(noproj).
+
+We also consider the ambiguity of the unitary.
+In this case we also demand that the phase redefinition of the unitary is *local* and should looks like
+\begin{equation}
+    (\#eq:UBbeta)
+    U_g|_{\mathcal{B}_L,\mathcal{B}_R} \mapsto e^{\mathrm{i}(\hat\beta(g,\mathcal{B}_L)-\hat\beta(g,\mathcal{B}_R))} U_g|_{\mathcal{B}_L,\mathcal{B}_R}
+\end{equation}
+for some function $\hat\beta$.
+
+[^separable]: Of course all the separable Hilbert spaces are isomorphic but identifying all of the Hilbert spaces $\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}$ by this universal isomorphism is just confusing and of no use.
+
+[^category]: When the theory is a TQFT, there is a multiplication between the state in $\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_M}$ and $\mathcal{H}_{\mathcal{B}_M,\mathcal{B}_R}$ valued in $\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}$. You can regard this structure as a **category**, whose objects are the boundary conditions, and morphisms are states on intervals (equivalently, topological boundary-changing operators).
+Then $U_g$ is a self-functor on this category, defining **categorical representation** of the (suspension of the) group $G$. 
+However the composition rule of the functors is up to natural transformations, which are the projective phases.
+When the theory is a general QFT there is no canonical multiplication among the states but there is a *family* of multiplications. In such cases KO imagines that the boundary conditions would define a category over some operad (something like the swiss-cheese one), and we should be dealing with the representation theory valued in such categories.
+As far as the anomaly is concerned, the only thing for which we need the operad-category structure is to show the splitting \@ref(eq:alphasplit).
+In higher dimensional QFTs, the category also has to be higher.
+
+### Group cohomology
+Now let us see that the projective phase \@ref(eq:UBproj), subject to the splitting \@ref(eq:alphasplit) and the ambiguity \@ref(eq:UBbeta), defines a group cohomology.
+First, we fix a boundary condition $\mathcal{B}_0$, define a 3-cochain $\alpha \in C^3(G)$ by
+\begin{equation}
+    (\#eq:alphadef)
+    \alpha(g_1,g_2,g_3) = \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,\mathcal{B}_0) = \hat\alpha(g_1,g_2,g_3\mathcal{B}_0) - \hat\alpha(g_1,g_2,\mathcal{B}_0).
+\end{equation}
+From this definition, we have
+\begin{equation}
+    (\#eq:alphatildealpha)
+    \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,g_4\mathcal{B}_0) =     
+    \alpha(g_1,g_2,g_3) - \alpha(g_1,g_2,g_4).
+\end{equation}
+Now the associativity of $U_{g_1}U_{g_2}U_{g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}$ demands
+\begin{align}
+    (\#eq:3cocycle)
+    0 = (\delta_4 \alpha) (g_1,g_2,g_3,g_4) = &\alpha(g_2,g_3,g_4) + \alpha (g_1,g_2g_3,g_4) \\&- \alpha(g_1,g_2,g_3g_4) - \alpha(g_1,g_2,g_3) + \alpha(g_1g_2,g_3,g_4).
+\end{align}
+Also, the ambiguity \@ref(eq:UBbeta) causes the shift to $\alpha$ by,
+\begin{equation}
+    (\#eq:3coboundary)
+    \alpha(g_1,g_2,g_3 )\to \alpha(g_1,g_2,g_3) + (\delta_3 \beta)(g_1,g_2,g_3)
+\end{equation}
+where $\beta(g_1,g_2) = \hat\beta(g_1,g_2\mathcal{B}_L)$ and $\delta_3$ is the one we defined before in \@ref(eq:cocycle).
+
+::: {.exercise}
+Check that $\delta_4\circ \delta_3 = 0$.
+:::
+
+Now the we define the 3rd cohomology in the same we did for the second cohomology:
+\begin{equation}
+    (\#eq:H3g)
+    H^3(G) = \mathrm{Ket}(\delta_4)/\mathrm{Im}(\delta_3).
+\end{equation}
+This is the invariant information from the projective phases associated to the Hilbert spaces on intervals.
+
+::: {.exercise}
+Calculate $H^3(\mathbb{Z}_2)$.
+:::
+
+### Anomaly-BC relationship
+In the above definition \@ref(eq:3cocycle), $\alpha$ depends on the choice of $\mathcal{B}_0$. So is this projective phase a property of the boundary condition, rather than a theory?
+The answer is no, the cohomology class of the projective phase should be uniform over the boundary conditions of a fixed theory.
+To see this, we assume that the boundary conditions admits a sum so that $\mathcal{H}_{\mathcal{B}_1\oplus \mathcal{B}_2,\mathcal{B}_R} = \mathcal{H}_{\mathcal{B}_1,\mathcal{B}_R} \oplus \mathcal{H}_{\mathcal{B}_2,\mathcal{B}_R}$.
+The boundary condition $\mathcal{B}_1\oplus \mathcal{B}_2$ is like 
+putting a qubit entangled with the boundary condition (e.g. the value of $X(0)$ in the periodic scalar example).
+Then, we also want the symmetry $U_g$ acts on $\mathcal{H}_{\mathcal{B}_1\oplus \mathcal{B}_2,\mathcal{B}_R}$.
+However if the cohomology classes associated to $\mathcal{B}_1$ and $\mathcal{B}_2$ were different, the projective "phase" on this direct sum space is not a overall phase, but just a diagonal matrix not proportional to the identity. This breaks the assumption that the symmetry is $G$.
+Therefore, the cohomology class is the **property of the theory**, not the boundary condition, and you can calculate it by picking any boundary condition you like.
+
+This leads to the following theorem, first claimed by @Thorngren:2020yht [^simeon]:
+
+::: {.theorem}
+If there is a boundary condition $\mathcal{B}$ such that $g \mathcal{B} =\mathcal{B}$ for elements of a symmetry group $g\in G$, this symmetry $G$ is non-anomalous, i.e. the cohomology class is trivial.
+(This hold for a QFT in a general dimensions.)
+:::
+Indeed by the definition \@ref(eq:alphadef) $\alpha = 0$ by choosing $\mathcal{B}_0 = \mathcal{B}$ in such a case.[^Thorngren]
+
+[^simeon]: See also @Hellerman:2021fla.
+[^Thorngren]: The work by @Thorngren:2020yht is not this trivial, as their definition of the anomaly is different from us.
+
+## Prospects
+### Background formalism
+### Higher diemnsions
+### Fermions
 
 
 
