@@ -153,19 +153,25 @@ div.csl-indent {
 <li class="chapter" data-level="3" data-path="quantum-anomaly-in-11d-qft.html"><a href="quantum-anomaly-in-11d-qft.html"><i class="fa fa-check"></i><b>3</b> Quantum Anomaly in 1+1d QFT</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="qft-on-a-manifold-and-symmetry.html"><a href="qft-on-a-manifold-and-symmetry.html"><i class="fa fa-check"></i><b>3.1</b> QFT on a manifold and symmetry</a></li>
-<li class="chapter" data-level="3.2" data-path="no-projective-phase-on-s1.html"><a href="no-projective-phase-on-s1.html"><i class="fa fa-check"></i><b>3.2</b> No projective phase on S^1</a></li>
+<li class="chapter" data-level="3.2" data-path="noproj.html"><a href="noproj.html"><i class="fa fa-check"></i><b>3.2</b> No projective phase on S^1</a></li>
 <li class="chapter" data-level="3.3" data-path="dimensional-periodic-scalar-theory.html"><a href="dimensional-periodic-scalar-theory.html"><i class="fa fa-check"></i><b>3.3</b> 1+1-dimensional periodic scalar theory</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="dimensional-periodic-scalar-theory.html"><a href="dimensional-periodic-scalar-theory.html#the-model"><i class="fa fa-check"></i><b>3.3.1</b> The model</a></li>
 <li class="chapter" data-level="3.3.2" data-path="dimensional-periodic-scalar-theory.html"><a href="dimensional-periodic-scalar-theory.html#quantization-on-s1-and-u12-symmetry"><i class="fa fa-check"></i><b>3.3.2</b> Quantization on <span class="math inline">\(S^1\)</span> and <span class="math inline">\(U(1)^2\)</span> symmetry</a></li>
 <li class="chapter" data-level="3.3.3" data-path="dimensional-periodic-scalar-theory.html"><a href="dimensional-periodic-scalar-theory.html#projective-phases-on-the-hilbert-spaces-on-an-interval"><i class="fa fa-check"></i><b>3.3.3</b> Projective phases on the Hilbert spaces on an interval</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="categorical-representation-and-3rd-group-cohomology.html"><a href="categorical-representation-and-3rd-group-cohomology.html"><i class="fa fa-check"></i><b>3.4</b> Categorical representation and 3rd group cohomology</a>
+<li class="chapter" data-level="3.4" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html"><i class="fa fa-check"></i><b>3.4</b> Third group cohomology</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="categorical-representation-and-3rd-group-cohomology.html"><a href="categorical-representation-and-3rd-group-cohomology.html#categorical-representation"><i class="fa fa-check"></i><b>3.4.1</b> Categorical representation</a></li>
-<li class="chapter" data-level="3.4.2" data-path="categorical-representation-and-3rd-group-cohomology.html"><a href="categorical-representation-and-3rd-group-cohomology.html#rd-group-cohomology"><i class="fa fa-check"></i><b>3.4.2</b> 3rd group cohomology</a></li>
+<li class="chapter" data-level="3.4.1" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#projective-phases-on-hilbert-spaces-on-intervals"><i class="fa fa-check"></i><b>3.4.1</b> Projective phases on Hilbert spaces on intervals</a></li>
+<li class="chapter" data-level="3.4.2" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#group-cohomology"><i class="fa fa-check"></i><b>3.4.2</b> Group cohomology</a></li>
+<li class="chapter" data-level="3.4.3" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#anomaly-bc-relationship"><i class="fa fa-check"></i><b>3.4.3</b> Anomaly-BC relationship</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="prospect.html"><a href="prospect.html"><i class="fa fa-check"></i><b>3.5</b> Prospect</a></li>
+<li class="chapter" data-level="3.5" data-path="prospects.html"><a href="prospects.html"><i class="fa fa-check"></i><b>3.5</b> Prospects</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="prospects.html"><a href="prospects.html#background-formalism"><i class="fa fa-check"></i><b>3.5.1</b> Background formalism</a></li>
+<li class="chapter" data-level="3.5.2" data-path="prospects.html"><a href="prospects.html#higher-diemnsions"><i class="fa fa-check"></i><b>3.5.2</b> Higher diemnsions</a></li>
+<li class="chapter" data-level="3.5.3" data-path="prospects.html"><a href="prospects.html#fermions"><i class="fa fa-check"></i><b>3.5.3</b> Fermions</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -228,7 +234,7 @@ We also define <span class="math inline">\(G\)</span>-SRE:</p>
 <p>Let us construct an example of SPT on 1+1d lattice for symmetry <span class="math inline">\(SO(3)\)</span>.
 We put two qubits, labeled by <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, on each site. So <span class="math inline">\(\mathcal{H}_i = \mathcal{H}^A_i \otimes \mathcal{H}^B_i\)</span>, with <span class="math inline">\(\mathcal{H}^A_i \cong \mathcal{H}^B_i \cong \mathbb{C}^2\)</span>.
 As a on-site
-Let <span class="math inline">\(\ket{s_i}\)</span> be the singlet state entangling the <span class="math inline">\(A\)</span>-qubit at site <span class="math inline">\(i\)</span> (<span class="math inline">\(i\in\mathbb{Z}\)</span>) and the <span class="math inline">\(B\)</span>-qubit at site <span class="math inline">\(i+1\)</span>: <span class="math inline">\(\ket{s_i} = \ket{\uparrow_{i,B}}\ket{\downarrow_{i+1,A}} - \ket{\downarrow_{i,B}} \ket{\uparrow_{i+1,A}} \in \mathcal{H}_{i}^A\otimes \mathcal{H}_{i+1}^B\)</span>.
+Let <span class="math inline">\(\ket{s_i}\)</span> be the Bell state between the <span class="math inline">\(A\)</span>-qubit at site <span class="math inline">\(i\)</span> (<span class="math inline">\(i\in\mathbb{Z}\)</span>) and the <span class="math inline">\(B\)</span>-qubit at site <span class="math inline">\(i+1\)</span>: <span class="math inline">\(\ket{s_i} = \ket{\uparrow_{i,B}}\ket{\uparrow_{i+1,A}} + \ket{\downarrow_{i,B}} \ket{\downarrow_{i+1,A}} \in \mathcal{H}_{i}^A\otimes \mathcal{H}_{i+1}^B\)</span>.
 Then we define the total state <span class="math inline">\(\ket{\psi}\)</span> by<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>
 <span class="math display" id="eq:SO3SPT">\[\begin{equation}
   \tag{2.49}
@@ -269,12 +275,11 @@ In summary, if we cut the chain in the SPT, on the edge we have the qubit protec
 <h3><span class="header-section-number">2.7.3</span> SPT for a general projective representation*</h3>
 <p>It is easy the generalize the above example into a general projective representation <span class="math inline">\(R\)</span> of a group <span class="math inline">\(G\)</span>. (Here we assume that <span class="math inline">\(G\)</span> acts by unitary operations.)
 For each site we prepare the local Hilbart space as <span class="math inline">\(\mathcal{H}_i = R_i \otimes R^\vee_i\)</span>, where <span class="math inline">\(R_i\)</span> is the <span class="math inline">\(i\)</span>-th copy of <span class="math inline">\(R\)</span> and <span class="math inline">\(R^\vee_i\)</span> is the dual of <span class="math inline">\(R\)</span>.
-Pick a nonzero state <span class="math inline">\(\ket{0}\)</span> from <span class="math inline">\(R\)</span>, let <span class="math inline">\(\ket{0^\vee} \in R^\vee\)</span> denote the dual of <span class="math inline">\(\ket{0}\)</span>, and then define the singlet state <span class="math inline">\(\ket{s_i}\)</span> by
+Pick a basis <span class="math inline">\(\ket{i}\)</span> in <span class="math inline">\(R\)</span>, let <span class="math inline">\(\ket{i^\vee} \in R^\vee\)</span> denote the dual basis, and then define the singlet state <span class="math inline">\(\ket{s_i}\)</span> by
 <span class="math display" id="eq:ketsiGeneral">\[\begin{equation}
   \tag{2.52}
-  \ket{s_i} = \int \mathrm{d}g \bigl(U_{g^{-1}}\ket{0^\vee}_{(i,B)}\big)\otimes \bigl(U_{g}\ket{0}_{(i+1,A)}\bigr) \in R_{i}^\vee \otimes R_{i+1},
+  \ket{s_i} = \sum_{i}^{\mathrm{dim}R} \ket{i^\vee}\otimes\ket{i}\in R_{i}^\vee \otimes R_{i+1}.
 \end{equation}\]</span>
-where <span class="math inline">\(\mathrm{d}g\)</span> is the Haar measure of <span class="math inline">\(G\)</span> (it is just a sum over the group element if <span class="math inline">\(G\)</span> is finite).
 This state is invariant under <span class="math inline">\(T_{g^{-1}}^{(i,B)}T_g^{(i+1,A)}\)</span> (and nonzero).
 Now the rest of the constuction is the same as above, and we see the edge mode in <span class="math inline">\(R\)</span> when the lattice has a boundary.
 Thus we have seen how the (one direction of) Hypothesis <a href="anomalous-symmetry-and-1d-spt.html#hyp:SPT">2.1</a> works in the 1+1d bulk/0+1d boundary case.</p>

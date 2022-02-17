@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3.1 QFT on a manifold and symmetry | Topological Aspects of Symmetry in Low Dimensions</title>
-  <meta name="description" content="3.1 QFT on a manifold and symmetry | Topological Aspects of Symmetry in Low Dimensions" />
+  <title>3.4 Third group cohomology | Topological Aspects of Symmetry in Low Dimensions</title>
+  <meta name="description" content="3.4 Third group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3.1 QFT on a manifold and symmetry | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta property="og:title" content="3.4 Third group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="kantohm11/symmetry_review" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3.1 QFT on a manifold and symmetry | Topological Aspects of Symmetry in Low Dimensions" />
+  <meta name="twitter:title" content="3.4 Third group cohomology | Topological Aspects of Symmetry in Low Dimensions" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="quantum-anomaly-in-11d-qft.html"/>
-<link rel="next" href="noproj.html"/>
+<link rel="prev" href="dimensional-periodic-scalar-theory.html"/>
+<link rel="next" href="prospects.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -194,55 +194,118 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="qft-on-a-manifold-and-symmetry" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> QFT on a manifold and symmetry</h2>
-<p>As emphasized, the locality plays the essential role in (topological properties of) QFT.
-One concequence of the locality is that,
-given a <span class="math inline">\(d+1\)</span>-dimensional QFT, we can quantize the theoy on a spacial closed manifold <span class="math inline">\(M_d\)</span> to get <span class="math inline">\(\mathcal{H}_{M_d}\)</span>.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>
-In other words a QFT is not just the Hilbert space and the Hamiltonian, but a rule to assign them when a closed manifold <span class="math inline">\(M_d\)</span> is given.
-It is more precise to express the same thing in terms of the algebra of operators.
-For a QFT, given a region <span class="math inline">\(R \in \mathbb{R}^{d,1}\)</span>, there is the algebra of local operators contained in <span class="math inline">\(R\)</span>: <span class="math inline">\(\mathcal{A}(R)\)</span>.
-Then we “glue” the algebra <span class="math inline">\(\mathcal{A}(B^{d+1})\)</span> on a ball to get <span class="math inline">\(\mathcal{A}(R)\)</span> for an arbitrary manifold <span class="math inline">\(R\)</span>. In particular we can get <span class="math inline">\(\mathcal{A}(M_d\times \mathbb{R})\)</span>.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p>
-<p>A symmetry also is expected to be local: that if there is a symmetry <span class="math inline">\(T\)</span> in a QFT, that means, for arbitrary <span class="math inline">\(\mathcal{M}_d\)</span>,
-there should exists a symmetry transformation <span class="math inline">\(T_{M_d}\)</span> on <span class="math inline">\(\mathbb{P}\mathcal{H}_{M_d}\)</span>.
-This is manifest in the case of continuous symmetry.
-For example, the unitary operator <span class="math inline">\(U_\lambda\)</span> for a <span class="math inline">\(U(1)\)</span> rotation by angle <span class="math inline">\(\lambda\)</span> is, from the Noether’s theorem,
-<span class="math display" id="eq:Noether">\[\begin{equation}
-    \tag{3.1}
-    U_\alpha = e^{\mathrm{i}\lambda \int_{M_d}j^0 \mathrm{d}^dx},
+<div id="third-group-cohomology" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Third group cohomology</h2>
+<div id="projective-phases-on-hilbert-spaces-on-intervals" class="section level3" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Projective phases on Hilbert spaces on intervals</h3>
+<p>Consider a 1+1-dimensional theory with boundary conditions <span class="math inline">\(\mathcal{B}_i\)</span>
+and symmetry <span class="math inline">\(G\)</span>.
+For each pair of boundary conditions <span class="math inline">\((\mathcal{B}_L,\mathcal{B}_R)\)</span>, we have the Hilbert space <span class="math inline">\(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\)</span> (for a fixed length of the interval).
+A boundary condition <span class="math inline">\(\mathcal{B}\)</span> does not necessarily fixed by the symmetry action, but rather mapped to another boundary condition <span class="math inline">\(g\mathcal{B}\)</span>.
+Accordingly, the Unitary in general maps a Hilbert space to another Hilbert space<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a><a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>:
+<span class="math display" id="eq:UgB">\[\begin{equation}
+    \tag{3.21}
+    U_g|_{\mathcal{B}_L,\mathcal{B}_R} : \mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R} \to \mathcal{H}_{g\mathcal{B}_L,g\mathcal{B}_R}.
 \end{equation}\]</span>
-where <span class="math inline">\(j^\mu\)</span> is the Noether current.
-In other words the locality of the unitary operator is manifest in the integral in the expression.
-For a discrete symmetry, the Noether current is not available.
-However, we can define that a symmetry transformation is a automorphism of <span class="math inline">\(\mathcal{A}(R)\)</span>:
-<span class="math display" id="eq:TonAR">\[\begin{equation}
-    \tag{3.2}
-    T \curvearrowright \mathcal{A}(R) \to \mathcal{A}(R),
+Then, the composition rule of <span class="math inline">\(U_g&#39;s\)</span> might involve projective phases:
+<span class="math display" id="eq:UBproj">\[\begin{equation}
+    \tag{3.22}
+    U_{g_1}U_{g_2}|_{\mathcal{B}_L,\mathcal{B}_R} = e^{\mathrm{i}\tilde{\alpha}(g_1,g_2,\mathcal{B}_L,\mathcal{B}_R)}U_{g_1g_2}|_{\mathcal{B}_L,\mathcal{B}_R}.
 \end{equation}\]</span>
-and then <span class="math inline">\(T\)</span> also naturally (projectively) acts on <span class="math inline">\(\mathcal{H}_{M_d}\)</span> which is a representation of <span class="math inline">\(\mathcal{A}(R)\)</span>.
-In a more explict term, if the QFT is written in terms of fundamental fields and symmetry acts on these fields,
-the Hilbert space <span class="math inline">\(\mathcal{H}_{M_d}\)</span> is the Fock space constructed from creation/annhilation operators for each modes of the fields on <span class="math inline">\(M_d\)</span>,
-and the action of a symmetry on the fields naturally defines the action on the annihilation operators, in turn defining the action on <span class="math inline">\(\mathcal{H}_{M_d}\)</span>.</p>
-<p>For a local symmetry transformation <span class="math inline">\(T\)</span>, defined in the above sense, to be the symmetry of the theory, the corresponding unitary has to commute with the Hamiltonian.
-We also assume that the Hamiltonian is local:
-<span class="math display" id="eq:localHam">\[\begin{equation}
-    \tag{3.3}
-    H = \int T_{00} \mathrm{d}^dx,
+We further assume that the phase is <em>local</em>; it should be a sum of contributions from left and right boundaries, and the two contributions should obey the same rule:
+<span class="math display" id="eq:alphasplit">\[\begin{equation}
+    \tag{3.23}
+    \tilde{\alpha}(g_1,g_2,\mathcal{B}_L,\mathcal{B}_R)
+    =
+    \hat{\alpha}(g_1,g_2,\mathcal{B}_L) - \hat{\alpha}(g_1,g_2,\mathcal{B}_R)
 \end{equation}\]</span>
-where <span class="math inline">\(T_{\mu\nu}\)</span> is the energy-momentum tensor.
-For a symmetry in QFT, we demand that <span class="math inline">\([U,T_{\mu\nu}] = 0\)</span>. Otherwise <span class="math inline">\(U\)</span> does not commute with the spacetime symmetry.</p>
+for some function <span class="math inline">\(\hat\alpha\)</span>. The negative sign is because the orientation is reversed between the left and right boundaries; in other words the contribution from the right boundary should be the time-reversal of the one from the left.
+In particular, we assume <span class="math inline">\(\tilde{\alpha}(g_1,g_2,\mathcal{B},\mathcal{B}) = 0\)</span>. As this can also be considered as the IR cutoff of <span class="math inline">\(\mathbb{R}\)</span> when the interval is long, this should indeed vanish according to the assumptions we made in Section <a href="noproj.html#noproj">3.2</a>.</p>
+<p>We also consider the ambiguity of the unitary.
+In this case we also demand that the phase redefinition of the unitary is <em>local</em> and should looks like
+<span class="math display" id="eq:UBbeta">\[\begin{equation}
+    \tag{3.24}
+    U_g|_{\mathcal{B}_L,\mathcal{B}_R} \mapsto e^{\mathrm{i}(\hat\beta(g,\mathcal{B}_L)-\hat\beta(g,\mathcal{B}_R))} U_g|_{\mathcal{B}_L,\mathcal{B}_R}
+\end{equation}\]</span>
+for some function <span class="math inline">\(\hat\beta\)</span>.</p>
+</div>
+<div id="group-cohomology" class="section level3" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Group cohomology</h3>
+<p>Now let us see that the projective phase <a href="third-group-cohomology.html#eq:UBproj">(3.22)</a>, subject to the splitting <a href="third-group-cohomology.html#eq:alphasplit">(3.23)</a> and the ambiguity <a href="third-group-cohomology.html#eq:UBbeta">(3.24)</a>, defines a group cohomology.
+First, we fix a boundary condition <span class="math inline">\(\mathcal{B}_0\)</span>, define a 3-cochain <span class="math inline">\(\alpha \in C^3(G)\)</span> by
+<span class="math display" id="eq:alphadef">\[\begin{equation}
+    \tag{3.25}
+    \alpha(g_1,g_2,g_3) = \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,\mathcal{B}_0) = \hat\alpha(g_1,g_2,g_3\mathcal{B}_0) - \hat\alpha(g_1,g_2,\mathcal{B}_0).
+\end{equation}\]</span>
+From this definition, we have
+<span class="math display" id="eq:alphatildealpha">\[\begin{equation}
+    \tag{3.26}
+    \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,g_4\mathcal{B}_0) =     
+    \alpha(g_1,g_2,g_3) - \alpha(g_1,g_2,g_4).
+\end{equation}\]</span>
+Now the associativity of <span class="math inline">\(U_{g_1}U_{g_2}U_{g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}\)</span> demands
+<span class="math display" id="eq:3cocycle">\[\begin{align}
+    \tag{3.27}
+    0 = (\delta_4 \alpha) (g_1,g_2,g_3,g_4) = &amp;\alpha(g_2,g_3,g_4) + \alpha (g_1,g_2g_3,g_4) \\&amp;- \alpha(g_1,g_2,g_3g_4) - \alpha(g_1,g_2,g_3) + \alpha(g_1g_2,g_3,g_4).
+\end{align}\]</span>
+Also, the ambiguity <a href="third-group-cohomology.html#eq:UBbeta">(3.24)</a> causes the shift to <span class="math inline">\(\alpha\)</span> by,
+<span class="math display" id="eq:3coboundary">\[\begin{equation}
+    \tag{3.28}
+    \alpha(g_1,g_2,g_3 )\to \alpha(g_1,g_2,g_3) + (\delta_3 \beta)(g_1,g_2,g_3)
+\end{equation}\]</span>
+where <span class="math inline">\(\beta(g_1,g_2) = \hat\beta(g_1,g_2\mathcal{B}_L)\)</span> and <span class="math inline">\(\delta_3\)</span> is the one we defined before in <a href="second-group-cohomology.html#eq:cocycle">(2.41)</a>.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Exercise 3.2  </strong></span>Check that <span class="math inline">\(\delta_4\circ \delta_3 = 0\)</span>.</p>
+</div>
+<p>Now the we define the 3rd cohomology in the same we did for the second cohomology:
+<span class="math display" id="eq:H3g">\[\begin{equation}
+    \tag{3.29}
+    H^3(G) = \mathrm{Ket}(\delta_4)/\mathrm{Im}(\delta_3).
+\end{equation}\]</span>
+This is the invariant information from the projective phases associated to the Hilbert spaces on intervals.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 3.3  </strong></span>Calculate <span class="math inline">\(H^3(\mathbb{Z}_2)\)</span>.</p>
+</div>
+</div>
+<div id="anomaly-bc-relationship" class="section level3" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Anomaly-BC relationship</h3>
+<p>In the above definition <a href="third-group-cohomology.html#eq:3cocycle">(3.27)</a>, <span class="math inline">\(\alpha\)</span> depends on the choice of <span class="math inline">\(\mathcal{B}_0\)</span>. So is this projective phase a property of the boundary condition, rather than a theory?
+The answer is no, the cohomology class of the projective phase should be uniform over the boundary conditions of a fixed theory.
+To see this, we assume that the boundary conditions admits a sum so that <span class="math inline">\(\mathcal{H}_{\mathcal{B}_1\oplus \mathcal{B}_2,\mathcal{B}_R} = \mathcal{H}_{\mathcal{B}_1,\mathcal{B}_R} \oplus \mathcal{H}_{\mathcal{B}_2,\mathcal{B}_R}\)</span>.
+The boundary condition <span class="math inline">\(\mathcal{B}_1\oplus \mathcal{B}_2\)</span> is like
+putting a qubit entangled with the boundary condition (e.g. the value of <span class="math inline">\(X(0)\)</span> in the periodic scalar example).
+Then, we also want the symmetry <span class="math inline">\(U_g\)</span> acts on <span class="math inline">\(\mathcal{H}_{\mathcal{B}_1\oplus \mathcal{B}_2,\mathcal{B}_R}\)</span>.
+However if the cohomology classes associated to <span class="math inline">\(\mathcal{B}_1\)</span> and <span class="math inline">\(\mathcal{B}_2\)</span> were different, the projective “phase” on this direct sum space is not a overall phase, but just a diagonal matrix not proportional to the identity. This breaks the assumption that the symmetry is <span class="math inline">\(G\)</span>.
+Therefore, the cohomology class is the <strong>property of the theory</strong>, not the boundary condition, and you can calculate it by picking any boundary condition you like.</p>
+<p>This leads to the following theorem, first claimed by <span class="citation"> [<a href="#ref-Thorngren:2020yht" role="doc-biblioref">16</a>]</span> <a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-8" class="theorem"><strong>Theorem 3.1  </strong></span>If there is a boundary condition <span class="math inline">\(\mathcal{B}\)</span> such that <span class="math inline">\(g \mathcal{B} =\mathcal{B}\)</span> for elements of a symmetry group <span class="math inline">\(g\in G\)</span>, this symmetry <span class="math inline">\(G\)</span> is non-anomalous, i.e. the cohomology class is trivial.
+(This hold for a QFT in a general dimensions.)</p>
+</div>
+<p>Indeed by the definition <a href="third-group-cohomology.html#eq:alphadef">(3.25)</a> <span class="math inline">\(\alpha = 0\)</span> by choosing <span class="math inline">\(\mathcal{B}_0 = \mathcal{B}\)</span> in such a case.<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a></p>
+</div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body">
-<div id="ref-Witten:2021jzq" class="csl-entry">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">E. Witten, <em><span class="nocase">Why Does Quantum Field Theory In Curved Spacetime Make Sense? And What Happens To The Algebra of Observables In The Thermodynamic Limit?</span></em>, (2021), <span class="nodecoration"><a href="https://arxiv.org/abs/2112.11614">https://arxiv.org/abs/2112.11614</a></span>.</div>
+<div id="ref-Thorngren:2020yht" class="csl-entry">
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">R. Thorngren and Y. Wang, <em><span class="nocase">Anomalous symmetries end at the boundary</span></em>, JHEP <strong>09</strong>, 017 (2021), <span class="nodecoration"><a href="https://arxiv.org/abs/2012.15861">https://arxiv.org/abs/2012.15861</a></span>.</div>
+</div>
+<div id="ref-Hellerman:2021fla" class="csl-entry">
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">S. Hellerman, D. Orlando, and M. Watanabe, <em><span class="nocase">Quantum Information Theory of the Gravitational Anomaly</span></em>, (2021), <span class="nodecoration"><a href="https://arxiv.org/abs/2101.03320">https://arxiv.org/abs/2101.03320</a></span>.</div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="13">
-<li id="fn13"><p>We often need an additional structure to <span class="math inline">\(M_d\)</span>. For example, if the theory includes fermionic fields, the manifold <span class="math inline">\(M_d\)</span> has to be equipped with the spin structure. In this lecture we do not care about thie subtle but interesting and important subtlety and assume that the theory is <em>bosonic</em>, i.e. does not contain fermionic fields. This amounts to assume only the orientation of <span class="math inline">\(M_d\)</span>. (To put a QFT on an unoriented manifold, one needs an anti-unitary symmetry which also be ignored in thie lecture.) The references mentioned in <a href="lecture-guide.html#othernotes">1.1.4</a> have contents about fermionic theories.<a href="qft-on-a-manifold-and-symmetry.html#fnref13" class="footnote-back">↩︎</a></p></li>
-<li id="fn14"><p>This explanation is awfully rough. For a better discussion the reader might refer to <span class="citation"> [<a href="#ref-Witten:2021jzq" role="doc-biblioref">12</a>]</span><a href="qft-on-a-manifold-and-symmetry.html#fnref14" class="footnote-back">↩︎</a></p></li>
+<ol start="17">
+<li id="fn17"><p>Of course all the separable Hilbert spaces are isomorphic but identifying all of the Hilbert spaces <span class="math inline">\(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\)</span> by this universal isomorphism is just confusing and of no use.<a href="third-group-cohomology.html#fnref17" class="footnote-back">↩︎</a></p></li>
+<li id="fn18"><p>When the theory is a TQFT, there is a multiplication between the state in <span class="math inline">\(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_M}\)</span> and <span class="math inline">\(\mathcal{H}_{\mathcal{B}_M,\mathcal{B}_R}\)</span> valued in <span class="math inline">\(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\)</span>. You can regard this structure as a <strong>category</strong>, whose objects are the boundary conditions, and morphisms are states on intervals (equivalently, topological boundary-changing operators).
+Then <span class="math inline">\(U_g\)</span> is a self-functor on this category, defining <strong>categorical representation</strong> of the (suspension of the) group <span class="math inline">\(G\)</span>.
+However the composition rule of the functors is up to natural transformations, which are the projective phases.
+When the theory is a general QFT there is no canonical multiplication among the states but there is a <em>family</em> of multiplications. In such cases KO imagines that the boundary conditions would define a category over some operad (something like the swiss-cheese one), and we should be dealing with the representation theory valued in such categories.
+As far as the anomaly is concerned, the only thing for which we need the operad-category structure is to show the splitting <a href="third-group-cohomology.html#eq:alphasplit">(3.23)</a>.
+In higher dimensional QFTs, the category also has to be higher.<a href="third-group-cohomology.html#fnref18" class="footnote-back">↩︎</a></p></li>
+<li id="fn19"><p>See also <span class="citation"> [<a href="#ref-Hellerman:2021fla" role="doc-biblioref">17</a>]</span>.<a href="third-group-cohomology.html#fnref19" class="footnote-back">↩︎</a></p></li>
+<li id="fn20"><p>The work by <span class="citation"> [<a href="#ref-Thorngren:2020yht" role="doc-biblioref">16</a>]</span> is not this trivial, as their definition of the anomaly is different from us.<a href="third-group-cohomology.html#fnref20" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -250,8 +313,8 @@ For a symmetry in QFT, we demand that <span class="math inline">\([U,T_{\mu\nu}]
           </div>
         </div>
       </div>
-<a href="quantum-anomaly-in-11d-qft.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="noproj.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dimensional-periodic-scalar-theory.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="prospects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
