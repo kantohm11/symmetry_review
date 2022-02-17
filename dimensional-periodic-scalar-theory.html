@@ -24,7 +24,7 @@
 <meta name="author" content="Kantaro Ohmori,  University of Tokyo" />
 
 
-<meta name="date" content="2022-02-16" />
+<meta name="date" content="2022-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="no-projective-phase-on-s1.html"/>
-<link rel="next" href="third-group-cohomology.html"/>
+<link rel="next" href="categorical-representation-and-3rd-group-cohomology.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -158,9 +158,13 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="dimensional-periodic-scalar-theory.html"><a href="dimensional-periodic-scalar-theory.html#the-model"><i class="fa fa-check"></i><b>3.3.1</b> The model</a></li>
 <li class="chapter" data-level="3.3.2" data-path="dimensional-periodic-scalar-theory.html"><a href="dimensional-periodic-scalar-theory.html#quantization-on-s1-and-u12-symmetry"><i class="fa fa-check"></i><b>3.3.2</b> Quantization on <span class="math inline">\(S^1\)</span> and <span class="math inline">\(U(1)^2\)</span> symmetry</a></li>
-<li class="chapter" data-level="3.3.3" data-path="dimensional-periodic-scalar-theory.html"><a href="dimensional-periodic-scalar-theory.html#hilbert-spaces-on-an-interval-as-a-projective-higher-reprentation"><i class="fa fa-check"></i><b>3.3.3</b> Hilbert spaces on an interval as a projective higher-reprentation</a></li>
+<li class="chapter" data-level="3.3.3" data-path="dimensional-periodic-scalar-theory.html"><a href="dimensional-periodic-scalar-theory.html#projective-phases-on-the-hilbert-spaces-on-an-interval"><i class="fa fa-check"></i><b>3.3.3</b> Projective phases on the Hilbert spaces on an interval</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html"><i class="fa fa-check"></i><b>3.4</b> Third group cohomology</a></li>
+<li class="chapter" data-level="3.4" data-path="categorical-representation-and-3rd-group-cohomology.html"><a href="categorical-representation-and-3rd-group-cohomology.html"><i class="fa fa-check"></i><b>3.4</b> Categorical representation and 3rd group cohomology</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="categorical-representation-and-3rd-group-cohomology.html"><a href="categorical-representation-and-3rd-group-cohomology.html#categorical-representation"><i class="fa fa-check"></i><b>3.4.1</b> Categorical representation</a></li>
+<li class="chapter" data-level="3.4.2" data-path="categorical-representation-and-3rd-group-cohomology.html"><a href="categorical-representation-and-3rd-group-cohomology.html#rd-group-cohomology"><i class="fa fa-check"></i><b>3.4.2</b> 3rd group cohomology</a></li>
+</ul></li>
 <li class="chapter" data-level="3.5" data-path="prospect.html"><a href="prospect.html"><i class="fa fa-check"></i><b>3.5</b> Prospect</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -187,33 +191,113 @@ div.csl-indent {
 <div id="dimensional-periodic-scalar-theory" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> 1+1-dimensional periodic scalar theory</h2>
 <p>Rather than explaining the general theory of a QFT on a open manifold, let us jump to a concrete example: 1+1-dimensional (relativistic) massless periodic scalar <span class="math inline">\(\phi\)</span>.
-The theory should be explained in any good textbooks on string theory, e.g. <span class="citation"> [<a href="#ref-PolchinskiVol1" role="doc-biblioref">15</a>]</span>.</p>
+The theory should be explained in any good textbooks on string theory, e.g. <span class="citation"> [<a href="#ref-PolchinskiVol1" role="doc-biblioref">15</a>]</span>. Here we give a lightening review.</p>
 <div id="the-model" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> The model</h3>
-<p>The action of the massless periodic scalar theory (on Euclidean flat space) is (in Polchinski’s normalization except for using <span class="math inline">\(\phi\)</span> instead of <span class="math inline">\(X\)</span>)
-<span class="math display" id="eq:Sphi">\[\begin{equation}
+<p>The action of the free massless periodic scalar theory (on the Minkowski flat space) is (in Polchinski’s normalization, in particular <span class="math inline">\(\hbar =1\)</span> as usual)
+<span class="math display" id="eq:SX">\[\begin{equation}
     \tag{3.4}
-    S = -\frac{1}{4\pi\alpha&#39;}\int_{M_2} \mathrm{d}\tau\mathrm{d}\sigma \,\delta^{ab}\partial_a \phi \partial_b \phi.
+    S = -\frac{1}{4\pi\alpha&#39;}\int_{M_2} \mathrm{d}\tau\mathrm{d}\sigma \,\eta^{ab}\partial_a X \partial_b X.
 \end{equation}\]</span>
-The scalar field <span class="math inline">\(\phi\)</span> is periodic and we set the periodicity to be <span class="math inline">\(2\pi R\)</span>: <span class="math inline">\(\phi \sim \phi + 2\pi R\)</span>.
+The scalar field <span class="math inline">\(X\)</span> is periodic and we set the periodicity to be <span class="math inline">\(2\pi R\)</span>: <span class="math inline">\(X \sim X + 2\pi R\)</span>.
 The equation of motion is the massless Klein-Gordon one
-<span class="math display" id="eq:EOMphi">\[\begin{equation}
+<span class="math display" id="eq:EOMX">\[\begin{equation}
     \tag{3.5}
-    \partial^2 \phi = 0.
+    \partial^2 X = 0.
 \end{equation}\]</span>
 The canonical momentum <span class="math inline">\(\Pi(\sigma,\tau)\)</span> is
 <span class="math display" id="eq:momentum">\[\begin{equation}
     \tag{3.6}
-    \Pi = \frac{1}{4\pi \alpha&#39;} 
+    \Pi = \frac{1}{2\pi \alpha&#39;} \partial_\tau X,
+\end{equation}\]</span>
+and the Hamiltonian is
+<span class="math display" id="eq:HamX">\[\begin{equation}
+    \tag{3.7}
+    H = \frac{1}{2\pi\alpha&#39;}\int\, \mathrm{d}\sigma \delta^{ab}\partial_a X \partial_b X.
 \end{equation}\]</span></p>
 </div>
 <div id="quantization-on-s1-and-u12-symmetry" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Quantization on <span class="math inline">\(S^1\)</span> and <span class="math inline">\(U(1)^2\)</span> symmetry</h3>
-<p>The theory has two <span class="math inline">\(U(1)\)</span></p>
+<p>Let us quantize the theory on <span class="math inline">\(S^1\)</span>, where we set the periodicity of the spacial coordinate <span class="math inline">\(\sigma \sim \sigma + 2\pi\)</span>.
+We write the general solution to the EOM <a href="dimensional-periodic-scalar-theory.html#eq:EOMX">(3.5)</a> as
+<span class="math display" id="eq:Xexp">\[\begin{equation}
+    \tag{3.8}
+    X^w(\sigma,\tau) = x +  R w \sigma + 2\pi \alpha&#39; p \, \tau + \mathrm{i}\bigl(\frac{\alpha&#39;}{2}\bigr) \sum_{m = -\infty}^{\infty} \frac1m\Bigl(\frac{\alpha_m}{z^m_+}+\frac{\tilde\alpha_m}{z^m_-}\Bigr),
+\end{equation}\]</span>
+where <span class="math inline">\(z = \exp(- \mathrm{i}(\tau \pm \sigma))\)</span>.
+The second term is possible because both <span class="math inline">\(\sigma\)</span> and <span class="math inline">\(X\)</span> is periodic, and the winding number <span class="math inline">\(w\)</span> is quantized (discretized): <span class="math inline">\(w\in \mathbb{Z}\)</span>.
+When there is such topologically distinct classical solutions to the EOM exists, we build the Hilbert space <span class="math inline">\(\mathcal{H}_w\)</span> around each solution labeled by <span class="math inline">\(w\)</span>, and the take the direct sum <span class="math inline">\(\mathcal{H} = \bigotimes_w \mathcal{H}_w\)</span> as the total Hilbert space.
+The canonical commutation relation gives
+<span class="math display" id="eq:comu">\[\begin{equation}
+    \tag{3.9}
+    [x,p] = \mathrm{i}, \quad [\alpha_m,\alpha_n] = [\tilde{\alpha}_m,\tilde{\alpha}_n] = m \delta_{m,-n},
+\end{equation}\]</span>
+and the Hamiltonian is (up to a divergent constant coming from commuting <span class="math inline">\(\alpha\)</span>’s)
+<span class="math display" id="eq:HamXModes">\[\begin{equation}
+    \tag{3.10}
+    H = \frac{\alpha&#39;}{4} \bigl(\frac{n^2}{R^2}+\frac{w^2 R^2}{\alpha&#39;^2}\bigr) + \sum_{n=1}^{\infty} \bigl(\alpha_{-n}\alpha_n + \tilde{\alpha}_{-n}\tilde{\alpha}_n\bigr),
+\end{equation}\]</span>
+where <span class="math inline">\(n = R p\)</span> is the quantized momentum whose eigenvalues takes in <span class="math inline">\(\mathbb{Z}\)</span>, as in the case of the particle on <span class="math inline">\(S^1\)</span>.
+A general eigenstate can be constructed by acting finite number of operators <span class="math inline">\(\alpha_{-i}\)</span> and <span class="math inline">\(\tilde{\alpha}_{-j}\)</span> on a state <span class="math inline">\(\ket{n,w}\)</span>:
+<span class="math display" id="eq:eigen">\[\begin{equation}
+    \tag{3.11}
+    \alpha_{-i_1}^{t_1}\alpha_{-i_2}^{t_s} \cdots 
+    \tilde\alpha_{-j_1}^{s_1}\tilde\alpha_{-j_2}^{s_2} \cdots 
+    \ket{n,w},
+\end{equation}\]</span>
+where <span class="math inline">\(i_a,j_b,t_c,s_d\)</span> are positive integers, and the state <span class="math inline">\(\ket{n,w}\)</span> satisfies
+<span class="math display">\[\begin{align}
+    \alpha_i \ket{n,w} = \tilde{\alpha}_j \ket{n,w} = 0,
+\end{align}\]</span>
+and has the corresponding quantum number <span class="math inline">\(n\)</span> and <span class="math inline">\(w\)</span>.</p>
+<p>This system famously have to <span class="math inline">\(U(1)\)</span> symmetries, whose charges are <span class="math inline">\(n\)</span> and <span class="math inline">\(w\)</span> respectively. The former is called the momentum <span class="math inline">\(U(1)\)</span>, and the latter called the winding <span class="math inline">\(U(1)\)</span>.
+We write the corresponding unitaries as <span class="math inline">\(U^p_\lambda\)</span> and <span class="math inline">\(U^w_\lambda\)</span>, where <span class="math inline">\(\lambda\)</span> is the parameter of the symmetry transformation, so that
+<span class="math display" id="eq:UpwAct">\[\begin{equation}
+    \tag{3.12}
+    U^p_\lambda \ket{n,w} = e^{\mathrm{i}\lambda n }\ket{n,w},\quad
+    U^w_\lambda \ket{n,w} = e^{\mathrm{i}\lambda w }\ket{n,w}.
+\end{equation}\]</span>
+Also, the momentum <span class="math inline">\(U(1)\)</span> is basically the canonical momentum <span class="math inline">\(p\)</span> to the average coodinate <span class="math inline">\(x = \int X \mathrm{d}\sigma\)</span>, it causes the translation in the space of <span class="math inline">\(X\)</span>:
+<span class="math display" id="eq:UpActX">\[\begin{equation}
+    \tag{3.13}
+    (U^p_{\lambda})^\dagger\, f(X(\sigma,\tau)) \, U^p_{\lambda} = 
+    f(X(\sigma,\tau) + \lambda R),
+\end{equation}\]</span>
+where <span class="math inline">\(f\)</span> is a periodic function.
+With this boundary condition,</p>
 </div>
-<div id="hilbert-spaces-on-an-interval-as-a-projective-higher-reprentation" class="section level3" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> Hilbert spaces on an interval as a projective higher-reprentation</h3>
-<p>Let us see the anomaly.</p>
+<div id="projective-phases-on-the-hilbert-spaces-on-an-interval" class="section level3" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Projective phases on the Hilbert spaces on an interval</h3>
+<p>Now let us see how the two <span class="math inline">\(U(1)\)</span> symmetries acts on the Hilbert spaces defined on a manifold with boudnaries. In 1d, there is only one (topology type) of a compact manifold with boundaries: the interval <span class="math inline">\(I = [0,2\pi]\)</span>.
+To define the theory on the interval, we have to pick boundary conditions for each of the boundaries: <span class="math inline">\(\sigma =0\)</span> (left boundary) and <span class="math inline">\(\sigma =2\pi\)</span> (right boundary).
+Here we pick the Dirichlet boundary condition <span class="math inline">\(\mathcal{D}(\theta_L,\theta_R)\)</span>
+defined by
+<span class="math display" id="eq:Dirichlet">\[\begin{equation}
+    \tag{3.14}
+    X(\sigma = 0,t) = R \theta_L, \quad X(\sigma = 2\pi, t)= R \theta_R.
+\end{equation}\]</span>
+The expansion of the periodic field <span class="math inline">\(X\)</span> in this case is
+<span class="math display" id="eq:XexpDirichlet">\[\begin{equation}
+    \tag{3.15}
+    X = R\theta_L + R w \sigma + \mathrm{i}\bigl(\frac{\alpha&#39;}{2}\bigr) e^{-\mathrm{i}\tau} \sum_{m = -\infty}^{\infty}  \frac1m \alpha_m \sin(m \sigma/2),
+\end{equation}\]</span>
+where the winding <span class="math inline">\(w\)</span> now has to takes values in <span class="math inline">\(w \in (\theta_R-\theta_L)/2\pi + \mathbb{Z}\)</span>.
+We write the Hilbert space of states on the interval with the boundary condition <span class="math inline">\(\mathcal{D}(\theta_L,\theta_R)\)</span> as <span class="math inline">\(\mathcal{H}_{\theta_L,\theta_R}\)</span>, and the state with winding <span class="math inline">\(w\)</span> in it as <span class="math inline">\(\ket{w}_{\theta_L,\theta_R}\)</span>. We only consider the ground states for the oscillation modes but the story can be applied to the states with these modes without any change.</p>
+<p>How does the <span class="math inline">\(U(1)^2\)</span> symmetries acts on the states?
+The momentum symmetry translate <span class="math inline">\(X\)</span>, and breaks the boundary condition <a href="dimensional-periodic-scalar-theory.html#eq:Dirichlet">(3.14)</a>.
+But it still defines a linear map <em>between the Hilbert spaces</em>:
+<span class="math display" id="eq:UpactDirichlet">\[\begin{align}
+    \tag{3.16}
+    U^p_\lambda : \mathcal{H}_{\theta_L,\theta_R} &amp;\to \mathcal{H}_{\theta_L+\lambda,\theta_R+\lambda}\\
+    \ket{w}_{\theta_L,\theta_R} &amp;\mapsto \ket{w}_{\theta_L+\lambda,\theta_R+\lambda}.
+\end{align}\]</span>
+On the other hand, the winding <span class="math inline">\(U(1)\)</span> symmetry preserved the Dirichlet boundary condition:
+<span class="math display" id="eq:UwactDirichlet">\[\begin{align}
+    \tag{3.17}
+    \widetilde{U}^w_\lambda : \mathcal{H}_{\theta_L,\theta_R} &amp;\to \mathcal{H}_{\theta_L,\theta_R}\\
+    \ket{w}_{\theta_L,\theta_R} &amp;\mapsto e^{\mathrm{i}\lambda w}\ket{w}_{\theta_L,\theta_R}.
+\end{align}\]</span>
+Here we put the tilde on <span class="math inline">\(U^w_\lambda\)</span> because there is one problem with this action, i.e. <span class="math inline">\(\widetilde{U}^w_\lambda = e^{\mathrm{i}(\theta_R-\theta_L)}\widetilde{U}^w_{\lambda+2\pi}\)</span>.</p>
 </div>
 </div>
 <h3>References</h3>
@@ -228,7 +312,7 @@ The canonical momentum <span class="math inline">\(\Pi(\sigma,\tau)\)</span> is
         </div>
       </div>
 <a href="no-projective-phase-on-s1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="third-group-cohomology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="categorical-representation-and-3rd-group-cohomology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
