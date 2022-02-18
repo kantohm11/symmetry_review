@@ -237,7 +237,7 @@ This characterization is utterly different from what you find in @PolchinskiVol1
 Find the relation ship between the characterization of the $U(1)^2$ anomaly here and more traditional one, defined by the 2-pt function of the currents. (KO does not know the answer, and he will be very pleased if you send an answer to him.)
 :::
 
-A virtue of this complicated way of stating the anomaly is
+An advantage of this way of stating the anomaly is
 
 1. it is clear that this is some kind of generalization of Wigner's projective phase, and
 2. applicable to discrete case.
@@ -317,7 +317,7 @@ Also, the ambiguity \@ref(eq:UBbeta) causes the shift to $\alpha$ by,
     (\#eq:3coboundary)
     \alpha(g_1,g_2,g_3 )\to \alpha(g_1,g_2,g_3) + (\delta_3 \beta)(g_1,g_2,g_3)
 \end{equation}
-where $\beta(g_1,g_2) = \hat\beta(g_1,g_2\mathcal{B}_L)$ and $\delta_3$ is the one we defined before in \@ref(eq:cocycle).
+where $\beta(g_1,g_2) = \hat\beta(g_1,g_2\mathcal{B}_0) - \hat\beta(g_1,\mathcal{B}_0)$ and $\delta_3$ is the one we defined before in \@ref(eq:cocycle).
 
 ::: {.exercise}
 Check that $\delta_4\circ \delta_3 = 0$.
@@ -333,6 +333,7 @@ This is the invariant information from the projective phases associated to the H
 ::: {.exercise}
 Calculate $H^3(\mathbb{Z}_2)$.
 :::
+
 
 ### Anomaly-BC relationship
 In the above definition \@ref(eq:3cocycle), $\alpha$ depends on the choice of $\mathcal{B}_0$. So is this projective phase a property of the boundary condition, rather than a theory?
