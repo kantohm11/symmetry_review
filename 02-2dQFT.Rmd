@@ -220,15 +220,15 @@ This projective phase can be easily removed by redefining the unitary as
 \begin{align}
     (\#eq:UwactDirichlet)
     U^w_\lambda : \mathcal{H}_{\theta_L,\theta_R} &\to \mathcal{H}_{\theta_L,\theta_R}\\
-    \ket{w}_{\theta_L,\theta_R} &\mapsto e^{\mathrm{i}\lambda (w-([\theta_R]-[\theta_L])/2\pi)}\ket{w}_{\theta_L,\theta_R},
+    \ket{w}_{\theta_L,\theta_R} &\mapsto e^{\mathrm{i}\lambda (w-(\{\theta_R\}w}_{\theta_L,\theta_R},
 \end{align}
-where $[\theta]$ is the number in $[0,2\pi)$ and $[\theta] = \theta \mod 2\pi$. Note that the modification is not $[\theta_R-\theta_L]$, so that the modification is defined *locally* -- it is a sum of independent contributions from the left and right boundaries.
+where $\{\theta\}$ is the number in $[0,2\pi)$ and $\{\theta\} = \theta \mod 2\pi$. Note that the modification is not $\{theta_R-\theta_L\}$, so that the modification is defined *locally* -- it is a sum of independent contributions from the left and right boundaries.
 However, this redefinition produces a projective phase in the product of $U^p_{\lambda_p}$ and $U^w_{\lambda_w}$:
 \begin{equation}
     (\#eq:UpUwcomu)
-    U^w_{\lambda_w}U^p_{\lambda_p}|_{\theta_L,\theta_R} = e^{\mathrm{i}\lambda_w(-\{\lambda_p+\theta_R\} + \{\lambda_p+\theta_L\})/2\pi} U^p_{\lambda_p}U^w_{\lambda_w}|_{\theta_L,\theta_R},
+    U^w_{\lambda_w}U^p_{\lambda_p}|_{\theta_L,\theta_R} = e^{\mathrm{i}\lambda_w(-[\lambda_p+\theta_R] + [\lambda_p+\theta_L])/2\pi} U^p_{\lambda_p}U^w_{\lambda_w}|_{\theta_L,\theta_R},
 \end{equation}
-where $\{\theta\} = \theta - [\theta] \in 2\pi \mathbb{Z}$.
+where $[\theta] = \theta - \{\theta\} \in 2\pi \mathbb{Z}$.
 The $|_{\theta_1,\theta_2}$ denotes the boundary conditions on which the operator just left of the vertical bar acts. For the other operator composed with this one, the domain is chosen so that the composition makes sense.
 This is the projective phase characterizing the mixed anomaly between the two $U(1)$ symmetry (or, the anomaly for the (anti-)diagonal of $U(1)$'s).
 This characterization is utterly different from what you find in @PolchinskiVol1, so
@@ -245,7 +245,7 @@ An advantage of this way of stating the anomaly is
 For example, we can take the $\mathbb{Z}_2$ subgroup of the diagonal of $U(1)$'s whose unitary is $U_{\mathbb{Z}_2}=U^w_\pi U^p_\pi$ and then the projective phase is
 \begin{equation}
     (\#eq:2dUZ2)
-    U_{\mathbb{Z}_2}^2|_{\theta_L,\theta_R} = e^{\mathrm{i}(-\{\pi+\theta_R\}+\{\pi+\theta_L\})/2} \mathrm{id}|_{\theta_L,\theta_R}.
+    U_{\mathbb{Z}_2}^2|_{\theta_L,\theta_R} = e^{\mathrm{i}(-[\pi+\theta_R]+[\pi+\theta_L])/2}\mathrm{id}|_{\theta_L,\theta_R}.
 \end{equation}
 
 Next we see that this projective phase can be captured by the third group cohomology.
@@ -348,10 +348,14 @@ Therefore, the cohomology class is the **property of the theory**, not the bound
 This leads to the following theorem, first claimed by @Thorngren:2020yht [^simeon]:
 
 ::: {.theorem}
-If there is a boundary condition $\mathcal{B}$ such that $g \mathcal{B} =\mathcal{B}$ for elements of a symmetry group $g\in G$, this symmetry $G$ is non-anomalous, i.e. the cohomology class is trivial.
+If there is a simple boundary condition $\mathcal{B}$ such that $g \mathcal{B} =\mathcal{B}$ for elements of a symmetry group $g\in G$, this symmetry $G$ is non-anomalous, i.e. the cohomology class is trivial.
 (This hold for a QFT in a general dimensions.)
 :::
 Indeed by the definition \@ref(eq:alphadef) $\alpha = 0$ by choosing $\mathcal{B}_0 = \mathcal{B}$ in such a case.[^Thorngren]
+
+---
+# Have to think about the simplicity! Maybe the reasoning above for the unimormity of the phase is not correct and we rather refer to the renormalization group.
+---
 
 [^simeon]: See also @Hellerman:2021fla.
 [^Thorngren]: The work by @Thorngren:2020yht is not this trivial, as their definition of the anomaly is different from us.
