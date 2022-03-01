@@ -24,7 +24,7 @@
 <meta name="author" content="Kantaro Ohmori,  University of Tokyo" />
 
 
-<meta name="date" content="2022-02-18" />
+<meta name="date" content="2022-03-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -308,15 +308,15 @@ This projective phase can be easily removed by redefining the unitary as
 <span class="math display" id="eq:UwactDirichlet">\[\begin{align}
     \tag{3.18}
     U^w_\lambda : \mathcal{H}_{\theta_L,\theta_R} &amp;\to \mathcal{H}_{\theta_L,\theta_R}\\
-    \ket{w}_{\theta_L,\theta_R} &amp;\mapsto e^{\mathrm{i}\lambda (w-([\theta_R]-[\theta_L])/2\pi)}\ket{w}_{\theta_L,\theta_R},
+    \ket{w}_{\theta_L,\theta_R} &amp;\mapsto e^{\mathrm{i}\lambda (w-(\{\theta_R\}w}_{\theta_L,\theta_R},
 \end{align}\]</span>
-where <span class="math inline">\([\theta]\)</span> is the number in <span class="math inline">\([0,2\pi)\)</span> and <span class="math inline">\([\theta] = \theta \mod 2\pi\)</span>. Note that the modification is not <span class="math inline">\([\theta_R-\theta_L]\)</span>, so that the modification is defined <em>locally</em> – it is a sum of independent contributions from the left and right boundaries.
+where <span class="math inline">\(\{\theta\}\)</span> is the number in <span class="math inline">\([0,2\pi)\)</span> and <span class="math inline">\(\{\theta\} = \theta \mod 2\pi\)</span>. Note that the modification is not <span class="math inline">\(\{theta_R-\theta_L\}\)</span>, so that the modification is defined <em>locally</em> – it is a sum of independent contributions from the left and right boundaries.
 However, this redefinition produces a projective phase in the product of <span class="math inline">\(U^p_{\lambda_p}\)</span> and <span class="math inline">\(U^w_{\lambda_w}\)</span>:
 <span class="math display" id="eq:UpUwcomu">\[\begin{equation}
     \tag{3.19}
-    U^w_{\lambda_w}U^p_{\lambda_p}|_{\theta_L,\theta_R} = e^{\mathrm{i}\lambda_w(-\{\lambda_p+\theta_R\} + \{\lambda_p+\theta_L\})/2\pi} U^p_{\lambda_p}U^w_{\lambda_w}|_{\theta_L,\theta_R},
+    U^w_{\lambda_w}U^p_{\lambda_p}|_{\theta_L,\theta_R} = e^{\mathrm{i}\lambda_w(-[\lambda_p+\theta_R] + [\lambda_p+\theta_L])/2\pi} U^p_{\lambda_p}U^w_{\lambda_w}|_{\theta_L,\theta_R},
 \end{equation}\]</span>
-where <span class="math inline">\(\{\theta\} = \theta - [\theta] \in 2\pi \mathbb{Z}\)</span>.
+where <span class="math inline">\([\theta] = \theta - \{\theta\} \in 2\pi \mathbb{Z}\)</span>.
 The <span class="math inline">\(|_{\theta_1,\theta_2}\)</span> denotes the boundary conditions on which the operator just left of the vertical bar acts. For the other operator composed with this one, the domain is chosen so that the composition makes sense.
 This is the projective phase characterizing the mixed anomaly between the two <span class="math inline">\(U(1)\)</span> symmetry (or, the anomaly for the (anti-)diagonal of <span class="math inline">\(U(1)\)</span>’s).
 This characterization is utterly different from what you find in <span class="citation"> [<a href="#ref-PolchinskiVol1" role="doc-biblioref">15</a>]</span>, so</p>
@@ -331,7 +331,7 @@ This characterization is utterly different from what you find in <span class="ci
 <p>For example, we can take the <span class="math inline">\(\mathbb{Z}_2\)</span> subgroup of the diagonal of <span class="math inline">\(U(1)\)</span>’s whose unitary is <span class="math inline">\(U_{\mathbb{Z}_2}=U^w_\pi U^p_\pi\)</span> and then the projective phase is
 <span class="math display" id="eq:2dUZ2">\[\begin{equation}
     \tag{3.20}
-    U_{\mathbb{Z}_2}^2|_{\theta_L,\theta_R} = e^{\mathrm{i}(-\{\pi+\theta_R\}+\{\pi+\theta_L\})/2} \mathrm{id}|_{\theta_L,\theta_R}.
+    U_{\mathbb{Z}_2}^2|_{\theta_L,\theta_R} = e^{\mathrm{i}(-[\pi+\theta_R]+[\pi+\theta_L])/2}\mathrm{id}|_{\theta_L,\theta_R}.
 \end{equation}\]</span></p>
 <p>Next we see that this projective phase can be captured by the third group cohomology.</p>
 </div>
