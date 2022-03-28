@@ -1,6 +1,6 @@
 --- 
-title: "Topological Aspects of Symmetry in Low Dimensions"
-author: "Kantaro Ohmori, </br> University of Tokyo"
+title: "Quantum Anomalies as Projective Phases"
+author: "Kantaro Ohmori, </br> University of Tokyo </br> kant.ohmori_at_gmail.com"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -12,11 +12,13 @@ link-citations: yes
 github-repo: kantohm11/symmetry_review
 description: ""
 abstract: |
-  This is a lecture note prepared for <a href="https://sites.google.com/view/apctpwinterschool/program">"26th APCTP Winter School on Fundamental Physics"</a>, Feb. 14-18, 2022.
+  This is a lecture note originally prepared for <a href="https://sites.google.com/view/apctpwinterschool/program">"26th APCTP Winter School on Fundamental Physics"</a>, Feb. 14-18, 2022.
+  Later it is expanded for the lecture at KEK (online), Apr. 19-21, 2022.
+  (The expansion is planned to be done before/through the lectures.)
   
   In this lecture we will study the symmetry and its anomaly in low-dimensional, i.e. 0+1d and 1+1d, quantum field theories.
   In 0+1-dimensional quantum field theory, a.k.a quantum mechanics, the Wigner’s theorem tells that a global symmetry forms a group and acts on the Hilbert (state) space as a projective representation. We will see example with non-trivial projective phases and how it can be related to symmetry protected topological phases in 1+1-dimensions. We then see how the story are generalized/changed in 1+1-dimensional (relativistic) quantum field theory, where the locality of the theory plays an important role.
-  Time permits, we also see how the inclusion of fermions affects the story.
+  This lecture aims to formalize quantum anomalies from Hamiltonian perspective, while a conventional approach usually heavily relies on path-integral perspectives.
 ---
 
 
