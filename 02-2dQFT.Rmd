@@ -220,9 +220,11 @@ This projective phase can be easily removed by redefining the unitary as
 \begin{align}
     (\#eq:UwactDirichlet)
     U^w_\lambda : \mathcal{H}_{\theta_L,\theta_R} &\to \mathcal{H}_{\theta_L,\theta_R}\\
-    \ket{w}_{\theta_L,\theta_R} &\mapsto e^{\mathrm{i}\lambda (w-(\{\theta_R\}w}_{\theta_L,\theta_R},
+    \ket{w}_{\theta_L,\theta_R} &\mapsto e^{\mathrm{i}\lambda (w+(\{\theta_L\}-\{\theta_R\})/2\pi)}\ket{w}_{\theta_L,\theta_R},
 \end{align}
-where $\{\theta\}$ is the number in $[0,2\pi)$ and $\{\theta\} = \theta \mod 2\pi$. Note that the modification is not $\{theta_R-\theta_L\}$, so that the modification is defined *locally* -- it is a sum of independent contributions from the left and right boundaries.
+where $\{\theta\}$ is the number in $[0,2\pi)$ and $\{\theta\} = \theta \mod 2\pi$.
+We use this notation to emphasize that the boundary condition $\mathcal{D}(\theta)$ and $\mathcal{D}(\theta+2\pi)$ are identified in equations e.g. \@ref(eq:UpactDirichlet).
+ Note that the modification is not $\{\theta_L-\theta_R\}$, so that the modification is defined *locally* -- it is a sum of independent contributions from the left and right boundaries.
 However, this redefinition produces a projective phase in the product of $U^p_{\lambda_p}$ and $U^w_{\lambda_w}$:
 \begin{equation}
     (\#eq:UpUwcomu)
@@ -296,21 +298,38 @@ In higher dimensional QFTs, the category also has to be higher.
 
 ### Group cohomology
 Now let us see that the projective phase \@ref(eq:UBproj), subject to the splitting \@ref(eq:alphasplit) and the ambiguity \@ref(eq:UBbeta), defines a group cohomology.
-First, we fix a boundary condition $\mathcal{B}_0$, define a 3-cochain $\alpha \in C^3(G)$ by
+First, we fix a simple boundary condition $\mathcal{B}_0$, define a 3-cochain $\alpha \in C^3(G)$ by
 \begin{equation}
     (\#eq:alphadef)
     \alpha(g_1,g_2,g_3) = \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,\mathcal{B}_0) = \hat\alpha(g_1,g_2,g_3\mathcal{B}_0) - \hat\alpha(g_1,g_2,\mathcal{B}_0).
 \end{equation}
+A boundary condition is called simple when it cannot be written as a direct sum of two boundary conditions.[^non-simple]
+For a non-simple boundary conditions the projective "phase" can take different values for each of the simple components and actually be a diagonal matrix.
 From this definition, we have
 \begin{equation}
     (\#eq:alphatildealpha)
     \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,g_4\mathcal{B}_0) =     
     \alpha(g_1,g_2,g_3) - \alpha(g_1,g_2,g_4).
 \end{equation}
-Now the associativity of $U_{g_1}U_{g_2}U_{g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}$ demands
+Now let us examine the associativity of $U_{g_1}U_{g_2}U_{g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}$. 
+One way of composing it is 
+\begin{align}
+    (\#eq:associative1)
+    U_{g_1}(U_{g_2}U_{g_3})|_{g_4\mathcal{B}_0,\mathcal{B}_0}
+    &= e^{\mathrm{i}(\alpha(g_2,g_3,g_4))}U_{g_1}U_{g_2g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}\\
+    &= e^{\mathrm{i}(\alpha(g_2,g_3,g_4)+\alpha(g_1,g_2g_3,g_4))}U_{g_1g_2g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0},
+\end{align}
+while the other is
+\begin{align}
+    (\#eq:associative2)
+    (U_{g_1}U_{g_2})|_{g_3g_4\mathcal{B}_0,g_3\mathcal{B}_0}U_{g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}
+    &= e^{\mathrm{i}(\alpha(g_1,g_2,g_3g_4)-\alpha(g_1,g_2,g_3))}U_{g_1g_2}U_{g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}\\
+    &= e^{\mathrm{i}(\alpha(g_1,g_2,g_3g_4)-\alpha(g_1,g_2,g_3)+\alpha(g_1g_2,g_3,g_4))}U_{g_1g_2g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}.
+\end{align}
+Thus, the associativity demands
 \begin{align}
     (\#eq:3cocycle)
-    0 = (\delta_4 \alpha) (g_1,g_2,g_3,g_4) = &\alpha(g_2,g_3,g_4) + \alpha (g_1,g_2g_3,g_4) \\&- \alpha(g_1,g_2,g_3g_4) - \alpha(g_1,g_2,g_3) + \alpha(g_1g_2,g_3,g_4).
+    0 = (\delta_4 \alpha) (g_1,g_2,g_3,g_4) = &\alpha(g_2,g_3,g_4) + \alpha (g_1,g_2g_3,g_4) \\&- \alpha(g_1,g_2,g_3g_4) + \alpha(g_1,g_2,g_3) - \alpha(g_1g_2,g_3,g_4).
 \end{align}
 Also, the ambiguity \@ref(eq:UBbeta) causes the shift to $\alpha$ by,
 \begin{equation}
@@ -318,6 +337,8 @@ Also, the ambiguity \@ref(eq:UBbeta) causes the shift to $\alpha$ by,
     \alpha(g_1,g_2,g_3 )\to \alpha(g_1,g_2,g_3) + (\delta_3 \beta)(g_1,g_2,g_3)
 \end{equation}
 where $\beta(g_1,g_2) = \hat\beta(g_1,g_2\mathcal{B}_0) - \hat\beta(g_1,\mathcal{B}_0)$ and $\delta_3$ is the one we defined before in \@ref(eq:cocycle).
+
+[^non-simple]: A non-simple boundary condition $\mathcal{B}_1\oplus \mathcal{B}_2$ is like having a external qubit sitting on the boundary which switches the two boundary conditions. Being external means that the state of the qubit cannot be affected by the dynamics of the system. So, e.g. in a spin system, the direct sum over the fixed boundary conditions (which is non-simple) is not the same as the free boundary condition (which is simple).
 
 ::: {.exercise}
 Check that $\delta_4\circ \delta_3 = 0$.
