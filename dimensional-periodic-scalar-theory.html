@@ -23,7 +23,7 @@
 <meta name="author" content="Kantaro Ohmori,  University of Tokyo  kant.ohmori_at_gmail.com" />
 
 
-<meta name="date" content="2022-03-28" />
+<meta name="date" content="2022-04-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -307,9 +307,11 @@ This projective phase can be easily removed by redefining the unitary as
 <span class="math display" id="eq:UwactDirichlet">\[\begin{align}
     \tag{3.18}
     U^w_\lambda : \mathcal{H}_{\theta_L,\theta_R} &amp;\to \mathcal{H}_{\theta_L,\theta_R}\\
-    \ket{w}_{\theta_L,\theta_R} &amp;\mapsto e^{\mathrm{i}\lambda (w-(\{\theta_R\}w}_{\theta_L,\theta_R},
+    \ket{w}_{\theta_L,\theta_R} &amp;\mapsto e^{\mathrm{i}\lambda (w+(\{\theta_L\}-\{\theta_R\})/2\pi)}\ket{w}_{\theta_L,\theta_R},
 \end{align}\]</span>
-where <span class="math inline">\(\{\theta\}\)</span> is the number in <span class="math inline">\([0,2\pi)\)</span> and <span class="math inline">\(\{\theta\} = \theta \mod 2\pi\)</span>. Note that the modification is not <span class="math inline">\(\{theta_R-\theta_L\}\)</span>, so that the modification is defined <em>locally</em> – it is a sum of independent contributions from the left and right boundaries.
+where <span class="math inline">\(\{\theta\}\)</span> is the number in <span class="math inline">\([0,2\pi)\)</span> and <span class="math inline">\(\{\theta\} = \theta \mod 2\pi\)</span>.
+We use this notation to emphasize that the boundary condition <span class="math inline">\(\mathcal{D}(\theta)\)</span> and <span class="math inline">\(\mathcal{D}(\theta+2\pi)\)</span> are identified in equations e.g. <a href="dimensional-periodic-scalar-theory.html#eq:UpactDirichlet">(3.16)</a>.
+Note that the modification is not <span class="math inline">\(\{\theta_L-\theta_R\}\)</span>, so that the modification is defined <em>locally</em> – it is a sum of independent contributions from the left and right boundaries.
 However, this redefinition produces a projective phase in the product of <span class="math inline">\(U^p_{\lambda_p}\)</span> and <span class="math inline">\(U^w_{\lambda_w}\)</span>:
 <span class="math display" id="eq:UpUwcomu">\[\begin{equation}
     \tag{3.19}
