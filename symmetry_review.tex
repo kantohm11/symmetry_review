@@ -80,7 +80,7 @@
 
 \title{Quantum Anomalies as Projective Phases}
 \author{Kantaro Ohmori, University of Tokyo kant.ohmori\_at\_gmail.com}
-\date{2022-04-14}
+\date{2022-04-19}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[section]
@@ -120,6 +120,7 @@ This lecture aims to formalize quantum anomalies from Hamiltonian perspective, w
 
 Symmetry is a guiding principle in physics. In many case, given a system, you first analyze its symmetry. Or, to model a given phenomena, the symmetry is often be the first clue.
 Therefore, there have been numerous research on the topic. What is surprising is that, still, in 2022, it is a hot area of research and there are many things to be understood.
+Maybe the main goal of this lecture is to give the sense of unfinished-ness.
 
 \hypertarget{lecture-guide}{%
 \subsection{Lecture guide}\label{lecture-guide}}
@@ -127,33 +128,47 @@ Therefore, there have been numerous research on the topic. What is surprising is
 \hypertarget{usage-of-this-note}{%
 \subsubsection{Usage of this note}\label{usage-of-this-note}}
 
-This note is provided primarily as a website.
-The usage is self-explaining but you might find a useful tips if you click the ``i'' mark in the top navigation bar. Also from the navigation bar one can download the pdf version. (If you want a epub file, I can easily generate it too, so let me know.) \textbf{However, the equation number does not much currently between the html and pdf format.}
+This note is provided primarily as a \href{https://kantohm11.github.io/symmetry_review/}{website}.
+The usage is self-explaining but you might find a useful tips if you click the ``i'' mark in the top navigation bar. Also from the navigation bar one can download the pdf version. (If you want a epub file, KO can easily generate it too, so let me know.) \textbf{However, the equation number does not much currently between the html and pdf format.}
 
 The parts having * at the tail of its title will probably be skipped in the lecture.
 
 \hypertarget{objective}{%
 \subsubsection{Objective}\label{objective}}
 
-This lecture aims to be an introduction to the field of symmetry and its anomaly in quantum field theory (QFT). In the first part of the lecture topological aspects of symmetry in quantum mechanics are reviewed, then in the latter part of the lecture we proceed to symmetry in 1+1-dimensional quantum field theory.
+This lecture aims to be an introduction to the field of symmetry and its anomaly in quantum field theory (QFT). However this lecture turns out to be idiosyncratic. KO still think this is the best way of understanding, but admittedly unconventional (KO am not going to talk about topological operators, background fields, or even fermions.)
+The aim here is to stress that the anomaly is the \textbf{projectiveness}.
+The linear algebra we love so much is redundant when connected to the physics by the Born rule, and anomaly or the projectiveness is one reflection of that fact.
+For more conventional introductions see the references below.
+
+In the first part of the lecture topological aspects of symmetry in quantum mechanics are reviewed, then in the latter part of the lecture we proceed to symmetry in 1+1-dimensional quantum field theory.
 
 \hypertarget{prerequisite}{%
 \subsubsection{Prerequisite}\label{prerequisite}}
 
-Proficiency in the undergraduate level quantum mechanics and some basic knowledge about quantum field theory and group theory (e.g.~what are \(SO(3)\), \(SU(2)\), \(\mathbb{Z}_2\), and so on) are assumed, but (hopefully) not much more. Especially, the first half will focus on quantum mechanics so it is hopefully understandable to even advanced undergraduates.
+Proficiency in the undergraduate level quantum mechanics and some basic knowledge about quantum field theory (at least knowing how to quantize the free scalar field) and group theory (e.g.~what are \(SO(3)\), \(SU(2)\), \(\mathbb{Z}_2\), and so on) are assumed, but (hopefully) not much more. Especially, the first half will focus on quantum mechanics so it is hopefully understandable to even advanced undergraduates.
 
 \hypertarget{othernotes}{%
 \subsubsection{Useful references}\label{othernotes}}
 
+(Random order)
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   \textcite{tachikawa_2019}:
-  The first half of Yuji's lecture is about the big framework the most of researchers assume (but not necessarily proven), which I will omit.
-  The second half of Yuji's will serve as an advanced version of this lecture.
+  Yuji Tachikawa's full semester lecture note.
+  The first half of Yuji's lecture is about the big framework the most of researchers assume (but not necessarily proven), which KO will mostly omit.
+  The second half of Yuji's might serve as an advanced version of this lecture.
+\item
+  \textcite{cordova_2020}:
+  Clay Córdova's lecture at Cern (video and hand-written notes). You can find other versions of his video on the same topic via googling. This might be regarded as more conventional version of this.
+\item
+  \textcite{ohmori_2020}:
+  Older lecture by myself (video and hand-written notes). This one was more normal.
 \item
   \textcite{Witten:2015aoa}, \textcite{Witten:2015aba}:
+  E. Witten's reviews/articles about fermions.
   While there are not so much overlap between this lecture by me and these lecture note and paper by E. Witten, and Witten's is a bit more advanced, they are undoubtedly ones of the best entry points to the field.
 \end{enumerate}
 
@@ -209,14 +224,60 @@ Thus the 't Hooft anomaly matching is a part of the foundation in the research o
 \caption{'t Hooft anomaly matching}\label{fig:flow}
 \end{figure}
 
+\hypertarget{example-without-explanation-4d-pure-ym-at-theta-pi}{%
+\subsubsection{\texorpdfstring{Example without explanation: 4d pure YM at \(\theta =\pi\)}{Example without explanation: 4d pure YM at \textbackslash theta =\textbackslash pi}}\label{example-without-explanation-4d-pure-ym-at-theta-pi}}
+
+Let me give an example of usage of 't Hooft anomaly, based on \textcite{Gaiotto:2017yup}.
+Here we see some fact, and for the thorough explanation see the original paper of Córdova's lecture \textcite{cordova_2020}. However we an analyze lower-dimensional analogue (,or two if time permits).
+
+The theory we consider here is the 4d \(SU(2)\) pure Yang-Mills. (Generalization to \(SU(\text{even})\) is straightforward, and odd \(N_c\) needs a bit different tool.)
+Note that the pure Yang-Mills does not contain any fermions.
+The quantum anomaly is not peculiar to chiral fermion, but it is just that chiral fermion is the most common place to find a quantum anomaly.
+A bosonic theory may well have anomalies, and this is one of many examples.
+
+The pure Yang-Mills theory contains a parameter called \(\theta\), coupling to the instanton number (in Euclidean signature):
+\begin{equation}
+  \label{eq:thetaSU2}
+  \mathrm{i}\frac{\theta}{32\pi^2}\int \epsilon_{\mu\nu\rho\sigma}\mathrm{Tr}F^{\mu\nu}F^{\rho\sigma}.
+\end{equation}
+What \textcite{Gaiotto:2017yup} found is
+
+\begin{itemize}
+\tightlist
+\item
+  \(\theta = \pi\) has a time-reversal (i.e.~anti-unitary) symmetry (this was known way before),
+\item
+  this time-reversal symmetry has a mixed quantum anomaly with \emph{one-form} symmetry (which we do not have time to learn in this lecture),
+\item
+  and this constrains the phase diagram.
+\end{itemize}
+
+Let us expand the last point by a bit. The YM theory is asymptotic free and strongly coupled in the IR, preventing us from easily determine its long-range behavior.
+However, the mixed anomaly at \(\theta = \pi\) should be matched by whatever the long-range physics realized in the IR. One easy conclusion is that the IR is \textbf{not trivial}; something happens at \(\theta = \pi\). 't Hooft anomaly matching says more, and at least one of the following must be true:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  the time- reversal is broken in the IR; leading to 2 vacua,
+\item
+  the ``one-form symmetry'' is broken in the IR, meaning de-confinement, or
+\item
+  gapless modes; realizing a CFT.\footnote{The argument in \textcite{Gaiotto:2017yup} could not exclude the forth possibility of an anomaly-matching topological phase, which was later excluded in \textcite{Cordova:2019bsd}.}
+\end{enumerate}
+
+The power of anomaly is that this conclusion can come only with pens and papers. No super computer, or even Mathematica.
+Before the work, it felt like hopeless to have \emph{any} robust conclusion on the phase structure of the pure YM, but now we have a bit even if it is a statement with options.
+This was clearly an unexpected advance in science, if not a breakthrough.
+
 \hypertarget{quantum-anomaly-in-quantum-mechanics}{%
 \section{Quantum Anomaly in Quantum Mechanics}\label{quantum-anomaly-in-quantum-mechanics}}
 
 In this chapter we learn about quantum anomaly of a symmetry in quantum mechanics, without assuming any kind of locality.
 Here, locality roughly means that we have a notion of ``observables localized in a subregion of the space (or spacetime).''
-Both quantum field theory (QFT) and a quantum system on lattice are local in this sense, which greatly affect the possible behavior of a symmetry.
+Both quantum field theory (QFT) and a quantum system on lattice are local in this sense, which affect the possible behavior of a symmetry.
 Here we will see what kind of ``topological'' phenomena are possible regarding symmetry when the locality is absent.
-In such case, we often regard that all of the observables are associated to a single point consisting the entire ``space'', justifying call such a system ``0+1-dimensional.''
+In such case, we often regard that all of the observables are associated to a single point consisting the entire ``space'', justifying to call such a system ``0+1-dimensional.''
 
 \hypertarget{basics-about-quantum-mechanics}{%
 \subsection{Basics about quantum mechanics}\label{basics-about-quantum-mechanics}}
@@ -244,6 +305,9 @@ Given two states \([\ket{\psi}],[\ket{\phi}] \in \mathbb{P}\mathcal{H}\), where 
 \end{equation}
 Note that this definition does not depends on the choice of the representatives \(\psi,\phi\) in each class.
 We put the structure of abelian group to \(C^2(G,M)\) induced by the abelian group structure of \(M\).
+
+\hypertarget{operator-algebra}{%
+\subsubsection{operator algebra*}\label{operator-algebra}}
 
 Sometimes it is convenient to focus on \emph{operators} acting on the states, rather than the states itself.
 We let the algebra of the (bounded) operators be denoted by \(\mathcal{A}\).
@@ -498,7 +562,7 @@ where in this example the projective phase is
 \end{equation}
 
 Recall that we have the room to redefine each \(U_g\) by a phase. Can we use this freedom to eliminate the projective phase?
-Let us say the we redefine \(U_g\) by phase \(\beta(g)\):
+Let us say that we redefine \(U_g\) by phase \(\beta(g)\):
 \begin{equation}
   \label{eq:Uredef}
   U_g \mapsto e^{\mathrm{i}\beta(g)}U_g.
@@ -563,25 +627,25 @@ Note that this is also the \(\mathbb{Z}_2\) flipping symmetry, in the sense of t
   \label{eq:UxU}
   U_{\mathbb{Z}_2}^\dagger \, f(x) \, U_{\mathbb{Z}_2} = f(-x),
 \end{equation}
-for any periodic function \(f\) of \(x\).
+for any periodic function \(f\) of \(x\).\footnote{\(\braket{m|f(x)|n} = \int \mathrm{d}x f(x) e^{\mathrm{i}(n-m)x/R}\), and thus \(\braket{m|U^\dagger_{\mathbb{Z}_2}f(x)U_{\mathbb{Z}_2}|n} = \int \mathrm{d}x f(x) e^{\mathrm{i}(-(n-1-(m-1))x/R}= \braket{m|f(-x)|n}\).}
 Now the multiplication between \(U_\lambda\) and \(\mathbb{Z}_2\) is
 \begin{equation}
   \label{eq:U1Z2comu}
   U_\lambda U_{\mathbb{Z}_2} = e^{-\mathrm{i}\lambda}U_{\mathbb{Z}_2}U_{-\lambda}.
 \end{equation}
-Note that in right hand side the parameter \(\lambda\) of \(U_{\lambda}\) is flipped, so the two symmetry forms the semidirect product \(U(1) \rtimes \mathbb{Z}_2\). On top to that, we oberserve the projective phase \(e^{-\mathrm{i}\lambda}\).
+Note that in the right hand side the parameter \(\lambda\) of \(U_{\lambda}\) is flipped, so the two symmetry forms the semidirect product \(U(1) \rtimes \mathbb{Z}_2\). On top to that, we oberserve the projective phase \(e^{-\mathrm{i}\lambda}\).
 If we focus on the subgroup \(\mathbb{Z}_2^\text{shift}\) (\(\lambda = \pi\)) subgroup of the \(U(1)\), we have the subgroup \(\mathbb{Z}_2^\text{shift}\times \mathbb{Z}_2\) of \(U(1) \rtimes \mathbb{Z}_2\) and the projective phase \(e^{-\mathrm{i}\pi}=-1\) is the same phase we observed in Section \ref{Z2Z2}!
 
-Recall that, in Section \ref{Z2Z2}, we have proven that there is no one-dimensional representation of \(\mathbb{Z}_2\times \mathbb{Z}_2\) with the nontrivial projective phase. Therefore \emph{every} eigenspace of \(H\) at \(\theta = \pi\) has dimension at least two. This can be easily verified because \(E_n(\pi) = E_{-n-1}(\pi)\). Therefore, in particular, the ground state has exact two-fold degeneracy that you might use as a qubit.\footnote{I believe this is called the flux qubit, but do not trust me, I'm not an expert on quantum computing.}
+Recall that, in Section \ref{Z2Z2}, we have proven that there is no one-dimensional representation of \(\mathbb{Z}_2\times \mathbb{Z}_2\) with the nontrivial projective phase. Therefore \emph{every} eigenspace of \(H\) at \(\theta = \pi\) has dimension at least two. This can be easily verified because \(E_n(\pi) = E_{-n-1}(\pi)\). In particular, the ground state has exact two-fold degeneracy that you might use as a qubit.\footnote{I believe this is called the flux qubit, but do not trust me, I'm not an expert on quantum computing.}
 
-Ok, but we could find the degeneracy without discussing the projective phase. The real advantage of the quantum anomaly is that it shows the degeneracy is \emph{robust}; this is the result of the symmetry and its quantum anomaly, so, as long as they are preserved, the degeneracy cannot be lifted.
+Okay, but we could find the degeneracy without discussing the projective phase. The real advantage of the quantum anomaly is that it shows the degeneracy is \emph{robust}; this is the result of the symmetry and its quantum anomaly, and as long as they are preserved, the degeneracy cannot be lifted.
 Also, the quantum anomaly is a \emph{discrete} thing and therefore it cannot be changed by continuous deformation. (We will discuss about his a bit more in the next section.)
-So, even if we deform the Hamiltonian as
+Thus, even if we deform the Hamiltonian as
 \begin{equation}
   \label{eq:ABringHamDef}
   H' = \frac{\hbar^2}{2mR^2}\bigl(\hat{n} + \frac{1}{2} \bigr)^2 + V(x),
 \end{equation}
-with an arbitrary (periodic) potential \(V(x)\) that is even : \(V(x) = V(-x)\),
+with an arbitrary (periodic) potential \(V(x)\) that preserves \(\mathbb{Z}_2\times \mathbb{Z}_2\) : \(V(-x) = V(x)\) and \(V(x+\pi) = V(x)\),
 we know that there is a degeneracy, although in this system cannot be easily solved.
 This is the power of quantum anomaly: it tells us something nontrivial \emph{without solving the system}!
 
@@ -1039,7 +1103,7 @@ Consider a 1+1-dimensional theory with boundary conditions \(\mathcal{B}_i\)
 and symmetry \(G\).
 For each pair of boundary conditions \((\mathcal{B}_L,\mathcal{B}_R)\), we have the Hilbert space \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\) (for a fixed length of the interval).
 A boundary condition \(\mathcal{B}\) does not necessarily fixed by the symmetry action, but rather mapped to another boundary condition \(g\mathcal{B}\).
-Accordingly, the Unitary in general maps a Hilbert space to another Hilbert space\footnote{Of course all the separable Hilbert spaces are isomorphic but identifying all of the Hilbert spaces \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\) by this universal isomorphism is just confusing and of no use.}\footnote{When the theory is a TQFT, there is a multiplication between the state in \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_M}\) and \(\mathcal{H}_{\mathcal{B}_M,\mathcal{B}_R}\) valued in \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\). You can regard this structure as a \textbf{category}, whose objects are the boundary conditions, and morphisms are states on intervals (equivalently, topological boundary-changing operators).
+Accordingly, the unitary in general maps a Hilbert space to another Hilbert space\footnote{Of course all the separable Hilbert spaces are isomorphic but identifying all of the Hilbert spaces \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\) by this universal isomorphism is just confusing and of no use.}\footnote{When the theory is a TQFT, there is a multiplication between the state in \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_M}\) and \(\mathcal{H}_{\mathcal{B}_M,\mathcal{B}_R}\) valued in \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\). You can regard this structure as a \textbf{category}, whose objects are the boundary conditions, and morphisms are states on intervals (equivalently, topological boundary-changing operators).
   Then \(U_g\) is a self-functor on this category, defining \textbf{categorical representation} of the (suspension of the) group \(G\).
   However the composition rule of the functors is up to natural transformations, which are the projective phases.
   When the theory is a general QFT there is no canonical multiplication among the states but there is a \emph{family} of multiplications. In such cases KO imagines that the boundary conditions would define a category over some operad (something like the swiss-cheese one), and we should be dealing with the representation theory valued in such categories.
@@ -1076,13 +1140,14 @@ for some function \(\hat\beta\).
 \subsubsection{Group cohomology}\label{group-cohomology}}
 
 Now let us see that the projective phase \eqref{eq:UBproj}, subject to the splitting \eqref{eq:alphasplit} and the ambiguity \eqref{eq:UBbeta}, defines a group cohomology.
-First, we fix a simple boundary condition \(\mathcal{B}_0\), define a 3-cochain \(\alpha \in C^3(G)\) by
+First, we fix a simple boundary condition \footnote{A boundary condition is called simple when it cannot be written as a direct sum of two boundary conditions. A non-simple boundary condition \(\mathcal{B}_1\oplus \mathcal{B}_2\) is like having a external qubit sitting on the boundary which switches the two boundary conditions. Being external means that the state of the qubit cannot be affected by the dynamics of the system. So, e.g.~in a spin system, the direct sum over the fixed boundary conditions (which is non-simple) is not the same as the free boundary condition (which is simple). For a non-simple boundary condition the projective ``phase'' can take different values for each of the simple components and actually be a diagonal matrix.} \(\mathcal{B}_0\), define a 3-cochain \(\alpha \in C^3(G)\) by
 \begin{equation}
     \label{eq:alphadef}
-    \alpha(g_1,g_2,g_3) = \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,\mathcal{B}_0) = \hat\alpha(g_1,g_2,g_3\mathcal{B}_0) - \hat\alpha(g_1,g_2,\mathcal{B}_0).
+    \alpha_{\mathcal{B}_0}(g_1,g_2,g_3) = \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,\mathcal{B}_0) = \hat\alpha(g_1,g_2,g_3\mathcal{B}_0) - \hat\alpha(g_1,g_2,\mathcal{B}_0).
 \end{equation}
-A boundary condition is called simple when it cannot be written as a direct sum of two boundary conditions.\footnote{A non-simple boundary condition \(\mathcal{B}_1\oplus \mathcal{B}_2\) is like having a external qubit sitting on the boundary which switches the two boundary conditions. Being external means that the state of the qubit cannot be affected by the dynamics of the system. So, e.g.~in a spin system, the direct sum over the fixed boundary conditions (which is non-simple) is not the same as the free boundary condition (which is simple).}
-For a non-simple boundary conditions the projective ``phase'' can take different values for each of the simple components and actually be a diagonal matrix.
+Although this definition depends on the simple boundary condition \(\mathcal{B}_0\), the \emph{cohomology class} of \(\alpha_{\mathcal{B}_0}\), which will be defined shortly, is independent of the choice of the boundary condition. This fact will be explained in the later part of this section. Therefore the cohomology class of \(\alpha_{\mathcal{B}_0}\) is \emph{a property of the theory itself}, not of the boundary condition.
+For this reason we omit the subscript of \(\alpha_{\mathcal{B}_0}\) unless necessary.
+
 From this definition, we have
 \begin{equation}
     \label{eq:alphatildealpha}
@@ -1114,13 +1179,17 @@ Also, the ambiguity \eqref{eq:UBbeta} causes the shift to \(\alpha\) by,
     \label{eq:3coboundary}
     \alpha(g_1,g_2,g_3 )\to \alpha(g_1,g_2,g_3) + (\delta_3 \beta)(g_1,g_2,g_3)
 \end{equation}
-where \(\beta(g_1,g_2) = \hat\beta(g_1,g_2\mathcal{B}_0) - \hat\beta(g_1,\mathcal{B}_0)\) and \(\delta_3\) is the one we defined before in \eqref{eq:cocycle}.
+where \(\beta(g_1,g_2) = \hat\beta(g_1,g_2\mathcal{B}_0) - \hat\beta(g_1,\mathcal{B}_0)\) and \(\delta_3\) is the one we defined in \eqref{eq:cocycle}:
+\begin{equation}
+    \label{eq:d3again}
+    (\delta_3 \beta)(g_1,g_2,g_3) := -\beta(g_1,g_2)-\beta(g_1g_2,g_3)+\beta(g_1,g_2g_3)+\beta(g_2,g_3).
+\end{equation}
 
 \begin{exercise}
 Check that \(\delta_4\circ \delta_3 = 0\).
 \end{exercise}
 
-Now the we define the 3rd cohomology in the same we did for the second cohomology:
+Now we can define the 3rd cohomology in the same we did for the second cohomology:
 \begin{equation}
     \label{eq:H3g}
     H^3(G) = \mathrm{Ket}(\delta_4)/\mathrm{Im}(\delta_3).
@@ -1130,6 +1199,28 @@ This is the invariant information from the projective phases associated to the H
 \begin{exercise}
 Calculate \(H^3(\mathbb{Z}_2)\).
 \end{exercise}
+
+\hypertarget{boundary-condition-independence}{%
+\subsubsection{Boundary condition independence}\label{boundary-condition-independence}}
+
+We again emphasize that it is crucial that the cohomology class of \(\alpha_{\mathcal{B}}\) is independent of \(\mathcal{B}\), and thus the anomaly defined in this way is a property of the theory itself.
+To show this independence, consider the associativity of
+\(U_{g_1}U_{g_2}U_{g_3}|_{\mathcal{B}_1,\mathcal{B}_2}\) when the simple boundary conditions \(\mathcal{B}_1\) and \(\mathcal{B}_2\) are not necessarily related by any symmetry action.
+From the locality \eqref{eq:alphasplit}, this leads to the equation
+\begin{equation}
+    \label{eq:assocB1B2}
+    \hat\alpha(g_1,g_2,g_3\mathcal{B}_1) + \hat\alpha(g_1g_2,g_3,\mathcal{B}_1) - \hat\alpha(g_1,g_2g_3,\mathcal{B}_1) - \hat\alpha(g_2,g_3,\mathcal{B}_1) = \text{($\mathcal{B}_1 \to \mathcal{B}_2$)}.
+\end{equation}
+From the definition of the cochain \(\alpha_{\mathcal{B}}\) in \eqref{eq:alphadef}, we conclude that the two cocycles \(\alpha_{\mathcal{B}_1}\) and \(\alpha_{\mathcal{B}_2}\) are cohomologous:
+\begin{equation}
+    \label{eq:B1B2equiv}
+    \alpha_{\mathcal{B}_1} = \alpha_{\mathcal{B}_2} + \delta_3 \beta_{\mathcal{B}_1,\mathcal{B}_2},
+\end{equation}
+where the 2-cochain \(\beta_{\mathcal{B}_1,\mathcal{B}_2}\) is
+\begin{equation}
+    \label{eq:betaB1B2}
+    \beta_{\mathcal{B}_1,\mathcal{B}_2}(g_1,g_2) = \hat\alpha(g_1,g_2,\mathcal{B}_1) - \hat\alpha(g_1,g_2,\mathcal{B}_2).
+\end{equation}
 
 \hypertarget{anomaly-bc-relationship}{%
 \subsubsection{Anomaly-BC relationship}\label{anomaly-bc-relationship}}
@@ -1151,6 +1242,9 @@ If there is a simple boundary condition \(\mathcal{B}\) such that \(g \mathcal{B
 \end{theorem}
 
 Indeed by the definition \eqref{eq:alphadef} \(\alpha = 0\) by choosing \(\mathcal{B}_0 = \mathcal{B}\) in such a case.\footnote{The work by \textcite{Thorngren:2020yht} is not this trivial, as their definition of the anomaly is different from us.}
+
+\hypertarget{anomaly-as-the-obsturction-to-the-anomaly}{%
+\subsubsection{Anomaly as the obsturction to the anomaly}\label{anomaly-as-the-obsturction-to-the-anomaly}}
 
 \hypertarget{prospects}{%
 \subsection{Prospects}\label{prospects}}
