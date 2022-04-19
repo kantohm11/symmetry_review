@@ -25,26 +25,43 @@ abstract: |
 # Introduction
 Symmetry is a guiding principle in physics. In many case, given a system, you first analyze its symmetry. Or, to model a given phenomena, the symmetry is often be the first clue.
 Therefore, there have been numerous research on the topic. What is surprising is that, still, in 2022, it is a hot area of research and there are many things to be understood.
+Maybe the main goal of this lecture is to give the sense of unfinished-ness.
 
 ## Lecture guide 
 
 ### Usage of this note
-This note is provided primarily as a website.
-The usage is self-explaining but you might find a useful tips if you click the "i" mark in the top navigation bar. Also from the navigation bar one can download the pdf version. (If you want a epub file, I can easily generate it too, so let me know.) **However, the equation number does not much currently between the html and pdf format.**
+This note is provided primarily as a [website](https://kantohm11.github.io/symmetry_review/).
+The usage is self-explaining but you might find a useful tips if you click the "i" mark in the top navigation bar. Also from the navigation bar one can download the pdf version. (If you want a epub file, KO can easily generate it too, so let me know.) **However, the equation number does not much currently between the html and pdf format.**
 
 The parts having \* at the tail of its title will probably be skipped in the lecture.
 
 ### Objective
-This lecture aims to be an introduction to the field of symmetry and its anomaly in quantum field theory (QFT). In the first part of the lecture topological aspects of symmetry in quantum mechanics are reviewed, then in the latter part of the lecture we proceed to symmetry in 1+1-dimensional quantum field theory.
+This lecture aims to be an introduction to the field of symmetry and its anomaly in quantum field theory (QFT). However this lecture turns out to be idiosyncratic. KO still think this is the best way of understanding, but admittedly unconventional (KO am not going to talk about topological operators, background fields, or even fermions.)
+The aim here is to stress that the anomaly is the **projectiveness**. 
+The linear algebra we love so much is redundant when connected to the physics by the Born rule, and anomaly or the projectiveness is one reflection of that fact.
+For more conventional introductions see the references below.
+
+In the first part of the lecture topological aspects of symmetry in quantum mechanics are reviewed, then in the latter part of the lecture we proceed to symmetry in 1+1-dimensional quantum field theory.
 
 ### Prerequisite
-Proficiency in the undergraduate level quantum mechanics and some basic knowledge about quantum field theory and group theory (e.g. what are $SO(3)$, $SU(2)$, $\mathbb{Z}_2$, and so on) are assumed, but (hopefully) not much more. Especially, the first half will focus on quantum mechanics so it is hopefully understandable to even advanced undergraduates.
+Proficiency in the undergraduate level quantum mechanics and some basic knowledge about quantum field theory (at least knowing how to quantize the free scalar field) and group theory (e.g. what are $SO(3)$, $SU(2)$, $\mathbb{Z}_2$, and so on) are assumed, but (hopefully) not much more. Especially, the first half will focus on quantum mechanics so it is hopefully understandable to even advanced undergraduates.
 
 ### Useful references{#othernotes}
+(Random order)
+
 1. @tachikawa_2019:
-  The first half of Yuji’s lecture is about the big framework the most of researchers assume (but not necessarily proven), which I will omit.
-  The second half of Yuji's will serve as an advanced version of this lecture.
-2. @Witten:2015aoa, @Witten:2015aba:
+  Yuji Tachikawa's full semester lecture note.
+  The first half of Yuji’s lecture is about the big framework the most of researchers assume (but not necessarily proven), which KO will mostly omit.
+  The second half of Yuji's might serve as an advanced version of this lecture.
+
+2. @cordova_2020:
+  Clay Córdova's lecture at Cern (video and hand-written notes). You can find other versions of his video on the same topic via googling. This might be regarded as more conventional version of this.
+
+3. @ohmori_2020:
+  Older lecture by myself (video and hand-written notes). This one was more normal.
+
+4. @Witten:2015aoa, @Witten:2015aba:
+  E. Witten's reviews/articles about fermions.
   While there are not so much overlap between this lecture by me and these lecture note and paper by E. Witten, and Witten's is a bit more advanced, they are undoubtedly ones of the best entry points to the field.
 
 ## Motivation
@@ -90,5 +107,35 @@ knitr::include_graphics(rep("figs/flow_symmetry.jpeg"))
 ```
 
 
+### Example without explanation: 4d pure YM at $\theta =\pi$
+Let me give an example of usage of 't Hooft anomaly, based on @Gaiotto:2017yup.
+Here we see some fact, and for the thorough explanation see the original paper of Córdova's lecture @cordova_2020. However we an analyze lower-dimensional analogue (,or two if time permits).
 
+The theory we consider here is the 4d $SU(2)$ pure Yang-Mills. (Generalization to $SU(\text{even})$ is straightforward, and odd $N_c$ needs a bit different tool.)
+Note that the pure Yang-Mills does not contain any fermions. 
+The quantum anomaly is not peculiar to chiral fermion, but it is just that chiral fermion is the most common place to find a quantum anomaly.
+A bosonic theory may well have anomalies, and this is one of many examples. 
 
+The pure Yang-Mills theory contains a parameter called $\theta$, coupling to the instanton number (in Euclidean signature):
+\begin{equation}
+  (\#eq:thetaSU2)
+  \mathrm{i}\frac{\theta}{32\pi^2}\int \epsilon_{\mu\nu\rho\sigma}\mathrm{Tr}F^{\mu\nu}F^{\rho\sigma}.
+\end{equation}
+What @Gaiotto:2017yup found is
+
+- $\theta = \pi$ has a time-reversal (i.e. anti-unitary) symmetry (this was known way before),
+- this time-reversal symmetry has a mixed quantum anomaly with *one-form* symmetry (which we do not have time to learn in this lecture),
+- and this constrains the phase diagram.
+
+Let us expand the last point by a bit. The YM theory is asymptotic free and strongly coupled in the IR, preventing us from easily determine its long-range behavior.
+However, the mixed anomaly at $\theta = \pi$ should be matched by whatever the long-range physics realized in the IR. One easy conclusion is that the IR is **not trivial**; something happens at $\theta = \pi$. 't Hooft anomaly matching says more, and at least one of the following must be true:
+
+1. the time- reversal is broken in the IR; leading to 2 vacua,
+2. the "one-form symmetry" is broken in the IR, meaning de-confinement, or
+3. gapless modes; realizing a CFT.[^notqft]
+
+The power of anomaly is that this conclusion can come only with pens and papers. No super computer, or even Mathematica.
+Before the work, it felt like hopeless to have *any* robust conclusion on the phase structure of the pure YM, but now we have a bit even if it is a statement with options. 
+This was clearly an unexpected advance in science, if not a breakthrough.
+
+[^notqft]: The argument in @Gaiotto:2017yup could not exclude the forth possibility of an anomaly-matching topological phase, which was later excluded in @Cordova:2019bsd.
