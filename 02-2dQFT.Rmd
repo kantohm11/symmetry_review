@@ -259,7 +259,7 @@ Consider a 1+1-dimensional theory with boundary conditions $\mathcal{B}_i$
 and symmetry $G$. 
 For each pair of boundary conditions $(\mathcal{B}_L,\mathcal{B}_R)$, we have the Hilbert space $\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}$ (for a fixed length of the interval).
 A boundary condition $\mathcal{B}$ does not necessarily fixed by the symmetry action, but rather mapped to another boundary condition $g\mathcal{B}$. 
-Accordingly, the Unitary in general maps a Hilbert space to another Hilbert space[^separable][^category]:
+Accordingly, the unitary in general maps a Hilbert space to another Hilbert space[^separable][^category]:
 \begin{equation}
     (\#eq:UgB)
     U_g|_{\mathcal{B}_L,\mathcal{B}_R} : \mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R} \to \mathcal{H}_{g\mathcal{B}_L,g\mathcal{B}_R}.
@@ -298,13 +298,14 @@ In higher dimensional QFTs, the category also has to be higher.
 
 ### Group cohomology
 Now let us see that the projective phase \@ref(eq:UBproj), subject to the splitting \@ref(eq:alphasplit) and the ambiguity \@ref(eq:UBbeta), defines a group cohomology.
-First, we fix a simple boundary condition $\mathcal{B}_0$, define a 3-cochain $\alpha \in C^3(G)$ by
+First, we fix a simple boundary condition [^simple] $\mathcal{B}_0$, define a 3-cochain $\alpha \in C^3(G)$ by
 \begin{equation}
     (\#eq:alphadef)
-    \alpha(g_1,g_2,g_3) = \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,\mathcal{B}_0) = \hat\alpha(g_1,g_2,g_3\mathcal{B}_0) - \hat\alpha(g_1,g_2,\mathcal{B}_0).
+    \alpha_{\mathcal{B}_0}(g_1,g_2,g_3) = \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,\mathcal{B}_0) = \hat\alpha(g_1,g_2,g_3\mathcal{B}_0) - \hat\alpha(g_1,g_2,\mathcal{B}_0).
 \end{equation}
-A boundary condition is called simple when it cannot be written as a direct sum of two boundary conditions.[^non-simple]
-For a non-simple boundary conditions the projective "phase" can take different values for each of the simple components and actually be a diagonal matrix.
+Although this definition depends on the simple boundary condition $\mathcal{B}_0$, the *cohomology class* of $\alpha_{\mathcal{B}_0}$, which will be defined shortly, is independent of the choice of the boundary condition. This fact will be explained in the later part of this section. Therefore the cohomology class of $\alpha_{\mathcal{B}_0}$ is *a property of the theory itself*, not of the boundary condition. 
+For this reason we omit the subscript of $\alpha_{\mathcal{B}_0}$ unless necessary.
+
 From this definition, we have
 \begin{equation}
     (\#eq:alphatildealpha)
@@ -336,15 +337,19 @@ Also, the ambiguity \@ref(eq:UBbeta) causes the shift to $\alpha$ by,
     (\#eq:3coboundary)
     \alpha(g_1,g_2,g_3 )\to \alpha(g_1,g_2,g_3) + (\delta_3 \beta)(g_1,g_2,g_3)
 \end{equation}
-where $\beta(g_1,g_2) = \hat\beta(g_1,g_2\mathcal{B}_0) - \hat\beta(g_1,\mathcal{B}_0)$ and $\delta_3$ is the one we defined before in \@ref(eq:cocycle).
+where $\beta(g_1,g_2) = \hat\beta(g_1,g_2\mathcal{B}_0) - \hat\beta(g_1,\mathcal{B}_0)$ and $\delta_3$ is the one we defined in \@ref(eq:cocycle):
+\begin{equation}
+    (\#eq:d3again)
+    (\delta_3 \beta)(g_1,g_2,g_3) := -\beta(g_1,g_2)-\beta(g_1g_2,g_3)+\beta(g_1,g_2g_3)+\beta(g_2,g_3).
+\end{equation}
 
-[^non-simple]: A non-simple boundary condition $\mathcal{B}_1\oplus \mathcal{B}_2$ is like having a external qubit sitting on the boundary which switches the two boundary conditions. Being external means that the state of the qubit cannot be affected by the dynamics of the system. So, e.g. in a spin system, the direct sum over the fixed boundary conditions (which is non-simple) is not the same as the free boundary condition (which is simple).
+[^simple]: A boundary condition is called simple when it cannot be written as a direct sum of two boundary conditions. A non-simple boundary condition $\mathcal{B}_1\oplus \mathcal{B}_2$ is like having a external qubit sitting on the boundary which switches the two boundary conditions. Being external means that the state of the qubit cannot be affected by the dynamics of the system. So, e.g. in a spin system, the direct sum over the fixed boundary conditions (which is non-simple) is not the same as the free boundary condition (which is simple). For a non-simple boundary condition the projective "phase" can take different values for each of the simple components and actually be a diagonal matrix.
 
 ::: {.exercise}
 Check that $\delta_4\circ \delta_3 = 0$.
 :::
 
-Now the we define the 3rd cohomology in the same we did for the second cohomology:
+Now we can define the 3rd cohomology in the same we did for the second cohomology:
 \begin{equation}
     (\#eq:H3g)
     H^3(G) = \mathrm{Ket}(\delta_4)/\mathrm{Im}(\delta_3).
@@ -354,6 +359,26 @@ This is the invariant information from the projective phases associated to the H
 ::: {.exercise}
 Calculate $H^3(\mathbb{Z}_2)$.
 :::
+
+### Boundary condition independence
+We again emphasize that it is crucial that the cohomology class of $\alpha_{\mathcal{B}}$ is independent of $\mathcal{B}$, and thus the anomaly defined in this way is a property of the theory itself.
+To show this independence, consider the associativity of
+$U_{g_1}U_{g_2}U_{g_3}|_{\mathcal{B}_1,\mathcal{B}_2}$ when the simple boundary conditions $\mathcal{B}_1$ and $\mathcal{B}_2$ are not necessarily related by any symmetry action.
+From the locality \@ref(eq:alphasplit), this leads to the equation
+\begin{equation}
+    (\#eq:assocB1B2)
+    \hat\alpha(g_1,g_2,g_3\mathcal{B}_1) + \hat\alpha(g_1g_2,g_3,\mathcal{B}_1) - \hat\alpha(g_1,g_2g_3,\mathcal{B}_1) - \hat\alpha(g_2,g_3,\mathcal{B}_1) = \text{($\mathcal{B}_1 \to \mathcal{B}_2$)}.
+\end{equation}
+From the definition of the cochain $\alpha_{\mathcal{B}}$ in \@ref(eq:alphadef), we conclude that the two cocycles $\alpha_{\mathcal{B}_1}$ and $\alpha_{\mathcal{B}_2}$ are cohomologous:
+\begin{equation}
+    (\#eq:B1B2equiv)
+    \alpha_{\mathcal{B}_1} = \alpha_{\mathcal{B}_2} + \delta_3 \beta_{\mathcal{B}_1,\mathcal{B}_2},
+\end{equation}
+where the 2-cochain $\beta_{\mathcal{B}_1,\mathcal{B}_2}$ is
+\begin{equation}
+    (\#eq:betaB1B2)
+    \beta_{\mathcal{B}_1,\mathcal{B}_2}(g_1,g_2) = \hat\alpha(g_1,g_2,\mathcal{B}_1) - \hat\alpha(g_1,g_2,\mathcal{B}_2).
+\end{equation}
 
 
 ### Anomaly-BC relationship
@@ -374,12 +399,12 @@ If there is a simple boundary condition $\mathcal{B}$ such that $g \mathcal{B} =
 :::
 Indeed by the definition \@ref(eq:alphadef) $\alpha = 0$ by choosing $\mathcal{B}_0 = \mathcal{B}$ in such a case.[^Thorngren]
 
----
-# Have to think about the simplicity! Maybe the reasoning above for the unimormity of the phase is not correct and we rather refer to the renormalization group.
----
 
 [^simeon]: See also @Hellerman:2021fla.
 [^Thorngren]: The work by @Thorngren:2020yht is not this trivial, as their definition of the anomaly is different from us.
+
+### Anomaly as the obsturction to the anomaly
+
 
 ## Prospects
 ### Background formalism
