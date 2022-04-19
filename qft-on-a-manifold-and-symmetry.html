@@ -170,14 +170,19 @@ div.csl-indent {
 <li class="chapter" data-level="3.4.1" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#projective-phases-on-hilbert-spaces-on-intervals"><i class="fa fa-check"></i><b>3.4.1</b> Projective phases on Hilbert spaces on intervals</a></li>
 <li class="chapter" data-level="3.4.2" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#group-cohomology"><i class="fa fa-check"></i><b>3.4.2</b> Group cohomology</a></li>
 <li class="chapter" data-level="3.4.3" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#boundary-condition-independence"><i class="fa fa-check"></i><b>3.4.3</b> Boundary condition independence</a></li>
-<li class="chapter" data-level="3.4.4" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#anomaly-bc-relationship"><i class="fa fa-check"></i><b>3.4.4</b> Anomaly-BC relationship</a></li>
-<li class="chapter" data-level="3.4.5" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#anomaly-as-the-obsturction-to-the-anomaly"><i class="fa fa-check"></i><b>3.4.5</b> Anomaly as the obsturction to the anomaly</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="prospects.html"><a href="prospects.html"><i class="fa fa-check"></i><b>3.5</b> Prospects</a>
+<li class="chapter" data-level="3.5" data-path="property.html"><a href="property.html"><i class="fa fa-check"></i><b>3.5</b> General properties of anomaly in 1+1d</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="prospects.html"><a href="prospects.html#background-formalism"><i class="fa fa-check"></i><b>3.5.1</b> Background formalism</a></li>
-<li class="chapter" data-level="3.5.2" data-path="prospects.html"><a href="prospects.html#higher-diemnsions"><i class="fa fa-check"></i><b>3.5.2</b> Higher diemnsions</a></li>
-<li class="chapter" data-level="3.5.3" data-path="prospects.html"><a href="prospects.html#fermions"><i class="fa fa-check"></i><b>3.5.3</b> Fermions</a></li>
+<li class="chapter" data-level="3.5.1" data-path="property.html"><a href="property.html#anomaly-bc-relationship"><i class="fa fa-check"></i><b>3.5.1</b> Anomaly-BC relationship</a></li>
+<li class="chapter" data-level="3.5.2" data-path="property.html"><a href="property.html#countinuous-symmetry-and-anomalous-ward-identity"><i class="fa fa-check"></i><b>3.5.2</b> Countinuous symmetry and anomalous Ward identity</a></li>
+<li class="chapter" data-level="3.5.3" data-path="property.html"><a href="property.html#anomaly-as-the-obsturction-to-gauging"><i class="fa fa-check"></i><b>3.5.3</b> Anomaly as the obsturction to gauging</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="mathbbcp1-model.html"><a href="mathbbcp1-model.html"><i class="fa fa-check"></i><b>3.6</b> <span class="math inline">\(\mathbb{CP}^1\)</span> model</a></li>
+<li class="chapter" data-level="3.7" data-path="prospects.html"><a href="prospects.html"><i class="fa fa-check"></i><b>3.7</b> Prospects</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="prospects.html"><a href="prospects.html#background-formalism"><i class="fa fa-check"></i><b>3.7.1</b> Background formalism</a></li>
+<li class="chapter" data-level="3.7.2" data-path="prospects.html"><a href="prospects.html#higher-dimensions"><i class="fa fa-check"></i><b>3.7.2</b> Higher dimensions</a></li>
+<li class="chapter" data-level="3.7.3" data-path="prospects.html"><a href="prospects.html#fermions"><i class="fa fa-check"></i><b>3.7.3</b> Fermions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -230,7 +235,7 @@ and then <span class="math inline">\(T\)</span> also naturally (projectively) ac
 In a more explict term, if the QFT is written in terms of fundamental fields and symmetry acts on these fields,
 the Hilbert space <span class="math inline">\(\mathcal{H}_{M_d}\)</span> is the Fock space constructed from creation/annhilation operators for each modes of the fields on <span class="math inline">\(M_d\)</span>,
 and the action of a symmetry on the fields naturally defines the action on the annihilation operators, in turn defining the action on <span class="math inline">\(\mathcal{H}_{M_d}\)</span>.</p>
-<p>For a local symmetry transformation <span class="math inline">\(T\)</span>, defined in the above sense, to be the symmetry of the theory, the corresponding unitary has to commute with the Hamiltonian.
+<p>For a symmetry transformation <span class="math inline">\(T\)</span> respecting the locality<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>, defined in the above sense, to be the symmetry of the theory, the corresponding unitary has to commute with the Hamiltonian.
 We also assume that the Hamiltonian is local:
 <span class="math display" id="eq:localHam">\[\begin{equation}
     \tag{3.3}
@@ -250,6 +255,7 @@ For a symmetry in QFT, we demand that <span class="math inline">\([U,T_{\mu\nu}]
 <ol start="15">
 <li id="fn15"><p>We often need an additional structure to <span class="math inline">\(M_d\)</span>. For example, if the theory includes fermionic fields, the manifold <span class="math inline">\(M_d\)</span> has to be equipped with the spin structure. In this lecture we do not care about thie subtle but interesting and important subtlety and assume that the theory is <em>bosonic</em>, i.e. does not contain fermionic fields. This amounts to assume only the orientation of <span class="math inline">\(M_d\)</span>. (To put a QFT on an unoriented manifold, one needs an anti-unitary symmetry which also be ignored in thie lecture.) The references mentioned in <a href="lecture-guide.html#othernotes">1.1.4</a> have contents about fermionic theories.<a href="qft-on-a-manifold-and-symmetry.html#fnref15" class="footnote-back">↩︎</a></p></li>
 <li id="fn16"><p>This explanation is awfully rough. For a better discussion the reader might refer to <span class="citation"> [<a href="#ref-Witten:2021jzq" role="doc-biblioref">16</a>]</span><a href="qft-on-a-manifold-and-symmetry.html#fnref16" class="footnote-back">↩︎</a></p></li>
+<li id="fn17"><p>We cannot call this a “local symmetry” since it means something else.<a href="qft-on-a-manifold-and-symmetry.html#fnref17" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="dimensional-periodic-scalar-theory.html"/>
-<link rel="next" href="prospects.html"/>
+<link rel="next" href="property.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -170,14 +170,19 @@ div.csl-indent {
 <li class="chapter" data-level="3.4.1" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#projective-phases-on-hilbert-spaces-on-intervals"><i class="fa fa-check"></i><b>3.4.1</b> Projective phases on Hilbert spaces on intervals</a></li>
 <li class="chapter" data-level="3.4.2" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#group-cohomology"><i class="fa fa-check"></i><b>3.4.2</b> Group cohomology</a></li>
 <li class="chapter" data-level="3.4.3" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#boundary-condition-independence"><i class="fa fa-check"></i><b>3.4.3</b> Boundary condition independence</a></li>
-<li class="chapter" data-level="3.4.4" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#anomaly-bc-relationship"><i class="fa fa-check"></i><b>3.4.4</b> Anomaly-BC relationship</a></li>
-<li class="chapter" data-level="3.4.5" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#anomaly-as-the-obsturction-to-the-anomaly"><i class="fa fa-check"></i><b>3.4.5</b> Anomaly as the obsturction to the anomaly</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="prospects.html"><a href="prospects.html"><i class="fa fa-check"></i><b>3.5</b> Prospects</a>
+<li class="chapter" data-level="3.5" data-path="property.html"><a href="property.html"><i class="fa fa-check"></i><b>3.5</b> General properties of anomaly in 1+1d</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="prospects.html"><a href="prospects.html#background-formalism"><i class="fa fa-check"></i><b>3.5.1</b> Background formalism</a></li>
-<li class="chapter" data-level="3.5.2" data-path="prospects.html"><a href="prospects.html#higher-diemnsions"><i class="fa fa-check"></i><b>3.5.2</b> Higher diemnsions</a></li>
-<li class="chapter" data-level="3.5.3" data-path="prospects.html"><a href="prospects.html#fermions"><i class="fa fa-check"></i><b>3.5.3</b> Fermions</a></li>
+<li class="chapter" data-level="3.5.1" data-path="property.html"><a href="property.html#anomaly-bc-relationship"><i class="fa fa-check"></i><b>3.5.1</b> Anomaly-BC relationship</a></li>
+<li class="chapter" data-level="3.5.2" data-path="property.html"><a href="property.html#countinuous-symmetry-and-anomalous-ward-identity"><i class="fa fa-check"></i><b>3.5.2</b> Countinuous symmetry and anomalous Ward identity</a></li>
+<li class="chapter" data-level="3.5.3" data-path="property.html"><a href="property.html#anomaly-as-the-obsturction-to-gauging"><i class="fa fa-check"></i><b>3.5.3</b> Anomaly as the obsturction to gauging</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="mathbbcp1-model.html"><a href="mathbbcp1-model.html"><i class="fa fa-check"></i><b>3.6</b> <span class="math inline">\(\mathbb{CP}^1\)</span> model</a></li>
+<li class="chapter" data-level="3.7" data-path="prospects.html"><a href="prospects.html"><i class="fa fa-check"></i><b>3.7</b> Prospects</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="prospects.html"><a href="prospects.html#background-formalism"><i class="fa fa-check"></i><b>3.7.1</b> Background formalism</a></li>
+<li class="chapter" data-level="3.7.2" data-path="prospects.html"><a href="prospects.html#higher-dimensions"><i class="fa fa-check"></i><b>3.7.2</b> Higher dimensions</a></li>
+<li class="chapter" data-level="3.7.3" data-path="prospects.html"><a href="prospects.html#fermions"><i class="fa fa-check"></i><b>3.7.3</b> Fermions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -209,19 +214,19 @@ div.csl-indent {
 and symmetry <span class="math inline">\(G\)</span>.
 For each pair of boundary conditions <span class="math inline">\((\mathcal{B}_L,\mathcal{B}_R)\)</span>, we have the Hilbert space <span class="math inline">\(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\)</span> (for a fixed length of the interval).
 A boundary condition <span class="math inline">\(\mathcal{B}\)</span> does not necessarily fixed by the symmetry action, but rather mapped to another boundary condition <span class="math inline">\(g\mathcal{B}\)</span>.
-Accordingly, the unitary in general maps a Hilbert space to another Hilbert space<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a><a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>:
+Accordingly, the unitary in general maps a Hilbert space to another Hilbert space<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a><a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>:
 <span class="math display" id="eq:UgB">\[\begin{equation}
-    \tag{3.21}
+    \tag{3.22}
     U_g|_{\mathcal{B}_L,\mathcal{B}_R} : \mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R} \to \mathcal{H}_{g\mathcal{B}_L,g\mathcal{B}_R}.
 \end{equation}\]</span>
 Then, the composition rule of <span class="math inline">\(U_g&#39;s\)</span> might involve projective phases:
 <span class="math display" id="eq:UBproj">\[\begin{equation}
-    \tag{3.22}
+    \tag{3.23}
     U_{g_1}U_{g_2}|_{\mathcal{B}_L,\mathcal{B}_R} = e^{\mathrm{i}\tilde{\alpha}(g_1,g_2,\mathcal{B}_L,\mathcal{B}_R)}U_{g_1g_2}|_{\mathcal{B}_L,\mathcal{B}_R}.
 \end{equation}\]</span>
 We further assume that the phase is <em>local</em>; it should be a sum of contributions from left and right boundaries, and the two contributions should obey the same rule:
 <span class="math display" id="eq:alphasplit">\[\begin{equation}
-    \tag{3.23}
+    \tag{3.24}
     \tilde{\alpha}(g_1,g_2,\mathcal{B}_L,\mathcal{B}_R)
     =
     \hat{\alpha}(g_1,g_2,\mathcal{B}_L) - \hat{\alpha}(g_1,g_2,\mathcal{B}_R)
@@ -231,68 +236,68 @@ In particular, we assume <span class="math inline">\(\tilde{\alpha}(g_1,g_2,\mat
 <p>We also consider the ambiguity of the unitary.
 In this case we also demand that the phase redefinition of the unitary is <em>local</em> and should looks like
 <span class="math display" id="eq:UBbeta">\[\begin{equation}
-    \tag{3.24}
+    \tag{3.25}
     U_g|_{\mathcal{B}_L,\mathcal{B}_R} \mapsto e^{\mathrm{i}(\hat\beta(g,\mathcal{B}_L)-\hat\beta(g,\mathcal{B}_R))} U_g|_{\mathcal{B}_L,\mathcal{B}_R}
 \end{equation}\]</span>
 for some function <span class="math inline">\(\hat\beta\)</span>.</p>
 </div>
 <div id="group-cohomology" class="section level3 hasAnchor" number="3.4.2">
 <h3><span class="header-section-number">3.4.2</span> Group cohomology<a href="third-group-cohomology.html#group-cohomology" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Now let us see that the projective phase <a href="third-group-cohomology.html#eq:UBproj">(3.22)</a>, subject to the splitting <a href="third-group-cohomology.html#eq:alphasplit">(3.23)</a> and the ambiguity <a href="third-group-cohomology.html#eq:UBbeta">(3.24)</a>, defines a group cohomology.
-First, we fix a simple boundary condition <a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a> <span class="math inline">\(\mathcal{B}_0\)</span>, define a 3-cochain <span class="math inline">\(\alpha \in C^3(G)\)</span> by
+<p>Now let us see that the projective phase <a href="third-group-cohomology.html#eq:UBproj">(3.23)</a>, subject to the splitting <a href="third-group-cohomology.html#eq:alphasplit">(3.24)</a> and the ambiguity <a href="third-group-cohomology.html#eq:UBbeta">(3.25)</a>, defines a group cohomology.
+First, we fix a simple boundary condition <a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a> <span class="math inline">\(\mathcal{B}_0\)</span>, define a 3-cochain <span class="math inline">\(\alpha \in C^3(G)\)</span> by
 <span class="math display" id="eq:alphadef">\[\begin{equation}
-    \tag{3.25}
+    \tag{3.26}
     \alpha_{\mathcal{B}_0}(g_1,g_2,g_3) = \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,\mathcal{B}_0) = \hat\alpha(g_1,g_2,g_3\mathcal{B}_0) - \hat\alpha(g_1,g_2,\mathcal{B}_0).
 \end{equation}\]</span>
 Although this definition depends on the simple boundary condition <span class="math inline">\(\mathcal{B}_0\)</span>, the <em>cohomology class</em> of <span class="math inline">\(\alpha_{\mathcal{B}_0}\)</span>, which will be defined shortly, is independent of the choice of the boundary condition. This fact will be explained in the later part of this section. Therefore the cohomology class of <span class="math inline">\(\alpha_{\mathcal{B}_0}\)</span> is <em>a property of the theory itself</em>, not of the boundary condition.
 For this reason we omit the subscript of <span class="math inline">\(\alpha_{\mathcal{B}_0}\)</span> unless necessary.</p>
 <p>From this definition, we have
 <span class="math display" id="eq:alphatildealpha">\[\begin{equation}
-    \tag{3.26}
+    \tag{3.27}
     \tilde{\alpha}(g_1,g_2,g_3\mathcal{B}_0,g_4\mathcal{B}_0) =     
     \alpha(g_1,g_2,g_3) - \alpha(g_1,g_2,g_4).
 \end{equation}\]</span>
 Now let us examine the associativity of <span class="math inline">\(U_{g_1}U_{g_2}U_{g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}\)</span>.
 One way of composing it is
 <span class="math display" id="eq:associative1">\[\begin{align}
-    \tag{3.27}
+    \tag{3.28}
     U_{g_1}(U_{g_2}U_{g_3})|_{g_4\mathcal{B}_0,\mathcal{B}_0}
     &amp;= e^{\mathrm{i}(\alpha(g_2,g_3,g_4))}U_{g_1}U_{g_2g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}\\
     &amp;= e^{\mathrm{i}(\alpha(g_2,g_3,g_4)+\alpha(g_1,g_2g_3,g_4))}U_{g_1g_2g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0},
 \end{align}\]</span>
 while the other is
 <span class="math display" id="eq:associative2">\[\begin{align}
-    \tag{3.28}
+    \tag{3.29}
     (U_{g_1}U_{g_2})|_{g_3g_4\mathcal{B}_0,g_3\mathcal{B}_0}U_{g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}
     &amp;= e^{\mathrm{i}(\alpha(g_1,g_2,g_3g_4)-\alpha(g_1,g_2,g_3))}U_{g_1g_2}U_{g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}\\
     &amp;= e^{\mathrm{i}(\alpha(g_1,g_2,g_3g_4)-\alpha(g_1,g_2,g_3)+\alpha(g_1g_2,g_3,g_4))}U_{g_1g_2g_3}|_{g_4\mathcal{B}_0,\mathcal{B}_0}.
 \end{align}\]</span>
 Thus, the associativity demands
 <span class="math display" id="eq:3cocycle">\[\begin{align}
-    \tag{3.29}
+    \tag{3.30}
     0 = (\delta_4 \alpha) (g_1,g_2,g_3,g_4) = &amp;\alpha(g_2,g_3,g_4) + \alpha (g_1,g_2g_3,g_4) \\&amp;- \alpha(g_1,g_2,g_3g_4) + \alpha(g_1,g_2,g_3) - \alpha(g_1g_2,g_3,g_4).
 \end{align}\]</span>
-Also, the ambiguity <a href="third-group-cohomology.html#eq:UBbeta">(3.24)</a> causes the shift to <span class="math inline">\(\alpha\)</span> by,
+Also, the ambiguity <a href="third-group-cohomology.html#eq:UBbeta">(3.25)</a> causes the shift to <span class="math inline">\(\alpha\)</span> by,
 <span class="math display" id="eq:3coboundary">\[\begin{equation}
-    \tag{3.30}
+    \tag{3.31}
     \alpha(g_1,g_2,g_3 )\to \alpha(g_1,g_2,g_3) + (\delta_3 \beta)(g_1,g_2,g_3)
 \end{equation}\]</span>
 where <span class="math inline">\(\beta(g_1,g_2) = \hat\beta(g_1,g_2\mathcal{B}_0) - \hat\beta(g_1,\mathcal{B}_0)\)</span> and <span class="math inline">\(\delta_3\)</span> is the one we defined in <a href="second-group-cohomology.html#eq:cocycle">(2.41)</a>:
 <span class="math display" id="eq:d3again">\[\begin{equation}
-    \tag{3.31}
+    \tag{3.32}
     (\delta_3 \beta)(g_1,g_2,g_3) := -\beta(g_1,g_2)-\beta(g_1g_2,g_3)+\beta(g_1,g_2g_3)+\beta(g_2,g_3).
 \end{equation}\]</span></p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Exercise 3.2  </strong></span>Check that <span class="math inline">\(\delta_4\circ \delta_3 = 0\)</span>.</p>
+<p><span id="exr:unlabeled-div-5" class="exercise"><strong>Exercise 3.1  </strong></span>Check that <span class="math inline">\(\delta_4\circ \delta_3 = 0\)</span>.</p>
 </div>
 <p>Now we can define the 3rd cohomology in the same we did for the second cohomology:
 <span class="math display" id="eq:H3g">\[\begin{equation}
-    \tag{3.32}
+    \tag{3.33}
     H^3(G) = \mathrm{Ket}(\delta_4)/\mathrm{Im}(\delta_3).
 \end{equation}\]</span>
 This is the invariant information from the projective phases associated to the Hilbert spaces on intervals.</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 3.3  </strong></span>Calculate <span class="math inline">\(H^3(\mathbb{Z}_2)\)</span>.</p>
+<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Exercise 3.2  </strong></span>Calculate <span class="math inline">\(H^3(\mathbb{Z}_2)\)</span>.</p>
 </div>
 </div>
 <div id="boundary-condition-independence" class="section level3 hasAnchor" number="3.4.3">
@@ -300,65 +305,34 @@ This is the invariant information from the projective phases associated to the H
 <p>We again emphasize that it is crucial that the cohomology class of <span class="math inline">\(\alpha_{\mathcal{B}}\)</span> is independent of <span class="math inline">\(\mathcal{B}\)</span>, and thus the anomaly defined in this way is a property of the theory itself.
 To show this independence, consider the associativity of
 <span class="math inline">\(U_{g_1}U_{g_2}U_{g_3}|_{\mathcal{B}_1,\mathcal{B}_2}\)</span> when the simple boundary conditions <span class="math inline">\(\mathcal{B}_1\)</span> and <span class="math inline">\(\mathcal{B}_2\)</span> are not necessarily related by any symmetry action.
-From the locality <a href="third-group-cohomology.html#eq:alphasplit">(3.23)</a>, this leads to the equation
+From the locality <a href="third-group-cohomology.html#eq:alphasplit">(3.24)</a>, this leads to the equation
 <span class="math display" id="eq:assocB1B2">\[\begin{equation}
-    \tag{3.33}
+    \tag{3.34}
     \hat\alpha(g_1,g_2,g_3\mathcal{B}_1) + \hat\alpha(g_1g_2,g_3,\mathcal{B}_1) - \hat\alpha(g_1,g_2g_3,\mathcal{B}_1) - \hat\alpha(g_2,g_3,\mathcal{B}_1) = \text{($\mathcal{B}_1 \to \mathcal{B}_2$)}.
 \end{equation}\]</span>
-From the definition of the cochain <span class="math inline">\(\alpha_{\mathcal{B}}\)</span> in <a href="third-group-cohomology.html#eq:alphadef">(3.25)</a>, we conclude that the two cocycles <span class="math inline">\(\alpha_{\mathcal{B}_1}\)</span> and <span class="math inline">\(\alpha_{\mathcal{B}_2}\)</span> are cohomologous:
+From the definition of the cochain <span class="math inline">\(\alpha_{\mathcal{B}}\)</span> in <a href="third-group-cohomology.html#eq:alphadef">(3.26)</a>, we conclude that the two cocycles <span class="math inline">\(\alpha_{\mathcal{B}_1}\)</span> and <span class="math inline">\(\alpha_{\mathcal{B}_2}\)</span> are cohomologous:
 <span class="math display" id="eq:B1B2equiv">\[\begin{equation}
-    \tag{3.34}
+    \tag{3.35}
     \alpha_{\mathcal{B}_1} = \alpha_{\mathcal{B}_2} + \delta_3 \beta_{\mathcal{B}_1,\mathcal{B}_2},
 \end{equation}\]</span>
 where the 2-cochain <span class="math inline">\(\beta_{\mathcal{B}_1,\mathcal{B}_2}\)</span> is
 <span class="math display" id="eq:betaB1B2">\[\begin{equation}
-    \tag{3.35}
+    \tag{3.36}
     \beta_{\mathcal{B}_1,\mathcal{B}_2}(g_1,g_2) = \hat\alpha(g_1,g_2,\mathcal{B}_1) - \hat\alpha(g_1,g_2,\mathcal{B}_2).
 \end{equation}\]</span></p>
-</div>
-<div id="anomaly-bc-relationship" class="section level3 hasAnchor" number="3.4.4">
-<h3><span class="header-section-number">3.4.4</span> Anomaly-BC relationship<a href="third-group-cohomology.html#anomaly-bc-relationship" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In the above definition <a href="third-group-cohomology.html#eq:3cocycle">(3.29)</a>, <span class="math inline">\(\alpha\)</span> depends on the choice of <span class="math inline">\(\mathcal{B}_0\)</span>. So is this projective phase a property of the boundary condition, rather than a theory?
-The answer is no, the cohomology class of the projective phase should be uniform over the boundary conditions of a fixed theory.
-To see this, we assume that the boundary conditions admits a sum so that <span class="math inline">\(\mathcal{H}_{\mathcal{B}_1\oplus \mathcal{B}_2,\mathcal{B}_R} = \mathcal{H}_{\mathcal{B}_1,\mathcal{B}_R} \oplus \mathcal{H}_{\mathcal{B}_2,\mathcal{B}_R}\)</span>.
-The boundary condition <span class="math inline">\(\mathcal{B}_1\oplus \mathcal{B}_2\)</span> is like
-putting a qubit entangled with the boundary condition (e.g. the value of <span class="math inline">\(X(0)\)</span> in the periodic scalar example).
-Then, we also want the symmetry <span class="math inline">\(U_g\)</span> acts on <span class="math inline">\(\mathcal{H}_{\mathcal{B}_1\oplus \mathcal{B}_2,\mathcal{B}_R}\)</span>.
-However if the cohomology classes associated to <span class="math inline">\(\mathcal{B}_1\)</span> and <span class="math inline">\(\mathcal{B}_2\)</span> were different, the projective “phase” on this direct sum space is not a overall phase, but just a diagonal matrix not proportional to the identity. This breaks the assumption that the symmetry is <span class="math inline">\(G\)</span>.
-Therefore, the cohomology class is the <strong>property of the theory</strong>, not the boundary condition, and you can calculate it by picking any boundary condition you like.</p>
-<p>This leads to the following theorem, first claimed by <span class="citation"> [<a href="#ref-Thorngren:2020yht" role="doc-biblioref">20</a>]</span> <a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>:</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-8" class="theorem"><strong>Theorem 3.1  </strong></span>If there is a simple boundary condition <span class="math inline">\(\mathcal{B}\)</span> such that <span class="math inline">\(g \mathcal{B} =\mathcal{B}\)</span> for elements of a symmetry group <span class="math inline">\(g\in G\)</span>, this symmetry <span class="math inline">\(G\)</span> is non-anomalous, i.e. the cohomology class is trivial.
-(This hold for a QFT in a general dimensions.)</p>
-</div>
-<p>Indeed by the definition <a href="third-group-cohomology.html#eq:alphadef">(3.25)</a> <span class="math inline">\(\alpha = 0\)</span> by choosing <span class="math inline">\(\mathcal{B}_0 = \mathcal{B}\)</span> in such a case.<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a></p>
-</div>
-<div id="anomaly-as-the-obsturction-to-the-anomaly" class="section level3 hasAnchor" number="3.4.5">
-<h3><span class="header-section-number">3.4.5</span> Anomaly as the obsturction to the anomaly<a href="third-group-cohomology.html#anomaly-as-the-obsturction-to-the-anomaly" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-</div>
-<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body">
-<div id="ref-Thorngren:2020yht" class="csl-entry">
-<div class="csl-left-margin">[20] </div><div class="csl-right-inline">R. Thorngren and Y. Wang, <em><span class="nocase">Anomalous symmetries end at the boundary</span></em>, JHEP <strong>09</strong>, 017 (2021), <span class="nodecoration"><a href="https://arxiv.org/abs/2012.15861">https://arxiv.org/abs/2012.15861</a></span>.</div>
-</div>
-<div id="ref-Hellerman:2021fla" class="csl-entry">
-<div class="csl-left-margin">[21] </div><div class="csl-right-inline">S. Hellerman, D. Orlando, and M. Watanabe, <em><span class="nocase">Quantum Information Theory of the Gravitational Anomaly</span></em>, (2021), <span class="nodecoration"><a href="https://arxiv.org/abs/2101.03320">https://arxiv.org/abs/2101.03320</a></span>.</div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="19">
-<li id="fn19"><p>Of course all the separable Hilbert spaces are isomorphic but identifying all of the Hilbert spaces <span class="math inline">\(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\)</span> by this universal isomorphism is just confusing and of no use.<a href="third-group-cohomology.html#fnref19" class="footnote-back">↩︎</a></p></li>
-<li id="fn20"><p>When the theory is a TQFT, there is a multiplication between the state in <span class="math inline">\(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_M}\)</span> and <span class="math inline">\(\mathcal{H}_{\mathcal{B}_M,\mathcal{B}_R}\)</span> valued in <span class="math inline">\(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\)</span>. You can regard this structure as a <strong>category</strong>, whose objects are the boundary conditions, and morphisms are states on intervals (equivalently, topological boundary-changing operators).
+<ol start="20">
+<li id="fn20"><p>Of course all the separable Hilbert spaces are isomorphic but identifying all of the Hilbert spaces <span class="math inline">\(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\)</span> by this universal isomorphism is just confusing and of no use.<a href="third-group-cohomology.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>When the theory is a TQFT, there is a multiplication between the state in <span class="math inline">\(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_M}\)</span> and <span class="math inline">\(\mathcal{H}_{\mathcal{B}_M,\mathcal{B}_R}\)</span> valued in <span class="math inline">\(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\)</span>. You can regard this structure as a <strong>category</strong>, whose objects are the boundary conditions, and morphisms are states on intervals (equivalently, topological boundary-changing operators).
 Then <span class="math inline">\(U_g\)</span> is a self-functor on this category, defining <strong>categorical representation</strong> of the (suspension of the) group <span class="math inline">\(G\)</span>.
 However the composition rule of the functors is up to natural transformations, which are the projective phases.
 When the theory is a general QFT there is no canonical multiplication among the states but there is a <em>family</em> of multiplications. In such cases KO imagines that the boundary conditions would define a category over some operad (something like the swiss-cheese one), and we should be dealing with the representation theory valued in such categories.
-As far as the anomaly is concerned, the only thing for which we need the operad-category structure is to show the splitting <a href="third-group-cohomology.html#eq:alphasplit">(3.23)</a>.
-In higher dimensional QFTs, the category also has to be higher.<a href="third-group-cohomology.html#fnref20" class="footnote-back">↩︎</a></p></li>
-<li id="fn21"><p>A boundary condition is called simple when it cannot be written as a direct sum of two boundary conditions. A non-simple boundary condition <span class="math inline">\(\mathcal{B}_1\oplus \mathcal{B}_2\)</span> is like having a external qubit sitting on the boundary which switches the two boundary conditions. Being external means that the state of the qubit cannot be affected by the dynamics of the system. So, e.g. in a spin system, the direct sum over the fixed boundary conditions (which is non-simple) is not the same as the free boundary condition (which is simple). For a non-simple boundary condition the projective “phase” can take different values for each of the simple components and actually be a diagonal matrix.<a href="third-group-cohomology.html#fnref21" class="footnote-back">↩︎</a></p></li>
-<li id="fn22"><p>See also <span class="citation"> [<a href="#ref-Hellerman:2021fla" role="doc-biblioref">21</a>]</span>.<a href="third-group-cohomology.html#fnref22" class="footnote-back">↩︎</a></p></li>
-<li id="fn23"><p>The work by <span class="citation"> [<a href="#ref-Thorngren:2020yht" role="doc-biblioref">20</a>]</span> is not this trivial, as their definition of the anomaly is different from us.<a href="third-group-cohomology.html#fnref23" class="footnote-back">↩︎</a></p></li>
+As far as the anomaly is concerned, the only thing for which we need the operad-category structure is to show the splitting <a href="third-group-cohomology.html#eq:alphasplit">(3.24)</a>.
+In higher dimensional QFTs, the category also has to be higher.<a href="third-group-cohomology.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p>A boundary condition is called simple when it cannot be written as a direct sum of two boundary conditions. A non-simple boundary condition <span class="math inline">\(\mathcal{B}_1\oplus \mathcal{B}_2\)</span> is like having a external qubit sitting on the boundary which switches the two boundary conditions. Being external means that the state of the qubit cannot be affected by the dynamics of the system. So, e.g. in a spin system, the direct sum over the fixed boundary conditions (which is non-simple) is not the same as the free boundary condition (which is simple). For a non-simple boundary condition the projective “phase” can take different values for each of the simple components and actually be a diagonal matrix.<a href="third-group-cohomology.html#fnref22" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -367,7 +341,7 @@ In higher dimensional QFTs, the category also has to be higher.<a href="third-gr
         </div>
       </div>
 <a href="dimensional-periodic-scalar-theory.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="prospects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="property.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -170,14 +170,19 @@ div.csl-indent {
 <li class="chapter" data-level="3.4.1" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#projective-phases-on-hilbert-spaces-on-intervals"><i class="fa fa-check"></i><b>3.4.1</b> Projective phases on Hilbert spaces on intervals</a></li>
 <li class="chapter" data-level="3.4.2" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#group-cohomology"><i class="fa fa-check"></i><b>3.4.2</b> Group cohomology</a></li>
 <li class="chapter" data-level="3.4.3" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#boundary-condition-independence"><i class="fa fa-check"></i><b>3.4.3</b> Boundary condition independence</a></li>
-<li class="chapter" data-level="3.4.4" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#anomaly-bc-relationship"><i class="fa fa-check"></i><b>3.4.4</b> Anomaly-BC relationship</a></li>
-<li class="chapter" data-level="3.4.5" data-path="third-group-cohomology.html"><a href="third-group-cohomology.html#anomaly-as-the-obsturction-to-the-anomaly"><i class="fa fa-check"></i><b>3.4.5</b> Anomaly as the obsturction to the anomaly</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="prospects.html"><a href="prospects.html"><i class="fa fa-check"></i><b>3.5</b> Prospects</a>
+<li class="chapter" data-level="3.5" data-path="property.html"><a href="property.html"><i class="fa fa-check"></i><b>3.5</b> General properties of anomaly in 1+1d</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="prospects.html"><a href="prospects.html#background-formalism"><i class="fa fa-check"></i><b>3.5.1</b> Background formalism</a></li>
-<li class="chapter" data-level="3.5.2" data-path="prospects.html"><a href="prospects.html#higher-diemnsions"><i class="fa fa-check"></i><b>3.5.2</b> Higher diemnsions</a></li>
-<li class="chapter" data-level="3.5.3" data-path="prospects.html"><a href="prospects.html#fermions"><i class="fa fa-check"></i><b>3.5.3</b> Fermions</a></li>
+<li class="chapter" data-level="3.5.1" data-path="property.html"><a href="property.html#anomaly-bc-relationship"><i class="fa fa-check"></i><b>3.5.1</b> Anomaly-BC relationship</a></li>
+<li class="chapter" data-level="3.5.2" data-path="property.html"><a href="property.html#countinuous-symmetry-and-anomalous-ward-identity"><i class="fa fa-check"></i><b>3.5.2</b> Countinuous symmetry and anomalous Ward identity</a></li>
+<li class="chapter" data-level="3.5.3" data-path="property.html"><a href="property.html#anomaly-as-the-obsturction-to-gauging"><i class="fa fa-check"></i><b>3.5.3</b> Anomaly as the obsturction to gauging</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="mathbbcp1-model.html"><a href="mathbbcp1-model.html"><i class="fa fa-check"></i><b>3.6</b> <span class="math inline">\(\mathbb{CP}^1\)</span> model</a></li>
+<li class="chapter" data-level="3.7" data-path="prospects.html"><a href="prospects.html"><i class="fa fa-check"></i><b>3.7</b> Prospects</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="prospects.html"><a href="prospects.html#background-formalism"><i class="fa fa-check"></i><b>3.7.1</b> Background formalism</a></li>
+<li class="chapter" data-level="3.7.2" data-path="prospects.html"><a href="prospects.html#higher-dimensions"><i class="fa fa-check"></i><b>3.7.2</b> Higher dimensions</a></li>
+<li class="chapter" data-level="3.7.3" data-path="prospects.html"><a href="prospects.html#fermions"><i class="fa fa-check"></i><b>3.7.3</b> Fermions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -263,16 +268,21 @@ where <span class="math inline">\(i_a,j_b,t_c,s_d\)</span> are positive integers
     \alpha_i \ket{n,w} = \tilde{\alpha}_j \ket{n,w} = 0,
 \end{align}\]</span>
 and has the corresponding quantum number <span class="math inline">\(n\)</span> and <span class="math inline">\(w\)</span>.</p>
-<p>This system famously have to <span class="math inline">\(U(1)\)</span> symmetries, whose charges are <span class="math inline">\(n\)</span> and <span class="math inline">\(w\)</span> respectively. The former is called the momentum <span class="math inline">\(U(1)\)</span>, and the latter called the winding <span class="math inline">\(U(1)\)</span>.
+<p>This system has two <span class="math inline">\(U(1)\)</span> symmetries, whose charges are <span class="math inline">\(n\)</span> and <span class="math inline">\(w\)</span> respectively. The former is called the momentum <span class="math inline">\(U(1)\)</span>, and the latter called the winding <span class="math inline">\(U(1)\)</span>.
+The current operators are
+<span class="math display" id="eq:U1currents">\[\begin{equation}
+    \tag{3.12}
+    j^p_\mu = R\partial_\mu X, \quad j^w_\mu = \frac{1}{2\pi R}\epsilon_{\mu\nu}\partial^\nu X.
+\end{equation}\]</span>
 We write the corresponding unitaries as <span class="math inline">\(U^p_\lambda\)</span> and <span class="math inline">\(U^w_\lambda\)</span>, where <span class="math inline">\(\lambda\)</span> is the parameter of the symmetry transformation, so that
 <span class="math display" id="eq:UpwAct">\[\begin{equation}
-    \tag{3.12}
+    \tag{3.13}
     U^p_\lambda \ket{n,w} = e^{\mathrm{i}\lambda n }\ket{n,w},\quad
     U^w_\lambda \ket{n,w} = e^{\mathrm{i}\lambda w }\ket{n,w}.
 \end{equation}\]</span>
 Also, the momentum <span class="math inline">\(U(1)\)</span> is basically the canonical momentum <span class="math inline">\(p\)</span> to the average coordinate <span class="math inline">\(x = \int X \mathrm{d}\sigma\)</span>, it causes the translation in the space of <span class="math inline">\(X\)</span>:
 <span class="math display" id="eq:UpActX">\[\begin{equation}
-    \tag{3.13}
+    \tag{3.14}
     (U^p_{\lambda})^\dagger\, f(X(\sigma,\tau)) \, U^p_{\lambda} = 
     f(X(\sigma,\tau) + \lambda R),
 \end{equation}\]</span>
@@ -286,62 +296,60 @@ To define the theory on the interval, we have to pick boundary conditions for ea
 Here we pick the Dirichlet boundary condition <span class="math inline">\(\mathcal{D}(\theta_L)\)</span> and <span class="math inline">\(\mathcal{D}(\theta_R)\)</span> for the left and right boundaries,
 defined by
 <span class="math display" id="eq:Dirichlet">\[\begin{equation}
-    \tag{3.14}
+    \tag{3.15}
     X(\sigma = 0,t) = R \theta_L, \quad X(\sigma = 2\pi, t)= R \theta_R.
 \end{equation}\]</span>
 The expansion of the periodic field <span class="math inline">\(X\)</span> in this case is
 <span class="math display" id="eq:XexpDirichlet">\[\begin{equation}
-    \tag{3.15}
+    \tag{3.16}
     X = R\theta_L + R w \sigma + \mathrm{i}\bigl(\frac{\alpha&#39;}{2}\bigr) e^{-\mathrm{i}\tau} \sum_{m = -\infty}^{\infty}  \frac1m \alpha_m \sin(m \sigma/2),
 \end{equation}\]</span>
 where the winding <span class="math inline">\(w\)</span> now has to takes values in <span class="math inline">\(w \in (\theta_R-\theta_L)/2\pi + \mathbb{Z}\)</span>.
 We write the Hilbert space of states on the interval with the boundary condition <span class="math inline">\(\mathcal{D}(\theta_L,\theta_R)\)</span> as <span class="math inline">\(\mathcal{H}_{\theta_L,\theta_R}\)</span>, and the state with winding <span class="math inline">\(w\)</span> in it as <span class="math inline">\(\ket{w}_{\theta_L,\theta_R}\)</span>. We only consider the ground states for the oscillation modes but the story can be applied to the states with these modes without any change.</p>
 <p>How does the <span class="math inline">\(U(1)^2\)</span> symmetries acts on the states?
-The momentum symmetry translate <span class="math inline">\(X\)</span>, and breaks the boundary condition <a href="dimensional-periodic-scalar-theory.html#eq:Dirichlet">(3.14)</a>.
+The momentum symmetry translate <span class="math inline">\(X\)</span>, and breaks the boundary condition <a href="dimensional-periodic-scalar-theory.html#eq:Dirichlet">(3.15)</a>.
 But it still defines a linear map <em>between the Hilbert spaces</em>:
 <span class="math display" id="eq:UpactDirichlet">\[\begin{align}
-    \tag{3.16}
+    \tag{3.17}
     U^p_\lambda : \mathcal{H}_{\theta_L,\theta_R} &amp;\to \mathcal{H}_{\theta_L+\lambda,\theta_R+\lambda}\\
     \ket{w}_{\theta_L,\theta_R} &amp;\mapsto \ket{w}_{\theta_L+\lambda,\theta_R+\lambda}.
 \end{align}\]</span>
-On the other hand, the winding <span class="math inline">\(U(1)\)</span> symmetry preserves the Dirichlet boundary condition and the naive extension of the action <a href="dimensional-periodic-scalar-theory.html#eq:UpwAct">(3.12)</a> to this case is
+On the other hand, the winding <span class="math inline">\(U(1)\)</span> symmetry preserves the Dirichlet boundary condition and the naive extension of the action <a href="dimensional-periodic-scalar-theory.html#eq:UpwAct">(3.13)</a> to this case is
 <span class="math display" id="eq:tildeUwactDirichlet">\[\begin{align}
-    \tag{3.17}
+    \tag{3.18}
     \widetilde{U}^w_\lambda : \mathcal{H}_{\theta_L,\theta_R} &amp;\to \mathcal{H}_{\theta_L,\theta_R}\\
     \ket{w}_{\theta_L,\theta_R} &amp;\mapsto e^{\mathrm{i}\lambda w}\ket{w}_{\theta_L,\theta_R}.
 \end{align}\]</span>
 Here we put the tilde on <span class="math inline">\(U^w_\lambda\)</span> because there is one problem with this action, i.e. <span class="math inline">\(\widetilde{U}^w_\lambda = e^{\mathrm{i}(\theta_R-\theta_L)}\widetilde{U}^w_{\lambda+2\pi}\)</span>.
 This projective phase can be easily removed by redefining the unitary as
 <span class="math display" id="eq:UwactDirichlet">\[\begin{align}
-    \tag{3.18}
+    \tag{3.19}
     U^w_\lambda : \mathcal{H}_{\theta_L,\theta_R} &amp;\to \mathcal{H}_{\theta_L,\theta_R}\\
     \ket{w}_{\theta_L,\theta_R} &amp;\mapsto e^{\mathrm{i}\lambda (w+(\{\theta_L\}-\{\theta_R\})/2\pi)}\ket{w}_{\theta_L,\theta_R},
 \end{align}\]</span>
 where <span class="math inline">\(\{\theta\}\)</span> is the number in <span class="math inline">\([0,2\pi)\)</span> and <span class="math inline">\(\{\theta\} = \theta \mod 2\pi\)</span>.
-We use this notation to emphasize that the boundary condition <span class="math inline">\(\mathcal{D}(\theta)\)</span> and <span class="math inline">\(\mathcal{D}(\theta+2\pi)\)</span> are identified in equations e.g. <a href="dimensional-periodic-scalar-theory.html#eq:UpactDirichlet">(3.16)</a>.
+We use this notation to emphasize that the boundary condition <span class="math inline">\(\mathcal{D}(\theta)\)</span> and <span class="math inline">\(\mathcal{D}(\theta+2\pi)\)</span> are identified in equations e.g. <a href="dimensional-periodic-scalar-theory.html#eq:UpactDirichlet">(3.17)</a>.
 Note that the modification is not <span class="math inline">\(\{\theta_L-\theta_R\}\)</span>, so that the modification is defined <em>locally</em> – it is a sum of independent contributions from the left and right boundaries.
 However, this redefinition produces a projective phase in the product of <span class="math inline">\(U^p_{\lambda_p}\)</span> and <span class="math inline">\(U^w_{\lambda_w}\)</span>:
 <span class="math display" id="eq:UpUwcomu">\[\begin{equation}
-    \tag{3.19}
+    \tag{3.20}
     U^w_{\lambda_w}U^p_{\lambda_p}|_{\theta_L,\theta_R} = e^{\mathrm{i}\lambda_w(-[\lambda_p+\theta_R] + [\lambda_p+\theta_L])/2\pi} U^p_{\lambda_p}U^w_{\lambda_w}|_{\theta_L,\theta_R},
 \end{equation}\]</span>
 where <span class="math inline">\([\theta] = \theta - \{\theta\} \in 2\pi \mathbb{Z}\)</span>.
 The <span class="math inline">\(|_{\theta_1,\theta_2}\)</span> denotes the boundary conditions on which the operator just left of the vertical bar acts. For the other operator composed with this one, the domain is chosen so that the composition makes sense.
 This is the projective phase characterizing the mixed anomaly between the two <span class="math inline">\(U(1)\)</span> symmetry (or, the anomaly for the (anti-)diagonal of <span class="math inline">\(U(1)\)</span>’s).
-This characterization is utterly different from what you find in <span class="citation"> [<a href="#ref-PolchinskiVol1" role="doc-biblioref">19</a>]</span>, so</p>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-5" class="exercise"><strong>Exercise 3.1  </strong></span>Find the relation ship between the characterization of the <span class="math inline">\(U(1)^2\)</span> anomaly here and more traditional one, defined by the 2-pt function of the currents. (KO does not know the answer, and he will be very pleased if you send an answer to him.)</p>
-</div>
-<p>An advantage of this way of stating the anomaly is</p>
+This characterization is very different from the conventional one you find in e.g. <span class="citation"> [<a href="#ref-PolchinskiVol1" role="doc-biblioref">19</a>]</span>, and the correspondence will be explained in Sec. <a href="property.html#property">3.5</a>.</p>
+<p>Advantages of characterizing the anomaly in this way are</p>
 <ol style="list-style-type: decimal">
 <li>it is clear that this is some kind of generalization of Wigner’s projective phase, and</li>
 <li>applicable to discrete case.</li>
 </ol>
 <p>For example, we can take the <span class="math inline">\(\mathbb{Z}_2\)</span> subgroup of the diagonal of <span class="math inline">\(U(1)\)</span>’s whose unitary is <span class="math inline">\(U_{\mathbb{Z}_2}=U^w_\pi U^p_\pi\)</span> and then the projective phase is
 <span class="math display" id="eq:2dUZ2">\[\begin{equation}
-    \tag{3.20}
+    \tag{3.21}
     U_{\mathbb{Z}_2}^2|_{\theta_L,\theta_R} = e^{\mathrm{i}(-[\pi+\theta_R]+[\pi+\theta_L])/2}\mathrm{id}|_{\theta_L,\theta_R}.
-\end{equation}\]</span></p>
+\end{equation}\]</span>
+The conventional description of the anomaly by anomalous Ward identity does not immediately tell how it restricts to a discrete subgroup.</p>
 <p>Next we see that this projective phase can be captured by the third group cohomology.</p>
 </div>
 </div>

@@ -904,7 +904,7 @@ In a more explict term, if the QFT is written in terms of fundamental fields and
 the Hilbert space \(\mathcal{H}_{M_d}\) is the Fock space constructed from creation/annhilation operators for each modes of the fields on \(M_d\),
 and the action of a symmetry on the fields naturally defines the action on the annihilation operators, in turn defining the action on \(\mathcal{H}_{M_d}\).
 
-For a local symmetry transformation \(T\), defined in the above sense, to be the symmetry of the theory, the corresponding unitary has to commute with the Hamiltonian.
+For a symmetry transformation \(T\) respecting the locality\footnote{We cannot call this a ``local symmetry'' since it means something else.}, defined in the above sense, to be the symmetry of the theory, the corresponding unitary has to commute with the Hamiltonian.
 We also assume that the Hamiltonian is local:
 \begin{equation}
     \label{eq:localHam}
@@ -1001,7 +1001,12 @@ where \(i_a,j_b,t_c,s_d\) are positive integers, and the state \(\ket{n,w}\) sat
 \end{align}
 and has the corresponding quantum number \(n\) and \(w\).
 
-This system famously have to \(U(1)\) symmetries, whose charges are \(n\) and \(w\) respectively. The former is called the momentum \(U(1)\), and the latter called the winding \(U(1)\).
+This system has two \(U(1)\) symmetries, whose charges are \(n\) and \(w\) respectively. The former is called the momentum \(U(1)\), and the latter called the winding \(U(1)\).
+The current operators are
+\begin{equation}
+    \label{eq:U1currents}
+    j^p_\mu = R\partial_\mu X, \quad j^w_\mu = \frac{1}{2\pi R}\epsilon_{\mu\nu}\partial^\nu X.
+\end{equation}
 We write the corresponding unitaries as \(U^p_\lambda\) and \(U^w_\lambda\), where \(\lambda\) is the parameter of the symmetry transformation, so that
 \begin{equation}
     \label{eq:UpwAct}
@@ -1068,13 +1073,9 @@ However, this redefinition produces a projective phase in the product of \(U^p_{
 where \([\theta] = \theta - \{\theta\} \in 2\pi \mathbb{Z}\).
 The \(|_{\theta_1,\theta_2}\) denotes the boundary conditions on which the operator just left of the vertical bar acts. For the other operator composed with this one, the domain is chosen so that the composition makes sense.
 This is the projective phase characterizing the mixed anomaly between the two \(U(1)\) symmetry (or, the anomaly for the (anti-)diagonal of \(U(1)\)'s).
-This characterization is utterly different from what you find in \textcite{PolchinskiVol1}, so
+This characterization is very different from the conventional one you find in e.g. \textcite{PolchinskiVol1}, and the correspondence will be explained in Sec. \ref{property}.
 
-\begin{exercise}
-Find the relation ship between the characterization of the \(U(1)^2\) anomaly here and more traditional one, defined by the 2-pt function of the currents. (KO does not know the answer, and he will be very pleased if you send an answer to him.)
-\end{exercise}
-
-An advantage of this way of stating the anomaly is
+Advantages of characterizing the anomaly in this way are
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1090,6 +1091,7 @@ For example, we can take the \(\mathbb{Z}_2\) subgroup of the diagonal of \(U(1)
     \label{eq:2dUZ2}
     U_{\mathbb{Z}_2}^2|_{\theta_L,\theta_R} = e^{\mathrm{i}(-[\pi+\theta_R]+[\pi+\theta_L])/2}\mathrm{id}|_{\theta_L,\theta_R}.
 \end{equation}
+The conventional description of the anomaly by anomalous Ward identity does not immediately tell how it restricts to a discrete subgroup.
 
 Next we see that this projective phase can be captured by the third group cohomology.
 
@@ -1222,6 +1224,9 @@ where the 2-cochain \(\beta_{\mathcal{B}_1,\mathcal{B}_2}\) is
     \beta_{\mathcal{B}_1,\mathcal{B}_2}(g_1,g_2) = \hat\alpha(g_1,g_2,\mathcal{B}_1) - \hat\alpha(g_1,g_2,\mathcal{B}_2).
 \end{equation}
 
+\hypertarget{property}{%
+\subsection{General properties of anomaly in 1+1d}\label{property}}
+
 \hypertarget{anomaly-bc-relationship}{%
 \subsubsection{Anomaly-BC relationship}\label{anomaly-bc-relationship}}
 
@@ -1243,8 +1248,27 @@ If there is a simple boundary condition \(\mathcal{B}\) such that \(g \mathcal{B
 
 Indeed by the definition \eqref{eq:alphadef} \(\alpha = 0\) by choosing \(\mathcal{B}_0 = \mathcal{B}\) in such a case.\footnote{The work by \textcite{Thorngren:2020yht} is not this trivial, as their definition of the anomaly is different from us.}
 
-\hypertarget{anomaly-as-the-obsturction-to-the-anomaly}{%
-\subsubsection{Anomaly as the obsturction to the anomaly}\label{anomaly-as-the-obsturction-to-the-anomaly}}
+\hypertarget{countinuous-symmetry-and-anomalous-ward-identity}{%
+\subsubsection{Countinuous symmetry and anomalous Ward identity}\label{countinuous-symmetry-and-anomalous-ward-identity}}
+
+\hypertarget{anomaly-as-the-obsturction-to-gauging}{%
+\subsubsection{Anomaly as the obsturction to gauging}\label{anomaly-as-the-obsturction-to-gauging}}
+
+Colloquial definition of ``anomaly'' might be that a symmetry has an anomaly when it cannot be (consistently) gauged, e.g.~an obstruction in gauging the symmetry.
+Let us see how the definition we used also leads to this obstruction when \(G\) is discrete.
+
+If the considered symmetry \(G\) has an anomaly, it does not have a \emph{simple} boundary condition that is invariant under the symmetry. However, one can always have a non-simple \(G\)-invariant boundary condition of the form
+\begin{equation}
+    \label{eq:GsumB}
+    G\mathcal{B} := \bigoplus_{g\in G} g\mathcal{B}.
+\end{equation}
+Therefore, we expect that the boundary condition \(G\mathcal{B}\) survives the gauging. However, the symmetry \(G\) does not linearly act on \(\mathcal{H}_{G\mathcal{B},G\mathcal{B}}\) (and the ``projective phase'' is even a matrix).
+Thus we cannot define a healthy notion of ``gauging G'' acting on this Hilbert space \(\mathcal{H}_{G\mathcal{B},G\mathcal{B}}\). \footnote{One can try to enlarge the group into \(G'\) by including the projective phases as their group elements for all \(\mathcal{B}\). One can gauge this enlarged \(G'\), but as the projective phases are absent on \(S^1\), the new elements acts trivially on \(\mathcal{H}_{S^1}\).
+  Gauging a symmetry trivially acting on \(\mathcal{H}_{S^1}\) means the gauged theory has a TQFT sector, in particular has degenerate vacua.
+  This is first pointed out and utilized in \autocite{Witten:2016cio,WWW}.}
+
+\hypertarget{mathbbcp1-model}{%
+\subsection{\texorpdfstring{\(\mathbb{CP}^1\) model}{\textbackslash mathbb\{CP\}\^{}1 model}}\label{mathbbcp1-model}}
 
 \hypertarget{prospects}{%
 \subsection{Prospects}\label{prospects}}
@@ -1252,8 +1276,8 @@ Indeed by the definition \eqref{eq:alphadef} \(\alpha = 0\) by choosing \(\mathc
 \hypertarget{background-formalism}{%
 \subsubsection{Background formalism}\label{background-formalism}}
 
-\hypertarget{higher-diemnsions}{%
-\subsubsection{Higher diemnsions}\label{higher-diemnsions}}
+\hypertarget{higher-dimensions}{%
+\subsubsection{Higher dimensions}\label{higher-dimensions}}
 
 \hypertarget{fermions}{%
 \subsubsection{Fermions}\label{fermions}}

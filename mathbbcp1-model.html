@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.2 Motivation | Quantum Anomalies as Projective Phases</title>
-  <meta name="description" content="1.2 Motivation | Quantum Anomalies as Projective Phases" />
+  <title>3.6 \(\mathbb{CP}^1\) model | Quantum Anomalies as Projective Phases</title>
+  <meta name="description" content="3.6 \(\mathbb{CP}^1\) model | Quantum Anomalies as Projective Phases" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.2 Motivation | Quantum Anomalies as Projective Phases" />
+  <meta property="og:title" content="3.6 \(\mathbb{CP}^1\) model | Quantum Anomalies as Projective Phases" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="kantohm11/symmetry_review" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.2 Motivation | Quantum Anomalies as Projective Phases" />
+  <meta name="twitter:title" content="3.6 \(\mathbb{CP}^1\) model | Quantum Anomalies as Projective Phases" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lecture-guide.html"/>
-<link rel="next" href="quantum-anomaly-in-quantum-mechanics.html"/>
+<link rel="prev" href="property.html"/>
+<link rel="next" href="prospects.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -206,103 +206,16 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="motivation" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Motivation<a href="motivation.html#motivation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Why do we care about symmetry and its anomaly in quantum field theory?
-There are two (closely related) uses cases of symmetry and its anomaly in the study of QFT and its applications:</p>
-<ol style="list-style-type: decimal">
-<li>to construction of a model, given observed spectrum or other desired properties, and</li>
-<li>to constraining possible long range physics from ’t Hooft anomaly matching.</li>
-</ol>
-<p>An example for the case one is the Standard Model (SM) of the particle physics.
-The spectrum of the fermions fits into a representation of <span class="math inline">\(SU(3)\times SU(2) \times U(1)\)</span> nicely, and gauging of the symmetry, after including the Higgs boson, magically explains almost all physics that occur in a collider. (The finding of the quark model involving the color symmetry was also mainly from group theory: it was to reproduce the observed <span class="math inline">\(SU(3)\)</span> symmetry among hadrons. )</p>
-<p>The quantum anomaly is also very important in construction of the SM: a single family of fermions in SM has chiral spectrum but seemingly miraculous cancellation of the quantum anomaly, which makes the model consistent. This cancellation also leads to the idea of grand unification.</p>
-<p>The second case is about the quantum anomaly for <em>global</em> symmetry.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
-’t Hooft anomaly matching states that the anomaly should match between the UV and IR of an renormalization group (RG) flow (see Fig. <a href="motivation.html#fig:flow">1.1</a>).
-Let <span class="math inline">\(G_\text{UV}\)</span> and <span class="math inline">\(G_\text{IR}\)</span> be the symmetry group for the UV and IR theory, respectively.
-The existence of the RG flow between them in particular means that an isomorphism between them:
-<span class="math display" id="eq:Ghom">\[\begin{equation}
-  \tag{1.1}
-  \phi: G_\text{UV} \to G_\text{IR}.
-\end{equation}\]</span>
-The RG flow also assigns a map between the quantum anomalies, which are a property of symmetries in a local quantum system, for the symmetries <span class="math inline">\(G_\text{UV}\)</span> and <span class="math inline">\(G_\text{IR}\)</span>;
-but this time it is backwards:
-<span class="math display" id="eq:pullback">\[\begin{equation}
-  \tag{1.2}
-  \phi^*: \mathcal{A}_\text{IR} \to \mathcal{A}_\text{UV}.
-\end{equation}\]</span>
-This map is in a sense linear, in particular <span class="math inline">\(\phi^* (0) = 0\)</span>, where <span class="math inline">\(\mathcal{A}=0\)</span> means that there is no anomaly.
-Therefore, if you know that <span class="math inline">\(\mathcal{A}_\text{UV}\neq 0\)</span>, which immediately means <span class="math inline">\(\mathcal{A}_\text{IR}\neq 0\)</span>.
-In turn, you also conclude that the IR <em>theory</em> it self is <em>not</em> trivial: you need some degrees of freedom to <strong>match</strong> the anomaly.</p>
-<p>This is the power of ’t Hooft anomaly matching: that you can say something without analyzing the dynamics about where the theory can flow into.
-This can be done even if the theory is very hard to analyze, i.e. <em>strongly coupled</em>, for example asymptotically free theories.
-For such theories the anomaly matching (and some generalization) are sometimes the only, or one of the few, analytical tools that one can apply.
-Thus the ’t Hooft anomaly matching is a part of the foundation in the research of strongly coupled quantum systems.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:flow"></span>
-<img src="figs/flow_symmetry.jpeg" alt="'t Hooft anomaly matching" width="50%" />
-<p class="caption">
-Figure 1.1: ’t Hooft anomaly matching
-</p>
-</div>
-<div id="example-without-explanation-4d-pure-ym-at-theta-pi" class="section level3 hasAnchor" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> Example without explanation: 4d pure YM at <span class="math inline">\(\theta =\pi\)</span><a href="motivation.html#example-without-explanation-4d-pure-ym-at-theta-pi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Let me give an example of usage of ’t Hooft anomaly, based on <span class="citation"> [<a href="#ref-Gaiotto:2017yup" role="doc-biblioref">6</a>]</span>.
-Here we see some fact, and for the thorough explanation see the original paper of Córdova’s lecture <span class="citation"> [<a href="#ref-cordova_2020" role="doc-biblioref">2</a>]</span>. However we an analyze lower-dimensional analogue (,or two if time permits).</p>
-<p>The theory we consider here is the 4d <span class="math inline">\(SU(2)\)</span> pure Yang-Mills. (Generalization to <span class="math inline">\(SU(\text{even})\)</span> is straightforward, and odd <span class="math inline">\(N_c\)</span> needs a bit different tool.)
-Note that the pure Yang-Mills does not contain any fermions.
-The quantum anomaly is not peculiar to chiral fermion, but it is just that chiral fermion is the most common place to find a quantum anomaly.
-A bosonic theory may well have anomalies, and this is one of many examples.</p>
-<p>The pure Yang-Mills theory contains a parameter called <span class="math inline">\(\theta\)</span>, coupling to the instanton number (in Euclidean signature):
-<span class="math display" id="eq:thetaSU2">\[\begin{equation}
-  \tag{1.3}
-  \mathrm{i}\frac{\theta}{32\pi^2}\int \epsilon_{\mu\nu\rho\sigma}\mathrm{Tr}F^{\mu\nu}F^{\rho\sigma}.
-\end{equation}\]</span>
-What <span class="citation"> [<a href="#ref-Gaiotto:2017yup" role="doc-biblioref">6</a>]</span> found is</p>
-<ul>
-<li><span class="math inline">\(\theta = \pi\)</span> has a time-reversal (i.e. anti-unitary) symmetry (this was known way before),</li>
-<li>this time-reversal symmetry has a mixed quantum anomaly with <em>one-form</em> symmetry (which we do not have time to learn in this lecture),</li>
-<li>and this constrains the phase diagram.</li>
-</ul>
-<p>Let us expand the last point by a bit. The YM theory is asymptotic free and strongly coupled in the IR, preventing us from easily determine its long-range behavior.
-However, the mixed anomaly at <span class="math inline">\(\theta = \pi\)</span> should be matched by whatever the long-range physics realized in the IR. One easy conclusion is that the IR is <strong>not trivial</strong>; something happens at <span class="math inline">\(\theta = \pi\)</span>. ’t Hooft anomaly matching says more, and at least one of the following must be true:</p>
-<ol style="list-style-type: decimal">
-<li>the time- reversal is broken in the IR; leading to 2 vacua,</li>
-<li>the “one-form symmetry” is broken in the IR, meaning de-confinement, or</li>
-<li>gapless modes; realizing a CFT.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
-</ol>
-<p>The power of anomaly is that this conclusion can come only with pens and papers. No super computer, or even Mathematica.
-Before the work, it felt like hopeless to have <em>any</em> robust conclusion on the phase structure of the pure YM, but now we have a bit even if it is a statement with options.
-This was clearly an unexpected advance in science, if not a breakthrough.</p>
-
-</div>
-</div>
-<!-- </div> -->
-<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body">
-<div id="ref-cordova_2020" class="csl-entry">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">C. Córdova, <em>Symmetries and Anomalies</em>, (2020), <span class="nodecoration"><a href="https://indico.cern.ch/event/857396/timetable/">https://indico.cern.ch/event/857396/timetable/</a></span>.</div>
-</div>
-<div id="ref-Gaiotto:2017yup" class="csl-entry">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">D. Gaiotto, A. Kapustin, Z. Komargodski, and N. Seiberg, <em><span class="nocase">Theta, Time Reversal, and Temperature</span></em>, JHEP <strong>05</strong>, 091 (2017), <span class="nodecoration"><a href="https://arxiv.org/abs/1703.00501">https://arxiv.org/abs/1703.00501</a></span>.</div>
-</div>
-<div id="ref-Cordova:2019bsd" class="csl-entry">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">C. Córdova and K. Ohmori, <em><span class="nocase">Anomaly Obstructions to Symmetry Preserving Gapped Phases</span></em>, (2019), <span class="nodecoration"><a href="https://arxiv.org/abs/1910.04962">https://arxiv.org/abs/1910.04962</a></span>.</div>
-</div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>Some authors, including the author of this lecture note, sometimes use the term “’t Hooft anomaly”, to mean a quantum anomaly for a <em>global</em> symmetry, to distinguish it from a quantum anomaly involving <em>gauge</em> symmetry. However this terminology does not seem to have a historical root (while the term “’t Hooft anomaly matching” is easily justified), so in this lecture KO tries to avoid the terminology to avoid any possible confusion.<a href="motivation.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>The argument in <span class="citation"> [<a href="#ref-Gaiotto:2017yup" role="doc-biblioref">6</a>]</span> could not exclude the forth possibility of an anomaly-matching topological phase, which was later excluded in <span class="citation"> [<a href="#ref-Cordova:2019bsd" role="doc-biblioref">7</a>]</span>.<a href="motivation.html#fnref2" class="footnote-back">↩︎</a></p></li>
-</ol>
+<div id="mathbbcp1-model" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> <span class="math inline">\(\mathbb{CP}^1\)</span> model<a href="mathbbcp1-model.html#mathbbcp1-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lecture-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="quantum-anomaly-in-quantum-mechanics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="property.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="prospects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -333,7 +246,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/kantohm11/symmetry_review/edit/main/index.Rmd",
+"link": "https://github.com/kantohm11/symmetry_review/edit/main/02-2dQFT.Rmd",
 "text": "Edit"
 },
 "history": {
