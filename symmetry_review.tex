@@ -80,7 +80,7 @@
 
 \title{Quantum Anomalies as Projective Phases}
 \author{Kantaro Ohmori, University of Tokyo kant.ohmori\_at\_gmail.com}
-\date{2022-04-19}
+\date{2022-04-21}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[section]
@@ -746,52 +746,7 @@ Show that \(H^2(\mathbb{Z}_2)=0\). (If you want, also calculate \(H^2(\mathbb{Z}
 \hypertarget{symmetry-protected-topological-phase}{%
 \subsubsection{Symmetry Protected Topological Phase}\label{symmetry-protected-topological-phase}}
 
-Before moving to the quantum anomaly in QFT, here let us see the crucial connection between quantum anomaly and \textbf{symmetry protected topological phase}(SPT), introduced in \textcite{Chen:2011pg}, a topic in condensed-matter physics.
-The relationship is summarized as the following hypothesis \footnote{The name of the hypothesis is cooked up by KO. Also the correct reference is not clear to KO (other than having a very long list); it feels more like a theme that gradually arose over a time (through the decade of 2010).}
-
-\begin{hypothesis}[SPT-inflow hypothesis]
-\protect\hypertarget{hyp:SPT}{}\label{hyp:SPT}A \(d+1\)-dimensional QFT with an anomalous global symmetry \(G\) (and non-anomalous Lorentz symmetry)
-can be realized as a boundary of a \((d+1)+1\)-dimensional SPT phase with (non-anomalous) symmetry \(G\).
-\end{hypothesis}
-
-This is a refinement of the Callan-Harvey anomaly-inflow principle \textcite{Callan:1984sa}.
-Callan-Harvey anomaly-inflow asserts that a quantum anomaly is related to a \emph{classical action} of backgrounds in \((d+1)+1\) dimension, but what kind of backgrounds/action can consist an ``inflow action'' was unclear; now it is replaced by ``SPT'', which has moth more clear definition and physical interpretation.
-
-We define the SPT on a lattice.
-To define, first we define the notion of ``short range entangled'' state.\footnote{This definition is by the original paper. A. Kitaev, and therefore many other people, uses the same words (SRE/SPT) for a non-equivalent thing. Let us call a state \(\ket{\psi}\) is \textbf{invertible} if \(\ket{\psi}\otimes \ket{\psi^\vee} \in \mathcal{H} \otimes \mathcal{H}^\vee\) is SRE (as defined in the main text). Here \(\mathcal{H}^\vee\) is the dual of \(\mathcal{H}\) and \(\ket{\psi^\vee}\) is the dual of \(\ket{\psi}\). What Kitaev calls SRE is actually this invertibility.
-  Note that while there is no nontrivial SPT when \(G\) is trivial by definition, but there can potentially be nontrivial invertible state even when \(G\) is trivial. An invertible state can actually captures a pure-gravitational anomaly on the boundary which improves Hypothesis \ref{hyp:SPT}.} \footnote{About continuum, see Yuji's note \textcite{tachikawa_2019}. In short an \emph{invertible QFT}, the continuum version of invertible state defined in the above footnote, is defined (and classified!) in \textcite{Freed:2016rqq} \textcite{Yonekura:2018ufj}.}
-
-\begin{definition}[Short Range Entangled (SRE)]
-\protect\hypertarget{def:SRE}{}\label{def:SRE}Consider a \(d\) (space) dimensional lattice system without boundary, whose Hilbert space is \(\mathcal{H} = \bigotimes_{i} \mathcal{H}_i\), where \(\mathcal{H}_i\) is the local Hilbert space associated to the site \(i\).
-A state \(\ket{\psi} \in \mathcal{H}\) is short range entangled when you can make \(\ket{\psi}\) a tensor product state by the following operation:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Enlarge the local Hilbert space \(\mathcal{H}^\text{enlarged}_i = \mathcal{H}_i \otimes \mathcal{H}_i^\text{ext}\) by some Hilbert space \(\mathcal{H}_i^\text{ext}\).
-  Also pick a state \(\ket{\phi_i} \in \mathcal{H}_i^\text{ext}\) from each \(\mathcal{H}_i^\text{ext}\) and set \(\ket{\hat\psi}\in \otimes_i \mathcal{H}_i^\text{enlarged}\) to be \(\ket{\hat\psi} = \ket{\psi}\otimes_i \ket{\phi_i}\).
-\item
-  Then pick a unitary \(U_i\) acting on each of the enlarged local Hilbert spaces \(\mathcal{H}_i^\text{enlarge}\).
-\end{enumerate}
-
-The resulting state is \(\ket{\tilde{\psi}}=\prod_i U_i \ket{\hat{\psi}}\), and \(\ket{\psi}\) is SRE iff you can pick \(\mathcal{H}_i^\text{ext}, \ket{\phi_i}\) and \(U_i\) so that \(\ket{\tilde{\psi}} = \otimes_i \ket{i}\) for some local states \(\ket{i} \in \mathcal{H}^\text{enlarged}_i\).
-\end{definition}
-
-In short, a state is SRE when you can add additional degrees of freedom then resolve all the entanglement between the sites by local unitary.
-We also define \(G\)-SRE:
-
-\begin{definition}[G-SRE]
-\protect\hypertarget{def:GSRE}{}\label{def:GSRE}Consider a \(d\) (space) dimensional lattice system without boundary with on-site symmetry \(G\). A \(G\)-invariant state \(\ket{\psi}\) is \(G\)-SRE iff it is SRE and all of the unitaries \(U_i\) in Definition \ref{def:SRE} can be taken to be the ones preserving \(G\).
-\end{definition}
-
-Then an SPT is defined by
-
-\begin{definition}[Symmetry Protected Topological phase]
-\protect\hypertarget{def:SPT}{}\label{def:SPT}A \(G\)-invariant state \(\ket{\psi}\) is in a (non-trivial) symmetry protected topological phase iff \(\ket{\psi}\) is SRE but not \(G\)-SRE.
-\end{definition}
-
-In other words a SPT state is SRE but not in a way respecting the on-site \(G\) symmetry.
+Kazama-san and Yamashita-san (and probably others) pointed out a significant error in the earlier version in the lecture, so this is part is currently omitted. KO thanks those who corrected me.
 
 \hypertarget{example-of-11d-so3-spt}{%
 \subsubsection{Example of 1+1d SO(3) SPT}\label{example-of-11d-so3-spt}}
@@ -1105,10 +1060,10 @@ Consider a 1+1-dimensional theory with boundary conditions \(\mathcal{B}_i\)
 and symmetry \(G\).
 For each pair of boundary conditions \((\mathcal{B}_L,\mathcal{B}_R)\), we have the Hilbert space \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\) (for a fixed length of the interval).
 A boundary condition \(\mathcal{B}\) does not necessarily fixed by the symmetry action, but rather mapped to another boundary condition \(g\mathcal{B}\).
-Accordingly, the unitary in general maps a Hilbert space to another Hilbert space\footnote{Of course all the separable Hilbert spaces are isomorphic but identifying all of the Hilbert spaces \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\) by this universal isomorphism is just confusing and of no use.}\footnote{When the theory is a TQFT, there is a multiplication between the state in \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_M}\) and \(\mathcal{H}_{\mathcal{B}_M,\mathcal{B}_R}\) valued in \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\). You can regard this structure as a \textbf{category}, whose objects are the boundary conditions, and morphisms are states on intervals (equivalently, topological boundary-changing operators).
+Accordingly, the unitary in general maps a Hilbert space to another Hilbert space\footnote{Of course, all the infinite-dimensional separable Hilbert spaces are isomorphic to each other but identifying all of the Hilbert spaces \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\) by this universal isomorphism is just confusing and of no use.}\footnote{When the theory is a TQFT, there is a multiplication between the states in \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_M}\) and \(\mathcal{H}_{\mathcal{B}_M,\mathcal{B}_R}\) valued in \(\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}\). You can regard this structure as a \textbf{category}, whose objects are the boundary conditions, and morphisms are states on intervals (equivalently, topological boundary-changing operators).
   Then \(U_g\) is a self-functor on this category, defining \textbf{categorical representation} of the (suspension of the) group \(G\).
   However the composition rule of the functors is up to natural transformations, which are the projective phases.
-  When the theory is a general QFT there is no canonical multiplication among the states but there is a \emph{family} of multiplications. In such cases KO imagines that the boundary conditions would define a category over some operad (something like the swiss-cheese one), and we should be dealing with the representation theory valued in such categories.
+  When the theory is a general QFT there is no canonical multiplication among the states but there is an \emph{infinite-dimensional family of multiplications}. In such cases KO imagines that the boundary conditions would define a category over some operad (something like the swiss-cheese one), and we should be dealing with the representation theory valued in such categories (in 1+1d CFT one can use Witten's OSFT product to define a usual category though).
   As far as the anomaly is concerned, the only thing for which we need the operad-category structure is to show the splitting \eqref{eq:alphasplit}.
   In higher dimensional QFTs, the category also has to be higher.}:
 \begin{equation}
