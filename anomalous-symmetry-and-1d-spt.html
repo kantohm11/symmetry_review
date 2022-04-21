@@ -210,24 +210,18 @@ div.csl-indent {
 <h2><span class="header-section-number">2.7</span> Anomalous symmetry and 1D SPT<a href="anomalous-symmetry-and-1d-spt.html#anomalous-symmetry-and-1d-spt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="symmetry-protected-topological-phase" class="section level3 hasAnchor" number="2.7.1">
 <h3><span class="header-section-number">2.7.1</span> Symmetry Protected Topological Phase<a href="anomalous-symmetry-and-1d-spt.html#symmetry-protected-topological-phase" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Kazama-san and Yamashita-san (and probably others) pointed out a significant error in the earlier version in the lecture, so this is part is currently omitted. KO thanks those who corrected me.</p>
+<p>Before moving to the quantum anomaly in QFT, here let us see the crucial connection between quantum anomaly and <strong>symmetry protected topological phase</strong>(SPT), introduced in <span class="citation"> [<a href="#ref-Chen:2011pg" role="doc-biblioref">10</a>]</span>, a topic in condensed-matter physics.
+The relationship is summarized as the following hypothesis <a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p>
+<div class="hypothesis">
+<p><span id="hyp:SPT" class="hypothesis"><strong>Hypothesis 2.1  (SPT-inflow hypothesis) </strong></span>A <span class="math inline">\(d+1\)</span>-dimensional QFT with an anomalous global symmetry <span class="math inline">\(G\)</span> (and non-anomalous Lorentz symmetry)
+can be realized as a boundary of a <span class="math inline">\((d+1)+1\)</span>-dimensional SPT phase with (non-anomalous) symmetry <span class="math inline">\(G\)</span>.</p>
+</div>
+<p>This is a refinement of the Callan-Harvey anomaly-inflow principle <span class="citation"> [<a href="#ref-Callan:1984sa" role="doc-biblioref">11</a>]</span>.
+Callan-Harvey anomaly-inflow asserts that a quantum anomaly is related to a <em>classical action</em> of backgrounds in <span class="math inline">\((d+1)+1\)</span> dimension, but what kind of backgrounds/action can consist an “inflow action” was unclear; now it is replaced by “SPT”, which has moth more clear definition and physical interpretation.</p>
+<p>We define the SPT on a lattice.
+To define, first we define the notion of “short range entangled” state.[^inv] [^conti]</p>
+<p>Kazama-san and Yamashita-san (and probably others) pointed out a significant error in the earlier version in the lecture, so the rest of this paragraph is currently omitted. KO thanks those who corrected him.</p>
 <!--
-Before moving to the quantum anomaly in QFT, here let us see the crucial connection between quantum anomaly and **symmetry protected topological phase**(SPT), introduced in @Chen:2011pg, a topic in condensed-matter physics.
-The relationship is summarized as the following hypothesis [^SPThyp]
-
-::: {.hypothesis #SPT name="SPT-inflow hypothesis"}
-A $d+1$-dimensional QFT with an anomalous global symmetry $G$ (and non-anomalous Lorentz symmetry)
-can be realized as a boundary of a $(d+1)+1$-dimensional SPT phase with (non-anomalous) symmetry $G$.
-:::
-
-[^SPThyp]: The name of the hypothesis is cooked up by KO. Also the correct reference is not clear to KO (other than having a very long list); it feels more like a theme that gradually arose over a time (through the decade of 2010).
-
-This is a refinement of the Callan-Harvey anomaly-inflow principle @Callan:1984sa.
-Callan-Harvey anomaly-inflow asserts that a quantum anomaly is related to a *classical action* of backgrounds in $(d+1)+1$ dimension, but what kind of backgrounds/action can consist an "inflow action" was unclear; now it is replaced by "SPT", which has moth more clear definition and physical interpretation.
-
-We define the SPT on a lattice. 
-To define, first we define the notion of "short range entangled" state.[^inv] [^conti]
-
 [^inv]: This definition is by the original paper. A. Kitaev, and therefore many other people, uses the same words (SRE/SPT) for a non-equivalent thing. Let us call a state $\ket{\psi}$ is **invertible** if $\ket{\psi}\otimes \ket{\psi^\vee} \in \mathcal{H} \otimes \mathcal{H}^\vee$ is SRE (as defined in the main text). Here $\mathcal{H}^\vee$ is the dual of $\mathcal{H}$ and $\ket{\psi^\vee}$ is the dual of $\ket{\psi}$. What Kitaev calls SRE is actually this invertibility.
 Note that while there is no nontrivial SPT when $G$ is trivial by definition, but there can potentially be nontrivial invertible state even when $G$ is trivial. An invertible state can actually captures a pure-gravitational anomaly on the boundary which improves Hypothesis \@ref(hyp:SPT).
 
@@ -264,7 +258,7 @@ In other words a SPT state is SRE but not in a way respecting the on-site $G$ sy
 We put two qubits, labeled by <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, on each site. So <span class="math inline">\(\mathcal{H}_i = \mathcal{H}^A_i \otimes \mathcal{H}^B_i\)</span>, with <span class="math inline">\(\mathcal{H}^A_i \cong \mathcal{H}^B_i \cong \mathbb{C}^2\)</span>.
 As a on-site
 Let <span class="math inline">\(\ket{s_i}\)</span> be the Bell state between the <span class="math inline">\(A\)</span>-qubit at site <span class="math inline">\(i\)</span> (<span class="math inline">\(i\in\mathbb{Z}\)</span>) and the <span class="math inline">\(B\)</span>-qubit at site <span class="math inline">\(i+1\)</span>: <span class="math inline">\(\ket{s_i} = \ket{\uparrow_{i,B}}\ket{\uparrow_{i+1,A}} + \ket{\downarrow_{i,B}} \ket{\downarrow_{i+1,A}} \in \mathcal{H}_{i}^A\otimes \mathcal{H}_{i+1}^B\)</span>.
-Then we define the total state <span class="math inline">\(\ket{\psi}\)</span> by<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>
+Then we define the total state <span class="math inline">\(\ket{\psi}\)</span> by<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>
 <span class="math display" id="eq:SO3SPT">\[\begin{equation}
   \tag{2.49}
   \ket{\psi} = \bigotimes_i \ket{s_i}.
@@ -285,8 +279,8 @@ Figure 2.1: The entanglement structure of the state <span class="math inline">\(
 \end{equation}\]</span>
 The state <span class="math inline">\(\ket{\psi}\)</span> is invariant under this transformation, because <span class="math inline">\(T_g = \prod_i T_{g^{-1}}^{(i,B)}T_g^{(i+1,A)}\)</span> and <span class="math inline">\(T_{g^{-1}}^{(i,B)}T_{g}^{(i+1,A)}\)</span> makes the singlet state <span class="math inline">\(\ket{s_i}\)</span> invariant.
 Note that this symmetry transformation does not have the projective phase: it is cancelled between the ones coming from <span class="math inline">\(U_g^{(i,A)}\)</span> and <span class="math inline">\(U_{g^{-1}}^{(i,B)}\)</span> within each site.</p>
-<p>The direct exposition that <span class="math inline">\(\ket{\psi}\)</span> is in a SPT can be found in <span class="citation"> [<a href="#ref-Prakash:2018ugo" role="doc-biblioref">11</a>]</span>.
-Here instead we observe how the Hypothesis <a href="#hyp:SPT"><strong>??</strong></a> works in this example.
+<p>The direct exposition that <span class="math inline">\(\ket{\psi}\)</span> is in a SPT can be found in <span class="citation"> [<a href="#ref-Prakash:2018ugo" role="doc-biblioref">13</a>]</span>.
+Here instead we observe how the Hypothesis <a href="anomalous-symmetry-and-1d-spt.html#hyp:SPT">2.1</a> works in this example.
 The state <span class="math inline">\(\ket{\psi}\)</span> has no problem to be defined on a periodic lattice.
 However, when there is a boundary, say that only <span class="math inline">\(i \in \mathbb{Z}_{\ge 0}\)</span> participate in the lattice, the <span class="math inline">\(A\)</span>-qubit at site <span class="math inline">\(i=0\)</span> does not have its partner to create an entanglement.
 Thus, there are equally good/bad extensions of the state <span class="math inline">\(\ket{\psi}\)</span> to open boundary:
@@ -311,33 +305,40 @@ Pick a basis <span class="math inline">\(\ket{i}\)</span> in <span class="math i
 \end{equation}\]</span>
 This state is invariant under <span class="math inline">\(T_{g^{-1}}^{(i,B)}T_g^{(i+1,A)}\)</span> (and nonzero).
 Now the rest of the constuction is the same as above, and we see the edge mode in <span class="math inline">\(R\)</span> when the lattice has a boundary.
-Thus we have seen how the (one direction of) Hypothesis <a href="#hyp:SPT"><strong>??</strong></a> works in the 1+1d bulk/0+1d boundary case.</p>
+Thus we have seen how the (one direction of) Hypothesis <a href="anomalous-symmetry-and-1d-spt.html#hyp:SPT">2.1</a> works in the 1+1d bulk/0+1d boundary case.</p>
 
 </div>
 </div>
 <!-- </div> -->
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body">
+<div id="ref-Chen:2011pg" class="csl-entry">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">X. Chen, Z.-C. Gu, Z.-X. Liu, and X.-G. Wen, <em><span class="nocase">Symmetry protected topological orders and the group cohomology of their symmetry group</span></em>, Phys. Rev. B <strong>87</strong>, 155114 (2013), <span class="nodecoration"><a href="https://arxiv.org/abs/1106.4772">https://arxiv.org/abs/1106.4772</a></span>.</div>
+</div>
+<div id="ref-Callan:1984sa" class="csl-entry">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">C. G. Callan Jr. and J. A. Harvey, <em><a href="https://doi.org/10.1016/0550-3213(85)90489-4"><span class="nocase">Anomalies and Fermion Zero Modes on Strings and Domain Walls</span></a></em>, Nucl. Phys. B <strong>250</strong>, 427 (1985).</div>
+</div>
 <div id="ref-AKLT" class="csl-entry">
-<div class="csl-left-margin">[10] </div><div class="csl-right-inline">I. Affleck, T. Kennedy, E. H. Lieb, and H. Tasaki, <em><a href="https://doi.org/10.1103/PhysRevLett.59.799"><span class="nocase">Rigorous Results on Valence Bond Ground States in Antiferromagnets</span></a></em>, Phys. Rev. Lett. <strong>59</strong>, 799 (1987).</div>
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">I. Affleck, T. Kennedy, E. H. Lieb, and H. Tasaki, <em><a href="https://doi.org/10.1103/PhysRevLett.59.799"><span class="nocase">Rigorous Results on Valence Bond Ground States in Antiferromagnets</span></a></em>, Phys. Rev. Lett. <strong>59</strong>, 799 (1987).</div>
 </div>
 <div id="ref-Prakash:2018ugo" class="csl-entry">
-<div class="csl-left-margin">[11] </div><div class="csl-right-inline">A. Prakash, J. Wang, and T.-C. Wei, <em><span>Unwinding Short-Range Entanglement</span></em>, Phys. Rev. B <strong>98</strong>, 125108 (2018), <span class="nodecoration"><a href="https://arxiv.org/abs/1804.11236">https://arxiv.org/abs/1804.11236</a></span>.</div>
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">A. Prakash, J. Wang, and T.-C. Wei, <em><span>Unwinding Short-Range Entanglement</span></em>, Phys. Rev. B <strong>98</strong>, 125108 (2018), <span class="nodecoration"><a href="https://arxiv.org/abs/1804.11236">https://arxiv.org/abs/1804.11236</a></span>.</div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="10">
-<li id="fn10"><p>This state looks very artificial. Instead, on can consider the state
+<li id="fn10"><p>The name of the hypothesis is cooked up by KO. Also the correct reference is not clear to KO (other than having a very long list); it feels more like a theme that gradually arose over a time (through the decade of 2010).<a href="anomalous-symmetry-and-1d-spt.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p>This state looks very artificial. Instead, on can consider the state
 <span class="math display">\[\begin{equation*}
   \ket{\mathrm{AKLT}} = \prod_i P_i^\text{triplet} \ket{\psi}
 \end{equation*}\]</span>
 where <span class="math inline">\(P_i^\text{triplet}\)</span>, acting on <span class="math inline">\(\mathcal{H}_i\)</span>, is the projection operator onto the triplet states consists of the <span class="math inline">\(A\)</span>- and <span class="math inline">\(B\)</span>- qubits on the <em>same</em> site <span class="math inline">\(i\)</span>.
-This state ,in the same SPT as <span class="math inline">\(\ket{\psi}\)</span>, is the ground state of the AKLT Hamiltonian defined with spin-1 operators <span class="math inline">\(\vec{S}_i\)</span> <span class="citation"> [<a href="#ref-AKLT" role="doc-biblioref">10</a>]</span>:
+This state ,in the same SPT as <span class="math inline">\(\ket{\psi}\)</span>, is the ground state of the AKLT Hamiltonian defined with spin-1 operators <span class="math inline">\(\vec{S}_i\)</span> <span class="citation"> [<a href="#ref-AKLT" role="doc-biblioref">12</a>]</span>:
 <span class="math display">\[\begin{equation*}
   H_{\mathrm{AKLT}} = \sum_i \Bigl(\vec{S}_i \cdot \vec{S}_{i+1} + \frac13 \bigl(\vec{S}_{j} \cdot \vec{S}_{j+1}\bigr)^2\Bigr),
 \end{equation*}\]</span>
-which was studied way before the invention the notion of SPT.<a href="anomalous-symmetry-and-1d-spt.html#fnref10" class="footnote-back">↩︎</a></p></li>
+which was studied way before the invention the notion of SPT.<a href="anomalous-symmetry-and-1d-spt.html#fnref11" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
