@@ -478,8 +478,12 @@ Show that $H^2(\mathbb{Z}_2)=0$. (If you want, also calculate $H^2(\mathbb{Z}_2,
 
 ## Anomalous symmetry and 1D SPT
 
+
 ### Symmetry Protected Topological Phase
 
+Kazama-san and Yamashita-san (and probably others) pointed out a significant error in the earlier version in the lecture, so this is part is currently omitted. KO thanks those who corrected me.
+
+<!--
 Before moving to the quantum anomaly in QFT, here let us see the crucial connection between quantum anomaly and **symmetry protected topological phase**(SPT), introduced in @Chen:2011pg, a topic in condensed-matter physics.
 The relationship is summarized as the following hypothesis [^SPThyp]
 
@@ -523,6 +527,8 @@ Then an SPT is defined by
 A $G$-invariant state $\ket{\psi}$ is in a (non-trivial) symmetry protected topological phase iff $\ket{\psi}$ is SRE but not $G$-SRE.
 :::
 In other words a SPT state is SRE but not in a way respecting the on-site $G$ symmetry.
+
+-->
 
 ### Example of 1+1d SO(3) SPT
 

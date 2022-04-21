@@ -290,12 +290,12 @@ In this case we also demand that the phase redefinition of the unitary is *local
 \end{equation}
 for some function $\hat\beta$.
 
-[^separable]: Of course all the separable Hilbert spaces are isomorphic but identifying all of the Hilbert spaces $\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}$ by this universal isomorphism is just confusing and of no use.
+[^separable]: Of course, all the infinite-dimensional separable Hilbert spaces are isomorphic to each other but identifying all of the Hilbert spaces $\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}$ by this universal isomorphism is just confusing and of no use.
 
-[^category]: When the theory is a TQFT, there is a multiplication between the state in $\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_M}$ and $\mathcal{H}_{\mathcal{B}_M,\mathcal{B}_R}$ valued in $\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}$. You can regard this structure as a **category**, whose objects are the boundary conditions, and morphisms are states on intervals (equivalently, topological boundary-changing operators).
+[^category]: When the theory is a TQFT, there is a multiplication between the states in $\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_M}$ and $\mathcal{H}_{\mathcal{B}_M,\mathcal{B}_R}$ valued in $\mathcal{H}_{\mathcal{B}_L,\mathcal{B}_R}$. You can regard this structure as a **category**, whose objects are the boundary conditions, and morphisms are states on intervals (equivalently, topological boundary-changing operators).
 Then $U_g$ is a self-functor on this category, defining **categorical representation** of the (suspension of the) group $G$. 
 However the composition rule of the functors is up to natural transformations, which are the projective phases.
-When the theory is a general QFT there is no canonical multiplication among the states but there is a *family* of multiplications. In such cases KO imagines that the boundary conditions would define a category over some operad (something like the swiss-cheese one), and we should be dealing with the representation theory valued in such categories.
+When the theory is a general QFT there is no canonical multiplication among the states but there is an *infinite-dimensional family of multiplications*. In such cases KO imagines that the boundary conditions would define a category over some operad (something like the swiss-cheese one), and we should be dealing with the representation theory valued in such categories (in 1+1d CFT one can use Witten's OSFT product to define a usual category though). 
 As far as the anomaly is concerned, the only thing for which we need the operad-category structure is to show the splitting \@ref(eq:alphasplit).
 In higher dimensional QFTs, the category also has to be higher.
 
