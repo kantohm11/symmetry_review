@@ -481,9 +481,7 @@ Show that $H^2(\mathbb{Z}_2)=0$. (If you want, also calculate $H^2(\mathbb{Z}_2,
 
 ### Symmetry Protected Topological Phase
 
-Kazama-san and Yamashita-san (and probably others) pointed out a significant error in the earlier version in the lecture, so this is part is currently omitted. KO thanks those who corrected me.
 
-<!--
 Before moving to the quantum anomaly in QFT, here let us see the crucial connection between quantum anomaly and **symmetry protected topological phase**(SPT), introduced in @Chen:2011pg, a topic in condensed-matter physics.
 The relationship is summarized as the following hypothesis [^SPThyp]
 
@@ -500,6 +498,9 @@ Callan-Harvey anomaly-inflow asserts that a quantum anomaly is related to a *cla
 We define the SPT on a lattice. 
 To define, first we define the notion of "short range entangled" state.[^inv] [^conti]
 
+Kazama-san and Yamashita-san (and probably others) pointed out a significant error in the earlier version in the lecture, so the rest of this paragraph is currently omitted. KO thanks those who corrected me.
+
+<!--
 [^inv]: This definition is by the original paper. A. Kitaev, and therefore many other people, uses the same words (SRE/SPT) for a non-equivalent thing. Let us call a state $\ket{\psi}$ is **invertible** if $\ket{\psi}\otimes \ket{\psi^\vee} \in \mathcal{H} \otimes \mathcal{H}^\vee$ is SRE (as defined in the main text). Here $\mathcal{H}^\vee$ is the dual of $\mathcal{H}$ and $\ket{\psi^\vee}$ is the dual of $\ket{\psi}$. What Kitaev calls SRE is actually this invertibility.
 Note that while there is no nontrivial SPT when $G$ is trivial by definition, but there can potentially be nontrivial invertible state even when $G$ is trivial. An invertible state can actually captures a pure-gravitational anomaly on the boundary which improves Hypothesis \@ref(hyp:SPT).
 
